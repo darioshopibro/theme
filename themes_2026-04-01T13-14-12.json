@@ -1,0 +1,792 @@
+[
+  {
+    "name": "Atlas",
+    "slug": "atlas",
+    "price": "$280",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "launchDate": "February 20, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/atlas/presets/atlas"
+  },
+  {
+    "name": "Zap",
+    "slug": "zap",
+    "price": "$320",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "launchDate": "March 23, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/zap/presets/zap"
+  },
+  {
+    "name": "Dynamic",
+    "slug": "dynamic",
+    "price": "$290",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "launchDate": "March 24, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/dynamic/presets/dynamic"
+  },
+  {
+    "name": "Prompt",
+    "slug": "prompt",
+    "price": "$320",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "launchDate": "March 05, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/prompt/presets/prompt"
+  },
+  {
+    "name": "Pebble",
+    "slug": "pebble",
+    "price": "$400",
+    "reviewCount": 6,
+    "ratingPercent": 100,
+    "launchDate": "February 20, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "kids"
+    ],
+    "url": "https://themes.shopify.com/themes/pebble/presets/pebble"
+  },
+  {
+    "name": "Gentech",
+    "slug": "gentech",
+    "price": "$360",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "launchDate": "March 19, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/gentech/presets/gentech"
+  },
+  {
+    "name": "Seventh",
+    "slug": "seventh",
+    "price": "$420",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "March 31, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/seventh/presets/seventh"
+  },
+  {
+    "name": "Zeal",
+    "slug": "zeal",
+    "price": "$290",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "March 27, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "wellness"
+    ],
+    "url": "https://themes.shopify.com/themes/zeal/presets/zeal"
+  },
+  {
+    "name": "Force",
+    "slug": "force",
+    "price": "$380",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "March 10, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "real results.",
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/force/presets/force"
+  },
+  {
+    "name": "Filo",
+    "slug": "filo",
+    "price": "$140",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "launchDate": "March 09, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/filo/presets/filo"
+  },
+  {
+    "name": "Zenith",
+    "slug": "zenith",
+    "price": "$380",
+    "reviewCount": 7,
+    "ratingPercent": 100,
+    "launchDate": "February 27, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "high-visual brand storytelling.",
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/zenith/presets/zenith"
+  },
+  {
+    "name": "Poco",
+    "slug": "poco",
+    "price": "$220",
+    "reviewCount": 9,
+    "ratingPercent": 100,
+    "launchDate": "March 10, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/poco/presets/poco"
+  },
+  {
+    "name": "Unity",
+    "slug": "unity",
+    "price": "$150",
+    "reviewCount": 5,
+    "ratingPercent": 100,
+    "launchDate": "March 05, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "wellness"
+    ],
+    "url": "https://themes.shopify.com/themes/unity/presets/unity"
+  },
+  {
+    "name": "Sweet",
+    "slug": "sweet",
+    "price": "$320",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "launchDate": "January 05, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/sweet/presets/sweet"
+  },
+  {
+    "name": "Metro",
+    "slug": "metro",
+    "price": "$250",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "February 04, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/metro/presets/metro"
+  },
+  {
+    "name": "Homage",
+    "slug": "homage",
+    "price": "$250",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "launchDate": "December 12, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "an immersive brand experience with editorial-style layouts that transform your products into lifestyle statements.",
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/homage/presets/homage"
+  },
+  {
+    "name": "Victory",
+    "slug": "victory",
+    "price": "$320",
+    "reviewCount": 6,
+    "ratingPercent": 100,
+    "launchDate": "March 18, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "all types of shops. Many elements are animated, which brings the site to life and gives it a very high-end professional feel. 10/10.",
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/victory/presets/victory"
+  },
+  {
+    "name": "Vetro",
+    "slug": "vetro",
+    "price": "$280",
+    "reviewCount": 23,
+    "ratingPercent": 100,
+    "launchDate": "February 10, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/vetro/presets/vetro"
+  },
+  {
+    "name": "Flaunt",
+    "slug": "flaunt",
+    "price": "$290",
+    "reviewCount": 4,
+    "ratingPercent": 100,
+    "launchDate": "February 20, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "a clean and timeless appeal.",
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/flaunt/presets/flaunt"
+  },
+  {
+    "name": "Mix",
+    "slug": "mix",
+    "price": "$380",
+    "reviewCount": 4,
+    "ratingPercent": 100,
+    "launchDate": "March 10, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/mix/presets/mix"
+  },
+  {
+    "name": "Supreme",
+    "slug": "supreme",
+    "price": "$150",
+    "reviewCount": 10,
+    "ratingPercent": 90,
+    "launchDate": "February 27, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/supreme/presets/supreme"
+  },
+  {
+    "name": "Fullframe",
+    "slug": "fullframe",
+    "price": "$260",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "launchDate": "December 02, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/fullframe/presets/fullframe"
+  },
+  {
+    "name": "Stockist",
+    "slug": "stockist",
+    "price": "$320",
+    "reviewCount": 5,
+    "ratingPercent": 100,
+    "launchDate": "March 04, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "office"
+    ],
+    "url": "https://themes.shopify.com/themes/stockist/presets/stockist"
+  },
+  {
+    "name": "Maximize",
+    "slug": "maximize",
+    "price": "$200",
+    "reviewCount": 24,
+    "ratingPercent": 100,
+    "launchDate": "March 20, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/maximize/presets/maximize"
+  },
+  {
+    "name": "Zyra",
+    "slug": "zyra",
+    "price": "$220",
+    "reviewCount": 3,
+    "ratingPercent": 100,
+    "launchDate": "December 24, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/zyra/presets/zyra"
+  },
+  {
+    "name": "Krank",
+    "slug": "krank",
+    "price": "$320",
+    "reviewCount": 14,
+    "ratingPercent": 93,
+    "launchDate": "March 23, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "hardware"
+    ],
+    "url": "https://themes.shopify.com/themes/krank/presets/krank"
+  },
+  {
+    "name": "Line",
+    "slug": "line",
+    "price": "$260",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "December 02, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/line/presets/line"
+  },
+  {
+    "name": "Flute",
+    "slug": "flute",
+    "price": "$230",
+    "reviewCount": 8,
+    "ratingPercent": 100,
+    "launchDate": "March 26, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/flute/presets/flute"
+  },
+  {
+    "name": "Purity",
+    "slug": "purity",
+    "price": "$300",
+    "reviewCount": 73,
+    "ratingPercent": 99,
+    "launchDate": "March 02, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/purity/presets/purity"
+  },
+  {
+    "name": "Beautify",
+    "slug": "beautify",
+    "price": "$420",
+    "reviewCount": 3,
+    "ratingPercent": 100,
+    "launchDate": "March 13, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/beautify/presets/beautify"
+  },
+  {
+    "name": "Elemento",
+    "slug": "elemento",
+    "price": "$390",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "September 17, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/elemento/presets/elemento"
+  },
+  {
+    "name": "Lollipop",
+    "slug": "lollipop",
+    "price": "$100",
+    "reviewCount": 4,
+    "ratingPercent": 100,
+    "launchDate": "February 06, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/lollipop/presets/lollipop"
+  },
+  {
+    "name": "Haven",
+    "slug": "haven",
+    "price": "$260",
+    "reviewCount": 6,
+    "ratingPercent": 100,
+    "launchDate": "February 05, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/haven/presets/haven"
+  },
+  {
+    "name": "Rad",
+    "slug": "rad",
+    "price": "$260",
+    "reviewCount": 3,
+    "ratingPercent": 100,
+    "launchDate": "January 05, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "maximum creative control, letting your brand's personality shine.",
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/rad/presets/rad"
+  },
+  {
+    "name": "Edge",
+    "slug": "edge",
+    "price": "$320",
+    "reviewCount": 17,
+    "ratingPercent": 100,
+    "launchDate": "March 03, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "jewelry and accessories"
+    ],
+    "url": "https://themes.shopify.com/themes/edge/presets/edge"
+  },
+  {
+    "name": "Allure",
+    "slug": "allure",
+    "price": "$100",
+    "reviewCount": 22,
+    "ratingPercent": 100,
+    "launchDate": "March 19, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/allure/presets/allure"
+  },
+  {
+    "name": "Grove",
+    "slug": "grove",
+    "price": "$320",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "January 22, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "jewelry and accessories"
+    ],
+    "url": "https://themes.shopify.com/themes/grove/presets/grove"
+  },
+  {
+    "name": "Adorn",
+    "slug": "adorn",
+    "price": "$270",
+    "reviewCount": 27,
+    "ratingPercent": 96,
+    "launchDate": "February 10, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/adorn/presets/adorn"
+  },
+  {
+    "name": "Lyra",
+    "slug": "lyra",
+    "price": "$260",
+    "reviewCount": 12,
+    "ratingPercent": 100,
+    "launchDate": "March 17, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "jewelry brands.",
+      "jewelry and accessories"
+    ],
+    "url": "https://themes.shopify.com/themes/lyra/presets/lyra"
+  },
+  {
+    "name": "Pastarina",
+    "slug": "pastarina",
+    "price": "$320",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "launchDate": "December 02, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/pastarina/presets/pastarina"
+  },
+  {
+    "name": "Megastore",
+    "slug": "megastore",
+    "price": "$380",
+    "reviewCount": 3,
+    "ratingPercent": 67,
+    "launchDate": "March 10, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/megastore/presets/megastore"
+  },
+  {
+    "name": "Genie",
+    "slug": "genie",
+    "price": "$180",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "launchDate": "December 02, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "kids"
+    ],
+    "url": "https://themes.shopify.com/themes/genie/presets/genie"
+  },
+  {
+    "name": "Maya",
+    "slug": "maya",
+    "price": "$500",
+    "reviewCount": 7,
+    "ratingPercent": 71,
+    "launchDate": "January 26, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/maya/presets/maya"
+  },
+  {
+    "name": "Fabric",
+    "slug": "fabric",
+    "price": "Free",
+    "reviewCount": 59,
+    "ratingPercent": 32,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/fabric/presets/fabric"
+  },
+  {
+    "name": "Savor",
+    "slug": "savor",
+    "price": "Free",
+    "reviewCount": 57,
+    "ratingPercent": 23,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/savor/presets/savor"
+  },
+  {
+    "name": "Vessel",
+    "slug": "vessel",
+    "price": "Free",
+    "reviewCount": 29,
+    "ratingPercent": 24,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/vessel/presets/vessel"
+  },
+  {
+    "name": "Dwell",
+    "slug": "dwell",
+    "price": "Free",
+    "reviewCount": 34,
+    "ratingPercent": 26,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/dwell/presets/dwell"
+  },
+  {
+    "name": "Tinker",
+    "slug": "tinker",
+    "price": "Free",
+    "reviewCount": 69,
+    "ratingPercent": 36,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "office"
+    ],
+    "url": "https://themes.shopify.com/themes/tinker/presets/tinker"
+  },
+  {
+    "name": "Pitch",
+    "slug": "pitch",
+    "price": "Free",
+    "reviewCount": 28,
+    "ratingPercent": 32,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/pitch/presets/pitch"
+  },
+  {
+    "name": "Atelier",
+    "slug": "atelier",
+    "price": "Free",
+    "reviewCount": 66,
+    "ratingPercent": 30,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "bags"
+    ],
+    "url": "https://themes.shopify.com/themes/atelier/presets/atelier"
+  },
+  {
+    "name": "Heritage",
+    "slug": "heritage",
+    "price": "Free",
+    "reviewCount": 10,
+    "ratingPercent": 50,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "brands with a strong editorial aesthetic. Immersive galleries with asymmetrical, organic layouts let your brand voice shine.",
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/heritage/presets/heritage"
+  },
+  {
+    "name": "Ritual",
+    "slug": "ritual",
+    "price": "Free",
+    "reviewCount": 21,
+    "ratingPercent": 33,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/ritual/presets/ritual"
+  },
+  {
+    "name": "Nova",
+    "slug": "nova",
+    "price": "$350",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "December 12, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "sports"
+    ],
+    "url": "https://themes.shopify.com/themes/nova/presets/nova"
+  },
+  {
+    "name": "Carbon",
+    "slug": "carbon",
+    "price": "$280",
+    "reviewCount": 8,
+    "ratingPercent": 88,
+    "launchDate": "February 04, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/carbon/presets/carbon"
+  },
+  {
+    "name": "Sampo",
+    "slug": "sampo",
+    "price": "$390",
+    "reviewCount": 3,
+    "ratingPercent": 100,
+    "launchDate": "December 02, 2025",
+    "latestUpdate": null,
+    "niches": [
+      "jewelry and accessories"
+    ],
+    "url": "https://themes.shopify.com/themes/sampo/presets/sampo"
+  },
+  {
+    "name": "Loka",
+    "slug": "loka",
+    "price": "$140",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/loka/presets/loka"
+  },
+  {
+    "name": "Strong",
+    "slug": "strong",
+    "price": "$320",
+    "reviewCount": 7,
+    "ratingPercent": 100,
+    "launchDate": "February 16, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "shoes"
+    ],
+    "url": "https://themes.shopify.com/themes/strong/presets/strong"
+  },
+  {
+    "name": "Monochrome",
+    "slug": "monochrome",
+    "price": "$320",
+    "reviewCount": 17,
+    "ratingPercent": 94,
+    "launchDate": "March 04, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "immersive visual storytelling.",
+      "art"
+    ],
+    "url": "https://themes.shopify.com/themes/monochrome/presets/monochrome"
+  },
+  {
+    "name": "Elixira",
+    "slug": "elixira",
+    "price": "$140",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "launchDate": "March 09, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "Mobile, Electronics",
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/elixira/presets/elixira"
+  },
+  {
+    "name": "Horizon",
+    "slug": "horizon",
+    "price": "Free",
+    "reviewCount": 154,
+    "ratingPercent": 37,
+    "launchDate": "March 30, 2026",
+    "latestUpdate": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/horizon/presets/horizon"
+  }
+]

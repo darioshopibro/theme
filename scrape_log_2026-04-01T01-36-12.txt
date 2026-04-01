@@ -1,0 +1,1673 @@
+[2026-04-01T01:36:12.295Z] ========================================
+[2026-04-01T01:36:12.295Z] SHOPIFY THEME STORE SCRAPER
+[2026-04-01T01:36:12.296Z] ========================================
+[2026-04-01T01:36:12.296Z] Stop condition: 150+ reviews
+[2026-04-01T01:36:12.296Z] Delay between requests: 5-10s
+[2026-04-01T01:36:12.296Z] Log file: /Users/dario61/Desktop/shopify-theme-research/scrape_log_2026-04-01T01-36-12.txt
+[2026-04-01T01:36:12.296Z] 
+[2026-04-01T01:36:12.296Z] Launching browser...
+[2026-04-01T01:36:13.382Z] Browser launched OK
+[2026-04-01T01:36:13.481Z] User agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+[2026-04-01T01:36:13.481Z] Viewport: 1440x900
+[2026-04-01T01:36:13.481Z] 
+========================================
+[2026-04-01T01:36:13.481Z] LISTING PAGE 1: https://themes.shopify.com/themes?sort_by=newest&page=1
+[2026-04-01T01:36:13.481Z] ========================================
+[2026-04-01T01:36:13.481Z] Themes collected so far: 0 | Duplicates skipped: 0 | Errors: 0
+[2026-04-01T01:36:14.043Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=1
+[2026-04-01T01:36:14.079Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:36:14.083Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:36:14.086Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:36:14.087Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:36:14.099Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:36:14.100Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:36:14.101Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:36:14.119Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:36:14.121Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:36:14.122Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:36:14.122Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:36:14.122Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:36:14.123Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:36:15.434Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:15.616Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:16.226Z] Page loaded in 2745ms
+[2026-04-01T01:36:18.233Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:36:18.235Z] Page body text length: 2091 chars
+[2026-04-01T01:36:18.236Z] Found 8 theme cards on page: atlas, zap, dynamic, prompt, pebble, gentech, seventh, zeal
+[2026-04-01T01:36:18.236Z]   [1/8] Waiting 9.2s then visiting: atlas
+[2026-04-01T01:36:27.707Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:27.708Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:27.713Z]   [HTTP 302] https://themes.shopify.com/themes/atlas
+[2026-04-01T01:36:28.084Z]   [HTTP 200] https://themes.shopify.com/themes/atlas/presets/atlas
+[2026-04-01T01:36:28.101Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:36:28.101Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:36:28.102Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:36:28.121Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:36:28.282Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:36:28.283Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:36:28.284Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:36:28.284Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:36:28.284Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:36:28.285Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:36:28.285Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:36:28.307Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:36:28.367Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:28.552Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:28.972Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-39QZ2KKSP9&gtm=45je63u0v9247125870za200&_p=1775007388367&gcd=13l3l3
+[2026-04-01T01:36:31.024Z]     Page loaded in 3570ms
+[2026-04-01T01:36:31.027Z]     ✓ Atlas | $280 | 0 reviews | null% | niches: electronics | body: 2849 chars
+[2026-04-01T01:36:31.027Z]     TOTAL so far: 1 unique themes
+[2026-04-01T01:36:31.027Z]   [2/8] Waiting 8.2s then visiting: zap
+[2026-04-01T01:36:33.882Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-39QZ2KKSP9&gtm=45je63u0v9247125870za200&_p=1775007388367&gcd=13l3l3
+[2026-04-01T01:36:39.446Z]   [HTTP 302] https://themes.shopify.com/themes/zap
+[2026-04-01T01:36:39.448Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:39.486Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:40.389Z]   [HTTP 200] https://themes.shopify.com/themes/zap/presets/zap
+[2026-04-01T01:36:40.407Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:36:40.409Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:36:40.411Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:36:40.412Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:36:40.555Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:36:40.556Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:36:40.556Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:36:40.556Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:36:40.557Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:36:40.559Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:36:40.560Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:36:40.560Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:36:40.641Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:40.785Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:42.771Z]     Page loaded in 3565ms
+[2026-04-01T01:36:42.773Z]     ✓ Zap | $320 | 0 reviews | null% | niches: food and drink | body: 3125 chars
+[2026-04-01T01:36:42.773Z]     TOTAL so far: 2 unique themes
+[2026-04-01T01:36:42.773Z]   [3/8] Waiting 5.6s then visiting: dynamic
+[2026-04-01T01:36:48.591Z]   [HTTP 302] https://themes.shopify.com/themes/dynamic
+[2026-04-01T01:36:48.593Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:48.593Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:49.061Z]   [HTTP 200] https://themes.shopify.com/themes/dynamic/presets/dynamic
+[2026-04-01T01:36:49.069Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:36:49.070Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:36:49.070Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:36:49.072Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:36:49.167Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:36:49.172Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:36:49.178Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:36:49.182Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:36:49.190Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:36:49.193Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:36:49.194Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:36:49.200Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:36:49.261Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:49.431Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:49.567Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-7SWCFM8R5P&gtm=45je63u0v9245960758za200&_p=1775007409210&gcd=13l3l3
+[2026-04-01T01:36:51.730Z]     Page loaded in 3393ms
+[2026-04-01T01:36:51.734Z]     ✓ Dynamic | $290 | 0 reviews | null% | niches: beauty | body: 3147 chars
+[2026-04-01T01:36:51.734Z]     TOTAL so far: 3 unique themes
+[2026-04-01T01:36:51.735Z]   [4/8] Waiting 6.4s then visiting: prompt
+[2026-04-01T01:36:54.581Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-7SWCFM8R5P&gtm=45je63u0v9245960758za200&_p=1775007409210&gcd=13l3l3
+[2026-04-01T01:36:58.353Z]   [HTTP 302] https://themes.shopify.com/themes/prompt
+[2026-04-01T01:36:58.357Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:58.710Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:58.733Z]   [HTTP 200] https://themes.shopify.com/themes/prompt/presets/prompt
+[2026-04-01T01:36:58.747Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:36:58.747Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:36:58.748Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:36:58.748Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:36:58.937Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:36:58.938Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:36:58.938Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:36:58.939Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:36:58.939Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:36:58.939Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:36:58.940Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:36:58.940Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:36:59.076Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:36:59.257Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:01.187Z]     Page loaded in 3072ms
+[2026-04-01T01:37:01.190Z]     ✓ Prompt | $320 | 1 reviews | 100% | niches: electronics | body: 3372 chars
+[2026-04-01T01:37:01.190Z]     TOTAL so far: 4 unique themes
+[2026-04-01T01:37:01.190Z]   [5/8] Waiting 5.9s then visiting: pebble
+[2026-04-01T01:37:07.367Z]   [HTTP 302] https://themes.shopify.com/themes/pebble
+[2026-04-01T01:37:07.368Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:07.369Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:07.931Z]   [HTTP 200] https://themes.shopify.com/themes/pebble/presets/pebble
+[2026-04-01T01:37:07.961Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:37:07.961Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:37:07.962Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:37:07.963Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:37:08.045Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:37:08.047Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:37:08.048Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:37:08.048Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:37:08.048Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:37:08.049Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:37:08.049Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:37:08.050Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:37:08.145Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:08.310Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:08.457Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-V9Q700L3MB&gtm=45je63u0v9236569483za200&_p=1775007428135&gcd=13l3l3
+[2026-04-01T01:37:10.336Z]     Page loaded in 3217ms
+[2026-04-01T01:37:10.338Z]     ✓ Pebble | $400 | 6 reviews | 100% | niches: kids | body: 3705 chars
+[2026-04-01T01:37:10.338Z]     TOTAL so far: 5 unique themes
+[2026-04-01T01:37:10.338Z]   [6/8] Waiting 8.9s then visiting: gentech
+[2026-04-01T01:37:13.466Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-V9Q700L3MB&gtm=45je63u0v9236569483za200&_p=1775007428135&gcd=13l3l3
+[2026-04-01T01:37:19.586Z]   [HTTP 302] https://themes.shopify.com/themes/gentech
+[2026-04-01T01:37:19.587Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:19.596Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:19.947Z]   [HTTP 200] https://themes.shopify.com/themes/gentech/presets/gentech
+[2026-04-01T01:37:19.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:37:19.967Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:37:19.967Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:37:19.968Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:37:20.247Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:37:20.248Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:37:20.248Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:37:20.249Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:37:20.250Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:37:20.250Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:37:20.251Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:37:20.251Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:37:20.329Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:20.501Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:20.681Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-45VKTNR45H&gtm=45je63u1h2v9243535533za200&_p=1775007440180&gcd=13l3
+[2026-04-01T01:37:23.185Z]     Page loaded in 3893ms
+[2026-04-01T01:37:23.189Z]     ✓ Gentech | $360 | 1 reviews | 100% | niches: home | body: 3655 chars
+[2026-04-01T01:37:23.189Z]     TOTAL so far: 6 unique themes
+[2026-04-01T01:37:23.190Z]   [7/8] Waiting 8.1s then visiting: seventh
+[2026-04-01T01:37:25.692Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-45VKTNR45H&gtm=45je63u1h2v9243535533za200&_p=1775007440180&gcd=13l3
+[2026-04-01T01:37:31.512Z]   [HTTP 302] https://themes.shopify.com/themes/seventh
+[2026-04-01T01:37:31.513Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:31.517Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:32.008Z]   [HTTP 200] https://themes.shopify.com/themes/seventh/presets/seventh
+[2026-04-01T01:37:32.027Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:37:32.028Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:37:32.028Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:37:32.029Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:37:32.111Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:37:32.112Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:37:32.123Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:37:32.129Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:37:32.130Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:37:32.132Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:37:32.133Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:37:32.134Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:37:32.210Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:32.372Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:34.412Z]     Page loaded in 3158ms
+[2026-04-01T01:37:34.414Z]     ✓ Seventh | $420 | 2 reviews | 100% | niches: clothing | body: 4379 chars
+[2026-04-01T01:37:34.415Z]     TOTAL so far: 7 unique themes
+[2026-04-01T01:37:34.415Z]   [8/8] Waiting 8.0s then visiting: zeal
+[2026-04-01T01:37:42.626Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:42.627Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:42.651Z]   [HTTP 302] https://themes.shopify.com/themes/zeal
+[2026-04-01T01:37:43.161Z]   [HTTP 200] https://themes.shopify.com/themes/zeal/presets/zeal
+[2026-04-01T01:37:43.170Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:37:43.171Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:37:43.171Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:37:43.172Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:37:43.243Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:37:43.243Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:37:43.245Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:37:43.245Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:37:43.246Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:37:43.247Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:37:43.248Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:37:43.249Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:37:43.331Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:43.504Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:43.685Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-9D8B0JNE1Q&gtm=45je63u0h1v9242265698za200&_p=1775007463334&gcd=13l3
+[2026-04-01T01:37:43.687Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-9D8B0JNE1Q&gtm=45je63u0h1v9242265698za200&_p=1775007463334&gcd=13l3
+[2026-04-01T01:37:43.693Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-9D8B0JNE1Q&gtm=45je63u0h1v9242265698za200&_p=1775007463334&gcd=13l3
+[2026-04-01T01:37:43.695Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-9D8B0JNE1Q&gtm=45je63u0h1v9242265698za200&_p=1775007463334&gcd=13l3
+[2026-04-01T01:37:43.760Z]   [HTTP 200] https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fthemes.shopify.com%2Fthemes%2Fzeal%2Fpresets%2Fze
+[2026-04-01T01:37:45.857Z]     Page loaded in 3478ms
+[2026-04-01T01:37:45.858Z]     ✓ Zeal | $290 | 2 reviews | 100% | niches: wellness | body: 3930 chars
+[2026-04-01T01:37:45.859Z]     TOTAL so far: 8 unique themes
+[2026-04-01T01:37:45.859Z] 
+--- Page 1 done | 8 themes | 1.5 min elapsed | waiting 8.1s ---
+[2026-04-01T01:37:53.927Z] 
+========================================
+[2026-04-01T01:37:53.929Z] LISTING PAGE 2: https://themes.shopify.com/themes?sort_by=newest&page=2
+[2026-04-01T01:37:53.929Z] ========================================
+[2026-04-01T01:37:53.930Z] Themes collected so far: 8 | Duplicates skipped: 0 | Errors: 0
+[2026-04-01T01:37:54.169Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:54.170Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:54.447Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=2
+[2026-04-01T01:37:54.461Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:37:54.461Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:37:54.462Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:37:54.463Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:37:54.464Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:37:54.466Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:37:54.466Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:37:54.466Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:37:54.467Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:37:54.467Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:37:54.467Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:37:54.467Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:37:54.468Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:37:54.598Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:54.764Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:37:55.329Z] Page loaded in 1399ms
+[2026-04-01T01:37:57.331Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:37:57.333Z] Page body text length: 2043 chars
+[2026-04-01T01:37:57.334Z] Found 10 theme cards on page: zeal, force, filo, zenith, poco, unity, sweet, metro, homage, victory
+[2026-04-01T01:37:57.335Z]   [1/10] SKIP "zeal" - already scraped
+[2026-04-01T01:37:57.335Z]   [2/10] Waiting 6.5s then visiting: force
+[2026-04-01T01:38:04.063Z]   [HTTP 302] https://themes.shopify.com/themes/force
+[2026-04-01T01:38:04.064Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:04.084Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:04.560Z]   [HTTP 200] https://themes.shopify.com/themes/force/presets/force
+[2026-04-01T01:38:04.573Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:38:04.574Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:38:04.574Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:38:04.575Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:38:04.653Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:38:04.654Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:38:04.655Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:38:04.655Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:38:04.656Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:38:04.656Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:38:04.656Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:38:04.656Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:38:04.735Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:04.956Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:06.930Z]     Page loaded in 3112ms
+[2026-04-01T01:38:06.933Z]     ✓ Force | $380 | 2 reviews | 100% | niches: real results., electronics | body: 3441 chars
+[2026-04-01T01:38:06.933Z]     TOTAL so far: 9 unique themes
+[2026-04-01T01:38:06.933Z]   [3/10] Waiting 9.6s then visiting: filo
+[2026-04-01T01:38:16.771Z]   [HTTP 302] https://themes.shopify.com/themes/filo
+[2026-04-01T01:38:16.772Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:16.772Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:17.174Z]   [HTTP 200] https://themes.shopify.com/themes/filo/presets/filo
+[2026-04-01T01:38:17.184Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:38:17.185Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:38:17.185Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:38:17.187Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:38:17.395Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:38:17.395Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:38:17.396Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:38:17.396Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:38:17.396Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:38:17.397Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:38:17.397Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:38:17.397Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:38:17.461Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:17.643Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:17.745Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RLK9EJ8Z76&gtm=45je63u0v9240529825za200&_p=1775007497413&gcd=13l3l3
+[2026-04-01T01:38:19.695Z]     Page loaded in 3192ms
+[2026-04-01T01:38:19.698Z]     ✓ Filo | $140 | 0 reviews | null% | niches: clothing | body: 2980 chars
+[2026-04-01T01:38:19.698Z]     TOTAL so far: 10 unique themes
+[2026-04-01T01:38:19.699Z]   [4/10] Waiting 8.5s then visiting: zenith
+[2026-04-01T01:38:22.757Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RLK9EJ8Z76&gtm=45je63u0v9240529825za200&_p=1775007497413&gcd=13l3l3
+[2026-04-01T01:38:28.441Z]   [HTTP 302] https://themes.shopify.com/themes/zenith
+[2026-04-01T01:38:28.459Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:28.460Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:28.871Z]   [HTTP 200] https://themes.shopify.com/themes/zenith/presets/zenith
+[2026-04-01T01:38:28.889Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:38:28.890Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:38:28.890Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:38:28.890Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:38:29.066Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:38:29.066Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:38:29.066Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:38:29.067Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:38:29.067Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:38:29.067Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:38:29.067Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:38:29.067Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:38:29.166Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:29.368Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:31.373Z]     Page loaded in 3183ms
+[2026-04-01T01:38:31.378Z]     ✓ Zenith | $380 | 7 reviews | 100% | niches: high-visual brand storytelling., clothing | body: 4172 chars
+[2026-04-01T01:38:31.378Z]     TOTAL so far: 11 unique themes
+[2026-04-01T01:38:31.378Z]   [5/10] Waiting 6.3s then visiting: poco
+[2026-04-01T01:38:37.958Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:37.961Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:40.363Z]   [HTTP 302] https://themes.shopify.com/themes/poco
+[2026-04-01T01:38:41.511Z]   [HTTP 200] https://themes.shopify.com/themes/poco/presets/poco
+[2026-04-01T01:38:41.525Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:38:41.526Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:38:41.527Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:38:41.527Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:38:41.773Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:38:41.774Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:38:41.774Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:38:41.775Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:38:41.775Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:38:41.775Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:38:41.776Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:38:41.776Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:38:41.842Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:42.021Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:42.254Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-RJCZ8BE9BD&gtm=45je63u0v9240452367za200&_p=1775007521830&_gaz=1&gcd=13l
+[2026-04-01T01:38:42.254Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-RJCZ8BE9BD&gtm=45je63u0v9240452367za200&_p=1775007521830&gcd=13l3l3l3l1
+[2026-04-01T01:38:44.296Z]     Page loaded in 6589ms
+[2026-04-01T01:38:44.301Z]     ✓ Poco | $220 | 9 reviews | 100% | niches: food and drink | body: 3732 chars
+[2026-04-01T01:38:44.301Z]     TOTAL so far: 12 unique themes
+[2026-04-01T01:38:44.302Z]   [6/10] Waiting 9.2s then visiting: unity
+[2026-04-01T01:38:53.712Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:53.719Z]   [HTTP 302] https://themes.shopify.com/themes/unity
+[2026-04-01T01:38:54.070Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:54.227Z]   [HTTP 200] https://themes.shopify.com/themes/unity/presets/unity
+[2026-04-01T01:38:54.237Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:38:54.238Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:38:54.238Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:38:54.238Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:38:54.316Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:38:54.317Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:38:54.317Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:38:54.318Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:38:54.318Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:38:54.319Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:38:54.319Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:38:54.319Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:38:54.378Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:54.595Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:38:54.695Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-WFGCKQ9JRW&gtm=45je63u0v9240193203za200&_p=1775007534366&gcd=13l3l3
+[2026-04-01T01:38:56.869Z]     Page loaded in 3413ms
+[2026-04-01T01:38:56.871Z]     ✓ Unity | $150 | 5 reviews | 100% | niches: wellness | body: 4099 chars
+[2026-04-01T01:38:56.871Z]     TOTAL so far: 13 unique themes
+[2026-04-01T01:38:56.871Z]   [7/10] Waiting 9.3s then visiting: sweet
+[2026-04-01T01:38:59.704Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-WFGCKQ9JRW&gtm=45je63u0v9240193203za200&_p=1775007534366&gcd=13l3l3
+[2026-04-01T01:39:06.462Z]   [HTTP 302] https://themes.shopify.com/themes/sweet
+[2026-04-01T01:39:06.465Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:06.466Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:06.920Z]   [HTTP 200] https://themes.shopify.com/themes/sweet/presets/sweet
+[2026-04-01T01:39:06.932Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:39:06.933Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:39:06.933Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:39:06.934Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:39:06.992Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:39:06.993Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:39:06.993Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:39:06.994Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:39:06.994Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:39:06.994Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:39:06.995Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:39:06.995Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:39:07.042Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:07.212Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:09.192Z]     Page loaded in 2977ms
+[2026-04-01T01:39:09.197Z]     ✓ Sweet | $320 | 0 reviews | null% | niches: food and drink | body: 2628 chars
+[2026-04-01T01:39:09.198Z]     TOTAL so far: 14 unique themes
+[2026-04-01T01:39:09.198Z]   [8/10] Waiting 5.5s then visiting: metro
+[2026-04-01T01:39:14.903Z]   [HTTP 302] https://themes.shopify.com/themes/metro
+[2026-04-01T01:39:14.904Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:14.907Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:15.267Z]   [HTTP 200] https://themes.shopify.com/themes/metro/presets/metro
+[2026-04-01T01:39:15.281Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:39:15.281Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:39:15.282Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:39:15.283Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:39:15.472Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:39:15.472Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:39:15.472Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:39:15.473Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:39:15.473Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:39:15.473Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:39:15.474Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:39:15.475Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:39:15.534Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:15.703Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:17.810Z]     Page loaded in 3158ms
+[2026-04-01T01:39:17.813Z]     ✓ Metro | $250 | 2 reviews | 100% | niches: home | body: 3884 chars
+[2026-04-01T01:39:17.813Z]     TOTAL so far: 15 unique themes
+[2026-04-01T01:39:17.813Z]   [9/10] Waiting 8.7s then visiting: homage
+[2026-04-01T01:39:26.710Z]   [HTTP 302] https://themes.shopify.com/themes/homage
+[2026-04-01T01:39:26.711Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:26.715Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:27.176Z]   [HTTP 200] https://themes.shopify.com/themes/homage/presets/homage
+[2026-04-01T01:39:27.182Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:39:27.182Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:39:27.183Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:39:27.183Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:39:27.242Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:39:27.243Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:39:27.244Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:39:27.244Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:39:27.245Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:39:27.245Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:39:27.246Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:39:27.246Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:39:27.313Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:27.498Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:27.667Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-6MCLMFR5LR&gtm=45je63u0v9237439005za200&_p=1775007567324&gcd=13l3l3
+[2026-04-01T01:39:29.503Z]     Page loaded in 3038ms
+[2026-04-01T01:39:29.505Z]     ✓ Homage | $250 | 0 reviews | null% | niches: an immersive brand experience with editorial-style layouts that transform your products into lifestyle statements., clothing | body: 2809 chars
+[2026-04-01T01:39:29.505Z]     TOTAL so far: 16 unique themes
+[2026-04-01T01:39:29.506Z]   [10/10] Waiting 9.6s then visiting: victory
+[2026-04-01T01:39:32.676Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-6MCLMFR5LR&gtm=45je63u0v9237439005za200&_p=1775007567324&gcd=13l3l3
+[2026-04-01T01:39:39.322Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:39.324Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:39.338Z]   [HTTP 302] https://themes.shopify.com/themes/victory
+[2026-04-01T01:39:39.863Z]   [HTTP 200] https://themes.shopify.com/themes/victory/presets/victory
+[2026-04-01T01:39:39.879Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:39:39.881Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:39:39.882Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:39:39.882Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:39:39.959Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:39:39.964Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:39:39.964Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:39:39.965Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:39:39.965Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:39:39.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:39:39.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:39:39.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:39:40.070Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:40.208Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:40.362Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-S5QKRGGPKJ&gtm=45je63u0h1v9236716547za200&_p=1775007580036&gcd=13l3
+[2026-04-01T01:39:42.547Z]     Page loaded in 3460ms
+[2026-04-01T01:39:42.550Z]     ✓ Victory | $320 | 6 reviews | 100% | niches: all types of shops. Many elements are animated, which brings the site to life and gives it a very high-end professional feel. 10/10., food and drink | body: 5807 chars
+[2026-04-01T01:39:42.550Z]     TOTAL so far: 17 unique themes
+[2026-04-01T01:39:42.551Z] 
+--- Page 2 done | 17 themes | 3.5 min elapsed | waiting 8.9s ---
+[2026-04-01T01:39:45.379Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-S5QKRGGPKJ&gtm=45je63u0h1v9236716547za200&_p=1775007580036&gcd=13l3
+[2026-04-01T01:39:51.477Z] 
+========================================
+[2026-04-01T01:39:51.478Z] LISTING PAGE 3: https://themes.shopify.com/themes?sort_by=newest&page=3
+[2026-04-01T01:39:51.479Z] ========================================
+[2026-04-01T01:39:51.479Z] Themes collected so far: 17 | Duplicates skipped: 1 | Errors: 0
+[2026-04-01T01:39:51.719Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:51.720Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:51.985Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=3
+[2026-04-01T01:39:52.001Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:39:52.003Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:39:52.003Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:39:52.004Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:39:52.004Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:39:52.026Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:39:52.026Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:39:52.027Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:39:52.027Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:39:52.028Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:39:52.028Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:39:52.028Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:39:52.028Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:39:52.117Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:52.300Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:39:52.988Z] Page loaded in 1508ms
+[2026-04-01T01:39:54.996Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:39:54.997Z] Page body text length: 2056 chars
+[2026-04-01T01:39:54.998Z] Found 6 theme cards on page: victory, vetro, flaunt, mix, supreme, fullframe
+[2026-04-01T01:39:54.999Z]   [1/6] SKIP "victory" - already scraped
+[2026-04-01T01:39:54.999Z]   [2/6] Waiting 8.0s then visiting: vetro
+[2026-04-01T01:40:03.220Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:03.221Z]   [HTTP 302] https://themes.shopify.com/themes/vetro
+[2026-04-01T01:40:03.223Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:03.742Z]   [HTTP 200] https://themes.shopify.com/themes/vetro/presets/vetro
+[2026-04-01T01:40:03.748Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:40:03.749Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:40:03.749Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:40:03.750Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:40:03.868Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:40:03.869Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:40:03.869Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:40:03.869Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:40:03.870Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:40:03.870Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:40:03.870Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:40:03.871Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:40:03.945Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:04.113Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:04.231Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-GFDLRT05YX&gtm=45je63u1h2v9236750374za200&_p=1775007603924&gcd=13l3
+[2026-04-01T01:40:04.235Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-GFDLRT05YX&gtm=45je63u1h2v9236750374za200&_p=1775007603924&gcd=13l3
+[2026-04-01T01:40:06.131Z]     Page loaded in 3164ms
+[2026-04-01T01:40:06.135Z]     ✓ Vetro | $280 | 23 reviews | 100% | niches: beauty | body: 4981 chars
+[2026-04-01T01:40:06.135Z]     TOTAL so far: 18 unique themes
+[2026-04-01T01:40:06.135Z]   [3/6] Waiting 9.1s then visiting: flaunt
+[2026-04-01T01:40:09.241Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-GFDLRT05YX&gtm=45je63u1h2v9236750374za200&_p=1775007603924&gcd=13l3
+[2026-04-01T01:40:15.540Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:15.541Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:15.550Z]   [HTTP 302] https://themes.shopify.com/themes/flaunt
+[2026-04-01T01:40:16.062Z]   [HTTP 200] https://themes.shopify.com/themes/flaunt/presets/flaunt
+[2026-04-01T01:40:16.083Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:40:16.084Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:40:16.085Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:40:16.085Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:40:16.172Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:40:16.173Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:40:16.173Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:40:16.174Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:40:16.174Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:40:16.175Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:40:16.178Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:40:16.178Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:40:16.284Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:16.538Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:16.573Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RWK3R6TB53&gtm=45je63u0v9225775867za200&_p=1775007616286&gcd=13l3l3
+[2026-04-01T01:40:16.583Z]   [HTTP 200] https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fthemes.shopify.com%2Fthemes%2Fflaunt%2Fpresets%2F
+[2026-04-01T01:40:18.800Z]     Page loaded in 3524ms
+[2026-04-01T01:40:18.801Z]     ✓ Flaunt | $290 | 4 reviews | 100% | niches: a clean and timeless appeal., clothing | body: 4089 chars
+[2026-04-01T01:40:18.802Z]     TOTAL so far: 19 unique themes
+[2026-04-01T01:40:18.802Z]   [4/6] Waiting 8.9s then visiting: mix
+[2026-04-01T01:40:21.577Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RWK3R6TB53&gtm=45je63u0v9225775867za200&_p=1775007616286&gcd=13l3l3
+[2026-04-01T01:40:27.980Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:27.981Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:28.069Z]   [HTTP 302] https://themes.shopify.com/themes/mix
+[2026-04-01T01:40:28.679Z]   [HTTP 200] https://themes.shopify.com/themes/mix/presets/mix
+[2026-04-01T01:40:28.703Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:40:28.705Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:40:28.707Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:40:28.709Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:40:28.845Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:40:28.845Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:40:28.845Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:40:28.845Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:40:28.846Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:40:28.846Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:40:28.846Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:40:28.847Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:40:28.923Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:29.186Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:29.250Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-XP4TH53FZJ&gtm=45je63u0v9237508487za200&_p=1775007628913&gcd=13l3l3
+[2026-04-01T01:40:31.425Z]     Page loaded in 3702ms
+[2026-04-01T01:40:31.427Z]     ✓ Mix | $380 | 4 reviews | 100% | niches: electronics | body: 4098 chars
+[2026-04-01T01:40:31.427Z]     TOTAL so far: 20 unique themes
+[2026-04-01T01:40:31.427Z]   [5/6] Waiting 6.3s then visiting: supreme
+[2026-04-01T01:40:34.255Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-XP4TH53FZJ&gtm=45je63u0v9237508487za200&_p=1775007628913&gcd=13l3l3
+[2026-04-01T01:40:37.952Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:37.957Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:37.957Z]   [HTTP 302] https://themes.shopify.com/themes/supreme
+[2026-04-01T01:40:38.483Z]   [HTTP 200] https://themes.shopify.com/themes/supreme/presets/supreme
+[2026-04-01T01:40:38.502Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:40:38.503Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:40:38.504Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:40:38.504Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:40:38.636Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:40:38.637Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:40:38.638Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:40:38.638Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:40:38.638Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:40:38.639Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:40:38.639Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:40:38.639Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:40:38.771Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:38.951Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:40.927Z]     Page loaded in 3231ms
+[2026-04-01T01:40:40.936Z]     ✓ Supreme | $250 | 10 reviews | 90% | niches: clothing | body: 3989 chars
+[2026-04-01T01:40:40.937Z]     TOTAL so far: 21 unique themes
+[2026-04-01T01:40:40.938Z]   [6/6] Waiting 6.6s then visiting: fullframe
+[2026-04-01T01:40:47.750Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:47.750Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:47.769Z]   [HTTP 302] https://themes.shopify.com/themes/fullframe
+[2026-04-01T01:40:48.294Z]   [HTTP 200] https://themes.shopify.com/themes/fullframe/presets/fullframe
+[2026-04-01T01:40:48.303Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:40:48.304Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:40:48.304Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:40:48.305Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:40:48.633Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:40:48.633Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:40:48.633Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:40:48.634Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:40:48.634Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:40:48.634Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:40:48.634Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:40:48.635Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:40:48.700Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:48.875Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:49.019Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-K3Z4PKEHYW&gtm=45je63u0v9243536091za200&_p=1775007648687&gcd=13l3l3
+[2026-04-01T01:40:50.918Z]     Page loaded in 3423ms
+[2026-04-01T01:40:50.920Z]     ✓ Fullframe | $260 | 1 reviews | 100% | niches: home | body: 3596 chars
+[2026-04-01T01:40:50.920Z]     TOTAL so far: 22 unique themes
+[2026-04-01T01:40:50.920Z] 
+--- Page 3 done | 22 themes | 4.6 min elapsed | waiting 5.7s ---
+[2026-04-01T01:40:54.035Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-K3Z4PKEHYW&gtm=45je63u0v9243536091za200&_p=1775007648687&gcd=13l3l3
+[2026-04-01T01:40:56.671Z] 
+========================================
+[2026-04-01T01:40:56.671Z] LISTING PAGE 4: https://themes.shopify.com/themes?sort_by=newest&page=4
+[2026-04-01T01:40:56.672Z] ========================================
+[2026-04-01T01:40:56.672Z] Themes collected so far: 22 | Duplicates skipped: 2 | Errors: 0
+[2026-04-01T01:40:56.922Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:56.922Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:57.205Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=4
+[2026-04-01T01:40:57.215Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:40:57.216Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:40:57.216Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:40:57.217Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:40:57.217Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:40:57.259Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:40:57.260Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:40:57.260Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:40:57.260Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:40:57.260Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:40:57.260Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:40:57.261Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:40:57.261Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:40:57.437Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:57.546Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:40:58.209Z] Page loaded in 1537ms
+[2026-04-01T01:41:00.214Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:41:00.216Z] Page body text length: 2060 chars
+[2026-04-01T01:41:00.217Z] Found 7 theme cards on page: stockist, maximize, zyra, krank, line, flute, purity
+[2026-04-01T01:41:00.218Z]   [1/7] Waiting 6.1s then visiting: stockist
+[2026-04-01T01:41:06.530Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:06.531Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:06.535Z]   [HTTP 302] https://themes.shopify.com/themes/stockist
+[2026-04-01T01:41:07.076Z]   [HTTP 200] https://themes.shopify.com/themes/stockist/presets/stockist
+[2026-04-01T01:41:07.091Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:41:07.091Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:41:07.092Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:41:07.093Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:41:07.176Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:41:07.177Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:41:07.177Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:41:07.178Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:41:07.178Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:41:07.178Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:41:07.179Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:41:07.179Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:41:07.290Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:07.459Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:07.628Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-3T33BSRV5N&gtm=45je63u0v9234795405za200&_p=1775007667290&gcd=13l3l3
+[2026-04-01T01:41:09.789Z]     Page loaded in 3503ms
+[2026-04-01T01:41:09.790Z]     ✓ Stockist | $320 | 5 reviews | 100% | niches: office | body: 4166 chars
+[2026-04-01T01:41:09.790Z]     TOTAL so far: 23 unique themes
+[2026-04-01T01:41:09.791Z]   [2/7] Waiting 8.7s then visiting: maximize
+[2026-04-01T01:41:12.637Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-3T33BSRV5N&gtm=45je63u0v9234795405za200&_p=1775007667290&gcd=13l3l3
+[2026-04-01T01:41:18.727Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:18.730Z]   [HTTP 302] https://themes.shopify.com/themes/maximize
+[2026-04-01T01:41:18.734Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:19.127Z]   [HTTP 200] https://themes.shopify.com/themes/maximize/presets/maximize
+[2026-04-01T01:41:19.144Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:41:19.144Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:41:19.145Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:41:19.145Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:41:19.451Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:41:19.451Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:41:19.452Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:41:19.452Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:41:19.452Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:41:19.452Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:41:19.453Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:41:19.453Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:41:19.525Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:19.850Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-9E4KPYPZH1&gtm=45je63u0v9233662421za200&_p=1775007679467&_gaz=1&gcd=13l
+[2026-04-01T01:41:19.994Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:22.053Z]     Page loaded in 3556ms
+[2026-04-01T01:41:22.056Z]     ✓ Maximize | $200 | 23 reviews | 100% | niches: electronics | body: 5150 chars
+[2026-04-01T01:41:22.056Z]     TOTAL so far: 24 unique themes
+[2026-04-01T01:41:22.056Z]   [3/7] Waiting 7.1s then visiting: zyra
+[2026-04-01T01:41:24.860Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-9E4KPYPZH1&gtm=45je63u0v9233662421za200&_p=1775007679467&gcd=13l3l3l3l1
+[2026-04-01T01:41:29.377Z]   [HTTP 302] https://themes.shopify.com/themes/zyra
+[2026-04-01T01:41:29.384Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:29.386Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:29.893Z]   [HTTP 200] https://themes.shopify.com/themes/zyra/presets/zyra
+[2026-04-01T01:41:29.911Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:41:29.912Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:41:29.913Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:41:29.913Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:41:30.001Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:41:30.002Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:41:30.002Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:41:30.003Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:41:30.003Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:41:30.004Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:41:30.006Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:41:30.007Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:41:30.071Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:30.597Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:32.214Z]     Page loaded in 3088ms
+[2026-04-01T01:41:32.216Z]     ✓ Zyra | $220 | 3 reviews | 100% | niches: clothing | body: 3724 chars
+[2026-04-01T01:41:32.216Z]     TOTAL so far: 25 unique themes
+[2026-04-01T01:41:32.217Z]   [4/7] Waiting 6.4s then visiting: krank
+[2026-04-01T01:41:38.917Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:38.918Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:38.933Z]   [HTTP 302] https://themes.shopify.com/themes/krank
+[2026-04-01T01:41:39.490Z]   [HTTP 200] https://themes.shopify.com/themes/krank/presets/krank
+[2026-04-01T01:41:39.501Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:41:39.502Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:41:39.502Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:41:39.503Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:41:39.609Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:41:39.610Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:41:39.610Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:41:39.610Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:41:39.610Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:41:39.610Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:41:39.611Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:41:39.611Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:41:39.693Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:39.873Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:39.999Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-K7CSF6KZ4L&gtm=45je63u0h1v9234580737za200&_p=1775007699694&_gaz=1&gcd=1
+[2026-04-01T01:41:42.018Z]     Page loaded in 3357ms
+[2026-04-01T01:41:42.021Z]     ✓ Krank | $320 | 14 reviews | 93% | niches: hardware | body: 4593 chars
+[2026-04-01T01:41:42.021Z]     TOTAL so far: 26 unique themes
+[2026-04-01T01:41:42.021Z]   [5/7] Waiting 5.9s then visiting: line
+[2026-04-01T01:41:45.012Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-K7CSF6KZ4L&gtm=45je63u0h1v9234580737za200&_p=1775007699694&gcd=13l3l3l3
+[2026-04-01T01:41:48.165Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:48.166Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:48.174Z]   [HTTP 302] https://themes.shopify.com/themes/line
+[2026-04-01T01:41:48.697Z]   [HTTP 200] https://themes.shopify.com/themes/line/presets/line
+[2026-04-01T01:41:48.716Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:41:48.717Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:41:48.717Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:41:48.718Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:41:48.860Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:41:48.861Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:41:48.862Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:41:48.862Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:41:48.862Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:41:48.863Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:41:48.863Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:41:48.864Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:41:48.922Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:49.107Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:41:49.145Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-3LTT0VYYMX&gtm=45je63u0v9243536605za200&_p=1775007708866&gcd=13l3l3
+[2026-04-01T01:41:51.055Z]     Page loaded in 3138ms
+[2026-04-01T01:41:51.056Z]     ✓ Line | $260 | 2 reviews | 100% | niches: beauty | body: 3403 chars
+[2026-04-01T01:41:51.057Z]     TOTAL so far: 27 unique themes
+[2026-04-01T01:41:51.057Z]   [6/7] Waiting 9.0s then visiting: flute
+[2026-04-01T01:41:54.148Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-3LTT0VYYMX&gtm=45je63u0v9243536605za200&_p=1775007708866&gcd=13l3l3
+[2026-04-01T01:42:00.315Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:00.317Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:00.320Z]   [HTTP 302] https://themes.shopify.com/themes/flute
+[2026-04-01T01:42:00.830Z]   [HTTP 200] https://themes.shopify.com/themes/flute/presets/flute
+[2026-04-01T01:42:00.842Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:42:00.843Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:42:00.843Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:42:00.844Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:42:00.911Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:42:00.912Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:42:00.913Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:42:00.913Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:42:00.913Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:42:00.914Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:42:00.914Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:42:00.914Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:42:01.030Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:01.292Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:01.319Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-XZKQVC56LB&gtm=45je63u0v9232710092za200&_p=1775007721035&_gaz=1&gcd=13l
+[2026-04-01T01:42:01.324Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-XZKQVC56LB&gtm=45je63u0v9232710092za200&_p=1775007721035&gcd=13l3l3l3l1
+[2026-04-01T01:42:03.348Z]     Page loaded in 3291ms
+[2026-04-01T01:42:03.351Z]     ✓ Flute | $230 | 8 reviews | 100% | niches: clothing | body: 3432 chars
+[2026-04-01T01:42:03.351Z]     TOTAL so far: 28 unique themes
+[2026-04-01T01:42:03.352Z]   [7/7] Waiting 8.0s then visiting: purity
+[2026-04-01T01:42:11.628Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:11.642Z]   [HTTP 302] https://themes.shopify.com/themes/purity
+[2026-04-01T01:42:11.951Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:12.185Z]   [HTTP 200] https://themes.shopify.com/themes/purity/presets/purity
+[2026-04-01T01:42:12.202Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:42:12.205Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:42:12.206Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:42:12.209Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:42:12.299Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:42:12.299Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:42:12.300Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:42:12.300Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:42:12.300Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:42:12.301Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:42:12.302Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:42:12.302Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:42:12.388Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:12.624Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:12.670Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-T6GLP0FW5X&gtm=45je63u0v9230883041za200&_p=1775007732378&gcd=13l3l3
+[2026-04-01T01:42:14.802Z]     Page loaded in 3408ms
+[2026-04-01T01:42:14.804Z]     ✓ Purity | $300 | 73 reviews | 99% | niches: beauty | body: 4736 chars
+[2026-04-01T01:42:14.804Z]     TOTAL so far: 29 unique themes
+[2026-04-01T01:42:14.804Z] 
+--- Page 4 done | 29 themes | 6.0 min elapsed | waiting 8.1s ---
+[2026-04-01T01:42:17.681Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-T6GLP0FW5X&gtm=45je63u0v9230883041za200&_p=1775007732378&gcd=13l3l3
+[2026-04-01T01:42:22.935Z] 
+========================================
+[2026-04-01T01:42:22.935Z] LISTING PAGE 5: https://themes.shopify.com/themes?sort_by=newest&page=5
+[2026-04-01T01:42:22.936Z] ========================================
+[2026-04-01T01:42:22.936Z] Themes collected so far: 29 | Duplicates skipped: 2 | Errors: 0
+[2026-04-01T01:42:23.185Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:23.186Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:23.438Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=5
+[2026-04-01T01:42:23.458Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:42:23.458Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:42:23.459Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:42:23.459Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:42:23.460Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:42:23.482Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:42:23.483Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:42:23.483Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:42:23.484Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:42:23.484Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:42:23.484Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:42:23.485Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:42:23.485Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:42:23.597Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:23.777Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:24.443Z] Page loaded in 1507ms
+[2026-04-01T01:42:26.447Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:42:26.449Z] Page body text length: 2067 chars
+[2026-04-01T01:42:26.451Z] Found 8 theme cards on page: purity, beautify, elemento, lollipop, haven, rad, edge, allure
+[2026-04-01T01:42:26.451Z]   [1/8] SKIP "purity" - already scraped
+[2026-04-01T01:42:26.451Z]   [2/8] Waiting 8.3s then visiting: beautify
+[2026-04-01T01:42:35.025Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:35.027Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:35.046Z]   [HTTP 302] https://themes.shopify.com/themes/beautify
+[2026-04-01T01:42:35.561Z]   [HTTP 200] https://themes.shopify.com/themes/beautify/presets/beautify
+[2026-04-01T01:42:35.569Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:42:35.579Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:42:35.580Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:42:35.580Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:42:35.653Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:42:35.654Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:42:35.654Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:42:35.655Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:42:35.655Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:42:35.655Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:42:35.656Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:42:35.656Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:42:35.724Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:35.890Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:36.044Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-KT16Q3HH32&gtm=45je63u1h2v9188040743za200&_p=1775007755679&_gaz=1&gcd=1
+[2026-04-01T01:42:38.244Z]     Page loaded in 3462ms
+[2026-04-01T01:42:38.246Z]     ✓ Beautify | $420 | 3 reviews | 100% | niches: beauty | body: 4946 chars
+[2026-04-01T01:42:38.246Z]     TOTAL so far: 30 unique themes
+[2026-04-01T01:42:38.246Z]   [3/8] Waiting 6.3s then visiting: elemento
+[2026-04-01T01:42:41.049Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-KT16Q3HH32&gtm=45je63u1h2v9188040743za200&_p=1775007755679&gcd=13l3l3l3
+[2026-04-01T01:42:44.737Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:44.740Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:44.764Z]   [HTTP 302] https://themes.shopify.com/themes/elemento
+[2026-04-01T01:42:45.177Z]   [HTTP 200] https://themes.shopify.com/themes/elemento/presets/elemento
+[2026-04-01T01:42:45.206Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:42:45.207Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:42:45.209Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:42:45.210Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:42:45.380Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:42:45.381Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:42:45.381Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:42:45.382Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:42:45.382Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:42:45.382Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:42:45.382Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:42:45.382Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:42:45.512Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:45.690Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:45.799Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RXLN74KDWZ&gtm=45je63u0v9184154223za200&_p=1775007765522&gcd=13l3l3
+[2026-04-01T01:42:47.744Z]     Page loaded in 3235ms
+[2026-04-01T01:42:47.746Z]     ✓ Elemento | $390 | 2 reviews | 100% | niches: clothing | body: 3514 chars
+[2026-04-01T01:42:47.746Z]     TOTAL so far: 31 unique themes
+[2026-04-01T01:42:47.746Z]   [4/8] Waiting 6.1s then visiting: lollipop
+[2026-04-01T01:42:50.804Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RXLN74KDWZ&gtm=45je63u0v9184154223za200&_p=1775007765522&gcd=13l3l3
+[2026-04-01T01:42:54.092Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:54.093Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:54.132Z]   [HTTP 302] https://themes.shopify.com/themes/lollipop
+[2026-04-01T01:42:54.667Z]   [HTTP 200] https://themes.shopify.com/themes/lollipop/presets/lollipop
+[2026-04-01T01:42:54.678Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:42:54.680Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:42:54.681Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:42:54.681Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:42:54.811Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:42:54.812Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:42:54.812Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:42:54.812Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:42:54.812Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:42:54.813Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:42:54.813Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:42:54.814Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:42:54.874Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:55.041Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:42:57.437Z]     Page loaded in 3573ms
+[2026-04-01T01:42:57.442Z]     ✓ Lollipop | $100 | 4 reviews | 100% | niches: beauty | body: 4241 chars
+[2026-04-01T01:42:57.442Z]     TOTAL so far: 32 unique themes
+[2026-04-01T01:42:57.442Z]   [5/8] Waiting 9.3s then visiting: haven
+[2026-04-01T01:43:06.985Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:06.986Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:06.988Z]   [HTTP 302] https://themes.shopify.com/themes/haven
+[2026-04-01T01:43:07.513Z]   [HTTP 200] https://themes.shopify.com/themes/haven/presets/haven
+[2026-04-01T01:43:07.528Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:43:07.528Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:43:07.530Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:43:07.530Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:43:07.597Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:43:07.597Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:43:07.597Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:43:07.598Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:43:07.598Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:43:07.598Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:43:07.598Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:43:07.599Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:43:07.675Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:07.857Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:07.967Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-KJN9F0V198&gtm=45je63u0v9223396179za200&_p=1775007787678&gcd=13l3l3
+[2026-04-01T01:43:10.112Z]     Page loaded in 3377ms
+[2026-04-01T01:43:10.114Z]     ✓ Haven | $260 | 6 reviews | 100% | niches: home | body: 4607 chars
+[2026-04-01T01:43:10.114Z]     TOTAL so far: 33 unique themes
+[2026-04-01T01:43:10.114Z]   [6/8] Waiting 6.4s then visiting: rad
+[2026-04-01T01:43:12.975Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-KJN9F0V198&gtm=45je63u0v9223396179za200&_p=1775007787678&gcd=13l3l3
+[2026-04-01T01:43:16.711Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:16.728Z]   [HTTP 302] https://themes.shopify.com/themes/rad
+[2026-04-01T01:43:17.033Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:17.265Z]   [HTTP 200] https://themes.shopify.com/themes/rad/presets/rad
+[2026-04-01T01:43:17.279Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:43:17.280Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:43:17.281Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:43:17.282Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:43:17.366Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:43:17.366Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:43:17.367Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:43:17.367Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:43:17.367Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:43:17.368Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:43:17.368Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:43:17.368Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:43:17.423Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:17.600Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:17.736Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-KF8WB4S9ZN&gtm=45je63u0v9104747092za200&_p=1775007797425&gcd=13l3l3
+[2026-04-01T01:43:17.748Z]   [HTTP 200] https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fthemes.shopify.com%2Fthemes%2Frad%2Fpresets%2Frad
+[2026-04-01T01:43:20.039Z]     Page loaded in 3559ms
+[2026-04-01T01:43:20.041Z]     ✓ Rad | $260 | 3 reviews | 100% | niches: maximum creative control, letting your brand's personality shine., beauty | body: 4039 chars
+[2026-04-01T01:43:20.041Z]     TOTAL so far: 34 unique themes
+[2026-04-01T01:43:20.041Z]   [7/8] Waiting 7.9s then visiting: edge
+[2026-04-01T01:43:22.742Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-KF8WB4S9ZN&gtm=45je63u0v9104747092za200&_p=1775007797425&gcd=13l3l3
+[2026-04-01T01:43:28.179Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:28.180Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:28.194Z]   [HTTP 302] https://themes.shopify.com/themes/edge
+[2026-04-01T01:43:28.724Z]   [HTTP 200] https://themes.shopify.com/themes/edge/presets/edge
+[2026-04-01T01:43:28.743Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:43:28.744Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:43:28.744Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:43:28.745Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:43:28.830Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:43:28.831Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:43:28.831Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:43:28.832Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:43:28.832Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:43:28.832Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:43:28.833Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:43:28.833Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:43:28.918Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:29.075Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:29.242Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-P7ZF8ET5JN&gtm=45je63u0v9226644512za200&_p=1775007808882&gcd=13l3l3
+[2026-04-01T01:43:31.406Z]     Page loaded in 3476ms
+[2026-04-01T01:43:31.410Z]     ✓ Edge | $320 | 17 reviews | 100% | niches: jewelry and accessories | body: 4446 chars
+[2026-04-01T01:43:31.410Z]     TOTAL so far: 35 unique themes
+[2026-04-01T01:43:31.410Z]   [8/8] Waiting 9.7s then visiting: allure
+[2026-04-01T01:43:34.249Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-P7ZF8ET5JN&gtm=45je63u0v9226644512za200&_p=1775007808882&gcd=13l3l3
+[2026-04-01T01:43:41.352Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:41.356Z]   [HTTP 302] https://themes.shopify.com/themes/allure
+[2026-04-01T01:43:41.357Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:41.888Z]   [HTTP 200] https://themes.shopify.com/themes/allure/presets/allure
+[2026-04-01T01:43:41.906Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:43:41.906Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:43:41.907Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:43:41.907Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:43:41.911Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:43:41.912Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:43:41.913Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:43:41.914Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:43:41.915Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:43:41.915Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:43:41.915Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:43:41.916Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:43:42.098Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:42.293Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:42.383Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-C26ZWKRJ8J&gtm=45je63u1h2v9224136915za200&_p=1775007822027&gcd=13l3l3l3
+[2026-04-01T01:43:42.388Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-C26ZWKRJ8J&gtm=45je63u1h2v9224136915za200&_p=1775007822027&em=tv.1~em.X
+[2026-04-01T01:43:42.458Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-C26ZWKRJ8J&gtm=45je63u1h2v9224136915za200&_p=1775007822027&gcd=13l3l3l3
+[2026-04-01T01:43:42.458Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-C26ZWKRJ8J&gtm=45je63u1h2v9224136915za200&_p=1775007822027&em=tv.1~em.X
+[2026-04-01T01:43:44.581Z]     Page loaded in 3478ms
+[2026-04-01T01:43:44.582Z]     ✓ Allure | $100 | 22 reviews | 100% | niches: clothing | body: 5632 chars
+[2026-04-01T01:43:44.582Z]     TOTAL so far: 36 unique themes
+[2026-04-01T01:43:44.582Z] 
+--- Page 5 done | 36 themes | 7.5 min elapsed | waiting 5.5s ---
+[2026-04-01T01:43:50.107Z] 
+========================================
+[2026-04-01T01:43:50.108Z] LISTING PAGE 6: https://themes.shopify.com/themes?sort_by=newest&page=6
+[2026-04-01T01:43:50.110Z] ========================================
+[2026-04-01T01:43:50.111Z] Themes collected so far: 36 | Duplicates skipped: 3 | Errors: 0
+[2026-04-01T01:43:50.350Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:50.351Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:50.589Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=6
+[2026-04-01T01:43:50.614Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:43:50.615Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:43:50.615Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:43:50.615Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:43:50.616Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:43:50.619Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:43:50.620Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:43:50.620Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:43:50.621Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:43:50.621Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:43:50.622Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:43:50.622Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:43:50.622Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:43:50.765Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:50.955Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:43:51.595Z] Page loaded in 1484ms
+[2026-04-01T01:43:53.601Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:43:53.603Z] Page body text length: 2056 chars
+[2026-04-01T01:43:53.605Z] Found 6 theme cards on page: allure, grove, adorn, lyra, pastarina, megastore
+[2026-04-01T01:43:53.605Z]   [1/6] SKIP "allure" - already scraped
+[2026-04-01T01:43:53.605Z]   [2/6] Waiting 7.0s then visiting: grove
+[2026-04-01T01:44:00.908Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:00.908Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:00.918Z]   [HTTP 302] https://themes.shopify.com/themes/grove
+[2026-04-01T01:44:01.427Z]   [HTTP 200] https://themes.shopify.com/themes/grove/presets/grove
+[2026-04-01T01:44:01.439Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:44:01.440Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:44:01.441Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:44:01.441Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:44:01.513Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:44:01.513Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:44:01.514Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:44:01.514Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:44:01.514Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:44:01.515Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:44:01.515Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:44:01.515Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:44:01.623Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:01.806Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:01.945Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-DN5XHZPE0T&gtm=45je63u0v9226018033za200&_p=1775007841624&gcd=13l3l3
+[2026-04-01T01:44:03.863Z]     Page loaded in 3212ms
+[2026-04-01T01:44:03.865Z]     ✓ Grove | $320 | 2 reviews | 100% | niches: jewelry and accessories | body: 2716 chars
+[2026-04-01T01:44:03.866Z]     TOTAL so far: 37 unique themes
+[2026-04-01T01:44:03.866Z]   [3/6] Waiting 9.4s then visiting: adorn
+[2026-04-01T01:44:06.955Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-DN5XHZPE0T&gtm=45je63u0v9226018033za200&_p=1775007841624&gcd=13l3l3
+[2026-04-01T01:44:13.470Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:13.482Z]   [HTTP 302] https://themes.shopify.com/themes/adorn
+[2026-04-01T01:44:13.483Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:14.085Z]   [HTTP 200] https://themes.shopify.com/themes/adorn/presets/adorn
+[2026-04-01T01:44:14.101Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:44:14.103Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:44:14.104Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:44:14.105Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:44:14.173Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:44:14.174Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:44:14.174Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:44:14.174Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:44:14.175Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:44:14.175Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:44:14.176Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:44:14.176Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:44:14.282Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:14.463Z]   [HTTP 200] https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fthemes.shopify.com%2Fthemes%2Fadorn%2Fpresets%2Fa
+[2026-04-01T01:44:14.540Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:16.531Z]     Page loaded in 3295ms
+[2026-04-01T01:44:16.535Z]     ✓ Adorn | $270 | 27 reviews | 96% | niches: beauty | body: 3877 chars
+[2026-04-01T01:44:16.535Z]     TOTAL so far: 38 unique themes
+[2026-04-01T01:44:16.535Z]   [4/6] Waiting 8.5s then visiting: lyra
+[2026-04-01T01:44:19.464Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RWK3R6TB53&gtm=45je63u0v9225775867za200&_p=1775007854362&gcd=13l3l3
+[2026-04-01T01:44:25.302Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:25.309Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:25.313Z]   [HTTP 302] https://themes.shopify.com/themes/lyra
+[2026-04-01T01:44:25.809Z]   [HTTP 200] https://themes.shopify.com/themes/lyra/presets/lyra
+[2026-04-01T01:44:25.823Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:44:25.825Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:44:25.825Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:44:25.826Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:44:25.893Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:44:25.894Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:44:25.894Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:44:25.894Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:44:25.895Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:44:25.895Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:44:25.895Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:44:25.895Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:44:25.997Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:26.166Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:26.325Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-2BENBVPT0P&gtm=45je63u0v9225671487za200&_p=1775007865998&_gaz=1&gcd=13l
+[2026-04-01T01:44:26.328Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-2BENBVPT0P&gtm=45je63u0v9225671487za200&_p=1775007865998&gcd=13l3l3l3l1
+[2026-04-01T01:44:26.396Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-2BENBVPT0P&gtm=45je63u0v9225671487za200&_p=1775007865998&gcd=13l3l3l3l1
+[2026-04-01T01:44:26.397Z]   [HTTP 204] https://analytics.google.com/g/collect?v=2&tid=G-2BENBVPT0P&gtm=45je63u0v9225671487za200&_p=1775007865998&gcd=13l3l3l3l1
+[2026-04-01T01:44:28.538Z]     Page loaded in 3478ms
+[2026-04-01T01:44:28.545Z]     ✓ Lyra | $260 | 12 reviews | 100% | niches: jewelry brands., jewelry and accessories | body: 4352 chars
+[2026-04-01T01:44:28.545Z]     TOTAL so far: 39 unique themes
+[2026-04-01T01:44:28.545Z]   [5/6] Waiting 9.2s then visiting: pastarina
+[2026-04-01T01:44:37.949Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:37.951Z]   [HTTP 302] https://themes.shopify.com/themes/pastarina
+[2026-04-01T01:44:37.973Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:38.469Z]   [HTTP 200] https://themes.shopify.com/themes/pastarina/presets/pastarina
+[2026-04-01T01:44:38.483Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:44:38.485Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:44:38.485Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:44:38.486Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:44:38.683Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:44:38.683Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:44:38.684Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:44:38.684Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:44:38.684Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:44:38.684Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:44:38.685Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:44:38.685Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:44:38.747Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:38.922Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:38.958Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-PSGTDZ3WTE&gtm=45je63u0v9223976711za200&_p=1775007878651&gcd=13l3l3
+[2026-04-01T01:44:41.239Z]     Page loaded in 3537ms
+[2026-04-01T01:44:41.243Z]     ✓ Pastarina | $320 | 1 reviews | 100% | niches: food and drink | body: 3110 chars
+[2026-04-01T01:44:41.243Z]     TOTAL so far: 40 unique themes
+[2026-04-01T01:44:41.243Z]   [6/6] Waiting 9.3s then visiting: megastore
+[2026-04-01T01:44:43.963Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-PSGTDZ3WTE&gtm=45je63u0v9223976711za200&_p=1775007878651&gcd=13l3l3
+[2026-04-01T01:44:50.822Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:50.823Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:50.830Z]   [HTTP 302] https://themes.shopify.com/themes/megastore
+[2026-04-01T01:44:51.354Z]   [HTTP 200] https://themes.shopify.com/themes/megastore/presets/megastore
+[2026-04-01T01:44:51.365Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:44:51.365Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:44:51.366Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:44:51.366Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:44:51.436Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:44:51.437Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:44:51.438Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:44:51.438Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:44:51.439Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:44:51.439Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:44:51.439Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:44:51.439Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:44:51.615Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:51.791Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:44:54.148Z]     Page loaded in 3574ms
+[2026-04-01T01:44:54.153Z]     ✓ Megastore | $380 | 3 reviews | 67% | niches: clothing | body: 4302 chars
+[2026-04-01T01:44:54.153Z]     TOTAL so far: 41 unique themes
+[2026-04-01T01:44:54.153Z] 
+--- Page 6 done | 41 themes | 8.7 min elapsed | waiting 7.7s ---
+[2026-04-01T01:45:01.806Z] 
+========================================
+[2026-04-01T01:45:01.807Z] LISTING PAGE 7: https://themes.shopify.com/themes?sort_by=newest&page=7
+[2026-04-01T01:45:01.807Z] ========================================
+[2026-04-01T01:45:01.807Z] Themes collected so far: 41 | Duplicates skipped: 4 | Errors: 0
+[2026-04-01T01:45:02.063Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:02.064Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:02.331Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=7
+[2026-04-01T01:45:02.338Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:45:02.339Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:45:02.339Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:45:02.340Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:45:02.340Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:45:02.407Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:45:02.408Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:45:02.409Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:45:02.411Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:45:02.411Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:45:02.412Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:45:02.412Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:45:02.413Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:45:02.558Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:02.727Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:03.333Z] Page loaded in 1525ms
+[2026-04-01T01:45:05.335Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:45:05.336Z] Page body text length: 2041 chars
+[2026-04-01T01:45:05.337Z] Found 14 theme cards on page: genie, maya, fabric, savor, vessel, dwell, tinker, pitch, atelier, heritage, ritual, nova, carbon, sampo
+[2026-04-01T01:45:05.337Z]   [1/14] Waiting 5.8s then visiting: genie
+[2026-04-01T01:45:11.377Z]   [HTTP 302] https://themes.shopify.com/themes/genie
+[2026-04-01T01:45:11.383Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:11.383Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:11.870Z]   [HTTP 200] https://themes.shopify.com/themes/genie/presets/genie
+[2026-04-01T01:45:11.880Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:45:11.882Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:45:11.883Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:45:11.884Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:45:11.965Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:45:11.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:45:11.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:45:11.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:45:11.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:45:11.966Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:45:11.967Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:45:11.967Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:45:12.032Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:12.205Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:14.250Z]     Page loaded in 3140ms
+[2026-04-01T01:45:14.256Z]     ✓ Genie | $180 | 0 reviews | null% | niches: kids | body: 3009 chars
+[2026-04-01T01:45:14.256Z]     TOTAL so far: 42 unique themes
+[2026-04-01T01:45:14.257Z]   [2/14] Waiting 9.5s then visiting: maya
+[2026-04-01T01:45:24.035Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:24.037Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:24.062Z]   [HTTP 302] https://themes.shopify.com/themes/maya
+[2026-04-01T01:45:24.452Z]   [HTTP 200] https://themes.shopify.com/themes/maya/presets/maya
+[2026-04-01T01:45:24.460Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:45:24.460Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:45:24.460Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:45:24.461Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:45:24.641Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:45:24.642Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:45:24.642Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:45:24.643Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:45:24.643Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:45:24.643Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:45:24.643Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:45:24.644Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:45:24.760Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:24.949Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:25.078Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-Z0G36F2P7C&gtm=45je63u0v9221644251za200&_p=1775007924771&gcd=13l3l3
+[2026-04-01T01:45:26.962Z]     Page loaded in 3171ms
+[2026-04-01T01:45:26.966Z]     ✓ Maya | $500 | 7 reviews | 71% | niches: clothing | body: 4051 chars
+[2026-04-01T01:45:26.966Z]     TOTAL so far: 43 unique themes
+[2026-04-01T01:45:26.966Z]   [3/14] Waiting 6.3s then visiting: fabric
+[2026-04-01T01:45:30.090Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-Z0G36F2P7C&gtm=45je63u0v9221644251za200&_p=1775007924771&gcd=13l3l3
+[2026-04-01T01:45:33.517Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:33.518Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:33.526Z]   [HTTP 302] https://themes.shopify.com/themes/fabric
+[2026-04-01T01:45:33.912Z]   [HTTP 200] https://themes.shopify.com/themes/fabric/presets/fabric
+[2026-04-01T01:45:33.928Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:45:33.929Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:45:33.930Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:45:33.931Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:45:34.110Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:45:34.110Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:45:34.111Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:45:34.111Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:45:34.111Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:45:34.111Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:45:34.112Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:45:34.112Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:45:34.171Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:34.341Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:36.350Z]     Page loaded in 3085ms
+[2026-04-01T01:45:36.352Z]     ✓ Fabric | Free | 59 reviews | 32% | niches: clothing | body: 4556 chars
+[2026-04-01T01:45:36.352Z]     TOTAL so far: 44 unique themes
+[2026-04-01T01:45:36.352Z]   [4/14] Waiting 9.5s then visiting: savor
+[2026-04-01T01:45:46.110Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:46.112Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:46.122Z]   [HTTP 302] https://themes.shopify.com/themes/savor
+[2026-04-01T01:45:46.613Z]   [HTTP 200] https://themes.shopify.com/themes/savor/presets/savor
+[2026-04-01T01:45:46.621Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:45:46.623Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:45:46.623Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:45:46.623Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:45:46.702Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:45:46.703Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:45:46.703Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:45:46.703Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:45:46.704Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:45:46.704Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:45:46.704Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:45:46.704Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:45:46.791Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:46.966Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:48.928Z]     Page loaded in 3068ms
+[2026-04-01T01:45:48.930Z]     ✓ Savor | Free | 57 reviews | 23% | niches: food and drink | body: 4973 chars
+[2026-04-01T01:45:48.930Z]     TOTAL so far: 45 unique themes
+[2026-04-01T01:45:48.931Z]   [5/14] Waiting 5.6s then visiting: vessel
+[2026-04-01T01:45:54.769Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:54.772Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:54.789Z]   [HTTP 302] https://themes.shopify.com/themes/vessel
+[2026-04-01T01:45:55.276Z]   [HTTP 200] https://themes.shopify.com/themes/vessel/presets/vessel
+[2026-04-01T01:45:55.287Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:45:55.288Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:45:55.289Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:45:55.289Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:45:55.363Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:45:55.363Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:45:55.364Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:45:55.364Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:45:55.364Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:45:55.365Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:45:55.365Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:45:55.365Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:45:55.445Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:55.623Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:45:57.598Z]     Page loaded in 3071ms
+[2026-04-01T01:45:57.602Z]     ✓ Vessel | Free | 29 reviews | 24% | niches: home | body: 5044 chars
+[2026-04-01T01:45:57.602Z]     TOTAL so far: 46 unique themes
+[2026-04-01T01:45:57.603Z]   [6/14] Waiting 6.5s then visiting: dwell
+[2026-04-01T01:46:04.374Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:04.375Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:04.399Z]   [HTTP 302] https://themes.shopify.com/themes/dwell
+[2026-04-01T01:46:04.896Z]   [HTTP 200] https://themes.shopify.com/themes/dwell/presets/dwell
+[2026-04-01T01:46:04.902Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:46:04.903Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:46:04.903Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:46:04.904Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:46:04.981Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:46:04.981Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:46:04.981Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:46:04.982Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:46:04.982Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:46:04.982Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:46:04.982Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:46:04.983Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:46:05.040Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:05.207Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:07.156Z]     Page loaded in 3033ms
+[2026-04-01T01:46:07.159Z]     ✓ Dwell | Free | 34 reviews | 26% | niches: home | body: 5287 chars
+[2026-04-01T01:46:07.159Z]     TOTAL so far: 47 unique themes
+[2026-04-01T01:46:07.159Z]   [7/14] Waiting 8.9s then visiting: tinker
+[2026-04-01T01:46:16.300Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:16.305Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:16.315Z]   [HTTP 302] https://themes.shopify.com/themes/tinker
+[2026-04-01T01:46:16.818Z]   [HTTP 200] https://themes.shopify.com/themes/tinker/presets/tinker
+[2026-04-01T01:46:16.827Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:46:16.828Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:46:16.828Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:46:16.828Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:46:16.898Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:46:16.899Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:46:16.899Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:46:16.899Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:46:16.899Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:46:16.900Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:46:16.900Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:46:16.900Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:46:16.973Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:17.153Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:19.123Z]     Page loaded in 3084ms
+[2026-04-01T01:46:19.127Z]     ✓ Tinker | Free | 69 reviews | 36% | niches: office | body: 5678 chars
+[2026-04-01T01:46:19.127Z]     TOTAL so far: 48 unique themes
+[2026-04-01T01:46:19.127Z]   [8/14] Waiting 6.7s then visiting: pitch
+[2026-04-01T01:46:26.106Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:26.109Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:26.128Z]   [HTTP 302] https://themes.shopify.com/themes/pitch
+[2026-04-01T01:46:26.501Z]   [HTTP 200] https://themes.shopify.com/themes/pitch/presets/pitch
+[2026-04-01T01:46:26.509Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:46:26.510Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:46:26.510Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:46:26.511Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:46:26.724Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:46:26.724Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:46:26.725Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:46:26.725Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:46:26.726Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:46:26.726Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:46:26.727Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:46:26.727Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:46:26.801Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:26.968Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:28.915Z]     Page loaded in 3058ms
+[2026-04-01T01:46:28.918Z]     ✓ Pitch | Free | 28 reviews | 32% | niches: beauty | body: 5371 chars
+[2026-04-01T01:46:28.918Z]     TOTAL so far: 49 unique themes
+[2026-04-01T01:46:28.918Z]   [9/14] Waiting 8.7s then visiting: atelier
+[2026-04-01T01:46:37.854Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:37.858Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:37.880Z]   [HTTP 302] https://themes.shopify.com/themes/atelier
+[2026-04-01T01:46:38.393Z]   [HTTP 200] https://themes.shopify.com/themes/atelier/presets/atelier
+[2026-04-01T01:46:38.405Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:46:38.406Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:46:38.406Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:46:38.407Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:46:38.481Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:46:38.482Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:46:38.482Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:46:38.483Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:46:38.483Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:46:38.484Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:46:38.484Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:46:38.485Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:46:38.570Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:38.720Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:40.742Z]     Page loaded in 3132ms
+[2026-04-01T01:46:40.751Z]     ✓ Atelier | Free | 66 reviews | 30% | niches: bags | body: 5242 chars
+[2026-04-01T01:46:40.751Z]     TOTAL so far: 50 unique themes
+[2026-04-01T01:46:40.751Z]   [10/14] Waiting 9.7s then visiting: heritage
+[2026-04-01T01:46:50.664Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:50.665Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:50.676Z]   [HTTP 302] https://themes.shopify.com/themes/heritage
+[2026-04-01T01:46:51.154Z]   [HTTP 200] https://themes.shopify.com/themes/heritage/presets/heritage
+[2026-04-01T01:46:51.170Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:46:51.171Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:46:51.171Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:46:51.172Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:46:51.174Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:46:51.175Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:46:51.175Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:46:51.175Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:46:51.176Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:46:51.176Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:46:51.176Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:46:51.177Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:46:51.334Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:51.506Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:46:53.498Z]     Page loaded in 3085ms
+[2026-04-01T01:46:53.500Z]     ✓ Heritage | Free | 10 reviews | 50% | niches: brands with a strong editorial aesthetic. Immersive galleries with asymmetrical, organic layouts let your brand voice shine., clothing | body: 5754 chars
+[2026-04-01T01:46:53.501Z]     TOTAL so far: 51 unique themes
+[2026-04-01T01:46:53.501Z]   [11/14] Waiting 8.2s then visiting: ritual
+[2026-04-01T01:47:01.961Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:01.966Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:01.974Z]   [HTTP 302] https://themes.shopify.com/themes/ritual
+[2026-04-01T01:47:02.507Z]   [HTTP 200] https://themes.shopify.com/themes/ritual/presets/ritual
+[2026-04-01T01:47:02.519Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:47:02.520Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:47:02.520Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:47:02.521Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:47:02.594Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:47:02.595Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:47:02.595Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:47:02.595Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:47:02.595Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:47:02.595Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:47:02.596Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:47:02.596Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:47:02.663Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:02.845Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:04.801Z]     Page loaded in 3087ms
+[2026-04-01T01:47:04.803Z]     ✓ Ritual | Free | 21 reviews | 33% | niches: clothing | body: 4778 chars
+[2026-04-01T01:47:04.803Z]     TOTAL so far: 52 unique themes
+[2026-04-01T01:47:04.803Z]   [12/14] Waiting 5.9s then visiting: nova
+[2026-04-01T01:47:10.963Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:10.965Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:10.978Z]   [HTTP 302] https://themes.shopify.com/themes/nova
+[2026-04-01T01:47:11.506Z]   [HTTP 200] https://themes.shopify.com/themes/nova/presets/nova
+[2026-04-01T01:47:11.518Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:47:11.519Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:47:11.520Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:47:11.521Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:47:11.686Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:47:11.687Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:47:11.687Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:47:11.688Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:47:11.688Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:47:11.688Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:47:11.688Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:47:11.688Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:47:11.763Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:11.934Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:12.627Z]   [HTTP 204] https://www.youtube.com/api/stats/playback?ns=yt&el=embedded&cpn=FBYMp4VDaR6QVpwj&ver=2&cmt=0.014&fmt=243&fs=0&rt=0.583&
+[2026-04-01T01:47:14.658Z]     Page loaded in 3941ms
+[2026-04-01T01:47:14.660Z]     ✓ Nova | $350 | 2 reviews | 100% | niches: sports | body: 3490 chars
+[2026-04-01T01:47:14.660Z]     TOTAL so far: 53 unique themes
+[2026-04-01T01:47:14.660Z]   [13/14] Waiting 9.6s then visiting: carbon
+[2026-04-01T01:47:15.660Z]   [HTTP 204] https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=FBYMp4VDaR6QVpwj&ver=2&cmt=2.975&fmt=243&fs=0&rt=3.59&euri=h
+[2026-04-01T01:47:21.044Z]   [HTTP 204] https://www.youtube.com/api/stats/watchtime?ns=yt&el=embedded&cpn=FBYMp4VDaR6QVpwj&ver=2&cmt=8.386&fmt=243&fs=0&rt=9.002
+[2026-04-01T01:47:24.495Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:24.501Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:24.510Z]   [HTTP 302] https://themes.shopify.com/themes/carbon
+[2026-04-01T01:47:25.017Z]   [HTTP 200] https://themes.shopify.com/themes/carbon/presets/carbon
+[2026-04-01T01:47:25.025Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:47:25.026Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:47:25.027Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:47:25.028Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:47:25.086Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:47:25.086Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:47:25.086Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:47:25.087Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:47:25.087Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:47:25.087Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:47:25.087Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:47:25.088Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:47:25.197Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:25.368Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:25.482Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-XG26CYYVP3&gtm=45je63u0v9232346559za200&_p=1775008045199&gcd=13l3l3
+[2026-04-01T01:47:27.372Z]     Page loaded in 3128ms
+[2026-04-01T01:47:27.375Z]     ✓ Carbon | $280 | 8 reviews | 88% | niches: clothing | body: 5244 chars
+[2026-04-01T01:47:27.375Z]     TOTAL so far: 54 unique themes
+[2026-04-01T01:47:27.376Z]   [14/14] Waiting 7.5s then visiting: sampo
+[2026-04-01T01:47:30.493Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-XG26CYYVP3&gtm=45je63u0v9232346559za200&_p=1775008045199&gcd=13l3l3
+[2026-04-01T01:47:35.158Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:35.160Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:35.164Z]   [HTTP 302] https://themes.shopify.com/themes/sampo
+[2026-04-01T01:47:35.651Z]   [HTTP 200] https://themes.shopify.com/themes/sampo/presets/sampo
+[2026-04-01T01:47:35.668Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:47:35.669Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:47:35.670Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:47:35.670Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:47:35.731Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:47:35.731Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:47:35.732Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:47:35.732Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:47:35.732Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:47:35.732Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:47:35.732Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:47:35.733Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:47:35.797Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:35.965Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:36.136Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-5S5TMW2ETW&gtm=45je63u0v9223914527za200&_p=1775008055763&gcd=13l3l3
+[2026-04-01T01:47:38.288Z]     Page loaded in 3378ms
+[2026-04-01T01:47:38.294Z]     ✓ Sampo | $390 | 3 reviews | 100% | niches: jewelry and accessories | body: 4284 chars
+[2026-04-01T01:47:38.294Z]     TOTAL so far: 55 unique themes
+[2026-04-01T01:47:38.295Z] 
+--- Page 7 done | 55 themes | 11.4 min elapsed | waiting 9.9s ---
+[2026-04-01T01:47:41.141Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-5S5TMW2ETW&gtm=45je63u0v9223914527za200&_p=1775008055763&gcd=13l3l3
+[2026-04-01T01:47:48.190Z] 
+========================================
+[2026-04-01T01:47:48.191Z] LISTING PAGE 8: https://themes.shopify.com/themes?sort_by=newest&page=8
+[2026-04-01T01:47:48.191Z] ========================================
+[2026-04-01T01:47:48.191Z] Themes collected so far: 55 | Duplicates skipped: 4 | Errors: 0
+[2026-04-01T01:47:48.433Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:48.433Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:48.697Z]   [HTTP 200] https://themes.shopify.com/themes?sort_by=newest&page=8
+[2026-04-01T01:47:48.722Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/application-695181538c2bc32d6d28171bd0a27b372a2721dc0980d
+[2026-04-01T01:47:48.722Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:47:48.723Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:47:48.723Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:47:48.724Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:47:48.750Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:47:48.751Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:47:48.751Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/application-DNNHlbyY.js
+[2026-04-01T01:47:48.751Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:47:48.751Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/runtime-DG0Ld3ay.js
+[2026-04-01T01:47:48.752Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:47:48.752Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:47:48.752Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:47:48.886Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:49.057Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:49.706Z] Page loaded in 1515ms
+[2026-04-01T01:47:51.712Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T01:47:51.714Z] Page body text length: 2077 chars
+[2026-04-01T01:47:51.716Z] Found 9 theme cards on page: sampo, loka, strong, monochrome, elixira, horizon, desert, volume, primavera
+[2026-04-01T01:47:51.717Z]   [1/9] SKIP "sampo" - already scraped
+[2026-04-01T01:47:51.717Z]   [2/9] Waiting 7.9s then visiting: loka
+[2026-04-01T01:47:59.821Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:59.822Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:47:59.831Z]   [HTTP 302] https://themes.shopify.com/themes/loka
+[2026-04-01T01:48:00.357Z]   [HTTP 200] https://themes.shopify.com/themes/loka/presets/loka
+[2026-04-01T01:48:00.371Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:48:00.372Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:48:00.373Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:48:00.373Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:48:00.446Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:48:00.447Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:48:00.447Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:48:00.448Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:48:00.448Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:48:00.449Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:48:00.449Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:48:00.449Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:48:00.545Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:00.715Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:00.825Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RKCBY57DN7&gtm=45je63u0v9240529326za200&_p=1775008080504&gcd=13l3l3
+[2026-04-01T01:48:02.983Z]     Page loaded in 3402ms
+[2026-04-01T01:48:02.986Z]     ✓ Loka | $140 | 1 reviews | 100% | niches: food and drink | body: 4562 chars
+[2026-04-01T01:48:02.986Z]     TOTAL so far: 56 unique themes
+[2026-04-01T01:48:02.986Z]   [3/9] Waiting 8.1s then visiting: strong
+[2026-04-01T01:48:05.833Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-RKCBY57DN7&gtm=45je63u0v9240529326za200&_p=1775008080504&gcd=13l3l3
+[2026-04-01T01:48:11.308Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:11.310Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:11.326Z]   [HTTP 302] https://themes.shopify.com/themes/strong
+[2026-04-01T01:48:11.850Z]   [HTTP 200] https://themes.shopify.com/themes/strong/presets/strong
+[2026-04-01T01:48:11.865Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:48:11.866Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:48:11.866Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:48:11.866Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:48:11.941Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:48:11.941Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:48:11.942Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:48:11.942Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:48:11.942Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:48:11.943Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:48:11.943Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:48:11.943Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:48:12.057Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:12.230Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:12.391Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-YSZCQBYSX1&gtm=45je63u0v9219889429za200&_p=1775008092058&gcd=13l3l3
+[2026-04-01T01:48:14.282Z]     Page loaded in 3209ms
+[2026-04-01T01:48:14.286Z]     ✓ Strong | $320 | 7 reviews | 100% | niches: shoes | body: 3776 chars
+[2026-04-01T01:48:14.286Z]     TOTAL so far: 57 unique themes
+[2026-04-01T01:48:14.287Z]   [4/9] Waiting 9.1s then visiting: monochrome
+[2026-04-01T01:48:17.398Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-YSZCQBYSX1&gtm=45je63u0v9219889429za200&_p=1775008092058&gcd=13l3l3
+[2026-04-01T01:48:23.636Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:23.637Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:23.640Z]   [HTTP 302] https://themes.shopify.com/themes/monochrome
+[2026-04-01T01:48:24.142Z]   [HTTP 200] https://themes.shopify.com/themes/monochrome/presets/monochrome
+[2026-04-01T01:48:24.159Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:48:24.160Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:48:24.160Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:48:24.161Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:48:24.224Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:48:24.225Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:48:24.225Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:48:24.225Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:48:24.226Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:48:24.226Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:48:24.227Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:48:24.227Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:48:24.367Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:24.539Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:26.530Z]     Page loaded in 3143ms
+[2026-04-01T01:48:26.535Z]     ✓ Monochrome | $320 | 17 reviews | 94% | niches: immersive visual storytelling., art | body: 4117 chars
+[2026-04-01T01:48:26.536Z]     TOTAL so far: 58 unique themes
+[2026-04-01T01:48:26.536Z]   [5/9] Waiting 7.9s then visiting: elixira
+[2026-04-01T01:48:34.704Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:34.705Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:34.716Z]   [HTTP 302] https://themes.shopify.com/themes/elixira
+[2026-04-01T01:48:35.223Z]   [HTTP 200] https://themes.shopify.com/themes/elixira/presets/elixira
+[2026-04-01T01:48:35.232Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:48:35.232Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:48:35.233Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:48:35.233Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:48:35.308Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:48:35.308Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:48:35.308Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:48:35.308Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:48:35.309Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:48:35.309Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:48:35.309Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:48:35.309Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:48:35.439Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:35.621Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:35.784Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-P3ZB1CKKPJ&gtm=45je63u0v9240528396za200&_p=1775008115449&gcd=13l3l3
+[2026-04-01T01:48:37.677Z]     Page loaded in 3219ms
+[2026-04-01T01:48:37.682Z]     ✓ Elixira | $140 | 2 reviews | 100% | niches: Mobile, Electronics, electronics | body: 4226 chars
+[2026-04-01T01:48:37.682Z]     TOTAL so far: 59 unique themes
+[2026-04-01T01:48:37.683Z]   [6/9] Waiting 5.9s then visiting: horizon
+[2026-04-01T01:48:40.796Z]   [HTTP 204] https://www.google-analytics.com/g/collect?v=2&tid=G-P3ZB1CKKPJ&gtm=45je63u0v9240528396za200&_p=1775008115449&gcd=13l3l3
+[2026-04-01T01:48:43.848Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:43.849Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:43.856Z]   [HTTP 302] https://themes.shopify.com/themes/horizon
+[2026-04-01T01:48:44.341Z]   [HTTP 200] https://themes.shopify.com/themes/horizon/presets/horizon
+[2026-04-01T01:48:44.354Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/merchant-196fa0a516c2e75d7296dcbe63b6d75d3f325a4d7cb15afa
+[2026-04-01T01:48:44.355Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/tailwind-6f84733b7dc50e02022f4fe396fa913c47833257711d8f3a
+[2026-04-01T01:48:44.355Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104a
+[2026-04-01T01:48:44.356Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/assets/rails-eea5a08ed1f5538d6feea53699204748e841ba23d0cdf4e2251
+[2026-04-01T01:48:44.427Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/error-reporting-C3VU61OX.js
+[2026-04-01T01:48:44.428Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/jquery-5sAwpjfl.js
+[2026-04-01T01:48:44.428Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/bugsnag-rmHKSsQk.js
+[2026-04-01T01:48:44.428Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/merchant-d2CP9WI6.js
+[2026-04-01T01:48:44.429Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/themes_home_trackers-Cv6VxYgN.js
+[2026-04-01T01:48:44.429Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/index-B5pOvigr.js
+[2026-04-01T01:48:44.429Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/turbo-BSTObgNS.js
+[2026-04-01T01:48:44.429Z]   [HTTP 200] https://themes.shopify.com/cdn/shopifycloud/theme_store/bundles/assets/monorail-edge-producer-M_NZMvgj.js
+[2026-04-01T01:48:44.483Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:44.655Z]   [HTTP 200] https://themes.shopify.com/.well-known/dux
+[2026-04-01T01:48:46.625Z]     Page loaded in 3033ms
+[2026-04-01T01:48:46.628Z]     ✓ Horizon | Free | 154 reviews | 37% | niches: clothing | body: 5296 chars
+[2026-04-01T01:48:46.628Z]     TOTAL so far: 60 unique themes
+[2026-04-01T01:48:46.628Z] 
+>>> STOP CONDITION: "Horizon" has 154 reviews (>= 150)
+[2026-04-01T01:48:46.628Z] 
+========================================
+[2026-04-01T01:48:46.629Z] SCRAPE FINISHED
+[2026-04-01T01:48:46.629Z] Total time: 12.6 minutes
+[2026-04-01T01:48:46.629Z] Total unique themes: 60
+[2026-04-01T01:48:46.629Z] Total duplicates skipped: 5
+[2026-04-01T01:48:46.629Z] Total errors: 0
+[2026-04-01T01:48:46.629Z] Pages scraped: 8
+[2026-04-01T01:48:46.629Z] ========================================
+[2026-04-01T01:48:46.762Z] Browser closed
+[2026-04-01T01:48:46.763Z] Saved JSON: /Users/dario61/Desktop/shopify-theme-research/themes_2026-04-01T01-48-46.json (60 themes)
+[2026-04-01T01:48:46.764Z] Saved CSV: /Users/dario61/Desktop/shopify-theme-research/themes_2026-04-01T01-48-46.csv (60 themes)
+[2026-04-01T01:48:46.764Z] 
+[2026-04-01T01:48:46.764Z] ========================================
+[2026-04-01T01:48:46.764Z] FINAL SUMMARY
+[2026-04-01T01:48:46.764Z] ========================================
+[2026-04-01T01:48:46.764Z] Total themes: 60
+[2026-04-01T01:48:46.764Z] With reviews: 53
+[2026-04-01T01:48:46.764Z] Without reviews: 7
+[2026-04-01T01:48:46.764Z] With errors: 0
+[2026-04-01T01:48:46.764Z] Price range: $280, $320, $290, $320, $400, $360, $420, $290, $380, $140, $380, $220, $150, $320, $250, $250, $320, $280, $290, $380, $250, $260, $320, $200, $220, $320, $260, $230, $300, $420, $390, $100, $260, $260, $320, $100, $320, $270, $260, $320, $380, $180, $500, Free, Free, Free, Free, Free, Free, Free, Free, Free, $350, $280, $390, $140, $320, $320, $140, Free
+[2026-04-01T01:48:46.764Z] Log saved to: /Users/dario61/Desktop/shopify-theme-research/scrape_log_2026-04-01T01-36-12.txt

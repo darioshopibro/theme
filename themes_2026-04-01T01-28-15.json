@@ -1,0 +1,349 @@
+[
+  {
+    "name": "Atlas",
+    "slug": "atlas",
+    "price": "$280",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/atlas/presets/atlas"
+  },
+  {
+    "name": "Zap",
+    "slug": "zap",
+    "price": "$320",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/zap/presets/zap"
+  },
+  {
+    "name": "Dynamic",
+    "slug": "dynamic",
+    "price": "$290",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/dynamic/presets/dynamic"
+  },
+  {
+    "name": "Prompt",
+    "slug": "prompt",
+    "price": "$320",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/prompt/presets/prompt"
+  },
+  {
+    "name": "Pebble",
+    "slug": "pebble",
+    "price": "$400",
+    "reviewCount": 6,
+    "ratingPercent": 100,
+    "niches": [
+      "kids"
+    ],
+    "url": "https://themes.shopify.com/themes/pebble/presets/pebble"
+  },
+  {
+    "name": "Gentech",
+    "slug": "gentech",
+    "price": "$360",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/gentech/presets/gentech"
+  },
+  {
+    "name": "Seventh",
+    "slug": "seventh",
+    "price": "$420",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/seventh/presets/seventh"
+  },
+  {
+    "name": "Zeal",
+    "slug": "zeal",
+    "price": "$290",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "niches": [
+      "wellness"
+    ],
+    "url": "https://themes.shopify.com/themes/zeal/presets/zeal"
+  },
+  {
+    "name": "Zeal",
+    "slug": "zeal",
+    "price": "$290",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "niches": [
+      "wellness"
+    ],
+    "url": "https://themes.shopify.com/themes/zeal/presets/zeal"
+  },
+  {
+    "name": "Force",
+    "slug": "force",
+    "price": "$380",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "niches": [
+      "real results.",
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/force/presets/force"
+  },
+  {
+    "name": "Filo",
+    "slug": "filo",
+    "price": "$140",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/filo/presets/filo"
+  },
+  {
+    "name": "Zenith",
+    "slug": "zenith",
+    "price": "$380",
+    "reviewCount": 7,
+    "ratingPercent": 100,
+    "niches": [
+      "high-visual brand storytelling.",
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/zenith/presets/zenith"
+  },
+  {
+    "name": "Poco",
+    "slug": "poco",
+    "price": "$220",
+    "reviewCount": 9,
+    "ratingPercent": 100,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/poco/presets/poco"
+  },
+  {
+    "name": "Unity",
+    "slug": "unity",
+    "price": "$150",
+    "reviewCount": 5,
+    "ratingPercent": 100,
+    "niches": [
+      "wellness"
+    ],
+    "url": "https://themes.shopify.com/themes/unity/presets/unity"
+  },
+  {
+    "name": "Sweet",
+    "slug": "sweet",
+    "price": "$320",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "niches": [
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/sweet/presets/sweet"
+  },
+  {
+    "name": "Metro",
+    "slug": "metro",
+    "price": "$250",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/metro/presets/metro"
+  },
+  {
+    "name": "Homage",
+    "slug": "homage",
+    "price": "$250",
+    "reviewCount": 0,
+    "ratingPercent": null,
+    "niches": [
+      "an immersive brand experience with editorial-style layouts that transform your products into lifestyle statements.",
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/homage/presets/homage"
+  },
+  {
+    "name": "Victory",
+    "slug": "victory",
+    "price": "$320",
+    "reviewCount": 6,
+    "ratingPercent": 100,
+    "niches": [
+      "all types of shops. Many elements are animated, which brings the site to life and gives it a very high-end professional feel. 10/10.",
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/victory/presets/victory"
+  },
+  {
+    "name": "Victory",
+    "slug": "victory",
+    "price": "$320",
+    "reviewCount": 6,
+    "ratingPercent": 100,
+    "niches": [
+      "all types of shops. Many elements are animated, which brings the site to life and gives it a very high-end professional feel. 10/10.",
+      "food and drink"
+    ],
+    "url": "https://themes.shopify.com/themes/victory/presets/victory"
+  },
+  {
+    "name": "Vetro",
+    "slug": "vetro",
+    "price": "$280",
+    "reviewCount": 23,
+    "ratingPercent": 100,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/vetro/presets/vetro"
+  },
+  {
+    "name": "Flaunt",
+    "slug": "flaunt",
+    "price": "$290",
+    "reviewCount": 4,
+    "ratingPercent": 100,
+    "niches": [
+      "a clean and timeless appeal.",
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/flaunt/presets/flaunt"
+  },
+  {
+    "name": "Mix",
+    "slug": "mix",
+    "price": "$380",
+    "reviewCount": 4,
+    "ratingPercent": 100,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/mix/presets/mix"
+  },
+  {
+    "name": "Supreme",
+    "slug": "supreme",
+    "price": "$250",
+    "reviewCount": 10,
+    "ratingPercent": 90,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/supreme/presets/supreme"
+  },
+  {
+    "name": "Fullframe",
+    "slug": "fullframe",
+    "price": "$260",
+    "reviewCount": 1,
+    "ratingPercent": 100,
+    "niches": [
+      "home"
+    ],
+    "url": "https://themes.shopify.com/themes/fullframe/presets/fullframe"
+  },
+  {
+    "name": "Stockist",
+    "slug": "stockist",
+    "price": "$320",
+    "reviewCount": 5,
+    "ratingPercent": 100,
+    "niches": [
+      "office"
+    ],
+    "url": "https://themes.shopify.com/themes/stockist/presets/stockist"
+  },
+  {
+    "name": "Maximize",
+    "slug": "maximize",
+    "price": "$200",
+    "reviewCount": 23,
+    "ratingPercent": 100,
+    "niches": [
+      "electronics"
+    ],
+    "url": "https://themes.shopify.com/themes/maximize/presets/maximize"
+  },
+  {
+    "name": "Zyra",
+    "slug": "zyra",
+    "price": "$220",
+    "reviewCount": 3,
+    "ratingPercent": 100,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/zyra/presets/zyra"
+  },
+  {
+    "name": "Krank",
+    "slug": "krank",
+    "price": "$320",
+    "reviewCount": 14,
+    "ratingPercent": 93,
+    "niches": [
+      "hardware"
+    ],
+    "url": "https://themes.shopify.com/themes/krank/presets/krank"
+  },
+  {
+    "name": "Line",
+    "slug": "line",
+    "price": "$260",
+    "reviewCount": 2,
+    "ratingPercent": 100,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/line/presets/line"
+  },
+  {
+    "name": "Flute",
+    "slug": "flute",
+    "price": "$230",
+    "reviewCount": 8,
+    "ratingPercent": 100,
+    "niches": [
+      "clothing"
+    ],
+    "url": "https://themes.shopify.com/themes/flute/presets/flute"
+  },
+  {
+    "name": "Purity",
+    "slug": "purity",
+    "price": "$300",
+    "reviewCount": 73,
+    "ratingPercent": 99,
+    "niches": [
+      "beauty"
+    ],
+    "url": "https://themes.shopify.com/themes/purity/presets/purity"
+  }
+]

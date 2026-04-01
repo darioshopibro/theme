@@ -1,0 +1,4 @@
+node_modules/
+debug-*.txt
+debug-*.png
+.claude/
