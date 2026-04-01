@@ -4003,7 +4003,34 @@ html[data-header-status="visible"] .product-container-main .product-info .produc
 }
 </style>
 <style>
-  a { pointer-events: none !important; cursor: default !important; }
+  .pick-overlay {
+    position: absolute; left: 0; right: 0; z-index: 99990;
+    cursor: pointer; transition: background 0.15s, outline 0.15s;
+    outline: 2px solid transparent; outline-offset: -2px;
+  }
+  .pick-overlay:hover {
+    background: rgba(99,102,241,0.08);
+    outline: 3px solid #6366f1;
+  }
+  .pick-overlay.picked {
+    background: rgba(34,197,94,0.08);
+    outline: 3px solid #22c55e;
+  }
+  .pick-overlay .pick-label {
+    position: absolute; top: 6px; left: 6px;
+    background: #6366f1; color: #fff; padding: 3px 10px; border-radius: 4px;
+    font: 600 11px -apple-system, sans-serif; opacity: 0; transition: opacity 0.15s;
+    pointer-events: none; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.3);
+  }
+  .pick-overlay:hover .pick-label { opacity: 1; }
+  .pick-overlay.picked .pick-label { background: #22c55e; opacity: 1; }
+  .pick-banner {
+    position: fixed; top: 8px; left: 50%; transform: translateX(-50%);
+    background: #6366f1; color: #fff; padding: 6px 16px; border-radius: 8px;
+    font: 600 12px -apple-system, sans-serif; z-index: 99999; pointer-events: none;
+    box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;">
@@ -6352,7 +6379,7 @@ United States |
                 </div><div class="field field--without-border">
                 <input id="Search-Input-Header-Search" class="field-input" type="search" name="q" value="" placeholder="What are you looking for?" aria-label="Search the Site" autocomplete="off" autocapitalize="off" spellcheck="false">
                 <label class="field-label" for="Search-Input-Header-Search">
-                    <typing-words data-text="What are you looking for?" data-interval="10"></typing-words>
+                    <typing-words data-text="What are you looking for?" data-interval="10">Wha</typing-words>
                 </label>
                 <div class="field-button-group">
                     <button type="reset" class="field-button reset-button light hidden focus-inset">
@@ -15195,13 +15222,13 @@ Professional
     <span>:</span>
     <div class="countdown-item">
       <div class="countdown-value">
-        <b class="hour">03</b>
+        <b class="hour">02</b>
         
       </div><div class="countdown-unit">Hours</div></div>
     <span>:</span>
     <div class="countdown-item">
       <div class="countdown-value">
-        <b class="minute">11</b>
+        <b class="minute">57</b>
         
       </div><div class="countdown-unit">Minutes</div></div>
   </div>
@@ -16544,7 +16571,7 @@ Shop Now
     </div><div class="section__wrapper newsletter__wrapper image-width--medium"><div class="newsletter-main section-template--24048560210221__newsletter_bC7F96-padding">
       <div class="content-group width--medium text-align--left text-align-mobile--center">
         <h2 class="shopify-block heading-block heading-size--s-large uppercase has-highlight-text" data-highlight-type="hollow" style="--color-highlight-text: #ff0000;">
-  <em class="loaded">Subscribe</em> to our newsletter
+  <em>Subscribe</em> to our newsletter
 </h2>
 
 
@@ -20022,7 +20049,7 @@ Shopify.shopJsCdnBaseUrl = "https://cdn.shopify.com/shopifycloud/shop-js";</scri
   if (!window.Shopify.featureAssets) window.Shopify.featureAssets = {};
   window.Shopify.featureAssets['shop-js'] = {"shop-toast-manager":["modules/v2/loader.shop-toast-manager.en.esm.js"],"shop-cash-offers":["modules/v2/loader.shop-cash-offers.en.esm.js"],"avatar":["modules/v2/loader.avatar.en.esm.js"],"shop-login-button":["modules/v2/loader.shop-login-button.en.esm.js"],"init-fed-cm":["modules/v2/loader.init-fed-cm.en.esm.js"],"init-windoid":["modules/v2/loader.init-windoid.en.esm.js"],"init-shop-email-lookup-coordinator":["modules/v2/loader.init-shop-email-lookup-coordinator.en.esm.js"],"checkout-modal":["modules/v2/loader.checkout-modal.en.esm.js"],"init-customer-accounts-sign-up":["modules/v2/loader.init-customer-accounts-sign-up.en.esm.js"],"shop-button":["modules/v2/loader.shop-button.en.esm.js"],"shop-cart-sync":["modules/v2/loader.shop-cart-sync.en.esm.js"],"init-shop-cart-sync":["modules/v2/loader.init-shop-cart-sync.en.esm.js"],"pay-button":["modules/v2/loader.pay-button.en.esm.js"],"init-customer-accounts":["modules/v2/loader.init-customer-accounts.en.esm.js"],"init-shop-for-new-customer-accounts":["modules/v2/loader.init-shop-for-new-customer-accounts.en.esm.js"],"shop-login":["modules/v2/loader.shop-login.en.esm.js"],"shop-follow-button":["modules/v2/loader.shop-follow-button.en.esm.js"],"lead-capture":["modules/v2/loader.lead-capture.en.esm.js"],"payment-terms":["modules/v2/loader.payment-terms.en.esm.js"]};
 </script>
-<script>var __st={"a":92057436461,"offset":-14400,"reqid":"3eaec5bb-2100-46fc-aa14-be459bf983a5-1775056898","pageurl":"ecommerce-power-tools.myshopify.com\/","u":"f08e979b4d89","p":"home"};</script>
+<script>var __st={"a":92057436461,"offset":-14400,"reqid":"871c6230-ee0c-4db2-abdd-52d1a7f4fd96-1775057567","pageurl":"ecommerce-power-tools.myshopify.com\/","u":"52900839f603","p":"home"};</script>
 <script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
 <script>!function(){'use strict';const t='contact',e='account',n='new_comment',o=[[t,t],['blogs',n],['comments',n],[t,'customer']],c=[[e,'customer_login'],[e,'guest_login'],[e,'recover_customer_password'],[e,'create_customer']],r=t=>t.map((([t,e])=>`form[action*='/${t}']:not([data-nocaptcha='true']) input[name='form_type'][value='${e}']`)).join(','),a=t=>()=>t?[...document.querySelectorAll(t)].map((t=>t.form)):[];function s(){const t=[...o],e=r(t);return a(e)}const i='password',u='form_key',d=['recaptcha-v3-token','g-recaptcha-response','h-captcha-response',i],f=()=>{try{return window.sessionStorage}catch{return}},m='__shopify_v',_=t=>t.elements[u];function p(t,e,n=!1){try{const o=window.sessionStorage,c=JSON.parse(o.getItem(e)),{data:r}=function(t){const{data:e,action:n}=t;return t[m]||n?{data:e,action:n}:{data:t,action:n}}(c);for(const[e,n]of Object.entries(r))t.elements[e]&&(t.elements[e].value=n);n&&o.removeItem(e)}catch(o){console.error('form repopulation failed',{error:o})}}const l='form_type',E='cptcha';function T(t){t.dataset[E]=!0}const w=window,h=w.document,L='Shopify',v='ce_forms',y='captcha';let A=!1;((t,e)=>{const n=(g='f06e6c50-85a8-45c8-87d0-21a2b65856fe',I='https://cdn.shopify.com/shopifycloud/storefront-forms-hcaptcha/ce_storefront_forms_captcha_hcaptcha.v1.5.2.iife.js',D={infoText:'Protected by hCaptcha',privacyText:'Privacy',termsText:'Terms'},(t,e,n)=>{const o=w[L][v],c=o.bindForm;if(c)return c(t,g,e,D).then(n);var r;o.q.push([[t,g,e,D],n]),r=I,A||(h.body.append(Object.assign(h.createElement('script'),{id:'captcha-provider',async:!0,src:r})),A=!0)});var g,I,D;w[L]=w[L]||{},w[L][v]=w[L][v]||{},w[L][v].q=[],w[L][y]=w[L][y]||{},w[L][y].protect=function(t,e){n(t,void 0,e),T(t)},Object.freeze(w[L][y]),function(t,e,n,w,h,L){const[v,y,A,g]=function(t,e,n){const i=e?o:[],u=t?c:[],d=[...i,...u],f=r(d),m=r(i),_=r(d.filter((([t,e])=>n.includes(e))));return[a(f),a(m),a(_),s()]}(w,h,L),I=t=>{const e=t.target;return e instanceof HTMLFormElement?e:e&&e.form},D=t=>v().includes(t);t.addEventListener('submit',(t=>{const e=I(t);if(!e)return;const n=D(e)&&!e.dataset.hcaptchaBound&&!e.dataset.recaptchaBound,o=_(e),c=g().includes(e)&&(!o||!o.value);(n||c)&&t.preventDefault(),c&&!n&&(function(t){try{if(!f())return;!function(t){const e=f();if(!e)return;const n=_(t);if(!n)return;const o=n.value;o&&e.removeItem(o)}(t);const e=Array.from(Array(32),(()=>Math.random().toString(36)[2])).join('');!function(t,e){_(t)||t.append(Object.assign(document.createElement('input'),{type:'hidden',name:u})),t.elements[u].value=e}(t,e),function(t,e){const n=f();if(!n)return;const o=[...t.querySelectorAll(`input[type='${i}']`)].map((({name:t})=>t)),c=[...d,...o],r={};for(const[a,s]of new FormData(t).entries())c.includes(a)||(r[a]=s);n.setItem(e,JSON.stringify({[m]:1,action:t.action,data:r}))}(t,e)}catch(e){console.error('failed to persist form',e)}}(e),e.submit())}));const S=(t,e)=>{t&&!t.dataset[E]&&(n(t,e.some((e=>e===t))),T(t))};for(const o of['focusin','change'])t.addEventListener(o,(t=>{const e=I(t);D(e)&&S(e,y())}));const B=e.get('form_key'),M=e.get(l),P=B&&M;t.addEventListener('DOMContentLoaded',(()=>{const t=y();if(P)for(const e of t)e.elements[l].value===M&&p(e,B);[...new Set([...A(),...v().filter((t=>'true'===t.dataset.shopifyCaptcha))])].forEach((e=>S(e,t)))}))}(h,new URLSearchParams(w.location.search),n,t,e,['guest_login'])})(!0,!0)}();</script>
 <script>var Shopify=Shopify||{};Shopify.PaymentButton=Shopify.PaymentButton||{isStorefrontPortableWallets:!0,init:function(){window.Shopify.PaymentButton.init=function(){};var t=document.createElement("script");t.src="https://ecommerce-power-tools.myshopify.com/cdn/shopifycloud/portable-wallets/latest/portable-wallets.en.js",t.type="module",document.head.appendChild(t)}};
@@ -20048,7 +20075,7 @@ Shopify.shopJsCdnBaseUrl = "https://cdn.shopify.com/shopifycloud/shop-js";</scri
   window.ShopifyAnalytics = window.ShopifyAnalytics || {};
   window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
   window.ShopifyAnalytics.meta.currency = 'USD';
-  var meta = {"page":{"pageType":"home","requestId":"3eaec5bb-2100-46fc-aa14-be459bf983a5-1775056898"}};
+  var meta = {"page":{"pageType":"home","requestId":"871c6230-ee0c-4db2-abdd-52d1a7f4fd96-1775057567"}};
   for (var attr in meta) {
     window.ShopifyAnalytics.meta[attr] = meta[attr];
   }
@@ -20181,7 +20208,7 @@ first.parentNode.insertBefore(script, first);
 
     };
     trekkie.load(
-      {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":92057436461,"isMerchantRequest":null,"themeId":175411560749,"themeCityHash":"757514445135124969","contentLanguage":"en","currency":"USD","eventMetadataId":"de00ce78-9fb1-4703-b545-8dad65137e1e"},"isServerSideCookieWritingEnabled":true,"monorailRegion":"shop_domain","enabledBetaFlags":["65f19447","b5387b81","d5bdd5d0"]},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer","apiClientId":580111}}
+      {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":92057436461,"isMerchantRequest":null,"themeId":175411560749,"themeCityHash":"757514445135124969","contentLanguage":"en","currency":"USD","eventMetadataId":"52fed08e-9c2a-4f17-baed-2e168eaca4b8"},"isServerSideCookieWritingEnabled":true,"monorailRegion":"shop_domain","enabledBetaFlags":["65f19447","b5387b81","d5bdd5d0"]},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer","apiClientId":580111}}
     );
 
     var loaded = false;
@@ -20197,7 +20224,7 @@ first.parentNode.insertBefore(script, first);
       try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
       document.write = originalDocumentWrite;
 
-      window.ShopifyAnalytics.lib.page(null,{"pageType":"home","requestId":"3eaec5bb-2100-46fc-aa14-be459bf983a5-1775056898","shopifyEmitted":true});
+      window.ShopifyAnalytics.lib.page(null,{"pageType":"home","requestId":"871c6230-ee0c-4db2-abdd-52d1a7f4fd96-1775057567","shopifyEmitted":true});
 
       var match = window.location.pathname.match(/checkouts\/(.+)\/(thank_you|post_purchase)/)
       var token = match? match[1]: undefined;
@@ -20464,5 +20491,66 @@ first.parentNode.insertBefore(script, first);
           stillHere: `We are still here!`
         };
     </script>
+<script>
+// Wait for JS to render everything, then add pick overlays
+setTimeout(function() {
+  // Disable all links and buttons
+  var style = document.createElement('style');
+  style.textContent = 'a, button, input, select, textarea { pointer-events: none !important; }' +
+    '.pick-overlay, .pick-overlay * { pointer-events: auto !important; }';
+  document.head.appendChild(style);
+
+  // Add banner
+  var banner = document.createElement('div');
+  banner.className = 'pick-banner';
+  banner.textContent = 'Click a section to extract';
+  document.body.appendChild(banner);
+
+  // Add overlay for each shopify section
+  var sections = document.querySelectorAll('[id^="shopify-section"]');
+  for (var i = 0; i < sections.length; i++) {
+    var sec = sections[i];
+    var rect = sec.getBoundingClientRect();
+    if (rect.height < 10) continue;
+
+    sec.style.position = 'relative';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'pick-overlay';
+    overlay.style.top = '0';
+    overlay.style.height = rect.height + 'px';
+
+    var id = sec.id;
+    var typeMatch = id.match(/__(.+?)(?:_[A-Za-z0-9]+)?$/);
+    var type = typeMatch ? typeMatch[1] : id.replace('shopify-section-', '');
+
+    var label = document.createElement('div');
+    label.className = 'pick-label';
+    label.textContent = type + ' — click to extract';
+    overlay.appendChild(label);
+
+    overlay.setAttribute('data-section-id', id);
+    overlay.setAttribute('data-section-type', type);
+    overlay.setAttribute('data-section-height', Math.round(rect.height).toString());
+
+    overlay.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.classList.add('picked');
+      window.parent.postMessage({
+        type: 'SECTION_PICKED',
+        sectionId: this.getAttribute('data-section-id'),
+        sectionType: this.getAttribute('data-section-type'),
+        height: parseInt(this.getAttribute('data-section-height') || '500')
+      }, '*');
+    });
+
+    sec.appendChild(overlay);
+  }
+
+  // Report height
+  window.parent.postMessage({ type: 'IFRAME_HEIGHT', height: document.body.scrollHeight }, '*');
+}, 3000);
+</script>
 </body>
 </html>

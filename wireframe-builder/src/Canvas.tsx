@@ -13,7 +13,13 @@ const Canvas: React.FC<Props> = ({ children }) => {
   const [lastMouse, setLastMouse] = useState({ x: 0, y: 0 });
   const [spaceHeld, setSpaceHeld] = useState(false);
 
-  // Zoom from center of viewport (not top-left)
+  const zoomRef = useRef(zoom);
+  const panXRef = useRef(panX);
+  const panYRef = useRef(panY);
+  zoomRef.current = zoom;
+  panXRef.current = panX;
+  panYRef.current = panY;
+
   const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();
     if (e.ctrlKey || e.metaKey) {
@@ -21,20 +27,22 @@ const Canvas: React.FC<Props> = ({ children }) => {
       const mouseX = e.clientX - rect.left;
       const mouseY = e.clientY - rect.top;
 
-      const oldZoom = zoom;
+      const oldZoom = zoomRef.current;
       const delta = -e.deltaY * 0.002;
       const newZoom = Math.min(3, Math.max(0.08, oldZoom + delta * oldZoom));
 
-      // Adjust pan so zoom centers on cursor
       const scale = newZoom / oldZoom;
-      setPanX(x => mouseX - scale * (mouseX - x));
-      setPanY(y => mouseY - scale * (mouseY - y));
+      const newPanX = mouseX - scale * (mouseX - panXRef.current);
+      const newPanY = mouseY - scale * (mouseY - panYRef.current);
+
       setZoom(newZoom);
+      setPanX(newPanX);
+      setPanY(newPanY);
     } else {
       setPanX(x => x - e.deltaX);
       setPanY(y => y - e.deltaY);
     }
-  }, [zoom]);
+  }, []);
 
   useEffect(() => {
     const el = containerRef.current;

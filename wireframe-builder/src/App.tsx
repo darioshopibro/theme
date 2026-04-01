@@ -87,6 +87,41 @@ const App: React.FC = () => {
     }]);
   };
 
+  // When user clicks a section in imported page → extract it via server and add to canvas
+  const handleSectionPick = async (sectionId: string, sectionType: string, height: number, sourceFile: string) => {
+    try {
+      // Call server to extract this section from the full page file
+      const url = sourceFile.includes('_full.html')
+        ? `http://localhost:3007/extracted/${sourceFile}`.replace('/extracted/extracted/', '/extracted/')
+        : '';
+
+      const res = await fetch('http://localhost:3007/api/extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          demoUrl: 'file://' + sourceFile, // won't be used for URL, just for naming
+          sectionMatch: sectionType,
+        }),
+      });
+
+      // For now, create section pointing to source file with section type
+      // The iframe will show the full page but we track which section was picked
+      const newSection: ThemeSection = {
+        id: `picked-${Date.now()}`,
+        type: sectionType,
+        heading: `Picked: ${sectionType}`,
+        visible: true,
+        order: 999,
+        height: height || 500,
+        settings: { ...DEFAULT_SECTION_SETTINGS },
+        importedHtml: sourceFile,
+      };
+      setCanvasSections(prev => [...prev, newSection]);
+    } catch (e) {
+      console.error('Section pick failed:', e);
+    }
+  };
+
   const removeCanvasPage = (id: string) => {
     setCanvasPages(prev => prev.filter(p => p.id !== id));
   };
@@ -201,19 +236,7 @@ const App: React.FC = () => {
             x={(settings.page_width + 100) * 2} y={0}
           />
 
-          {/* Imported sections on canvas */}
-          {canvasSections.map((sec, i) => (
-            <ImportedSectionCard
-              key={sec.id}
-              section={sec}
-              initialX={(settings.page_width + 100) * 3 + 100}
-              initialY={i * 700}
-              onRemove={() => removeCanvasSection(sec.id)}
-              onUpdate={(updated) => updateCanvasSection(sec.id, updated)}
-            />
-          ))}
-
-          {/* Imported full pages on canvas */}
+          {/* Imported full pages — far right */}
           {canvasPages.map((pg) => (
             <ImportedPageCard
               key={pg.id}
@@ -222,6 +245,19 @@ const App: React.FC = () => {
               initialX={pg.x}
               initialY={pg.y}
               onRemove={() => removeCanvasPage(pg.id)}
+              onSectionPick={handleSectionPick}
+            />
+          ))}
+
+          {/* Picked/imported sections — below all page frames, spaced out */}
+          {canvasSections.map((sec, i) => (
+            <ImportedSectionCard
+              key={sec.id}
+              section={sec}
+              initialX={i * 1550}
+              initialY={-800}
+              onRemove={() => removeCanvasSection(sec.id)}
+              onUpdate={(updated) => updateCanvasSection(sec.id, updated)}
             />
           ))}
         </Canvas>
@@ -366,21 +402,23 @@ const ImportedSectionCard: React.FC<{
   );
 };
 
-// Imported full page card on canvas
+// Imported full page card on canvas — click sections to extract
 const ImportedPageCard: React.FC<{
   file: string;
   name: string;
   initialX: number;
   initialY: number;
   onRemove: () => void;
-}> = ({ file, name, initialX, initialY, onRemove }) => {
+  onSectionPick: (sectionId: string, sectionType: string, height: number, sourceFile: string) => void;
+}> = ({ file, name, initialX, initialY, onRemove, onSectionPick }) => {
   const [pos, setPos] = useState({ x: initialX, y: initialY });
   const [dragging, setDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [iframeHeight, setIframeHeight] = useState(3000);
+  const [picking, setPicking] = useState(true);
 
   const onMouseDown = (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest('button')) return;
+    if ((e.target as HTMLElement).closest('button') || (e.target as HTMLElement).closest('iframe')) return;
     setDragging(true);
     setDragStart({ x: e.clientX - pos.x, y: e.clientY - pos.y });
     e.preventDefault();
@@ -395,21 +433,47 @@ const ImportedPageCard: React.FC<{
     return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
   }, [dragging, dragStart]);
 
+  // Listen for section picks from iframe
+  React.useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      if (e.data?.type === 'SECTION_PICKED') {
+        onSectionPick(e.data.sectionId, e.data.sectionType, e.data.height, file);
+      }
+      if (e.data?.type === 'IFRAME_HEIGHT' && e.data.height > 100) {
+        setIframeHeight(e.data.height);
+      }
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, [file, onSectionPick]);
+
   return (
     <div
-      style={{ position: 'absolute', left: pos.x, top: pos.y, cursor: dragging ? 'grabbing' : 'grab', opacity: dragging ? 0.85 : 1 }}
+      style={{ position: 'absolute', left: pos.x, top: pos.y, cursor: dragging ? 'grabbing' : 'default', opacity: dragging ? 0.85 : 1 }}
       onMouseDown={onMouseDown}
     >
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <div style={{ width: 8, height: 8, borderRadius: 4, background: '#22c55e' }} />
           <span style={{ fontSize: 12, fontWeight: 600, color: '#166534' }}>Imported: {name}</span>
-          <span style={{ fontSize: 9, color: '#86efac' }}>drag to move</span>
+          <span style={{ fontSize: 10, color: picking ? '#22c55e' : '#9ca3af', fontWeight: 500 }}>
+            {picking ? '← click sections to extract' : 'drag header to move'}
+          </span>
         </div>
-        <button onClick={onRemove} style={{
-          padding: '3px 8px', borderRadius: 5, fontSize: 10, cursor: 'pointer',
-          border: '1px solid #fecaca', background: '#fef2f2', color: '#ef4444',
-        }}>Remove</button>
+        <div style={{ display: 'flex', gap: 3 }}>
+          <button onClick={() => setPicking(!picking)} style={{
+            padding: '3px 8px', borderRadius: 5, fontSize: 10, fontWeight: 600, cursor: 'pointer',
+            border: '1px solid ' + (picking ? '#22c55e' : '#d1d5db'),
+            background: picking ? '#f0fdf4' : '#fff',
+            color: picking ? '#22c55e' : '#6b7280',
+          }}>
+            {picking ? 'Picking ON' : 'Picking OFF'}
+          </button>
+          <button onClick={onRemove} style={{
+            padding: '3px 8px', borderRadius: 5, fontSize: 10, cursor: 'pointer',
+            border: '1px solid #fecaca', background: '#fef2f2', color: '#ef4444',
+          }}>Remove</button>
+        </div>
       </div>
       <div style={{
         width: 1440, background: '#fff', borderRadius: 6,
@@ -418,11 +482,8 @@ const ImportedPageCard: React.FC<{
       }}>
         <iframe
           src={`http://localhost:3007/extracted/${file}`}
-          style={{ width: '100%', height: iframeHeight, border: 'none', pointerEvents: 'none', display: 'block' }}
+          style={{ width: '100%', height: iframeHeight, border: 'none', pointerEvents: picking ? 'auto' : 'none', display: 'block' }}
           title={name}
-          onLoad={(e) => {
-            try { const h = (e.target as HTMLIFrameElement).contentDocument?.body.scrollHeight; if (h && h > 100) setIframeHeight(h); } catch (_) {}
-          }}
         />
       </div>
     </div>

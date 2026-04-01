@@ -522,13 +522,101 @@ app.post("/api/import-page", async (req, res) => {
 ${pageData.extCSS.map((u: string) => `<link rel="stylesheet" href="${u}">`).join("\n")}
 <style>${pageData.allCSS}</style>
 <style>
-  a { pointer-events: none !important; cursor: default !important; }
+  .pick-overlay {
+    position: absolute; left: 0; right: 0; z-index: 99990;
+    cursor: pointer; transition: background 0.15s, outline 0.15s;
+    outline: 2px solid transparent; outline-offset: -2px;
+  }
+  .pick-overlay:hover {
+    background: rgba(99,102,241,0.08);
+    outline: 3px solid #6366f1;
+  }
+  .pick-overlay.picked {
+    background: rgba(34,197,94,0.08);
+    outline: 3px solid #22c55e;
+  }
+  .pick-overlay .pick-label {
+    position: absolute; top: 6px; left: 6px;
+    background: #6366f1; color: #fff; padding: 3px 10px; border-radius: 4px;
+    font: 600 11px -apple-system, sans-serif; opacity: 0; transition: opacity 0.15s;
+    pointer-events: none; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.3);
+  }
+  .pick-overlay:hover .pick-label { opacity: 1; }
+  .pick-overlay.picked .pick-label { background: #22c55e; opacity: 1; }
+  .pick-banner {
+    position: fixed; top: 8px; left: 50%; transform: translateX(-50%);
+    background: #6366f1; color: #fff; padding: 6px 16px; border-radius: 8px;
+    font: 600 12px -apple-system, sans-serif; z-index: 99999; pointer-events: none;
+    box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;">
 ${pageData.bodyHTML}
 ${pageData.extJS.map((u: string) => `<script src="${u}"><\/script>`).join("\n")}
 ${pageData.inlineJS.map((js: string) => `<script>${js}<\/script>`).join("\n")}
+<script>
+// Wait for JS to render everything, then add pick overlays
+setTimeout(function() {
+  // Disable all links and buttons
+  var style = document.createElement('style');
+  style.textContent = 'a, button, input, select, textarea { pointer-events: none !important; }' +
+    '.pick-overlay, .pick-overlay * { pointer-events: auto !important; }';
+  document.head.appendChild(style);
+
+  // Add banner
+  var banner = document.createElement('div');
+  banner.className = 'pick-banner';
+  banner.textContent = 'Click a section to extract';
+  document.body.appendChild(banner);
+
+  // Add overlay for each shopify section
+  var sections = document.querySelectorAll('[id^="shopify-section"]');
+  for (var i = 0; i < sections.length; i++) {
+    var sec = sections[i];
+    var rect = sec.getBoundingClientRect();
+    if (rect.height < 10) continue;
+
+    sec.style.position = 'relative';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'pick-overlay';
+    overlay.style.top = '0';
+    overlay.style.height = rect.height + 'px';
+
+    var id = sec.id;
+    var typeMatch = id.match(/__(.+?)(?:_[A-Za-z0-9]+)?$/);
+    var type = typeMatch ? typeMatch[1] : id.replace('shopify-section-', '');
+
+    var label = document.createElement('div');
+    label.className = 'pick-label';
+    label.textContent = type + ' — click to extract';
+    overlay.appendChild(label);
+
+    overlay.setAttribute('data-section-id', id);
+    overlay.setAttribute('data-section-type', type);
+    overlay.setAttribute('data-section-height', Math.round(rect.height).toString());
+
+    overlay.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.classList.add('picked');
+      window.parent.postMessage({
+        type: 'SECTION_PICKED',
+        sectionId: this.getAttribute('data-section-id'),
+        sectionType: this.getAttribute('data-section-type'),
+        height: parseInt(this.getAttribute('data-section-height') || '500')
+      }, '*');
+    });
+
+    sec.appendChild(overlay);
+  }
+
+  // Report height
+  window.parent.postMessage({ type: 'IFRAME_HEIGHT', height: document.body.scrollHeight }, '*');
+}, 3000);
+<\/script>
 </body>
 </html>`;
 
@@ -546,6 +634,97 @@ ${pageData.inlineJS.map((js: string) => `<script>${js}<\/script>`).join("\n")}
     res.status(500).json({ error: err.message });
   } finally {
     if (browser) await browser.close();
+  }
+});
+
+// Extract a section from an already-imported full page HTML file
+app.post("/api/extract-from-file", async (req, res) => {
+  const { file, sectionId } = req.body;
+  if (!file || !sectionId) return res.status(400).json({ error: "file and sectionId required" });
+
+  try {
+    const filepath = path.join(EXTRACTED_DIR, file);
+    if (!fs.existsSync(filepath)) return res.status(404).json({ error: "file not found" });
+
+    const fullHTML = fs.readFileSync(filepath, "utf-8");
+
+    // Parse out the section by ID using regex (faster than full DOM parse)
+    // Find the section element with this ID
+    const idEscaped = sectionId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const sectionMatch = fullHTML.match(new RegExp(`(<[^>]+id="${idEscaped}"[^>]*>[\\s\\S]*?)(?=<[^/][^>]+id="shopify-section|$)`, 'i'));
+
+    if (!sectionMatch) {
+      return res.json({ error: "Section not found in file", sectionId });
+    }
+
+    let sectionHTML = sectionMatch[1];
+
+    // Clean up — close any unclosed tags (rough but works for extraction)
+    // Count open vs close tags for the root element
+    const rootTag = sectionHTML.match(/<(\w+)/)?.[1] || 'div';
+    const openCount = (sectionHTML.match(new RegExp(`<${rootTag}[\\s>]`, 'gi')) || []).length;
+    const closeCount = (sectionHTML.match(new RegExp(`</${rootTag}>`, 'gi')) || []).length;
+    for (let i = closeCount; i < openCount; i++) {
+      sectionHTML += `</${rootTag}>`;
+    }
+
+    // Extract CSS from the full page (everything in <style> tags and inline styles)
+    const styles: string[] = [];
+    const styleRegex = /<style[^>]*>([\s\S]*?)<\/style>/gi;
+    let styleMatch;
+    while ((styleMatch = styleRegex.exec(fullHTML)) !== null) {
+      styles.push(styleMatch[1]);
+    }
+
+    // Extract external CSS links
+    const cssLinks: string[] = [];
+    const linkRegex = /<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/gi;
+    let linkMatch;
+    while ((linkMatch = linkRegex.exec(fullHTML)) !== null) {
+      cssLinks.push(linkMatch[1]);
+    }
+
+    // Extract base tag if present
+    const baseMatch = fullHTML.match(/<base[^>]+href="([^"]+)"/i);
+    const baseHref = baseMatch ? baseMatch[1] : "";
+
+    // Build self-contained section HTML
+    const sectionFile = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+${baseHref ? `<base href="${baseHref}">` : ''}
+${cssLinks.map(u => `<link rel="stylesheet" href="${u}">`).join("\n")}
+<style>
+${styles.join("\n")}
+a { pointer-events: none !important; cursor: default !important; }
+img { background: #c7d2dc !important; }
+[style*="background-image"] { background-image: none !important; background: #c7d2dc !important; }
+</style>
+</head>
+<body style="margin:0;padding:0;">
+${sectionHTML}
+<script>
+function reportHeight() {
+  window.parent.postMessage({ type: 'IFRAME_HEIGHT', height: document.body.scrollHeight }, '*');
+}
+window.addEventListener('load', function() { setTimeout(reportHeight, 500); });
+</script>
+</body>
+</html>`;
+
+    // Save as separate file
+    const themeName = file.replace(/__.*/, '');
+    const sectionType = sectionId.split('__').pop()?.replace(/_[A-Za-z0-9]+$/, '') || 'section';
+    const outFilename = `${themeName}__${sectionType}_extracted.html`;
+    fs.writeFileSync(path.join(EXTRACTED_DIR, outFilename), sectionFile, "utf-8");
+
+    console.log(`Extracted section ${sectionType} from ${file} → ${outFilename} (${sectionFile.length} bytes)`);
+
+    res.json({ success: true, file: outFilename, sectionId, sectionType });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
   }
 });
 
