@@ -107,8 +107,8 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
 
   return (
     <div style={{ position: 'absolute', left: x, top: y }}>
-      {/* Frame header — zoom resistant */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 * counterScale, padding: '0 2px', transform: `scale(${counterScale})`, transformOrigin: 'top left', height: 20 * counterScale }}>
+      {/* Frame header */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, padding: '0 2px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 12, fontWeight: 600, color: '#888' }}>{label}</span>
           <span style={{ fontSize: 10, color: '#bbb', fontFamily: 'monospace' }}>{width}px</span>
@@ -123,8 +123,8 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
         </div>
       </div>
 
-      {/* Progress bar — zoom resistant */}
-      <div style={{ marginBottom: 6 * counterScale, position: 'relative', transform: `scale(${counterScale})`, transformOrigin: 'top left', height: 20 * counterScale }}>
+      {/* Progress bar */}
+      <div style={{ marginBottom: 6, position: 'relative' }}>
         <div
           onClick={() => setShowChecklist(!showChecklist)}
           style={{

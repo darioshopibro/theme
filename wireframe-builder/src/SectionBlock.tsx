@@ -332,7 +332,7 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
 
           {/* Preview tooltip */}
           <div style={{
-            position: 'absolute', top: -36 * counterScale, left: '50%', transform: `translateX(-50%) scale(${counterScale})`,
+            position: 'absolute', top: -36, left: '50%', transform: 'translateX(-50%)',
             background: '#1f2937', color: '#f9fafb', fontSize: 10, padding: '5px 10px',
             borderRadius: 6, whiteSpace: 'nowrap', zIndex: 20,
             boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
