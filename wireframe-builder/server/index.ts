@@ -441,6 +441,114 @@ ${allCSS || ""}
   }
 });
 
+// Import full page — inline all CSS, keep external JS links
+app.post("/api/import-page", async (req, res) => {
+  const { url } = req.body;
+  if (!url) return res.status(400).json({ error: "url required" });
+
+  console.log(`Importing full page: ${url}`);
+  let browser;
+  try {
+    browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
+    const page = await browser.newPage();
+    await page.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36");
+    await page.setViewport({ width: 1440, height: 900 });
+
+    await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 });
+    await new Promise(r => setTimeout(r, 5000));
+
+    // Scroll to trigger lazy content
+    await page.evaluate(async () => {
+      for (let y = 0; y < document.body.scrollHeight; y += 300) {
+        window.scrollTo(0, y);
+        await new Promise(r => setTimeout(r, 100));
+      }
+      window.scrollTo(0, 0);
+    });
+    await new Promise(r => setTimeout(r, 3000));
+
+    // Get rendered HTML + all inline CSS + external resource URLs
+    const pageData = await page.evaluate(() => {
+      // Inline all CSS
+      let allCSS = "";
+      for (const style of document.querySelectorAll("style")) {
+        allCSS += style.textContent + "\n";
+      }
+      for (const sheet of document.styleSheets) {
+        try { for (const rule of sheet.cssRules) allCSS += rule.cssText + "\n"; } catch (e) {}
+      }
+
+      // Get external CSS links (for fonts etc)
+      const extCSS = [...document.querySelectorAll('link[rel="stylesheet"]')].map(l => (l as HTMLLinkElement).href);
+
+      // Get external JS
+      const extJS = [...document.querySelectorAll('script[src]')].map(s => (s as HTMLScriptElement).src);
+
+      // Get inline scripts
+      const inlineJS: string[] = [];
+      for (const s of document.querySelectorAll('script:not([src])')) {
+        if (s.textContent && s.textContent.length > 10) inlineJS.push(s.textContent);
+      }
+
+      // Get full body HTML (rendered DOM)
+      const bodyHTML = document.body.innerHTML;
+
+      // Get sections
+      const sections = [...document.querySelectorAll('[id^="shopify-section"]')].map(el => {
+        const id = el.id;
+        const typeMatch = id.match(/__(.+?)(?:_[A-Za-z0-9]+)?$/);
+        const type = typeMatch ? typeMatch[1] : id.replace("shopify-section-", "");
+        const heading = el.querySelector("h1,h2,h3");
+        const rect = el.getBoundingClientRect();
+        return {
+          id, type,
+          heading: heading?.textContent?.trim().slice(0, 50) || null,
+          top: Math.round(rect.top + window.scrollY),
+          height: Math.round(rect.height),
+          visible: rect.height > 0,
+        };
+      }).filter(s => s.visible);
+
+      return { allCSS, extCSS, extJS, inlineJS, bodyHTML, sections };
+    });
+
+    // Build self-contained HTML with all CSS inline + JS from original
+    const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="${url}">
+${pageData.extCSS.map((u: string) => `<link rel="stylesheet" href="${u}">`).join("\n")}
+<style>${pageData.allCSS}</style>
+<style>
+  a { pointer-events: none !important; cursor: default !important; }
+</style>
+</head>
+<body style="margin:0;padding:0;">
+${pageData.bodyHTML}
+${pageData.extJS.map((u: string) => `<script src="${u}"><\/script>`).join("\n")}
+${pageData.inlineJS.map((js: string) => `<script>${js}<\/script>`).join("\n")}
+</body>
+</html>`;
+
+    const hostname = new URL(url).hostname.replace(".myshopify.com", "");
+    const pageName = url.includes("/collections") ? "collection" : url.includes("/products") ? "product" : "homepage";
+    const filename = `${hostname}__${pageName}_full.html`;
+    const filepath = path.join(EXTRACTED_DIR, filename);
+    fs.writeFileSync(filepath, html, "utf-8");
+
+    console.log(`Saved: ${filename} (${html.length} bytes, ${pageData.sections.length} sections)`);
+    res.json({ success: true, file: filename, url: `/extracted/${filename}`, sections: pageData.sections, size: html.length });
+
+  } catch (err: any) {
+    console.error("Import error:", err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    if (browser) await browser.close();
+  }
+});
+
 // Screenshot a page with section bounding boxes overlay
 app.post("/api/screenshot", async (req, res) => {
   const { url } = req.body;

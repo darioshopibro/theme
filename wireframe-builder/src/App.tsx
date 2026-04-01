@@ -74,6 +74,23 @@ const App: React.FC = () => {
     setCanvasSections(prev => [...prev, newSection]);
   };
 
+  // Imported full pages on canvas
+  const [canvasPages, setCanvasPages] = useState<{ id: string; file: string; name: string; x: number; y: number }[]>([]);
+
+  const handleImportPage = (file: string, pageName: string) => {
+    setCanvasPages(prev => [...prev, {
+      id: `page-${Date.now()}`,
+      file,
+      name: pageName,
+      x: (settings.page_width + 100) * 3 + 100,
+      y: prev.length * 900,
+    }]);
+  };
+
+  const removeCanvasPage = (id: string) => {
+    setCanvasPages(prev => prev.filter(p => p.id !== id));
+  };
+
   const removeCanvasSection = (id: string) => {
     setCanvasSections(prev => prev.filter(s => s.id !== id));
   };
@@ -148,9 +165,9 @@ const App: React.FC = () => {
           </div>
           <div style={{ display: 'flex', gap: 6 }}>
             <button onClick={() => setShowImport(true)} style={{
-              padding: '4px 14px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff',
+              padding: '4px 14px', borderRadius: 6, border: '1px solid #6366f1', background: '#eef2ff',
               color: '#6366f1', fontSize: 11, cursor: 'pointer', fontWeight: 600,
-            }}>Import Section</button>
+            }}>Import Page</button>
             <button onClick={exportConfig} style={{
               padding: '4px 14px', borderRadius: 6, border: 'none', background: '#6366f1',
               color: '#fff', fontSize: 11, cursor: 'pointer', fontWeight: 600,
@@ -164,7 +181,7 @@ const App: React.FC = () => {
             sections={sections.homepage} settings={settings}
             onSectionsChange={s => updateSections('homepage', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
-            onShowImport={() => setShowImport(true)}
+
             x={0} y={0}
           />
           <PageFrame
@@ -172,7 +189,7 @@ const App: React.FC = () => {
             sections={sections.collection} settings={settings}
             onSectionsChange={s => updateSections('collection', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
-            onShowImport={() => setShowImport(true)}
+
             x={settings.page_width + 100} y={0}
           />
           <PageFrame
@@ -180,11 +197,11 @@ const App: React.FC = () => {
             sections={sections.product} settings={settings}
             onSectionsChange={s => updateSections('product', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
-            onShowImport={() => setShowImport(true)}
+
             x={(settings.page_width + 100) * 2} y={0}
           />
 
-          {/* Imported sections on canvas — positioned to the right of all pages */}
+          {/* Imported sections on canvas */}
           {canvasSections.map((sec, i) => (
             <ImportedSectionCard
               key={sec.id}
@@ -195,11 +212,24 @@ const App: React.FC = () => {
               onUpdate={(updated) => updateCanvasSection(sec.id, updated)}
             />
           ))}
+
+          {/* Imported full pages on canvas */}
+          {canvasPages.map((pg) => (
+            <ImportedPageCard
+              key={pg.id}
+              file={pg.file}
+              name={pg.name}
+              initialX={pg.x}
+              initialY={pg.y}
+              onRemove={() => removeCanvasPage(pg.id)}
+            />
+          ))}
         </Canvas>
 
         {showImport && (
           <ImportModal
             onImport={handleImport}
+            onImportPage={handleImportPage}
             onClose={() => setShowImport(false)}
           />
         )}
@@ -330,6 +360,69 @@ const ImportedSectionCard: React.FC<{
           }}
           title={section.type}
           onLoad={onIframeLoad}
+        />
+      </div>
+    </div>
+  );
+};
+
+// Imported full page card on canvas
+const ImportedPageCard: React.FC<{
+  file: string;
+  name: string;
+  initialX: number;
+  initialY: number;
+  onRemove: () => void;
+}> = ({ file, name, initialX, initialY, onRemove }) => {
+  const [pos, setPos] = useState({ x: initialX, y: initialY });
+  const [dragging, setDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [iframeHeight, setIframeHeight] = useState(3000);
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('button')) return;
+    setDragging(true);
+    setDragStart({ x: e.clientX - pos.x, y: e.clientY - pos.y });
+    e.preventDefault();
+  };
+
+  React.useEffect(() => {
+    if (!dragging) return;
+    const onMove = (e: MouseEvent) => setPos({ x: e.clientX - dragStart.x, y: e.clientY - dragStart.y });
+    const onUp = () => setDragging(false);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
+  }, [dragging, dragStart]);
+
+  return (
+    <div
+      style={{ position: 'absolute', left: pos.x, top: pos.y, cursor: dragging ? 'grabbing' : 'grab', opacity: dragging ? 0.85 : 1 }}
+      onMouseDown={onMouseDown}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div style={{ width: 8, height: 8, borderRadius: 4, background: '#22c55e' }} />
+          <span style={{ fontSize: 12, fontWeight: 600, color: '#166534' }}>Imported: {name}</span>
+          <span style={{ fontSize: 9, color: '#86efac' }}>drag to move</span>
+        </div>
+        <button onClick={onRemove} style={{
+          padding: '3px 8px', borderRadius: 5, fontSize: 10, cursor: 'pointer',
+          border: '1px solid #fecaca', background: '#fef2f2', color: '#ef4444',
+        }}>Remove</button>
+      </div>
+      <div style={{
+        width: 1440, background: '#fff', borderRadius: 6,
+        boxShadow: '0 2px 16px rgba(0,0,0,0.08), 0 0 0 2px rgba(34,197,94,0.3)',
+        overflow: 'hidden',
+      }}>
+        <iframe
+          src={`http://localhost:3007/extracted/${file}`}
+          style={{ width: '100%', height: iframeHeight, border: 'none', pointerEvents: 'none', display: 'block' }}
+          title={name}
+          onLoad={(e) => {
+            try { const h = (e.target as HTMLIFrameElement).contentDocument?.body.scrollHeight; if (h && h > 100) setIframeHeight(h); } catch (_) {}
+          }}
         />
       </div>
     </div>

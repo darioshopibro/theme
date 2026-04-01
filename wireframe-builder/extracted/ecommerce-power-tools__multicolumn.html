@@ -4003,59 +4003,51 @@ html[data-header-status="visible"] .product-container-main .product-info .produc
 }
 
 
-/* Replace ALL images with placeholders */
-img, svg image, video, picture source {
-  visibility: hidden !important;
-}
-img {
-  background: linear-gradient(135deg, #e2e8f0, #cbd5e1) !important;
-  min-height: 80px !important;
-}
-[style*="background-image"] {
-  background-image: none !important;
-  background-color: #e2e8f0 !important;
-}
+/* Catch any remaining images not replaced in DOM */
+img { display: block !important; background: #c7d2dc !important; min-height: 60px !important; }
+video { background: #c7d2dc !important; }
+[style*="background-image"] { background-image: none !important; background: #c7d2dc !important; }
+[data-placeholder] { background: #c7d2dc !important; }
 
-/* Disable all links */
+/* Disable all links and interactions */
 a { pointer-events: none !important; cursor: default !important; }
+button:not(.block-toolbar button) { pointer-events: none !important; }
 
-/* Edit mode styles (activated via postMessage) */
-.edit-mode body > * > * {
-  outline: 1px dashed rgba(99,102,241,0.3) !important;
-  position: relative !important;
+/* EDIT MODE — target all meaningful elements */
+.edit-mode .editable-block {
+  outline: 2px dashed rgba(99,102,241,0.35) !important;
   cursor: pointer !important;
-  transition: outline 0.1s, opacity 0.2s !important;
 }
-.edit-mode body > * > *:hover {
+.edit-mode .editable-block:hover {
   outline: 2px solid #6366f1 !important;
+  background-color: rgba(99,102,241,0.04) !important;
 }
 .edit-mode .block-selected {
   outline: 3px solid #6366f1 !important;
+  background-color: rgba(99,102,241,0.06) !important;
 }
 .edit-mode .block-hidden {
-  opacity: 0.12 !important;
+  opacity: 0.1 !important;
+  outline-style: dotted !important;
 }
 .block-toolbar {
-  position: absolute !important; top: 4px !important; right: 4px !important;
+  position: fixed !important;
   display: flex !important; gap: 4px !important; z-index: 99999 !important;
+  background: #fff !important; padding: 4px !important; border-radius: 6px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
 }
 .block-toolbar button {
-  padding: 4px 10px !important; border-radius: 4px !important; font-size: 11px !important;
+  padding: 5px 12px !important; border-radius: 4px !important; font-size: 11px !important;
   font-weight: 600 !important; cursor: pointer !important; border: none !important;
   font-family: -apple-system, sans-serif !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
 }
-.block-toolbar .hide-btn { background: #fff !important; color: #374151 !important; }
+.block-toolbar .hide-btn { background: #f3f4f6 !important; color: #374151 !important; }
+.block-toolbar .hide-btn:hover { background: #e5e7eb !important; }
 .block-toolbar .delete-btn { background: #ef4444 !important; color: #fff !important; }
-.block-label {
-  position: absolute !important; top: 4px !important; left: 4px !important;
-  font-size: 9px !important; background: rgba(0,0,0,0.65) !important; color: #fff !important;
-  padding: 2px 6px !important; border-radius: 3px !important; z-index: 99998 !important;
-  font-family: monospace !important; pointer-events: none !important;
-}
+.block-toolbar .delete-btn:hover { background: #dc2626 !important; }
 </style>
 </head>
-<body style="margin:0;padding:0;overflow:hidden;">
+<body style="margin:0;padding:0;">
 <section id="shopify-section-template--24048560210221__multicolumn_ycK4gK" class="shopify-section"><style data-shopify="">.section-template--24048560210221__multicolumn_ycK4gK-padding {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -4078,7 +4070,7 @@ a { pointer-events: none !important; cursor: default !important; }
   <div class="section__wrapper section-multicolumn__wrapper page-width section-template--24048560210221__multicolumn_ycK4gK-padding">
     <div class="shopify-block section-header-block content-group group--center text-align--center width--medium">
   <h2 class="shopify-block heading-block heading-size--medium uppercase has-highlight-text" data-highlight-type="color" style="--color-highlight-text: #ff0000;">
-  <em><strong>KRANK</strong></em> Tool Collection
+  <em class="loaded"><strong>KRANK</strong></em> Tool Collection
 </h2>
 
 
@@ -4117,7 +4109,7 @@ a { pointer-events: none !important; cursor: default !important; }
 
 
   
-<div data-placeholder="image" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+<div data-placeholder="image" style="width: 326px; height: 408px; background: rgb(199, 210, 220); border-radius: 4px; display: block;"></div>
   </div>
   <div class="image-with-text-content content-group group--compact text-align--center"><h3 class="text-content-heading h4">Power Drills</h3><div class="text-content-description rte light"><p>Essential for drilling and driving with speed and precision.</p></div><a class="button button--small mt-2" href="/collections/power-drills">
         Shop All
@@ -4133,7 +4125,7 @@ a { pointer-events: none !important; cursor: default !important; }
 
 
   
-<div data-placeholder="image" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+<div data-placeholder="image" style="width: 326px; height: 408px; background: rgb(199, 210, 220); border-radius: 4px; display: block;"></div>
   </div>
   <div class="image-with-text-content content-group group--compact text-align--center"><h3 class="text-content-heading h4">Impact Wrenches</h3><div class="text-content-description rte light"><p>High-torque tools for loosening and tightening tough bolts with ease.</p></div><a class="button button--small mt-2" href="/collections/impact-wrenches">
         Shop All
@@ -4149,7 +4141,7 @@ a { pointer-events: none !important; cursor: default !important; }
 
 
   
-<div data-placeholder="Person using a power tool with sparks flying, likely cutting metal." style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+<div data-placeholder="Person using a power tool with sparks flying, likely cutting metal." style="width: 326px; height: 408px; background: rgb(199, 210, 220); border-radius: 4px; display: block;"></div>
   </div>
   <div class="image-with-text-content content-group group--compact text-align--center"><h3 class="text-content-heading h4">Power Saws</h3><div class="text-content-description rte light"><p>Fast, precise cutting for wood, metal, and more — built for serious work.</p></div><a class="button button--small mt-2" href="/collections/power-saws">
         Shop All
@@ -4165,7 +4157,7 @@ a { pointer-events: none !important; cursor: default !important; }
 
 
   
-<div data-placeholder="image" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+<div data-placeholder="image" style="width: 326px; height: 408px; background: rgb(199, 210, 220); border-radius: 4px; display: block;"></div>
   </div>
   <div class="image-with-text-content content-group group--compact text-align--center"><h3 class="text-content-heading h4">Measuring Tools</h3><div class="text-content-description rte light"><p>Accurate, dependable tools for precise measurements every time.</p></div><a class="button button--small mt-2" href="/collections/measuring-tools">
         Shop All
@@ -4212,95 +4204,105 @@ a { pointer-events: none !important; cursor: default !important; }
 
 </section>
 <script>
-// Listen for edit mode toggle from parent
+var editing = false;
+var currentToolbar = null;
+
 window.addEventListener('message', function(e) {
-  if (e.data === 'EDIT_ON') {
-    document.documentElement.classList.add('edit-mode');
-    initEditor();
-  }
-  if (e.data === 'EDIT_OFF') {
-    document.documentElement.classList.remove('edit-mode');
-    cleanup();
-  }
+  if (e.data === 'EDIT_ON') { editing = true; enableEdit(); }
+  if (e.data === 'EDIT_OFF') { editing = false; disableEdit(); }
 });
 
-// Report height to parent
 function reportHeight() {
   window.parent.postMessage({ type: 'IFRAME_HEIGHT', height: document.body.scrollHeight }, '*');
 }
-window.addEventListener('load', function() { setTimeout(reportHeight, 500); });
+window.addEventListener('load', function() { setTimeout(reportHeight, 300); });
 
-var labels = [];
-var toolbars = [];
-
-function cleanup() {
-  labels.forEach(function(l) { l.remove(); });
-  toolbars.forEach(function(t) { t.remove(); });
-  labels = [];
-  toolbars = [];
-  document.querySelectorAll('.block-selected').forEach(function(el) { el.classList.remove('block-selected'); });
+function findBlocks() {
+  // Find all meaningful visual blocks — divs, sections, headers, etc with real content
+  var all = document.querySelectorAll('div, section, header, footer, nav, aside, article, figure, ul, form');
+  var blocks = [];
+  for (var i = 0; i < all.length; i++) {
+    var el = all[i];
+    var rect = el.getBoundingClientRect();
+    // Only elements that are visible, have height, and are not too deeply nested
+    if (rect.height > 30 && rect.width > 100 && !el.classList.contains('block-toolbar')) {
+      // Check depth — max 4 levels deep from body
+      var depth = 0; var p = el;
+      while (p.parentElement && p.parentElement !== document.body) { depth++; p = p.parentElement; }
+      if (depth <= 4) blocks.push(el);
+    }
+  }
+  return blocks;
 }
 
-function initEditor() {
-  cleanup();
-  var container = document.body.children[0] || document.body;
-  var children = container.children;
+function enableEdit() {
+  var blocks = findBlocks();
+  blocks.forEach(function(el) { el.classList.add('editable-block'); });
 
-  for (var i = 0; i < children.length; i++) {
-    var child = children[i];
-    if (child.classList.contains('block-toolbar') || child.classList.contains('block-label')) continue;
+  document.addEventListener('click', onClick, true);
+  document.body.style.overflow = 'auto';
+}
 
-    // Add label
-    var label = document.createElement('div');
-    label.className = 'block-label';
-    label.textContent = '<' + child.tagName.toLowerCase() + '> ' + (child.textContent || '').trim().slice(0, 25);
-    child.style.position = 'relative';
-    child.appendChild(label);
-    labels.push(label);
+function disableEdit() {
+  document.querySelectorAll('.editable-block').forEach(function(el) { el.classList.remove('editable-block'); });
+  document.querySelectorAll('.block-selected').forEach(function(el) { el.classList.remove('block-selected'); });
+  if (currentToolbar) { currentToolbar.remove(); currentToolbar = null; }
+  document.removeEventListener('click', onClick, true);
+}
 
-    (function(el) {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+function onClick(e) {
+  if (!editing) return;
+  var target = e.target;
 
-        var wasSelected = el.classList.contains('block-selected');
-        document.querySelectorAll('.block-selected').forEach(function(s) { s.classList.remove('block-selected'); });
-        toolbars.forEach(function(t) { t.remove(); });
-        toolbars = [];
+  // If clicking toolbar button, let it handle
+  if (target.closest('.block-toolbar')) return;
 
-        if (wasSelected) return;
-        el.classList.add('block-selected');
+  e.preventDefault();
+  e.stopPropagation();
 
-        var toolbar = document.createElement('div');
-        toolbar.className = 'block-toolbar';
+  // Find nearest editable block
+  var block = target.closest('.editable-block');
+  if (!block) return;
 
-        var hideBtn = document.createElement('button');
-        hideBtn.className = 'hide-btn';
-        hideBtn.textContent = el.classList.contains('block-hidden') ? 'Show' : 'Hide';
-        hideBtn.addEventListener('click', function(ev) {
-          ev.stopPropagation();
-          el.classList.toggle('block-hidden');
-          hideBtn.textContent = el.classList.contains('block-hidden') ? 'Show' : 'Hide';
-          reportHeight();
-        });
+  // Deselect previous
+  document.querySelectorAll('.block-selected').forEach(function(el) { el.classList.remove('block-selected'); });
+  if (currentToolbar) { currentToolbar.remove(); currentToolbar = null; }
 
-        var deleteBtn = document.createElement('button');
-        deleteBtn.className = 'delete-btn';
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', function(ev) {
-          ev.stopPropagation();
-          el.remove();
-          toolbar.remove();
-          reportHeight();
-        });
+  // Select this block
+  block.classList.add('block-selected');
 
-        toolbar.appendChild(hideBtn);
-        toolbar.appendChild(deleteBtn);
-        el.appendChild(toolbar);
-        toolbars.push(toolbar);
-      });
-    })(child);
-  }
+  // Show toolbar near cursor
+  var toolbar = document.createElement('div');
+  toolbar.className = 'block-toolbar';
+  var rect = block.getBoundingClientRect();
+  toolbar.style.top = (rect.top + window.scrollY + 4) + 'px';
+  toolbar.style.right = '8px';
+
+  var hideBtn = document.createElement('button');
+  hideBtn.className = 'hide-btn';
+  hideBtn.textContent = block.classList.contains('block-hidden') ? 'Show' : 'Hide';
+  hideBtn.onclick = function(ev) {
+    ev.stopPropagation();
+    block.classList.toggle('block-hidden');
+    hideBtn.textContent = block.classList.contains('block-hidden') ? 'Show' : 'Hide';
+    reportHeight();
+  };
+
+  var deleteBtn = document.createElement('button');
+  deleteBtn.className = 'delete-btn';
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.onclick = function(ev) {
+    ev.stopPropagation();
+    block.remove();
+    toolbar.remove();
+    currentToolbar = null;
+    reportHeight();
+  };
+
+  toolbar.appendChild(hideBtn);
+  toolbar.appendChild(deleteBtn);
+  document.body.appendChild(toolbar);
+  currentToolbar = toolbar;
 }
 </script>
 </body>

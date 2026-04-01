@@ -22,13 +22,14 @@ interface ImportedBlock {
 
 interface Props {
   onImport: (file: string, sectionId: string, blocks: ImportedBlock[]) => void;
+  onImportPage: (file: string, pageName: string) => void;
   onClose: () => void;
 }
 
 type PageTab = 'home' | 'collection' | 'product';
 
-const ImportModal: React.FC<Props> = ({ onImport, onClose }) => {
-  const [step, setStep] = useState<'url' | 'browse' | 'extracting' | 'done'>('url');
+const ImportModal: React.FC<Props> = ({ onImport, onImportPage, onClose }) => {
+  const [step, setStep] = useState<'url' | 'browse' | 'fullpage' | 'extracting' | 'done'>('url');
   const [demoUrl, setDemoUrl] = useState('');
   const [pageTab, setPageTab] = useState<PageTab>('home');
   const [screenshot, setScreenshot] = useState('');
@@ -39,8 +40,37 @@ const ImportModal: React.FC<Props> = ({ onImport, onClose }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [result, setResult] = useState<{ file: string; sectionId: string; blocks: ImportedBlock[] } | null>(null);
+  const [fullPageFile, setFullPageFile] = useState<string | null>(null);
+  const [fullPageSections, setFullPageSections] = useState<SectionRect[]>([]);
 
   const baseUrl = demoUrl.replace(/\/$/, '');
+
+  // Import full page and show in iframe
+  const importFullPage = async (tab: PageTab) => {
+    setPageTab(tab);
+    setLoading(true);
+    setError('');
+
+    let url = baseUrl;
+    if (tab === 'collection') url = baseUrl + '/collections/all';
+    if (tab === 'product') url = baseUrl + '/collections/all';
+
+    try {
+      const res = await fetch(`${API}/api/import-page`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url }),
+      });
+      const data = await res.json();
+      if (data.error) { setError(data.error); setLoading(false); return; }
+      setFullPageFile(data.file);
+      setFullPageSections(data.sections.map((s: any) => ({ ...s, left: 0, width: 1440 })));
+      setStep('fullpage');
+    } catch (e: any) {
+      setError('Server error');
+    }
+    setLoading(false);
+  };
 
   const loadPage = async (tab: PageTab) => {
     setPageTab(tab);
@@ -126,23 +156,37 @@ const ImportModal: React.FC<Props> = ({ onImport, onClose }) => {
             <p style={s.hint}>Works with Shopify demos and most websites</p>
             {error && <p style={s.error}>{error}</p>}
 
-            {/* Page buttons */}
-            <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
-              {([
-                { tab: 'home' as PageTab, icon: <Home size={14} />, label: 'Homepage' },
-                { tab: 'collection' as PageTab, icon: <ShoppingBag size={14} />, label: 'Collection' },
-                { tab: 'product' as PageTab, icon: <Package size={14} />, label: 'Product' },
-              ]).map(({ tab, icon, label }) => (
-                <button
-                  key={tab}
-                  onClick={() => loadPage(tab)}
-                  disabled={!demoUrl}
-                  style={{ ...s.pageBtn, opacity: !demoUrl ? 0.4 : 1 }}
-                >
-                  {icon}
-                  <span>{label}</span>
-                </button>
-              ))}
+            {/* Two modes */}
+            <div style={{ marginTop: 20 }}>
+              <div style={{ fontSize: 10, fontWeight: 600, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Import Section</div>
+              <div style={{ display: 'flex', gap: 8 }}>
+                {([
+                  { tab: 'home' as PageTab, icon: <Home size={14} />, label: 'Homepage' },
+                  { tab: 'collection' as PageTab, icon: <ShoppingBag size={14} />, label: 'Collection' },
+                  { tab: 'product' as PageTab, icon: <Package size={14} />, label: 'Product' },
+                ]).map(({ tab, icon, label }) => (
+                  <button key={tab} onClick={() => loadPage(tab)} disabled={!demoUrl}
+                    style={{ ...s.pageBtn, opacity: !demoUrl ? 0.4 : 1 }}>
+                    {icon}<span>{label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ marginTop: 16 }}>
+              <div style={{ fontSize: 10, fontWeight: 600, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Import Full Page</div>
+              <div style={{ display: 'flex', gap: 8 }}>
+                {([
+                  { tab: 'home' as PageTab, icon: <Home size={14} />, label: 'Homepage' },
+                  { tab: 'collection' as PageTab, icon: <ShoppingBag size={14} />, label: 'Collection' },
+                  { tab: 'product' as PageTab, icon: <Package size={14} />, label: 'Product' },
+                ]).map(({ tab, icon, label }) => (
+                  <button key={`full-${tab}`} onClick={() => importFullPage(tab)} disabled={!demoUrl}
+                    style={{ ...s.pageBtn, opacity: !demoUrl ? 0.4 : 1, borderColor: '#22c55e40' }}>
+                    {icon}<span>{label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -151,8 +195,8 @@ const ImportModal: React.FC<Props> = ({ onImport, onClose }) => {
         {loading && (
           <div style={{ ...s.body, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 60 }}>
             <Loader size={32} color="#6366f1" style={{ animation: 'spin 1s linear infinite' }} />
-            <p style={{ fontSize: 13, color: '#6b7280', marginTop: 16 }}>Taking screenshot...</p>
-            <p style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>This takes a few seconds</p>
+            <p style={{ fontSize: 13, color: '#6b7280', marginTop: 16 }}>Loading...</p>
+            <p style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>This takes ~10-15 seconds</p>
           </div>
         )}
 
@@ -221,6 +265,60 @@ const ImportModal: React.FC<Props> = ({ onImport, onClose }) => {
             </div>
 
             {error && <div style={{ padding: '8px 16px', background: '#fef2f2', color: '#ef4444', fontSize: 11, flexShrink: 0 }}>{error}</div>}
+          </div>
+        )}
+
+        {/* Step: Full page imported — preview + add to canvas */}
+        {step === 'fullpage' && !loading && fullPageFile && (
+          <div style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
+            <div style={{ padding: '8px 16px', borderBottom: '1px solid #f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ width: 8, height: 8, borderRadius: 4, background: '#22c55e' }} />
+                <span style={{ fontSize: 12, fontWeight: 600, color: '#374151' }}>
+                  Full page imported — {fullPageSections.length} sections detected
+                </span>
+              </div>
+              <div style={{ display: 'flex', gap: 6 }}>
+                {([
+                  { tab: 'home' as PageTab, label: 'Home' },
+                  { tab: 'collection' as PageTab, label: 'Collection' },
+                  { tab: 'product' as PageTab, label: 'Product' },
+                ]).map(({ tab, label }) => (
+                  <button key={tab} onClick={() => importFullPage(tab)} style={{
+                    padding: '4px 10px', borderRadius: 5, border: '1px solid ' + (pageTab === tab ? '#6366f1' : '#e5e7eb'),
+                    background: pageTab === tab ? '#eef2ff' : '#fff', color: pageTab === tab ? '#6366f1' : '#9ca3af',
+                    fontSize: 10, cursor: 'pointer', fontWeight: 500,
+                  }}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Full page preview */}
+            <div style={{ flex: 1, overflow: 'auto', background: '#f0f0f0', display: 'flex', justifyContent: 'center', padding: 16 }}>
+              <iframe
+                src={`${API}/extracted/${fullPageFile}`}
+                style={{ width: 1440, border: 'none', display: 'block', background: '#fff', borderRadius: 8, boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}
+                title="Full page preview"
+              />
+            </div>
+
+            {/* Bottom bar — add to canvas */}
+            <div style={{ padding: '12px 16px', borderTop: '1px solid #f3f4f6', display: 'flex', gap: 8, flexShrink: 0 }}>
+              <button onClick={() => { onImportPage(fullPageFile, pageTab); onClose(); }} style={{
+                flex: 1, padding: '10px', background: '#22c55e', color: '#fff', border: 'none',
+                borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer',
+              }}>
+                Add full page to canvas
+              </button>
+              <button onClick={() => setStep('url')} style={{
+                padding: '10px 20px', background: 'none', border: '1px solid #e5e7eb',
+                borderRadius: 8, fontSize: 12, color: '#6b7280', cursor: 'pointer',
+              }}>
+                Back
+              </button>
+            </div>
           </div>
         )}
 

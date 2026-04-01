@@ -1,0 +1,14 @@
+[
+  {
+    "tag": "style",
+    "html": "<style data-shopify=\"\">.section-template--24048560210221__custom_section_header_JbYLJi-padding {\n    padding-top: 0px;\n    padding-bottom: 0px;\n  }\n  .section-template--24048560210221__custom_section_header_JbYLJi-margin {\n    margin-top: 0px;\n    margin-bottom: 36px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--24048560210221__custom_section_header_JbYLJi-padding {\n      padding-top: 0px;\n      padding-bottom: 0px;\n    }\n    .section-template--24048560210221__custom_section_header_JbYLJi-margin {\n      margin-top: 0px;\n      margin-bottom: 48px;\n    }\n  }</style>",
+    "text": ".section-template--24048560210221__custom_section_header_JbYLJi-padding {\n    pa",
+    "height": 100
+  },
+  {
+    "tag": "div",
+    "html": "<div class=\"custom-section-header isolate color-scheme-1 gradient section-template--24048560210221__custom_section_header_JbYLJi-margin\">\n  <div class=\"section__wrapper custom-section-header__wrapper page-width section-template--24048560210221__custom_section_header_JbYLJi-padding\">\n    <div class=\"section-header-block content-group group--center text-align--center width--medium mb-0--important\">\n      <h2 class=\"shopify-block heading-block heading-size--medium uppercase has-highlight-text\" data-highlight-type=\"color\" style=\"--color-highlight-text: #ff0000;\">\n  <em class=\"loaded\">Pro</em> Tool Picks\n</h2>\n\n\n<div class=\"shopify-block description-block\">\n  \n  \n\n<expandable-container id=\"Expandable-Container-ANlNvTEdLNE5Xak1Sa__description_ELwHkh\" data-limit-height=\"\" style=\"--limit-height: 5rem;\">\n  <div class=\"content-main rte\">\n    <p>Our best KRANK tools—selected for you.</p>\n  </div><div class=\"expand-button-wrapper\">\n      <button type=\"button\" class=\"expand-button button--clear link link-text show-underline\" aria-controls=\"Expandable-Container-ANlNvTEdLNE5Xak1Sa__description_ELwHkh\" aria-expanded=\"false\">\n        <span class=\"read-more-text\">\n          Read More\n        </span>\n        <span class=\"read-less-text hidden\">\n          Read Less\n        </span>\n      </button>\n    </div></expandable-container>\n\n</div>\n\n\n    </div>\n  </div>\n</div>",
+    "text": "Pro Tool Picks\n\n\n\n\n  \n  \n\n\n  \n    Our best KRANK tools—selected for you.\n  \n    ",
+    "height": 85
+  }
+]

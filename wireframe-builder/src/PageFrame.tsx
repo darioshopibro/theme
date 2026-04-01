@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { ThemeSettings, ThemeSection, PageType, SectionSettings, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS } from './types';
-import { Eye, Smartphone, Monitor, CircleAlert, Import } from 'lucide-react';
+import { Eye, Smartphone, Monitor, CircleAlert } from 'lucide-react';
 import SectionBlock from './SectionBlock';
 import SectionSettingsPopup from './SectionSettingsPopup';
 
@@ -11,12 +11,11 @@ interface Props {
   settings: ThemeSettings;
   onSectionsChange: (sections: ThemeSection[]) => void;
   onPreview: (page: PageType, mobile: boolean) => void;
-  onShowImport: () => void;
   x: number;
   y: number;
 }
 
-const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, onShowImport, x, y }) => {
+const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, x, y }) => {
   const [showAddMenu, setShowAddMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showImport, setShowImport] = useState(false);
@@ -111,9 +110,6 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
           <span style={{ fontSize: 10, color: '#bbb', fontFamily: 'monospace' }}>{width}px</span>
         </div>
         <div style={{ display: 'flex', gap: 3 }}>
-          <IconBtn title="Import section" onClick={onShowImport}>
-            <Import size={13} />
-          </IconBtn>
           <IconBtn title={isMobile ? 'Desktop' : 'Mobile'} onClick={() => setIsMobile(!isMobile)} active={isMobile}>
             {isMobile ? <Smartphone size={13} /> : <Monitor size={13} />}
           </IconBtn>
