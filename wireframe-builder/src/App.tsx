@@ -54,6 +54,29 @@ const App: React.FC = () => {
   const [preview, setPreview] = useState<{ page: PageType; mobile: boolean; width: number } | null>(null);
   const [showImport, setShowImport] = useState(false);
 
+  // Undo system
+  const [history, setHistory] = useState<{ sections: Record<PageType, ThemeSection[]>; canvasSections: ThemeSection[]; groups: SectionGroup[] }[]>([]);
+  const pushHistory = () => {
+    setHistory(prev => [...prev.slice(-30), { sections: JSON.parse(JSON.stringify(sections)), canvasSections: JSON.parse(JSON.stringify(canvasSections)), groups: JSON.parse(JSON.stringify(groups)) }]);
+  };
+  const undo = () => {
+    if (history.length === 0) return;
+    const prev = history[history.length - 1];
+    setSections(prev.sections);
+    setCanvasSections(prev.canvasSections);
+    setGroups(prev.groups);
+    setHistory(h => h.slice(0, -1));
+  };
+
+  // Ctrl+Z
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [history]);
+
   useEffect(() => {
     const link = document.getElementById('gf') as HTMLLinkElement || document.createElement('link');
     link.id = 'gf'; link.rel = 'stylesheet';
@@ -67,7 +90,7 @@ const App: React.FC = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const updateSections = (page: PageType, s: ThemeSection[]) => setSections(prev => ({ ...prev, [page]: s }));
+  const updateSections = (page: PageType, s: ThemeSection[]) => { pushHistory(); setSections(prev => ({ ...prev, [page]: s })); };
 
   const exportConfig = () => {
     const blob = new Blob([JSON.stringify({ settings, sections }, null, 2)], { type: 'application/json' });
@@ -209,16 +232,19 @@ const App: React.FC = () => {
 
   // Move section from frame back to canvas
   const handleExtractFromFrame = (section: ThemeSection) => {
+    pushHistory();
     setCanvasSections(prev => [...prev, { ...section, id: `extracted-${Date.now()}` }]);
   };
 
   // Move section from canvas to a page frame
   const handleAddToPage = (section: ThemeSection, page: PageType) => {
-    updateSections(page, [...sections[page], { ...section, order: sections[page].length }]);
+    pushHistory();
+    setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, order: prev[page].length }] }));
     setCanvasSections(prev => prev.filter(s => s.id !== section.id));
   };
 
   const removeCanvasSection = (id: string) => {
+    pushHistory();
     setCanvasSections(prev => prev.filter(s => s.id !== id));
   };
 

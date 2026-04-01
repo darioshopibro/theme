@@ -29,21 +29,25 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
   // Sync with prop
   React.useEffect(() => { setLocalHeight(section.height); }, [section.height]);
 
+  const localHeightRef = React.useRef(localHeight);
+  localHeightRef.current = localHeight;
+
   // Resize drag handler
   React.useEffect(() => {
     if (!resizing) return;
     const onMove = (e: MouseEvent) => {
       const newH = Math.max(50, resizeStartH.current + (e.clientY - resizeStartY.current));
       setLocalHeight(newH);
+      localHeightRef.current = newH;
     };
     const onUp = () => {
       setResizing(false);
-      if (onResize) onResize(localHeight);
+      if (onResize) onResize(localHeightRef.current);
     };
     window.addEventListener('mousemove', onMove);
     window.addEventListener('mouseup', onUp);
     return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
-  }, [resizing, localHeight, onResize]);
+  }, [resizing, onResize]);
 
   const startResize = (e: React.MouseEvent) => {
     e.preventDefault();
