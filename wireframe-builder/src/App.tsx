@@ -606,9 +606,10 @@ const ImportedSectionCard: React.FC<{
       {/* Section content */}
       <div style={{
         width: section.importedHtml ? 1440 : settings.page_width,
+        height: iframeHeight,
         background: '#fff', borderRadius: 6,
         boxShadow: '0 2px 16px rgba(0,0,0,0.08), 0 0 0 2px ' + (editing ? '#6366f140' : '#f59e0b40'),
-        overflow: 'hidden',
+        overflow: 'hidden', position: 'relative',
       }}>
         {section.importedHtml ? (
           <iframe
