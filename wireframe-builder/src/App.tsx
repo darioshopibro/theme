@@ -309,19 +309,56 @@ const App: React.FC = () => {
           }),
         });
 
-        // For now, also add a basic wireframe placeholder to frame
-        // AI agent will update this later via result file
+        const queueRes = await fetch('http://localhost:3007/api/queue-section', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sectionHtml: sectionHtml.slice(0, 50000),
+            sectionType: section.type,
+            themeSettings: settings,
+            targetPage: page,
+            sourceFile: section.importedHtml,
+          }),
+        });
+        const queueData = await queueRes.json();
+
+        // Add placeholder, then poll for AI result
+        const placeholderId = `queued-${Date.now()}`;
         const wireframe: ThemeSection = {
-          id: `queued-${Date.now()}`,
+          id: placeholderId,
           type: section.type || 'rich-text',
-          heading: section.heading?.replace('Imported: ', '') || null,
+          heading: `⏳ Analyzing: ${section.type}...`,
           visible: true,
           order: sections[page].length,
           height: section.height || 400,
           settings: { ...DEFAULT_SECTION_SETTINGS },
         };
         setSections(prev => ({ ...prev, [page]: [...prev[page], wireframe] }));
-        // Original stays on canvas
+
+        // Poll for result
+        if (queueData.id) {
+          const pollInterval = setInterval(async () => {
+            try {
+              const checkRes = await fetch(`http://localhost:3007/api/queue/${queueData.id}`);
+              const checkData = await checkRes.json();
+              if (checkData.status === 'done' && checkData.result) {
+                clearInterval(pollInterval);
+                const r = checkData.result;
+                setSections(prev => ({
+                  ...prev,
+                  [page]: prev[page].map(s => s.id === placeholderId ? {
+                    ...s,
+                    type: r.wireframeSection.type,
+                    heading: r.wireframeSection.settings?.heading || r.wireframeSection.heading || null,
+                    settings: { ...DEFAULT_SECTION_SETTINGS, ...r.wireframeSection.settings },
+                  } : s),
+                }));
+              }
+            } catch (e) {}
+          }, 2000);
+          // Stop polling after 60s
+          setTimeout(() => clearInterval(pollInterval), 60000);
+        }
       } catch (e) {
         setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, id: `copy-${Date.now()}`, order: sections[page].length }] }));
       }
