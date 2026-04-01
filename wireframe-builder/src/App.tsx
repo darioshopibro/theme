@@ -380,6 +380,7 @@ const App: React.FC = () => {
             onExtractSection={handleExtractFromFrame}
             onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
             selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
+            clearSelection={selectedElement === null}
 
             x={0} y={0}
           />
@@ -391,6 +392,7 @@ const App: React.FC = () => {
             onExtractSection={handleExtractFromFrame}
             onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
             selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
+            clearSelection={selectedElement === null}
 
             x={settings.page_width + 100} y={0}
           />
@@ -402,6 +404,7 @@ const App: React.FC = () => {
             onExtractSection={handleExtractFromFrame}
             onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
             selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
+            clearSelection={selectedElement === null}
 
             x={(settings.page_width + 100) * 2} y={0}
           />

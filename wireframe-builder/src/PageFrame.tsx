@@ -15,11 +15,12 @@ interface Props {
   onExtractSection: (section: ThemeSection) => void;
   onSelectSection?: (id: string, page: PageType) => void;
   selectedSectionId?: string | null;
+  clearSelection?: boolean;
   x: number;
   y: number;
 }
 
-const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, onExtractSection, onSelectSection, selectedSectionId, x, y }) => {
+const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, onExtractSection, onSelectSection, selectedSectionId, clearSelection, x, y }) => {
   const [showAddMenu, setShowAddMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showImport, setShowImport] = useState(false);
@@ -99,7 +100,12 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
 
   const [showChecklist, setShowChecklist] = useState(false);
   const zoom = useZoom();
-  const counterScale = Math.max(1, 1 / zoom);  // scale up when zoomed out, never below 1x
+  const counterScale = Math.max(1, 1 / zoom);
+
+  // Close popup when selection is cleared (Escape or canvas click)
+  React.useEffect(() => {
+    if (clearSelection) setSelectedSection(null);
+  }, [clearSelection]);  // scale up when zoomed out, never below 1x
 
   const availableSections = Object.entries(SECTION_TEMPLATES).filter(([_, t]) => t.pages.includes(pageType));
   const selectedSectionData = selectedSection ? sections.find(s => s.id === selectedSection) : null;
