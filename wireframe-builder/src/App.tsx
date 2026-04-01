@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeSettings, ThemeSection, PageType, ImportedBlock, DEFAULT_SETTINGS, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS } from './types';
+import { ThemeSettings, ThemeSection, SectionGroup, PageType, ImportedBlock, DEFAULT_SETTINGS, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS, GROUP_COLORS } from './types';
 import { getFontImportUrl, settingsToCSS } from './css-vars';
 import SettingsSidebar from './SettingsSidebar';
 import Canvas from './Canvas';
 import PageFrame from './PageFrame';
 import SectionBlock from './SectionBlock';
 import ImportModal from './ImportModal';
+import BottomDrawer from './BottomDrawer';
 
 function getDefaultSections(pageType: PageType): ThemeSection[] {
   return Object.entries(SECTION_TEMPLATES)
@@ -95,12 +96,13 @@ const App: React.FC = () => {
 
   // Imported full pages on canvas
   const [canvasPages, setCanvasPages] = useState<{ id: string; file: string; name: string; x: number; y: number }[]>(saved.current?.canvasPages || []);
+  const [groups, setGroups] = useState<SectionGroup[]>(saved.current?.groups || []);
 
   // Auto-save to localStorage
   useEffect(() => {
-    const t = setTimeout(() => saveState({ settings, sections, canvasSections, canvasPages }), 500);
+    const t = setTimeout(() => saveState({ settings, sections, canvasSections, canvasPages, groups }), 500);
     return () => clearTimeout(t);
-  }, [settings, sections, canvasSections, canvasPages]);
+  }, [settings, sections, canvasSections, canvasPages, groups]);
 
   const handleImportPage = (file: string, pageName: string) => {
     setCanvasPages(prev => [...prev, {
@@ -142,6 +144,60 @@ const App: React.FC = () => {
 
   const removeCanvasPage = (id: string) => {
     setCanvasPages(prev => prev.filter(p => p.id !== id));
+  };
+
+  // Group handlers
+  const createGroup = (name: string) => {
+    setGroups(prev => [...prev, {
+      id: `group-${Date.now()}`,
+      name,
+      color: GROUP_COLORS[prev.length % GROUP_COLORS.length],
+      sections: [],
+    }]);
+  };
+
+  const deleteGroup = (id: string) => setGroups(prev => prev.filter(g => g.id !== id));
+
+  const renameGroup = (id: string, name: string) => {
+    setGroups(prev => prev.map(g => g.id === id ? { ...g, name } : g));
+  };
+
+  const addSectionToGroup = (sectionId: string, groupId: string) => {
+    const sec = canvasSections.find(s => s.id === sectionId);
+    if (!sec) return;
+    setGroups(prev => prev.map(g => g.id === groupId ? { ...g, sections: [...g.sections, sec] } : g));
+    setCanvasSections(prev => prev.filter(s => s.id !== sectionId));
+  };
+
+  const removeSectionFromGroup = (sectionId: string, groupId: string) => {
+    const group = groups.find(g => g.id === groupId);
+    const sec = group?.sections.find(s => s.id === sectionId);
+    if (!sec) return;
+    setGroups(prev => prev.map(g => g.id === groupId ? { ...g, sections: g.sections.filter(s => s.id !== sectionId) } : g));
+    setCanvasSections(prev => [...prev, sec]);
+  };
+
+  const addGroupToCanvas = (groupId: string) => {
+    const group = groups.find(g => g.id === groupId);
+    if (!group) return;
+    setCanvasSections(prev => [...prev, ...group.sections.map(s => ({ ...s, id: `${s.id}-${Date.now()}` }))]);
+  };
+
+  const addGroupToPage = (groupId: string, page: PageType) => {
+    const group = groups.find(g => g.id === groupId);
+    if (!group) return;
+    updateSections(page, [...sections[page], ...group.sections.map((s, i) => ({ ...s, id: `${s.id}-${Date.now()}-${i}`, order: sections[page].length + i }))]);
+  };
+
+  const addWireframeSectionToCanvas = (type: string) => {
+    const template = SECTION_TEMPLATES[type];
+    const sec: ThemeSection = {
+      id: `wire-${Date.now()}`,
+      type, heading: null, visible: true, order: 999,
+      height: template?.defaultHeight || 200,
+      settings: { ...DEFAULT_SECTION_SETTINGS },
+    };
+    setCanvasSections(prev => [...prev, sec]);
   };
 
   // Move section from frame back to canvas
@@ -302,6 +358,19 @@ const App: React.FC = () => {
             onClose={() => setShowImport(false)}
           />
         )}
+
+        <BottomDrawer
+          canvasSections={canvasSections}
+          groups={groups}
+          onCreateGroup={createGroup}
+          onDeleteGroup={deleteGroup}
+          onRenameGroup={renameGroup}
+          onAddSectionToGroup={addSectionToGroup}
+          onRemoveSectionFromGroup={removeSectionFromGroup}
+          onAddGroupToCanvas={addGroupToCanvas}
+          onAddGroupToPage={addGroupToPage}
+          onAddWireframeSectionToCanvas={addWireframeSectionToCanvas}
+        />
       </div>
     </div>
   );

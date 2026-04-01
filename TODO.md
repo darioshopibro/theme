@@ -28,17 +28,26 @@
 - [ ] Vrijednosti dolaze TEK iz wireframe-a (korak 4)
 
 ## 4. Wireframe builder + dizajn pravac
-- [ ] Napraviti wireframe builder (React) — baza: YT automation visual-editor (`~/Desktop/YT automation/tools/visual-editor`)
-- [ ] Uzima research JSON kao input — zna koje sekcije/features postoje za izabranu nišu
-- [ ] Infinite canvas (već postoji u visual-editoru) sa sekcijama kao blokovima
-- [ ] Sidebar sa SVIM engine varijablama kao kontrolama (slideri, color picker, itd)
-- [ ] Live preview — pomjeraš varijablu, wireframe se mijenja
-- [ ] HP / Collection / Product tabs
-- [ ] **Desktop I mobile preview** — obavezno oba
-- [ ] Drag/reorder sekcije, brisanje, dodavanje
-- [ ] Export: varijable kao JSON → postaje engine config
-- [ ] Dario ocjenjuje, tweakuje, odobri → finalne varijable za obje teme
-- [ ] Portability lista: zeleno / žuto / crveno (tek kad vidimo wireframe znamo šta se može portovati)
+- [x] Infinite canvas sa pan/zoom
+- [x] 3 page frame-a (HP, Collection, Product) na canvasu
+- [x] Sidebar sa theme settings (colors, typo, spacing, buttons, cards)
+- [x] Section drag & drop reorder u frame-ovima
+- [x] Import sekcija sa screenshot browse
+- [x] Import FULL PAGE (rendered DOM + CSS + JS)
+- [x] Section picking iz importovanog page-a → extract na canvas
+- [x] Add section to frame (→ HP / → Col / → PDP) i extract iz frame-a (←)
+- [x] Preview mode sa width slider 300-2400px
+- [x] Resize handle na sekcijama (drag donju ivicu)
+- [x] Edit blocks u importovanim sekcijama (hide/delete elemente)
+- [x] Progress bar + checklist per page
+- [x] Auto-save state u localStorage
+- [x] Section library bottom drawer sa grupama
+- [ ] **Settings povezati sa pravim Shopify settings_schema.json** — da kad exportujemo, output bude validan Shopify config
+- [ ] **AI recommended settings** — za svaku importovanu sekciju, Claude analizira i predlaže naše engine settings (boje, fontovi, spacing, radius) da matčuju tu sekciju
+- [ ] Smisliti kako AI settings recommendations izgledaju u UI-ju (popup? sidebar panel? automatski apply?)
+- [ ] Desktop I mobile preview per frame
+- [ ] Export: varijable kao JSON → postaje engine config + settings_schema.json
+- [ ] Portability lista: zeleno / žuto / crveno (tek kad vidimo wireframe)
 
 ## 5. Planiranje razvoja
 - [ ] Lista SVIH sekcija za obje teme (iz wireframe-a)
