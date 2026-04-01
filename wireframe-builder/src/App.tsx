@@ -119,6 +119,11 @@ const App: React.FC = () => {
     setCanvasPages(prev => prev.filter(p => p.id !== id));
   };
 
+  // Move section from frame back to canvas
+  const handleExtractFromFrame = (section: ThemeSection) => {
+    setCanvasSections(prev => [...prev, { ...section, id: `extracted-${Date.now()}` }]);
+  };
+
   // Move section from canvas to a page frame
   const handleAddToPage = (section: ThemeSection, page: PageType) => {
     updateSections(page, [...sections[page], { ...section, order: sections[page].length }]);
@@ -215,6 +220,7 @@ const App: React.FC = () => {
             sections={sections.homepage} settings={settings}
             onSectionsChange={s => updateSections('homepage', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
+            onExtractSection={handleExtractFromFrame}
 
             x={0} y={0}
           />
@@ -223,6 +229,7 @@ const App: React.FC = () => {
             sections={sections.collection} settings={settings}
             onSectionsChange={s => updateSections('collection', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
+            onExtractSection={handleExtractFromFrame}
 
             x={settings.page_width + 100} y={0}
           />
@@ -231,6 +238,7 @@ const App: React.FC = () => {
             sections={sections.product} settings={settings}
             onSectionsChange={s => updateSections('product', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
+            onExtractSection={handleExtractFromFrame}
 
             x={(settings.page_width + 100) * 2} y={0}
           />

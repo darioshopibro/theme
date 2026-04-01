@@ -11,11 +11,12 @@ interface Props {
   settings: ThemeSettings;
   onSectionsChange: (sections: ThemeSection[]) => void;
   onPreview: (page: PageType, mobile: boolean) => void;
+  onExtractSection: (section: ThemeSection) => void;
   x: number;
   y: number;
 }
 
-const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, x, y }) => {
+const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, onExtractSection, x, y }) => {
   const [showAddMenu, setShowAddMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showImport, setShowImport] = useState(false);
@@ -233,6 +234,7 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
                 isMobile={isMobile}
                 onRemove={() => removeSection(section.id)}
                 onToggleVisibility={() => toggleVisibility(section.id)}
+                onExtractToCanvas={() => { onExtractSection(section); removeSection(section.id); }}
                 isSelected={isSelected}
               />
             </div>

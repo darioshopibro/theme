@@ -9,11 +9,12 @@ interface Props {
   isMobile: boolean;
   onRemove: () => void;
   onToggleVisibility: () => void;
+  onExtractToCanvas?: () => void;
   isSelected?: boolean;
 }
 
 
-const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, onToggleVisibility, isSelected }) => {
+const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, onToggleVisibility, onExtractToCanvas, isSelected }) => {
   const [hovered, setHovered] = useState(false);
   const [showOriginal, setShowOriginal] = useState(true);
   const css = settingsToCSS(settings);
@@ -257,6 +258,11 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
             <span style={{ fontSize: 10, color: '#6366f1', fontWeight: 500, padding: '0 4px' }}>
               {template?.label || section.type}
             </span>
+            {onExtractToCanvas && section.importedHtml && (
+              <button onClick={onExtractToCanvas} style={{ ...iconBtnStyle, color: '#f59e0b', fontSize: 10, fontWeight: 600 }} title="Move to canvas">
+                ←
+              </button>
+            )}
             <button onClick={onToggleVisibility} style={iconBtnStyle} title="Hide section">
               <EyeOff size={12} />
             </button>
