@@ -17,13 +17,32 @@ function getDefaultSections(pageType: PageType): ThemeSection[] {
     }));
 }
 
+// LocalStorage helpers
+const STORAGE_KEY = 'wireframe-builder-state';
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) return JSON.parse(saved);
+  } catch (e) {}
+  return null;
+}
+
+function saveState(data: any) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+}
+
 const App: React.FC = () => {
-  const [settings, setSettings] = useState<ThemeSettings>(DEFAULT_SETTINGS);
-  const [sections, setSections] = useState<Record<PageType, ThemeSection[]>>({
-    homepage: getDefaultSections('homepage'),
-    collection: getDefaultSections('collection'),
-    product: getDefaultSections('product'),
-  });
+  const saved = React.useRef(loadState());
+
+  const [settings, setSettings] = useState<ThemeSettings>(saved.current?.settings || DEFAULT_SETTINGS);
+  const [sections, setSections] = useState<Record<PageType, ThemeSection[]>>(
+    saved.current?.sections || {
+      homepage: getDefaultSections('homepage'),
+      collection: getDefaultSections('collection'),
+      product: getDefaultSections('product'),
+    }
+  );
   const [preview, setPreview] = useState<{ page: PageType; mobile: boolean; width: number } | null>(null);
   const [showImport, setShowImport] = useState(false);
 
@@ -48,7 +67,7 @@ const App: React.FC = () => {
   };
 
   // Imported sections on canvas (not in any page yet)
-  const [canvasSections, setCanvasSections] = useState<ThemeSection[]>([]);
+  const [canvasSections, setCanvasSections] = useState<ThemeSection[]>(saved.current?.canvasSections || []);
 
   const handleImport = (file: string, sectionId: string, blocks: { tag: string; html: string; text: string; height: number }[]) => {
     const sectionType = sectionId.split('__').pop()?.replace(/_[A-Za-z0-9]+$/, '') || 'imported';
@@ -75,7 +94,13 @@ const App: React.FC = () => {
   };
 
   // Imported full pages on canvas
-  const [canvasPages, setCanvasPages] = useState<{ id: string; file: string; name: string; x: number; y: number }[]>([]);
+  const [canvasPages, setCanvasPages] = useState<{ id: string; file: string; name: string; x: number; y: number }[]>(saved.current?.canvasPages || []);
+
+  // Auto-save to localStorage
+  useEffect(() => {
+    const t = setTimeout(() => saveState({ settings, sections, canvasSections, canvasPages }), 500);
+    return () => clearTimeout(t);
+  }, [settings, sections, canvasSections, canvasPages]);
 
   const handleImportPage = (file: string, pageName: string) => {
     setCanvasPages(prev => [...prev, {
