@@ -956,6 +956,152 @@ app.post("/api/extract-settings", async (req, res) => {
   }
 });
 
+// Analyze an imported section and generate wireframe settings
+app.post("/api/analyze-section", async (req, res) => {
+  const { file, sectionId } = req.body;
+  if (!file) return res.status(400).json({ error: "file required" });
+
+  try {
+    const filepath = path.join(EXTRACTED_DIR, file);
+    if (!fs.existsSync(filepath)) return res.status(404).json({ error: "file not found" });
+
+    // Use Puppeteer to analyze the rendered section
+    const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1440, height: 3000 });
+    await page.goto(`http://localhost:${PORT}/extracted/${file}`, { waitUntil: "networkidle2", timeout: 30000 });
+    await new Promise(r => setTimeout(r, 2000));
+
+    const analysis = await page.evaluate(`
+      (function() {
+        var body = document.body;
+        var all = body.querySelectorAll('*');
+
+        // Count product cards
+        var productCards = body.querySelectorAll('[class*="product-card"], [class*="product_card"], [class*="ProductCard"], .card, [class*="grid-item"]');
+        var productsCount = productCards.length;
+
+        // Detect grid columns
+        var gridEl = body.querySelector('[class*="grid"], [class*="collection"], [style*="grid"]');
+        var columns = 4;
+        if (gridEl) {
+          var gridStyle = getComputedStyle(gridEl);
+          var gtc = gridStyle.gridTemplateColumns;
+          if (gtc && gtc !== 'none') {
+            columns = gtc.split(' ').filter(function(s) { return s && s !== '0px'; }).length;
+          }
+        }
+        if (productsCount > 0 && columns === 4) {
+          // Estimate from product count per row
+          var firstRow = [];
+          var firstY = null;
+          for (var i = 0; i < productCards.length; i++) {
+            var rect = productCards[i].getBoundingClientRect();
+            if (firstY === null) firstY = rect.top;
+            if (Math.abs(rect.top - firstY) < 20) firstRow.push(productCards[i]);
+            else break;
+          }
+          if (firstRow.length > 0) columns = firstRow.length;
+        }
+
+        // Find headings
+        var h1 = body.querySelector('h1, h2, h3');
+        var heading = h1 ? h1.textContent.trim().slice(0, 60) : '';
+
+        // Find subheading
+        var sub = h1 ? h1.nextElementSibling : null;
+        var subheading = '';
+        if (sub && (sub.tagName === 'P' || sub.tagName === 'SPAN' || sub.tagName === 'DIV')) {
+          subheading = sub.textContent.trim().slice(0, 80);
+        }
+
+        // Find buttons
+        var btn = body.querySelector('button, a.btn, [class*="button"], a[class*="btn"]');
+        var buttonText = btn ? btn.textContent.trim().slice(0, 30) : '';
+
+        // Detect section type from content
+        var sectionType = 'rich-text';
+        var hasProducts = productsCount > 0;
+        var hasTestimonials = body.textContent.includes('review') || body.textContent.includes('testimonial') || body.querySelectorAll('[class*="testimonial"], [class*="review"]').length > 0;
+        var hasNewsletter = body.querySelectorAll('input[type="email"], [class*="newsletter"]').length > 0;
+        var hasVideo = body.querySelectorAll('video, iframe[src*="youtube"], iframe[src*="vimeo"]').length > 0;
+        var hasBlog = body.querySelectorAll('[class*="blog"], [class*="article"], article').length > 0;
+        var hasLogos = body.querySelectorAll('[class*="logo-list"], [class*="partners"], [class*="brand"]').length > 3;
+        var hasTrustBadges = body.querySelectorAll('[class*="trust"], [class*="badge"], [class*="guarantee"]').length > 2;
+        var isHero = body.querySelector('[class*="hero"], [class*="banner"], [class*="slideshow"], [class*="carousel"]') !== null;
+        var hasMediaText = body.querySelectorAll('[class*="media-with-text"], [class*="image-with-text"]').length > 0;
+
+        if (isHero) sectionType = 'hero';
+        else if (hasProducts && productsCount > 2) sectionType = 'featured-collection';
+        else if (hasTestimonials) sectionType = 'testimonials';
+        else if (hasNewsletter) sectionType = 'newsletter';
+        else if (hasVideo) sectionType = 'video';
+        else if (hasBlog) sectionType = 'featured-blog';
+        else if (hasLogos) sectionType = 'logo-list';
+        else if (hasTrustBadges) sectionType = 'trust-badges';
+        else if (hasMediaText) sectionType = 'media-with-text';
+        else if (columns > 1) sectionType = 'multicolumn';
+
+        // Image ratio detection
+        var firstImg = productCards[0] ? productCards[0].querySelector('img, [class*="image"]') : null;
+        var imageRatio = '1:1';
+        if (firstImg) {
+          var imgRect = firstImg.getBoundingClientRect();
+          if (imgRect.width > 0 && imgRect.height > 0) {
+            var ratio = imgRect.width / imgRect.height;
+            if (ratio > 1.2) imageRatio = '16:9';
+            else if (ratio > 0.9) imageRatio = '1:1';
+            else if (ratio > 0.7) imageRatio = '3:4';
+            else imageRatio = '3:4';
+          }
+        }
+
+        // Text alignment
+        var textAlign = 'center';
+        if (h1) {
+          var h1Style = getComputedStyle(h1);
+          textAlign = h1Style.textAlign || 'center';
+        }
+
+        // Height
+        var height = Math.round(body.scrollHeight);
+
+        return {
+          detectedType: sectionType,
+          settings: {
+            heading: heading,
+            subheading: subheading,
+            columns: columns,
+            products_count: productsCount || columns,
+            button_text: buttonText,
+            image_ratio: imageRatio,
+            text_align: textAlign,
+            show_price: hasProducts,
+            show_vendor: false,
+          },
+          meta: {
+            hasProducts: hasProducts,
+            productsCount: productsCount,
+            hasTestimonials: hasTestimonials,
+            hasNewsletter: hasNewsletter,
+            hasVideo: hasVideo,
+            hasBlog: hasBlog,
+            isHero: isHero,
+            height: height,
+          }
+        };
+      })()
+    `);
+
+    await browser.close();
+
+    console.log(`Analyzed ${file}: type=${analysis.detectedType}, cols=${analysis.settings.columns}, products=${analysis.settings.products_count}`);
+    res.json(analysis);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Screenshot a page with section bounding boxes overlay
 app.post("/api/screenshot", async (req, res) => {
   const { url } = req.body;

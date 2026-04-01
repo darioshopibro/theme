@@ -195,7 +195,7 @@ const App: React.FC = () => {
     }]);
   };
 
-  // When user clicks a section in imported page → extract just that section and add to canvas
+  // When user clicks a section in imported page → extract and add to canvas as imported
   const handleSectionPick = async (sectionId: string, sectionType: string, height: number, sourceFile: string) => {
     try {
       const res = await fetch('http://localhost:3007/api/extract-from-file', {
@@ -204,20 +204,19 @@ const App: React.FC = () => {
         body: JSON.stringify({ file: sourceFile, sectionId }),
       });
       const data = await res.json();
-
       if (data.error) { console.error('Extract failed:', data.error); return; }
 
-      const newSection: ThemeSection = {
+      pushHistory();
+      setCanvasSections(prev => [...prev, {
         id: `picked-${Date.now()}`,
         type: data.sectionType || sectionType,
-        heading: `Picked: ${data.sectionType || sectionType}`,
+        heading: `Imported: ${data.sectionType || sectionType}`,
         visible: true,
         order: 999,
         height: height || 500,
         settings: { ...DEFAULT_SECTION_SETTINGS },
         importedHtml: data.file,
-      };
-      setCanvasSections(prev => [...prev, newSection]);
+      }]);
     } catch (e) {
       console.error('Section pick failed:', e);
     }
@@ -287,11 +286,45 @@ const App: React.FC = () => {
     setCanvasSections(prev => [...prev, { ...section, id: `extracted-${Date.now()}` }]);
   };
 
-  // Move section from canvas to a page frame
-  const handleAddToPage = (section: ThemeSection, page: PageType) => {
+  // Add section to page frame — if imported, create wireframe copy; original stays on canvas
+  const handleAddToPage = async (section: ThemeSection, page: PageType) => {
     pushHistory();
-    setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, order: prev[page].length }] }));
-    setCanvasSections(prev => prev.filter(s => s.id !== section.id));
+
+    if (section.importedHtml) {
+      // Analyze and create wireframe version for the frame
+      try {
+        const res = await fetch('http://localhost:3007/api/analyze-section', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ file: section.importedHtml }),
+        });
+        const analysis = await res.json();
+
+        const wireframe: ThemeSection = {
+          id: `wireframe-${Date.now()}`,
+          type: analysis.detectedType || section.type || 'rich-text',
+          heading: analysis.settings?.heading || section.heading,
+          visible: true,
+          order: sections[page].length,
+          height: analysis.meta?.height || section.height || 400,
+          settings: {
+            ...DEFAULT_SECTION_SETTINGS,
+            ...(analysis.settings || {}),
+          },
+          // No importedHtml — this is a wireframe that uses our theme settings
+        };
+
+        setSections(prev => ({ ...prev, [page]: [...prev[page], wireframe] }));
+        // Original stays on canvas as reference!
+      } catch (e) {
+        // Fallback: just add as-is
+        setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, id: `copy-${Date.now()}`, order: sections[page].length }] }));
+      }
+    } else {
+      // Wireframe section — move it (remove from canvas, add to frame)
+      setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, order: prev[page].length }] }));
+      setCanvasSections(prev => prev.filter(s => s.id !== section.id));
+    }
   };
 
   const removeCanvasSection = (id: string) => {
