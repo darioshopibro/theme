@@ -11,6 +11,9 @@ app.use(express.json({ limit: "10mb" }));
 const EXTRACTED_DIR = path.join(process.cwd(), "extracted");
 if (!fs.existsSync(EXTRACTED_DIR)) fs.mkdirSync(EXTRACTED_DIR);
 
+const QUEUE_DIR = path.join(process.cwd(), "queue");
+if (!fs.existsSync(QUEUE_DIR)) fs.mkdirSync(QUEUE_DIR);
+
 // Serve extracted HTML files
 app.use("/extracted", express.static(EXTRACTED_DIR));
 
@@ -954,6 +957,55 @@ app.post("/api/extract-settings", async (req, res) => {
   } finally {
     if (browser) await browser.close();
   }
+});
+
+// Queue a section for AI analysis (Claude Code hook picks this up)
+app.post("/api/queue-section", (req, res) => {
+  const { sectionHtml, sectionType, themeSettings, targetPage, sourceUrl } = req.body;
+  if (!sectionHtml) return res.status(400).json({ error: "sectionHtml required" });
+
+  const id = `req-${Date.now()}`;
+  const request = {
+    id,
+    status: "pending",
+    createdAt: new Date().toISOString(),
+    sectionType: sectionType || "unknown",
+    targetPage: targetPage || "homepage",
+    sourceUrl: sourceUrl || "",
+    themeSettings,
+    sectionHtml: sectionHtml.slice(0, 50000), // limit size
+  };
+
+  fs.writeFileSync(path.join(QUEUE_DIR, `${id}.json`), JSON.stringify(request, null, 2), "utf-8");
+  console.log(`Queued section: ${id} (${sectionType}, ${targetPage})`);
+  res.json({ id, status: "pending" });
+});
+
+// Check queue result
+app.get("/api/queue/:id", (req, res) => {
+  const resultPath = path.join(QUEUE_DIR, `${req.params.id}-result.json`);
+  const requestPath = path.join(QUEUE_DIR, `${req.params.id}.json`);
+
+  if (fs.existsSync(resultPath)) {
+    const result = JSON.parse(fs.readFileSync(resultPath, "utf-8"));
+    return res.json({ status: "done", result });
+  }
+  if (fs.existsSync(requestPath)) {
+    const request = JSON.parse(fs.readFileSync(requestPath, "utf-8"));
+    return res.json({ status: request.status || "pending" });
+  }
+  res.json({ status: "not_found" });
+});
+
+// List all queue items
+app.get("/api/queue", (_req, res) => {
+  const files = fs.readdirSync(QUEUE_DIR).filter(f => f.endsWith(".json") && !f.includes("-result"));
+  const items = files.map(f => {
+    const data = JSON.parse(fs.readFileSync(path.join(QUEUE_DIR, f), "utf-8"));
+    const hasResult = fs.existsSync(path.join(QUEUE_DIR, f.replace(".json", "-result.json")));
+    return { id: data.id, type: data.sectionType, page: data.targetPage, status: hasResult ? "done" : "pending", createdAt: data.createdAt };
+  });
+  res.json(items);
 });
 
 // Analyze an imported section and generate wireframe settings

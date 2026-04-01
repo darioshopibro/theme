@@ -286,42 +286,47 @@ const App: React.FC = () => {
     setCanvasSections(prev => [...prev, { ...section, id: `extracted-${Date.now()}` }]);
   };
 
-  // Add section to page frame — if imported, create wireframe copy; original stays on canvas
+  // Add section to page frame
   const handleAddToPage = async (section: ThemeSection, page: PageType) => {
     pushHistory();
 
     if (section.importedHtml) {
-      // Analyze and create wireframe version for the frame
+      // Queue for AI analysis via Claude Code hook
       try {
-        const res = await fetch('http://localhost:3007/api/analyze-section', {
+        // Read the extracted HTML for the queue request
+        const htmlRes = await fetch(`http://localhost:3007/extracted/${section.importedHtml}`);
+        const sectionHtml = await htmlRes.text();
+
+        await fetch('http://localhost:3007/api/queue-section', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ file: section.importedHtml }),
+          body: JSON.stringify({
+            sectionHtml: sectionHtml.slice(0, 50000),
+            sectionType: section.type,
+            themeSettings: settings,
+            targetPage: page,
+            sourceFile: section.importedHtml,
+          }),
         });
-        const analysis = await res.json();
 
+        // For now, also add a basic wireframe placeholder to frame
+        // AI agent will update this later via result file
         const wireframe: ThemeSection = {
-          id: `wireframe-${Date.now()}`,
-          type: analysis.detectedType || section.type || 'rich-text',
-          heading: analysis.settings?.heading || section.heading,
+          id: `queued-${Date.now()}`,
+          type: section.type || 'rich-text',
+          heading: section.heading?.replace('Imported: ', '') || null,
           visible: true,
           order: sections[page].length,
-          height: analysis.meta?.height || section.height || 400,
-          settings: {
-            ...DEFAULT_SECTION_SETTINGS,
-            ...(analysis.settings || {}),
-          },
-          // No importedHtml — this is a wireframe that uses our theme settings
+          height: section.height || 400,
+          settings: { ...DEFAULT_SECTION_SETTINGS },
         };
-
         setSections(prev => ({ ...prev, [page]: [...prev[page], wireframe] }));
-        // Original stays on canvas as reference!
+        // Original stays on canvas
       } catch (e) {
-        // Fallback: just add as-is
         setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, id: `copy-${Date.now()}`, order: sections[page].length }] }));
       }
     } else {
-      // Wireframe section — move it (remove from canvas, add to frame)
+      // Wireframe section — move it
       setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, order: prev[page].length }] }));
       setCanvasSections(prev => prev.filter(s => s.id !== section.id));
     }
