@@ -68,14 +68,40 @@ const App: React.FC = () => {
     setHistory(h => h.slice(0, -1));
   };
 
-  // Ctrl+Z
+  // Global selected element (for delete with Backspace/Delete)
+  const [selectedElement, setSelectedElement] = useState<{ type: 'canvas-section' | 'page-section'; id: string; page?: PageType } | null>(null);
+
+  // Keyboard shortcuts: Ctrl+Z, Escape, Backspace/Delete
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      // Ignore if typing in input
+      if ((e.target as HTMLElement).tagName === 'INPUT' || (e.target as HTMLElement).tagName === 'TEXTAREA' || (e.target as HTMLElement).tagName === 'SELECT') return;
+
       if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); }
+
+      if (e.key === 'Escape') {
+        setSelectedElement(null);
+        setShowImport(false);
+        setPreview(null);
+      }
+
+      if ((e.key === 'Backspace' || e.key === 'Delete') && selectedElement) {
+        e.preventDefault();
+        if (selectedElement.type === 'canvas-section') {
+          removeCanvasSection(selectedElement.id);
+        } else if (selectedElement.type === 'page-section' && selectedElement.page) {
+          pushHistory();
+          setSections(prev => ({
+            ...prev,
+            [selectedElement.page!]: prev[selectedElement.page!].filter(s => s.id !== selectedElement.id),
+          }));
+        }
+        setSelectedElement(null);
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [history]);
+  }, [history, selectedElement]);
 
   useEffect(() => {
     const link = document.getElementById('gf') as HTMLLinkElement || document.createElement('link');
@@ -328,13 +354,15 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <Canvas>
+        <Canvas onCanvasClick={() => setSelectedElement(null)}>
           <PageFrame
             pageType="homepage" label="Homepage"
             sections={sections.homepage} settings={settings}
             onSectionsChange={s => updateSections('homepage', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
             onExtractSection={handleExtractFromFrame}
+            onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
+            selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
 
             x={0} y={0}
           />
@@ -344,6 +372,8 @@ const App: React.FC = () => {
             onSectionsChange={s => updateSections('collection', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
             onExtractSection={handleExtractFromFrame}
+            onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
+            selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
 
             x={settings.page_width + 100} y={0}
           />
@@ -353,6 +383,8 @@ const App: React.FC = () => {
             onSectionsChange={s => updateSections('product', s)}
             onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
             onExtractSection={handleExtractFromFrame}
+            onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
+            selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
 
             x={(settings.page_width + 100) * 2} y={0}
           />

@@ -13,11 +13,13 @@ interface Props {
   onSectionsChange: (sections: ThemeSection[]) => void;
   onPreview: (page: PageType, mobile: boolean) => void;
   onExtractSection: (section: ThemeSection) => void;
+  onSelectSection?: (id: string, page: PageType) => void;
+  selectedSectionId?: string | null;
   x: number;
   y: number;
 }
 
-const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, onExtractSection, x, y }) => {
+const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, onExtractSection, onSelectSection, selectedSectionId, x, y }) => {
   const [showAddMenu, setShowAddMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showImport, setShowImport] = useState(false);
@@ -203,7 +205,7 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
           const realIdx = sections.indexOf(section);
           const isDragging = dragId === section.id;
           const isDropTarget = dropTarget === realIdx;
-          const isSelected = selectedSection === section.id;
+          const isSelected = selectedSection === section.id || selectedSectionId === section.id;
 
           return (
             <div
@@ -214,7 +216,7 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
               onDragOver={(e) => handleDragOver(e, realIdx)}
               onDrop={() => handleDrop(realIdx)}
               onDragEnd={handleDragEnd}
-              onClick={(e) => onSectionClick(section.id, e)}
+              onClick={(e) => { onSectionClick(section.id, e); if (onSelectSection) onSelectSection(section.id, pageType); }}
               style={{
                 position: 'relative',
                 opacity: isDragging ? 0.3 : 1,

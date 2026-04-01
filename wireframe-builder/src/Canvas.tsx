@@ -3,9 +3,10 @@ import { ZoomProvider } from './ZoomContext';
 
 interface Props {
   children: React.ReactNode;
+  onCanvasClick?: () => void;
 }
 
-const Canvas: React.FC<Props> = ({ children }) => {
+const Canvas: React.FC<Props> = ({ children, onCanvasClick }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [zoom, setZoom] = useState(0.35);
   const [panX, setPanX] = useState(200);
@@ -88,7 +89,7 @@ const Canvas: React.FC<Props> = ({ children }) => {
         backgroundSize: `${24 * zoom}px ${24 * zoom}px`,
         backgroundPosition: `${panX % (24 * zoom)}px ${panY % (24 * zoom)}px`,
       }}
-      onMouseDown={onMouseDown}
+      onMouseDown={(e) => { onMouseDown(e); if (e.target === e.currentTarget && onCanvasClick) onCanvasClick(); }}
       onMouseMove={onMouseMove}
       onMouseUp={onMouseUp}
       onMouseLeave={onMouseUp}
