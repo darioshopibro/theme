@@ -493,11 +493,15 @@ app.post("/api/import-page", async (req, res) => {
       // Get full body HTML (rendered DOM)
       const bodyHTML = document.body.innerHTML;
 
-      // Get sections
-      const sections = [...document.querySelectorAll('[id^="shopify-section"]')].map(el => {
-        const id = el.id;
+      // Get sections — Shopify or generic
+      let sectionEls = [...document.querySelectorAll('[id^="shopify-section"]')];
+      if (sectionEls.length === 0) {
+        sectionEls = [...document.querySelectorAll('body > section, body > header, body > footer, body > nav, body > main, body > div > section, body > div > header, body > div > footer, main > section, main > div')];
+      }
+      const sections = sectionEls.map((el, idx) => {
+        const id = el.id || el.className?.toString().split(' ')[0] || el.tagName.toLowerCase() + '-' + idx;
         const typeMatch = id.match(/__(.+?)(?:_[A-Za-z0-9]+)?$/);
-        const type = typeMatch ? typeMatch[1] : id.replace("shopify-section-", "");
+        const type = typeMatch ? typeMatch[1] : id.replace("shopify-section-", "").slice(0, 30);
         const heading = el.querySelector("h1,h2,h3");
         const rect = el.getBoundingClientRect();
         return {
@@ -505,7 +509,7 @@ app.post("/api/import-page", async (req, res) => {
           heading: heading?.textContent?.trim().slice(0, 50) || null,
           top: Math.round(rect.top + window.scrollY),
           height: Math.round(rect.height),
-          visible: rect.height > 0,
+          visible: rect.height > 0 && rect.height > 30,
         };
       }).filter(s => s.visible);
 
@@ -571,12 +575,16 @@ setTimeout(function() {
   banner.textContent = 'Click a section to extract';
   document.body.appendChild(banner);
 
-  // Add overlay for each shopify section
+  // Add overlay for each section — Shopify first, then generic fallback
   var sections = document.querySelectorAll('[id^="shopify-section"]');
+  if (sections.length === 0) {
+    // Non-Shopify: use semantic elements
+    sections = document.querySelectorAll('body > section, body > header, body > footer, body > nav, body > main, body > div > section, body > div > header, body > div > footer, main > section, main > div');
+  }
   for (var i = 0; i < sections.length; i++) {
     var sec = sections[i];
     var rect = sec.getBoundingClientRect();
-    if (rect.height < 10) continue;
+    if (rect.height < 30 || rect.width < 200) continue;
 
     sec.style.position = 'relative';
 
@@ -585,9 +593,9 @@ setTimeout(function() {
     overlay.style.top = '0';
     overlay.style.height = rect.height + 'px';
 
-    var id = sec.id;
+    var id = sec.id || sec.className.toString().split(' ')[0] || sec.tagName.toLowerCase() + '-' + i;
     var typeMatch = id.match(/__(.+?)(?:_[A-Za-z0-9]+)?$/);
-    var type = typeMatch ? typeMatch[1] : id.replace('shopify-section-', '');
+    var type = typeMatch ? typeMatch[1] : id.replace('shopify-section-', '').slice(0, 30);
 
     var label = document.createElement('div');
     label.className = 'pick-label';
