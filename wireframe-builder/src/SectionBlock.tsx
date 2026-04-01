@@ -65,18 +65,20 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
     <div
       onMouseDown={startResize}
       style={{
-        position: 'absolute', bottom: 0, left: 0, right: 0, height: 8,
+        position: 'absolute', bottom: -6, left: 0, right: 0, height: 14,
         cursor: 'ns-resize', zIndex: 20,
-        background: resizing ? '#6366f1' : 'transparent',
-        transition: 'background 0.15s',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
       }}
-      onMouseEnter={e => { if (!resizing) (e.target as HTMLElement).style.background = '#6366f133'; }}
-      onMouseLeave={e => { if (!resizing) (e.target as HTMLElement).style.background = 'transparent'; }}
     >
       <div style={{
-        width: 40, height: 3, background: resizing ? '#fff' : '#cbd5e1', borderRadius: 2,
-        margin: '0 auto', marginTop: 2,
-      }} />
+        width: 60, height: 4, borderRadius: 2,
+        background: resizing ? '#6366f1' : '#d1d5db',
+        transition: 'background 0.15s, width 0.15s',
+        boxShadow: resizing ? '0 0 8px rgba(99,102,241,0.4)' : 'none',
+      }}
+        onMouseEnter={e => { if (!resizing) { e.currentTarget.style.background = '#6366f1'; e.currentTarget.style.width = '80px'; } }}
+        onMouseLeave={e => { if (!resizing) { e.currentTarget.style.background = '#d1d5db'; e.currentTarget.style.width = '60px'; } }}
+      />
     </div>
   );
 
@@ -302,6 +304,7 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
       }}
     >
       {renderContent()}
+      <ResizeHandle />
 
       {/* Hover toolbar */}
       {hovered && (
