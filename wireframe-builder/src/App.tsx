@@ -119,6 +119,12 @@ const App: React.FC = () => {
     setCanvasPages(prev => prev.filter(p => p.id !== id));
   };
 
+  // Move section from canvas to a page frame
+  const handleAddToPage = (section: ThemeSection, page: PageType) => {
+    updateSections(page, [...sections[page], { ...section, order: sections[page].length }]);
+    setCanvasSections(prev => prev.filter(s => s.id !== section.id));
+  };
+
   const removeCanvasSection = (id: string) => {
     setCanvasSections(prev => prev.filter(s => s.id !== id));
   };
@@ -251,6 +257,7 @@ const App: React.FC = () => {
               initialY={-800}
               onRemove={() => removeCanvasSection(sec.id)}
               onUpdate={(updated) => updateCanvasSection(sec.id, updated)}
+              onAddToPage={handleAddToPage}
             />
           ))}
         </Canvas>
@@ -274,7 +281,8 @@ const ImportedSectionCard: React.FC<{
   initialY: number;
   onRemove: () => void;
   onUpdate: (s: ThemeSection) => void;
-}> = ({ section, initialX, initialY, onRemove, onUpdate }) => {
+  onAddToPage: (section: ThemeSection, page: PageType) => void;
+}> = ({ section, initialX, initialY, onRemove, onUpdate, onAddToPage }) => {
   const [editing, setEditing] = useState(false);
   const [iframeHeight, setIframeHeight] = useState(section.height || 600);
   const iframeRef = React.useRef<HTMLIFrameElement>(null);
@@ -353,6 +361,14 @@ const ImportedSectionCard: React.FC<{
           <span style={{ fontSize: 9, color: '#d97706', fontStyle: 'italic' }}>drag to move</span>
         </div>
         <div style={{ display: 'flex', gap: 3 }}>
+          {(['homepage', 'collection', 'product'] as PageType[]).map(p => (
+            <button key={p} onClick={() => onAddToPage(section, p)} style={{
+              padding: '3px 8px', borderRadius: 5, fontSize: 10, fontWeight: 500, cursor: 'pointer',
+              border: '1px solid #6366f1', background: '#eef2ff', color: '#6366f1',
+            }}>
+              → {p === 'homepage' ? 'HP' : p === 'collection' ? 'Col' : 'PDP'}
+            </button>
+          ))}
           <button
             onClick={() => setEditing(!editing)}
             style={{
