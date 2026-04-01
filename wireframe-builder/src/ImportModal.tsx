@@ -22,7 +22,7 @@ interface ImportedBlock {
 
 interface Props {
   onImport: (file: string, sectionId: string, blocks: ImportedBlock[]) => void;
-  onImportPage: (file: string, pageName: string) => void;
+  onImportPage: (file: string, pageName: string, recommended?: Record<string, any>) => void;
   onClose: () => void;
 }
 
@@ -42,6 +42,7 @@ const ImportModal: React.FC<Props> = ({ onImport, onImportPage, onClose }) => {
   const [result, setResult] = useState<{ file: string; sectionId: string; blocks: ImportedBlock[] } | null>(null);
   const [fullPageFile, setFullPageFile] = useState<string | null>(null);
   const [fullPageSections, setFullPageSections] = useState<SectionRect[]>([]);
+  const [recommendedSettings, setRecommendedSettings] = useState<Record<string, any> | null>(null);
 
   const baseUrl = demoUrl.replace(/\/$/, '');
 
@@ -65,6 +66,7 @@ const ImportModal: React.FC<Props> = ({ onImport, onImportPage, onClose }) => {
       if (data.error) { setError(data.error); setLoading(false); return; }
       setFullPageFile(data.file);
       setFullPageSections(data.sections.map((s: any) => ({ ...s, left: 0, width: 1440 })));
+      if (data.recommended) setRecommendedSettings(data.recommended);
       setStep('fullpage');
     } catch (e: any) {
       setError('Server error');
@@ -304,13 +306,40 @@ const ImportModal: React.FC<Props> = ({ onImport, onImportPage, onClose }) => {
               />
             </div>
 
+            {/* Recommended settings */}
+            {recommendedSettings && Object.keys(recommendedSettings).length > 0 && (
+              <div style={{ padding: '8px 16px', borderTop: '1px solid #f3f4f6', maxHeight: 120, overflowY: 'auto', flexShrink: 0, background: '#fafafa' }}>
+                <div style={{ fontSize: 10, fontWeight: 600, color: '#6366f1', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>
+                  Detected Theme Settings
+                </div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                  {Object.entries(recommendedSettings).filter(([_, v]) => v != null).map(([key, val]) => (
+                    <div key={key} style={{
+                      padding: '3px 8px', background: '#fff', border: '1px solid #e5e7eb',
+                      borderRadius: 4, fontSize: 10, display: 'flex', alignItems: 'center', gap: 4,
+                    }}>
+                      <span style={{ color: '#9ca3af' }}>{key.replace(/_/g, ' ')}:</span>
+                      {String(val).startsWith('#') ? (
+                        <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                          <div style={{ width: 10, height: 10, borderRadius: 2, background: String(val), border: '1px solid #e5e7eb' }} />
+                          <span style={{ fontFamily: 'monospace', color: '#374151' }}>{val}</span>
+                        </span>
+                      ) : (
+                        <span style={{ fontFamily: 'monospace', color: '#374151' }}>{val}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Bottom bar — add to canvas */}
             <div style={{ padding: '12px 16px', borderTop: '1px solid #f3f4f6', display: 'flex', gap: 8, flexShrink: 0 }}>
-              <button onClick={() => { onImportPage(fullPageFile, pageTab); onClose(); }} style={{
+              <button onClick={() => { onImportPage(fullPageFile, pageTab, recommendedSettings || undefined); onClose(); }} style={{
                 flex: 1, padding: '10px', background: '#22c55e', color: '#fff', border: 'none',
                 borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer',
               }}>
-                Add full page to canvas
+                Add to canvas {recommendedSettings ? '+ Apply settings' : ''}
               </button>
               <button onClick={() => setStep('url')} style={{
                 padding: '10px 20px', background: 'none', border: '1px solid #e5e7eb',

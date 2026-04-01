@@ -173,7 +173,19 @@ const App: React.FC = () => {
     return () => clearTimeout(t);
   }, [settings, sections, canvasSections, canvasPages, groups]);
 
-  const handleImportPage = (file: string, pageName: string) => {
+  const handleImportPage = (file: string, pageName: string, recommended?: Record<string, any>) => {
+    // Apply recommended settings if available
+    if (recommended) {
+      setSettings(prev => {
+        const updated = { ...prev };
+        for (const [key, val] of Object.entries(recommended)) {
+          if (val != null && key in updated) {
+            (updated as any)[key] = val;
+          }
+        }
+        return updated;
+      });
+    }
     setCanvasPages(prev => [...prev, {
       id: `page-${Date.now()}`,
       file,
