@@ -513,48 +513,50 @@ app.post("/api/import-page", async (req, res) => {
         };
       }).filter(s => s.visible);
 
-      // Also extract theme settings
-      const root = document.documentElement;
-      const cs = getComputedStyle(root);
-      const cssVars: Record<string, string> = {};
-      for (const prop of cs) {
-        if (prop.startsWith("--")) {
-          const val = cs.getPropertyValue(prop).trim();
-          if (val) cssVars[prop] = val;
-        }
-      }
-
-      function rgbToHex(rgb: string): string | null {
-        const match = rgb.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
-        if (!match) return null;
-        return "#" + [match[1], match[2], match[3]].map(n => parseInt(n).toString(16).padStart(2, "0")).join("");
-      }
-      function tripletToHex(t: string): string | null {
-        const p = t.split(",").map(s => parseInt(s.trim()));
-        if (p.length !== 3 || p.some(isNaN)) return null;
-        return "#" + p.map(n => n.toString(16).padStart(2, "0")).join("");
-      }
-
-      const bodyS = getComputedStyle(document.body);
-      const btnEl = document.querySelector('button, .btn, [class*="button"]');
-      const btnS = btnEl ? getComputedStyle(btnEl) : null;
-      const cardEl = document.querySelector('[class*="card"], [class*="product-card"]');
-      const cardS = cardEl ? getComputedStyle(cardEl) : null;
-
-      const recommended: Record<string, any> = {};
-      recommended.color_background = rgbToHex(bodyS.backgroundColor) || "#ffffff";
-      recommended.color_foreground = rgbToHex(bodyS.color) || "#121212";
-      if (cssVars["--color-primary"]) recommended.color_primary = tripletToHex(cssVars["--color-primary"]);
-      if (!recommended.color_primary && btnS) recommended.color_primary = rgbToHex(btnS.backgroundColor);
-      if (cssVars["--color-secondary"]) recommended.color_secondary = tripletToHex(cssVars["--color-secondary"]);
-      recommended.font_heading = cssVars["--font-heading-family"]?.split(",")[0].replace(/['"]/g, "").trim() || "Playfair Display";
-      recommended.font_body = cssVars["--font-body-family"]?.split(",")[0].replace(/['"]/g, "").trim() || "Inter";
-      if (cssVars["--page-width"]) recommended.page_width = parseInt(cssVars["--page-width"]);
-      if (btnS) { recommended.button_radius = parseInt(btnS.borderRadius) || 0; recommended.button_text_transform = btnS.textTransform || "none"; }
-      if (cardS) { recommended.card_radius = parseInt(cardS.borderRadius) || 0; }
-
-      return { allCSS, extCSS, extJS, inlineJS, bodyHTML, sections, recommended };
+      return { allCSS, extCSS, extJS, inlineJS, bodyHTML, sections };
     });
+
+    // Extract settings in a separate evaluate to avoid tsx __name issue
+    const recommended = await page.evaluate(`
+      (function() {
+        var root = document.documentElement;
+        var cs = getComputedStyle(root);
+        var cssVars = {};
+        for (var i = 0; i < cs.length; i++) {
+          var prop = cs[i];
+          if (prop.startsWith("--")) {
+            var val = cs.getPropertyValue(prop).trim();
+            if (val) cssVars[prop] = val;
+          }
+        }
+        var rgbToHex = function(rgb) {
+          var match = rgb.match(/rgb\\((\\d+),\\s*(\\d+),\\s*(\\d+)\\)/);
+          if (!match) return null;
+          return "#" + [match[1], match[2], match[3]].map(function(n) { return parseInt(n).toString(16).padStart(2, "0"); }).join("");
+        };
+        var tripletToHex = function(t) {
+          var p = t.split(",").map(function(s) { return parseInt(s.trim()); });
+          if (p.length !== 3 || p.some(isNaN)) return null;
+          return "#" + p.map(function(n) { return n.toString(16).padStart(2, "0"); }).join("");
+        };
+        var bodyS = getComputedStyle(document.body);
+        var btnEl = document.querySelector('button, .btn, [class*="button"]');
+        var btnS = btnEl ? getComputedStyle(btnEl) : null;
+        var cardS = null; try { var cardEl = document.querySelector('[class*="card"]'); cardS = cardEl ? getComputedStyle(cardEl) : null; } catch(e) {}
+        var r = {};
+        r.color_background = rgbToHex(bodyS.backgroundColor) || "#ffffff";
+        r.color_foreground = rgbToHex(bodyS.color) || "#121212";
+        if (cssVars["--color-primary"]) r.color_primary = tripletToHex(cssVars["--color-primary"]);
+        if (!r.color_primary && btnS) r.color_primary = rgbToHex(btnS.backgroundColor);
+        if (cssVars["--color-secondary"]) r.color_secondary = tripletToHex(cssVars["--color-secondary"]);
+        r.font_heading = (cssVars["--font-heading-family"] || "").split(",")[0].replace(/['"]/g, "").trim() || "Playfair Display";
+        r.font_body = (cssVars["--font-body-family"] || "").split(",")[0].replace(/['"]/g, "").trim() || "Inter";
+        if (cssVars["--page-width"]) r.page_width = parseInt(cssVars["--page-width"]);
+        if (btnS) { r.button_radius = parseInt(btnS.borderRadius) || 0; r.button_text_transform = btnS.textTransform || "none"; }
+        if (cardS) { r.card_radius = parseInt(cardS.borderRadius) || 0; }
+        return r;
+      })()
+    `);
 
     // Build self-contained HTML with all CSS inline + JS from original
     const html = `<!DOCTYPE html>
@@ -674,8 +676,8 @@ setTimeout(function() {
     const filepath = path.join(EXTRACTED_DIR, filename);
     fs.writeFileSync(filepath, html, "utf-8");
 
-    console.log(`Saved: ${filename} (${html.length} bytes, ${pageData.sections.length} sections, ${Object.keys(pageData.recommended || {}).length} settings)`);
-    res.json({ success: true, file: filename, url: `/extracted/${filename}`, sections: pageData.sections, recommended: pageData.recommended, size: html.length });
+    console.log(`Saved: ${filename} (${html.length} bytes, ${pageData.sections.length} sections, ${Object.keys(recommended || {}).length} settings)`);
+    res.json({ success: true, file: filename, url: `/extracted/${filename}`, sections: pageData.sections, recommended, size: html.length });
 
   } catch (err: any) {
     console.error("Import error:", err.message);
@@ -867,41 +869,37 @@ app.post("/api/extract-settings", async (req, res) => {
       const computed = getComputedStyle(root);
 
       // Extract ALL CSS custom properties
-      const cssVars: Record<string, string> = {};
-      for (const prop of computed) {
+      var cssVars = {};
+      for (var prop of computed) {
         if (prop.startsWith("--")) {
-          const val = computed.getPropertyValue(prop).trim();
+          var val = computed.getPropertyValue(prop).trim();
           if (val) cssVars[prop] = val;
         }
       }
 
-      // Helper: rgb string to hex
-      function rgbToHex(rgb: string): string | null {
-        const match = rgb.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+      var rgbToHex = function(rgb) {
+        var match = rgb.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
         if (!match) return null;
-        return "#" + [match[1], match[2], match[3]].map(n => parseInt(n).toString(16).padStart(2, "0")).join("");
+        return "#" + [match[1], match[2], match[3]].map(function(n) { return parseInt(n).toString(16).padStart(2, "0"); }).join("");
       }
 
-      // Helper: rgb triplet (e.g. "18, 18, 18") to hex
-      function tripletToHex(triplet: string): string | null {
-        const parts = triplet.split(",").map(s => parseInt(s.trim()));
+      var tripletToHex = function(triplet) {
+        var parts = triplet.split(",").map(function(s) { return parseInt(s.trim()); });
         if (parts.length !== 3 || parts.some(isNaN)) return null;
-        return "#" + parts.map(n => n.toString(16).padStart(2, "0")).join("");
+        return "#" + parts.map(function(n) { return n.toString(16).padStart(2, "0"); }).join("");
       }
 
-      // Extract computed styles from key elements
-      const bodyS = getComputedStyle(document.body);
-      const h1El = document.querySelector("h1");
-      const h1S = h1El ? getComputedStyle(h1El) : null;
-      const btnEl = document.querySelector('button, .btn, a.button, [class*="button"]');
-      const btnS = btnEl ? getComputedStyle(btnEl) : null;
-      const cardEl = document.querySelector('[class*="card"], [class*="product-card"]');
-      const cardS = cardEl ? getComputedStyle(cardEl) : null;
-      const inputEl = document.querySelector('input[type="text"], input[type="email"]');
-      const inputS = inputEl ? getComputedStyle(inputEl) : null;
+      var bodyS = getComputedStyle(document.body);
+      var h1El = document.querySelector("h1");
+      var h1S = h1El ? getComputedStyle(h1El) : null;
+      var btnEl = document.querySelector('button, .btn, a.button, [class*="button"]');
+      var btnS = btnEl ? getComputedStyle(btnEl) : null;
+      var cardEl = document.querySelector('[class*="card"], [class*="product-card"]');
+      var cardS = cardEl ? getComputedStyle(cardEl) : null;
+      var inputEl = document.querySelector('input[type="text"], input[type="email"]');
+      var inputS = inputEl ? getComputedStyle(inputEl) : null;
 
-      // Build recommended settings
-      const recommended: Record<string, any> = {};
+      var recommended = {};
 
       // Colors
       recommended.color_background = rgbToHex(bodyS.backgroundColor) || "#ffffff";
