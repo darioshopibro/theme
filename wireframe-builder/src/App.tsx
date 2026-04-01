@@ -70,14 +70,26 @@ const App: React.FC = () => {
 
   // Global selected element (for delete with Backspace/Delete)
   const [selectedElement, setSelectedElement] = useState<{ type: 'canvas-section' | 'page-section'; id: string; page?: PageType } | null>(null);
+  const selectedRef = React.useRef(selectedElement);
+  selectedRef.current = selectedElement;
 
-  // Keyboard shortcuts: Ctrl+Z, Escape, Backspace/Delete
+  // Keyboard shortcuts
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      // Ignore if typing in input
-      if ((e.target as HTMLElement).tagName === 'INPUT' || (e.target as HTMLElement).tagName === 'TEXTAREA' || (e.target as HTMLElement).tagName === 'SELECT') return;
+      const tag = (e.target as HTMLElement).tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
 
-      if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); }
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
+        e.preventDefault();
+        setHistory(prev => {
+          if (prev.length === 0) return prev;
+          const last = prev[prev.length - 1];
+          setSections(last.sections);
+          setCanvasSections(last.canvasSections);
+          setGroups(last.groups);
+          return prev.slice(0, -1);
+        });
+      }
 
       if (e.key === 'Escape') {
         setSelectedElement(null);
@@ -85,15 +97,16 @@ const App: React.FC = () => {
         setPreview(null);
       }
 
-      if ((e.key === 'Backspace' || e.key === 'Delete') && selectedElement) {
+      if (e.key === 'Backspace' || e.key === 'Delete') {
+        const sel = selectedRef.current;
+        if (!sel) return;
         e.preventDefault();
-        if (selectedElement.type === 'canvas-section') {
-          removeCanvasSection(selectedElement.id);
-        } else if (selectedElement.type === 'page-section' && selectedElement.page) {
-          pushHistory();
+        if (sel.type === 'canvas-section') {
+          setCanvasSections(prev => prev.filter(s => s.id !== sel.id));
+        } else if (sel.type === 'page-section' && sel.page) {
           setSections(prev => ({
             ...prev,
-            [selectedElement.page!]: prev[selectedElement.page!].filter(s => s.id !== selectedElement.id),
+            [sel.page!]: prev[sel.page!].filter(s => s.id !== sel.id),
           }));
         }
         setSelectedElement(null);
@@ -101,7 +114,7 @@ const App: React.FC = () => {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [history, selectedElement]);
+  }, []);
 
   useEffect(() => {
     const link = document.getElementById('gf') as HTMLLinkElement || document.createElement('link');
@@ -331,7 +344,11 @@ const App: React.FC = () => {
   }
 
   return (
-    <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+    <div
+      tabIndex={-1}
+      style={{ display: 'flex', height: '100vh', overflow: 'hidden', outline: 'none' }}
+      onMouseDown={(e) => { (e.currentTarget as HTMLElement).focus(); }}
+    >
       <SettingsSidebar settings={settings} onChange={setSettings} />
 
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
