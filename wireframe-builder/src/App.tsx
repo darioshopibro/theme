@@ -375,6 +375,7 @@ const App: React.FC = () => {
             <ImportedSectionCard
               key={sec.id}
               section={sec}
+              settings={settings}
               initialX={i * 1550}
               initialY={-800}
               onRemove={() => removeCanvasSection(sec.id)}
@@ -412,12 +413,13 @@ const App: React.FC = () => {
 // Imported section card on canvas — draggable + iframe with edit overlay
 const ImportedSectionCard: React.FC<{
   section: ThemeSection;
+  settings: ThemeSettings;
   initialX: number;
   initialY: number;
   onRemove: () => void;
   onUpdate: (s: ThemeSection) => void;
   onAddToPage: (section: ThemeSection, page: PageType) => void;
-}> = ({ section, initialX, initialY, onRemove, onUpdate, onAddToPage }) => {
+}> = ({ section, settings, initialX, initialY, onRemove, onUpdate, onAddToPage }) => {
   const [editing, setEditing] = useState(false);
   const [iframeHeight, setIframeHeight] = useState(section.height || 600);
   const iframeRef = React.useRef<HTMLIFrameElement>(null);
@@ -522,25 +524,38 @@ const ImportedSectionCard: React.FC<{
         </div>
       </div>
 
-      {/* Section — always iframe, edit mode via injection */}
+      {/* Section content */}
       <div style={{
-        width: 1440, background: '#fff', borderRadius: 6,
+        width: section.importedHtml ? 1440 : settings.page_width,
+        background: '#fff', borderRadius: 6,
         boxShadow: '0 2px 16px rgba(0,0,0,0.08), 0 0 0 2px ' + (editing ? '#6366f140' : '#f59e0b40'),
         overflow: 'hidden',
       }}>
-        <iframe
-          ref={iframeRef}
-          src={`http://localhost:3007/extracted/${section.importedHtml}`}
-          style={{
-            width: '100%',
-            height: iframeHeight,
-            border: 'none',
-            pointerEvents: editing ? 'auto' : 'none',
-            display: 'block',
-          }}
-          title={section.type}
-          onLoad={onIframeLoad}
-        />
+        {section.importedHtml ? (
+          <iframe
+            ref={iframeRef}
+            src={`http://localhost:3007/extracted/${section.importedHtml}`}
+            style={{
+              width: '100%',
+              height: iframeHeight,
+              border: 'none',
+              pointerEvents: editing ? 'auto' : 'none',
+              display: 'block',
+            }}
+            title={section.type}
+            onLoad={onIframeLoad}
+          />
+        ) : (
+          <div style={{ padding: 0 }}>
+            <SectionBlock
+              section={section}
+              settings={settings}
+              isMobile={false}
+              onRemove={onRemove}
+              onToggleVisibility={() => {}}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
