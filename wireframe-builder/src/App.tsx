@@ -478,6 +478,9 @@ const ImportedSectionCard: React.FC<{
   const [pos, setPos] = useState({ x: initialX, y: initialY });
   const [dragging, setDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [resizing, setResizing] = useState(false);
+  const resizeStartY = React.useRef(0);
+  const resizeStartH = React.useRef(0);
 
   const onMouseDown = (e: React.MouseEvent) => {
     if (editing) return; // don't drag in edit mode
@@ -497,6 +500,30 @@ const ImportedSectionCard: React.FC<{
     window.addEventListener('mouseup', onUp);
     return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
   }, [dragging, dragStart]);
+
+  // Resize effect
+  React.useEffect(() => {
+    if (!resizing) return;
+    const onMove = (e: MouseEvent) => {
+      const newH = Math.max(100, resizeStartH.current + (e.clientY - resizeStartY.current));
+      setIframeHeight(newH);
+    };
+    const onUp = () => {
+      setResizing(false);
+      onUpdate({ ...section, height: iframeHeight });
+    };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
+  }, [resizing]);
+
+  const startResize = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setResizing(true);
+    resizeStartY.current = e.clientY;
+    resizeStartH.current = iframeHeight;
+  };
 
   // Auto-detect iframe content height
   const onIframeLoad = () => {
@@ -608,6 +635,27 @@ const ImportedSectionCard: React.FC<{
             />
           </div>
         )}
+
+        {/* Resize handle */}
+        <div
+          draggable={false}
+          onMouseDown={startResize}
+          onDragStart={e => e.preventDefault()}
+          style={{
+            position: 'absolute', bottom: -6, left: 0, right: 0, height: 18,
+            cursor: 'ns-resize', zIndex: 30,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}
+        >
+          <div style={{
+            width: 60, height: 4, borderRadius: 2,
+            background: resizing ? '#6366f1' : '#d1d5db',
+            transition: 'background 0.15s',
+          }}
+            onMouseEnter={e => { if (!resizing) e.currentTarget.style.background = '#6366f1'; }}
+            onMouseLeave={e => { if (!resizing) e.currentTarget.style.background = '#d1d5db'; }}
+          />
+        </div>
       </div>
     </div>
   );

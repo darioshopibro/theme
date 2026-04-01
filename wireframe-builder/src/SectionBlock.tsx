@@ -310,8 +310,6 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
         transition: 'outline 0.1s',
         outline: isSelected ? '2px solid #6366f1' : hovered ? '2px solid #a5b4fc' : '2px solid transparent',
         outlineOffset: -2,
-        height: height,
-        overflow: 'hidden',
       }}
     >
       {renderContent()}
