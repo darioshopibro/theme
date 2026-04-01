@@ -32,11 +32,12 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
   const localHeightRef = React.useRef(localHeight);
   localHeightRef.current = localHeight;
 
-  // Resize drag handler
+  // Resize drag handler — divide delta by zoom for canvas-aware resize
   React.useEffect(() => {
     if (!resizing) return;
     const onMove = (e: MouseEvent) => {
-      const newH = Math.max(50, resizeStartH.current + (e.clientY - resizeStartY.current));
+      const delta = (e.clientY - resizeStartY.current) / zoom;
+      const newH = Math.max(50, resizeStartH.current + delta);
       setLocalHeight(newH);
       localHeightRef.current = newH;
     };
@@ -47,7 +48,7 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
     window.addEventListener('mousemove', onMove);
     window.addEventListener('mouseup', onUp);
     return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
-  }, [resizing, onResize]);
+  }, [resizing, onResize, zoom]);
 
   const startResize = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -67,10 +68,12 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
   // Resize handle component
   const ResizeHandle = () => (
     <div
-      onMouseDown={startResize}
+      draggable={false}
+      onMouseDown={(e) => { e.stopPropagation(); e.preventDefault(); startResize(e); }}
+      onDragStart={(e) => e.preventDefault()}
       style={{
-        position: 'absolute', bottom: -6, left: 0, right: 0, height: 14,
-        cursor: 'ns-resize', zIndex: 20,
+        position: 'absolute', bottom: -6, left: 0, right: 0, height: 18,
+        cursor: 'ns-resize', zIndex: 30,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
       }}
     >
@@ -305,6 +308,8 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
         transition: 'outline 0.1s',
         outline: isSelected ? '2px solid #6366f1' : hovered ? '2px solid #a5b4fc' : '2px solid transparent',
         outlineOffset: -2,
+        height: height,
+        overflow: 'hidden',
       }}
     >
       {renderContent()}
