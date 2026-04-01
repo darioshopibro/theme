@@ -324,7 +324,7 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
             <span style={{ fontSize: 10, color: '#6366f1', fontWeight: 500, padding: '0 4px' }}>
               {template?.label || section.type}
             </span>
-            {onExtractToCanvas && section.importedHtml && (
+            {onExtractToCanvas && (
               <button onClick={onExtractToCanvas} style={{ ...iconBtnStyle, color: '#f59e0b', fontSize: 10, fontWeight: 600 }} title="Move to canvas">
                 ←
               </button>
