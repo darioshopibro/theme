@@ -235,6 +235,7 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
                 onRemove={() => removeSection(section.id)}
                 onToggleVisibility={() => toggleVisibility(section.id)}
                 onExtractToCanvas={() => { onExtractSection(section); removeSection(section.id); }}
+                onResize={(h) => onSectionsChange(sections.map(s => s.id === section.id ? { ...s, height: h } : s))}
                 isSelected={isSelected}
               />
             </div>

@@ -10,19 +10,72 @@ interface Props {
   onRemove: () => void;
   onToggleVisibility: () => void;
   onExtractToCanvas?: () => void;
+  onResize?: (height: number) => void;
   isSelected?: boolean;
 }
 
 
-const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, onToggleVisibility, onExtractToCanvas, isSelected }) => {
+const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, onToggleVisibility, onExtractToCanvas, onResize, isSelected }) => {
   const [hovered, setHovered] = useState(false);
   const [showOriginal, setShowOriginal] = useState(true);
+  const [resizing, setResizing] = useState(false);
+  const [localHeight, setLocalHeight] = useState(section.height);
+  const resizeStartY = React.useRef(0);
+  const resizeStartH = React.useRef(0);
+
+  // Sync with prop
+  React.useEffect(() => { setLocalHeight(section.height); }, [section.height]);
+
+  // Resize drag handler
+  React.useEffect(() => {
+    if (!resizing) return;
+    const onMove = (e: MouseEvent) => {
+      const newH = Math.max(50, resizeStartH.current + (e.clientY - resizeStartY.current));
+      setLocalHeight(newH);
+    };
+    const onUp = () => {
+      setResizing(false);
+      if (onResize) onResize(localHeight);
+    };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
+  }, [resizing, localHeight, onResize]);
+
+  const startResize = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setResizing(true);
+    resizeStartY.current = e.clientY;
+    resizeStartH.current = localHeight;
+  };
+
   const css = settingsToCSS(settings);
   const template = SECTION_TEMPLATES[section.type];
-  const height = section.height || template?.defaultHeight || 200;
+  const height = localHeight || template?.defaultHeight || 200;
   const fg = css['--color-foreground'];
   const primary = css['--color-primary'];
   const bg = css['--color-background'];
+
+  // Resize handle component
+  const ResizeHandle = () => (
+    <div
+      onMouseDown={startResize}
+      style={{
+        position: 'absolute', bottom: 0, left: 0, right: 0, height: 8,
+        cursor: 'ns-resize', zIndex: 20,
+        background: resizing ? '#6366f1' : 'transparent',
+        transition: 'background 0.15s',
+      }}
+      onMouseEnter={e => { if (!resizing) (e.target as HTMLElement).style.background = '#6366f133'; }}
+      onMouseLeave={e => { if (!resizing) (e.target as HTMLElement).style.background = 'transparent'; }}
+    >
+      <div style={{
+        width: 40, height: 3, background: resizing ? '#fff' : '#cbd5e1', borderRadius: 2,
+        margin: '0 auto', marginTop: 2,
+      }} />
+    </div>
+  );
 
   // If this is an imported section, render iframe
   if (section.importedHtml) {
@@ -41,10 +94,12 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
           src={`http://localhost:3007/extracted/${section.importedHtml}`}
           style={{
             width: '100%', height: height, border: 'none',
-            pointerEvents: 'none',
+            pointerEvents: 'none', overflow: 'hidden',
           }}
           title={section.type}
+          scrolling="no"
         />
+        <ResizeHandle />
         {hovered && (
           <div style={{
             position: 'absolute', top: 4, right: 4, display: 'flex', gap: 2, alignItems: 'center',
