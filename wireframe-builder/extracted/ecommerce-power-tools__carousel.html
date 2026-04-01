@@ -4002,92 +4002,70 @@ html[data-header-status="visible"] .product-container-main .product-info .produc
   html.has-bottom-nav-bar[data-scroll-direction="up"] .product-container-main .product-info .product-info-mini-checkout.position--bottom { inset-block-end: 5rem; }
 }
 
-
-/* IMAGE PLACEHOLDERS — solid color blocks, not invisible */
-img {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E") !important;
-  background: #c7d2dc !important;
-  min-height: 100px !important;
-  display: block !important;
-  object-fit: cover !important;
-}
-video, picture { background: #c7d2dc !important; }
-[style*="background-image"] { background-image: none !important; background: #c7d2dc !important; }
-
-/* Disable all links and interactions */
-a { pointer-events: none !important; cursor: default !important; }
-button:not(.block-toolbar button) { pointer-events: none !important; }
-
-/* EDIT MODE — target all meaningful elements */
-.edit-mode .editable-block {
-  outline: 2px dashed rgba(99,102,241,0.35) !important;
-  cursor: pointer !important;
-}
-.edit-mode .editable-block:hover {
-  outline: 2px solid #6366f1 !important;
-  background-color: rgba(99,102,241,0.04) !important;
-}
-.edit-mode .block-selected {
-  outline: 3px solid #6366f1 !important;
-  background-color: rgba(99,102,241,0.06) !important;
-}
-.edit-mode .block-hidden {
-  opacity: 0.1 !important;
-  outline-style: dotted !important;
-}
-.block-toolbar {
-  position: fixed !important;
-  display: flex !important; gap: 4px !important; z-index: 99999 !important;
-  background: #fff !important; padding: 4px !important; border-radius: 6px !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
-}
-.block-toolbar button {
-  padding: 5px 12px !important; border-radius: 4px !important; font-size: 11px !important;
-  font-weight: 600 !important; cursor: pointer !important; border: none !important;
-  font-family: -apple-system, sans-serif !important;
-}
-.block-toolbar .hide-btn { background: #f3f4f6 !important; color: #374151 !important; }
-.block-toolbar .hide-btn:hover { background: #e5e7eb !important; }
-.block-toolbar .delete-btn { background: #ef4444 !important; color: #fff !important; }
-.block-toolbar .delete-btn:hover { background: #dc2626 !important; }
+/* Override any remaining background images */
+[style*="background-image"] { background-image: none !important; background-color: #e2e8f0 !important; }
 </style>
 </head>
-<body style="margin:0;padding:0;">
-<section id="shopify-section-template--24048560210221__featured_collection_r4q7b7" class="shopify-section"><style data-shopify="">.section-template--24048560210221__featured_collection_r4q7b7-padding {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-  .section-template--24048560210221__featured_collection_r4q7b7-margin {
+<body style="margin:0;padding:0;overflow:hidden;">
+<section id="shopify-section-template--24048560210221__carousel_t7iURU" class="shopify-section"><link href="//ecommerce-power-tools.myshopify.com/cdn/shop/t/2/assets/component-image-banner.css?v=121070719607374616351761019940" rel="stylesheet" type="text/css" media="all">
+<link href="//ecommerce-power-tools.myshopify.com/cdn/shop/t/2/assets/section-carousel.css?v=180512861293935222131754293408" rel="stylesheet" type="text/css" media="all">
+<style data-shopify="">.section-template--24048560210221__carousel_t7iURU-margin {
     margin-top: 0px;
     margin-bottom: 66px;
   }
 
   @media screen and (min-width: 750px) {
-    .section-template--24048560210221__featured_collection_r4q7b7-padding {
-      padding-top: 0px;
-      padding-bottom: 0px;
-    }
-    .section-template--24048560210221__featured_collection_r4q7b7-margin {
-      margin-top: 0px;
-      margin-bottom: 88px;
-    }
-  }</style><div class="featured-collection section-template--24048560210221__featured_collection_r4q7b7-margin isolate color-scheme-1 gradient">
-  <div class="section__wrapper page-width section-template--24048560210221__featured_collection_r4q7b7-padding">
-    <div class="shopify-block section-header-block content-group group--center text-align--center width--medium">
-  <h2 class="shopify-block heading-block heading-size--medium uppercase has-highlight-text" data-highlight-type="color" style="--color-highlight-text: #ff0000;">
-  Shop Our <em>Bestsellers</em>
+      .section-template--24048560210221__carousel_t7iURU-margin {
+        margin-top: 0px;
+        margin-bottom: 88px;
+      }
+  }</style>
+<div id="Carousel-template--24048560210221__carousel_t7iURU" class="carousel isolate section-template--24048560210221__carousel_t7iURU-margin">
+  <div class="section__wrapper carousel__wrapper">
+    <slider-component id="Carousel-template--24048560210221__carousel_t7iURU" class="slider slider--is-playing slider--installed" data-slide-desktop="" data-slide-mobile="" data-draggable="" data-looping="" data-autoplay="" data-interval="10000.0" aria-live="polite" aria-atomic="true" aria-label="Carousel" style="--change-ratio: 0;">
+      <div class="slider-container is-horizontal">
+        <ul id="Slider-template--24048560210221__carousel_t7iURU" class="slider-wrapper slider-change--zoom" style="transform: translate3d(0px, 0px, 0px);"><li id="Slide-template--24048560210221__carousel_t7iURU-ANDZSMTJNRjZFOWg4R__carousel_image_slide_gDcPLG" class="slider-slide active" data-page="1">
+              
+
+<div class="shopify-block carousel-slide-block image-banner__wrapper color-scheme-3 gradient banner-box--transparent">
+  <div class="banner-media media media--adapt" style="opacity: 60%; --ratio-percent: 40rem; --ratio-percent-mobile: 35rem;">
+    
+
+
+  
+<picture>
+        
+        <div data-placeholder="Worker in a factory setting using a machine tool" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+      </picture>
+
+    
+    
+
+
+  
+<picture>
+        
+        <div data-placeholder="image" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+      </picture>
+  </div><div class="banner-content">
+      <div class="banner-content-wrapper page-width position-container position--middle-center position-mobile--middle-center">
+        <div class="banner-box content-group width--medium gradient text-align--center text-align-mobile--center"><div id="shopify-block-Ad0ZkSFREbmdoZHo3Q__subheading_pqTLHb" class="shopify-block subheading-block caption">KRANK
+
+</div>
+<h2 class="shopify-block heading-block heading-size--s-large uppercase has-highlight-text" data-highlight-type="hollow" style="--color-highlight-text: #ffd600;">
+  <strong>Made for the </strong><em class="loaded"><strong>Relentless</strong></em>
 </h2>
 
 
-<div class="shopify-block description-block">
+<div class="shopify-block description-block light">
   
   
 
-<expandable-container id="Expandable-Container-ATXovckFNMTl2ZVZFe__description_jCEAqH" data-limit-height="" style="--limit-height: 5rem;">
+<expandable-container id="Expandable-Container-AZjNRNEF5ZE1SVHNJa__description_iFjYUa" data-limit-height="" style="--limit-height: 5rem;">
   <div class="content-main rte">
-    <p>Top tools. Proven performance.</p>
+    <p>The jobsite is tough. KRANK tools are tougher.</p>
   </div><div class="expand-button-wrapper">
-      <button type="button" class="expand-button button--clear link link-text show-underline" aria-controls="Expandable-Container-ATXovckFNMTl2ZVZFe__description_jCEAqH" aria-expanded="false">
+      <button type="button" class="expand-button button--clear link link-text show-underline" aria-controls="Expandable-Container-AZjNRNEF5ZE1SVHNJa__description_iFjYUa" aria-expanded="false">
         <span class="read-more-text">
           Read More
         </span>
@@ -4099,48 +4077,96 @@ button:not(.block-toolbar button) { pointer-events: none !important; }
 
 </div>
 
+<div class="shopify-block spacer-block show-line line-width--half" style="padding-top: 8px; padding-bottom: 8px;"></div>
+
+<div id="shopify-block-ARWFVZXhmYUhvcjZVT__buttons_A7grUk" class="shopify-block buttons-block"><div class="button-list auto-inline-flex gap-2">
+  <a class="shopify-block button-block button button--primary button--medium" href="/collections/all">Shop All
+</a>
+
+<a class="shopify-block button-block button button--secondary button--medium" href="/pages/contact">Explore More
+
+
+
+<svg class="icon icon-right caret-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M19.1351 20.9398C18.9293 21.1386 18.6538 21.2485 18.3677 21.246C18.0817 21.2435 17.8081 21.1288 17.6058 20.9265C17.4035 20.7243 17.2888 20.4507 17.2863 20.1646C17.2838 19.8786 17.3938 19.603 17.5925 19.3973L22.2758 14.714H3.09092C2.80159 14.714 2.52411 14.599 2.31952 14.3944C2.11494 14.1898 2 13.9124 2 13.623C2 13.3337 2.11494 13.0562 2.31952 12.8516C2.52411 12.647 2.80159 12.5321 3.09092 12.5321H22.2758L17.5925 7.84879C17.3938 7.64304 17.2838 7.36748 17.2863 7.08144C17.2888 6.7954 17.4035 6.52179 17.6058 6.31952C17.8081 6.11726 18.0817 6.00253 18.3677 6.00004C18.6538 5.99756 18.9293 6.10751 19.1351 6.30623L25.6806 12.8518C25.8851 13.0563 26 13.3338 26 13.623C26 13.9123 25.8851 14.1897 25.6806 14.3943L19.1351 20.9398Z" fill="currentColor" data-ltr=""></path>
+          <path d="M8.86492 6.30623C9.07067 6.10751 9.34624 5.99755 9.63228 6.00004C9.91831 6.00252 10.1919 6.11726 10.3942 6.31952C10.5965 6.52179 10.7112 6.7954 10.7137 7.08144C10.7162 7.36747 10.6062 7.64304 10.4075 7.84879L5.72417 12.5321L24.9091 12.5321C25.1984 12.5321 25.4759 12.647 25.6805 12.8516C25.8851 13.0562 26 13.3337 26 13.623C26 13.9124 25.8851 14.1898 25.6805 14.3944C25.4759 14.599 25.1984 14.714 24.9091 14.714L5.72417 14.714L10.4075 19.3973C10.6062 19.603 10.7162 19.8786 10.7137 20.1646C10.7112 20.4507 10.5965 20.7243 10.3942 20.9265C10.1919 21.1288 9.91831 21.2435 9.63228 21.246C9.34624 21.2485 9.07067 21.1385 8.86492 20.9398L2.3194 14.3943C2.11489 14.1897 2 13.9123 2 13.623C2 13.3338 2.11489 13.0563 2.3194 12.8518L8.86492 6.30623Z" fill="currentColor" data-rtl=""></path>
+</svg>
+
+</a>
+
 
 </div>
 
+</div>
+</div>
+      </div>
+    </div></div>
 
 
-    <div id="shopify-block-AbEIvSnZWUGtxUFF3b__product-list" class="shopify-block product-list-block">
-<slider-component class="product-list-component slider" data-slide-desktop="" data-slide-smooth="" data-draggable="" data-wheelable="">
-  <div class="slider-container">
-    <ul id="Slider-template--24048560210221__featured_collection_r4q7b7" class="product-list slider-wrapper slider--center auto-grid" style="--item-min-size: 15rem; --item-perfect-size: 18rem; --item-min-size-mobile: 10rem;  --item-perfect-size-mobile: 14rem;"><li id="Slide-template--24048560210221__featured_collection_r4q7b7-0" class="collection-info-item slider-slide grid-item focus-inset" tabindex="0">
-          
-    <div class="collection-info color-scheme-3 gradient">
-      <div class="collection-image media" style="opacity: 60%;">
-        
+            </li><li id="Slide-template--24048560210221__carousel_t7iURU-AajgrcUQ4RlVzSDR5a__carousel_image_slide_H9KFqV" class="slider-slide" data-page="2">
+              
+
+<div class="shopify-block carousel-slide-block image-banner__wrapper color-scheme-3 gradient banner-box--transparent">
+  <div class="banner-media media media--adapt" style="opacity: 60%; --ratio-percent: 40rem; --ratio-percent-mobile: 35rem;">
+    
+
+
+  
+<div data-placeholder="Close-up of a grinding wheel with sparks in a workshop setting" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+
+    
+    
 
 
   
 <div data-placeholder="image" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-      </div>
-      <div class="collection-content">
-        <div class="content-group text-align--center">
-          <span class="shopify-block icon-block icon--medium hover-trigger">
+  </div><div class="banner-content">
+      <div class="banner-content-wrapper page-width position-container position--middle-center position-mobile--middle-center">
+        <div class="banner-box content-group width--medium gradient text-align--center text-align-mobile--center"><div class="shopify-block countdown-block scroll-trigger animate--scale-in scroll-trigger--offscreen">
+  
 
-<svg class="animate--bounce icon icon-hot" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M16.0168 24.5742C15.9357 24.5742 15.8545 24.5717 15.771 24.5656C14.2874 24.4636 12.9317 23.5085 12.3196 22.1307C11.8107 20.9876 11.8009 19.5446 12.2925 18.5392C12.6649 17.7796 13.2709 17.3813 14.0379 16.8774C14.9757 16.2616 16.1102 15.5155 16.8526 13.9987C17.0456 14.6858 17.0579 15.3668 17.0677 15.9383C17.08 16.6721 17.1058 18.1987 18.4886 18.5551L18.6742 18.6031L18.9028 18.608C19.537 18.608 19.9955 18.2872 20.3593 17.8767C20.6113 19.1009 20.6346 20.6348 19.8836 21.9979C19.8713 22.0213 18.4197 24.5742 16.0168 24.5742Z" fill="currentColor" opacity="0.2"></path>
-          <path d="M22.069 8.1616C21.4901 7.25081 21.0071 6.89559 20.4343 6.93492C19.7263 7.00007 19.5161 7.62693 19.3772 8.04237C19.2568 8.40251 19.0798 8.92735 18.6631 9.58493C18.6275 8.35457 18.496 6.69156 17.6577 4.98798C17.2742 4.20748 15.8865 1.68284 14.1915 2.03314C13.1271 2.24578 12.8088 3.32742 12.5285 4.28123C12.4523 4.5418 12.3736 4.81467 12.2753 5.08016C11.6005 6.93861 10.3296 7.72157 8.85832 8.62867C7.49644 9.4694 5.95265 10.4195 4.94968 12.3431C3.68982 14.7596 3.68244 17.9 4.9337 20.539C6.39391 23.6216 9.59334 25.7566 13.0829 25.9803C13.2844 25.9939 13.4823 26 13.6778 26C19.2973 26 22.4058 20.8401 22.5386 20.6127C25.3631 15.8056 23.4641 10.3667 22.0654 8.16283L22.069 8.1616ZM16.624 21.5444C16.6117 21.5665 15.3936 23.6536 13.5598 23.6536C13.5008 23.6536 13.4405 23.6536 13.3766 23.6474C12.2298 23.57 11.1814 22.8276 10.7045 21.757C10.3075 20.8635 10.2903 19.7081 10.6627 18.946C10.9134 18.4347 11.324 18.1508 12.0922 17.6456C12.5752 17.3272 13.148 16.9511 13.7072 16.4337C13.7712 17.3862 14.0846 19.0062 15.7955 19.4463L15.9811 19.4954C16.0524 19.5151 16.125 19.5249 16.1987 19.5262L16.447 19.5311C16.6854 19.5311 16.9165 19.5016 17.1402 19.4401C17.1328 20.1223 17.0026 20.861 16.6264 21.5444H16.624ZM20.953 19.6761C20.8842 19.7917 19.8873 21.4264 18.0805 22.6875C18.1764 22.5437 18.2305 22.449 18.2329 22.4441C19.1658 20.7516 19.0589 18.9251 18.8045 17.6911C18.7344 17.3494 18.4775 17.0765 18.1395 16.9868C17.804 16.9007 17.4438 17.0064 17.2115 17.2658C16.8809 17.6382 16.6387 17.6886 16.4642 17.6886L16.2602 17.6628C15.7476 17.5313 15.5497 17.0605 15.5313 15.9236C15.5214 15.3139 15.5079 14.5543 15.283 13.7505C15.1798 13.3817 14.8602 13.115 14.4791 13.0806C14.1104 13.0486 13.7367 13.2502 13.5684 13.5931C12.9366 14.8825 11.9496 15.5315 11.0757 16.1079C10.262 16.6414 9.49255 17.1453 9.00705 18.1348C8.39248 19.391 8.39863 21.1068 9.02057 22.5056C9.04761 22.5658 9.08448 22.6211 9.11275 22.6801C8.04341 21.9267 7.16089 20.9286 6.60163 19.7499C5.60849 17.6542 5.60235 15.0816 6.58565 13.1961C7.35386 11.7236 8.55595 10.9825 9.82688 10.1995C11.3682 9.24938 13.1148 8.17266 14.0096 5.71071C14.119 5.40834 14.2112 5.0986 14.2985 4.80238C14.382 4.51968 14.4988 4.11898 14.6021 3.90634C14.9266 4.11898 15.5251 4.83311 16.0033 5.80412C16.7801 7.38356 16.8096 8.96791 16.8305 10.1258C16.8501 11.1939 16.8686 12.203 17.8433 12.439C18.7897 12.6713 19.4031 11.7802 20.0496 10.835C20.3667 10.3703 20.5916 9.94876 20.7576 9.58616C21.7556 11.4729 23.2109 15.8326 20.953 19.6786V19.6761Z" fill="currentColor"></path></svg>
+<link href="//ecommerce-power-tools.myshopify.com/cdn/shop/t/2/assets/component-countdown.css?v=106707043281523446731751961796" rel="stylesheet" type="text/css" media="all">
+<countdown-timer class="countdown" data-endtime="2025-09-31 15:23" data-shop-timezone="-0400" role="timer" aria-live="off" aria-label="Activity countdown, ends at 2025-09-31 15:23">
+  <div class="countdown-inner aria-hidden" style="--color-timer-background: #121212; --color-timer-foreground: #ffffff;">
+    <div class="countdown-item">
+      <div class="countdown-value">
+        <b class="day">00</b>
+        
+      </div><div class="countdown-unit">Days</div></div>
+    <span>:</span>
+    <div class="countdown-item">
+      <div class="countdown-value">
+        <b class="hour">00</b>
+        
+      </div><div class="countdown-unit">Hours</div></div>
+    <span>:</span>
+    <div class="countdown-item">
+      <div class="countdown-value">
+        <b class="minute">00</b>
+        
+      </div><div class="countdown-unit">Minutes</div></div>
+  </div>
+  <div class="countdown-message">Timer complete message</div>
+</countdown-timer>
 
-</span>
+<script src="//ecommerce-power-tools.myshopify.com/cdn/shop/t/2/assets/countdown.js?v=180540322605437547641744332868" defer="defer"></script>
+
+</div>
 
 
-<h3 class="shopify-block heading-block heading-size--small has-highlight-text" data-highlight-type="hand-drawn-underline" style="--color-highlight-text: #ff0000;">
-  Tough Tools. Hot Deals.
-</h3>
+<h2 class="shopify-block heading-block heading-size--s-large uppercase has-highlight-text" data-highlight-type="hand-drawn-circle" style="--color-highlight-text: #ff0000;">
+  <strong>Gear Up. </strong><em><strong>Prices Down.</strong></em>
+</h2>
 
 
-<div class="shopify-block description-block">
+<div class="shopify-block description-block light">
   
   
 
-<expandable-container id="Expandable-Container-AeE9PN214SXVGL2hPV__description_QkBPUt" data-limit-height="" style="--limit-height: 5rem;">
+<expandable-container id="Expandable-Container-ASFBJVlY2NFpCaStsV__description_VaQ9hQ" data-limit-height="" style="--limit-height: 5rem;">
   <div class="content-main rte">
-    <p>Top-selling KRANK gear</p>
+    <p>KRANK tools, now at a rare price. Don’t miss out.</p>
   </div><div class="expand-button-wrapper">
-      <button type="button" class="expand-button button--clear link link-text show-underline" aria-controls="Expandable-Container-AeE9PN214SXVGL2hPV__description_QkBPUt" aria-expanded="false">
+      <button type="button" class="expand-button button--clear link link-text show-underline" aria-controls="Expandable-Container-ASFBJVlY2NFpCaStsV__description_VaQ9hQ" aria-expanded="false">
         <span class="read-more-text">
           Read More
         </span>
@@ -4152,607 +4178,114 @@ button:not(.block-toolbar button) { pointer-events: none !important; }
 
 </div>
 
-<div class="shopify-block spacer-block" style="padding-top: 4px; padding-bottom: 4px;"></div>
+<div class="shopify-block spacer-block" style="padding-top: 8px; padding-bottom: 8px;"></div>
 
-<a class="shopify-block button-block button button--primary button--small" href="/collections/best-sellers">Shop All
-</a>
+<div id="shopify-block-AVGY5RDVxWVh0RzNnb__discount_code_Wkyq7m" class="shopify-block discount-code-block"><div class="discount-code">
+  <span class="code">NEWUSER</span>
+  <custom-copy-text class="copy-button" role="button" data-text="NEWUSER" data-message="Code Has Copied" tabindex="0">
+    
 
 
-        </div>
+<svg class="icon icon-copy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M8 13C8 10.1716 8 8.75736 8.87868 7.87868C9.75736 7 11.1716 7 14 7H17C19.8284 7 21.2426 7 22.1213 7.87868C23 8.75736 23 10.1716 23 13V18C23 20.8284 23 22.2426 22.1213 23.1213C21.2426 24 19.8284 24 17 24H14C11.1716 24 9.75736 24 8.87868 23.1213C8 22.2426 8 20.8284 8 18V13Z" stroke="currentColor" stroke-width="1.5"></path>
+          <path opacity="0.5" d="M8 21C6.34315 21 5 19.6569 5 18V12C5 8.22876 5 6.34315 6.17157 5.17157C7.34315 4 9.22876 4 13 4H17C18.6569 4 20 5.34315 20 7" stroke="currentColor" stroke-width="1.5"></path>
+</svg>
+
+    Copy
+  </custom-copy-text>
+</div>
+
+</div>
+</div>
       </div>
-    </div>
-  
-        </li><li id="Slide-template--24048560210221__featured_collection_r4q7b7-1" class="slider-slide grid-item focus-inset" tabindex="0" data-product-id="10008100929837">
-          
-          
+    </div></div>
 
 
-<product-card class="product-card card card--wrapped color-scheme-1 gradient">
-  <div class="card-media has-secondary-image image-hover-effect--fade">
-    <a class="media media--square media-fit--cover link" href="/products/cordless-drill-with-battery">
+            </li><li id="Slide-template--24048560210221__carousel_t7iURU-AVDl3aXRqL0ZoM0U1a__carousel_image_slide_9W8tkc" class="slider-slide" data-page="3">
+              
 
-
-  
-<div data-placeholder="###SDS" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
+<div class="shopify-block carousel-slide-block image-banner__wrapper color-scheme-3 gradient banner-box--transparent">
+  <div class="banner-media media media--adapt" style="opacity: 60%; --ratio-percent: 40rem; --ratio-percent-mobile: 35rem;">
+    
 
 
   
-<div data-placeholder="###SDS" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+<div data-placeholder="Three workers in red uniforms and white hard hats giving thumbs up in an industrial setting." style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
 
-
-
-
-  
-<div data-placeholder="###SDS" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
+    
+    
 
 
   
-<div data-placeholder="###SDS Plus" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-<div class="media-content">
-          <div class="content-top">
-            <modal-opener class="quick-view-button button button--icon button--mini button--pill button--float has-loading small-hide" data-product-handle="cordless-drill-with-battery" data-product-url="/products/cordless-drill-with-battery" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Quick View" tabindex="0">
-              <span class="button-text loading-hidden">
-                
+<div data-placeholder="image" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
+  </div><div class="banner-content">
+      <div class="banner-content-wrapper page-width position-container position--middle-center position-mobile--middle-center">
+        <div class="banner-box content-group width--medium gradient text-align--center text-align-mobile--center"><div id="shopify-block-AaFUyd1E5NjFlSWRGY__subheading_ff3AxW" class="shopify-block subheading-block caption">Power in your hands
 
-
-<svg class="icon icon-search" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M19.4513 19.4147L24.5 24.5M22.1667 12.8333C22.1667 17.988 17.988 22.1667 12.8333 22.1667C7.67867 22.1667 3.5 17.988 3.5 12.8333C3.5 7.67867 7.67867 3.5 12.8333 3.5C17.988 3.5 22.1667 7.67867 22.1667 12.8333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-
-              </span>
-              <span class="loading-overlay"></span>
-            </modal-opener>
-          </div>
-          <div class="content-bottom"><modal-opener class="quick-view-button button button--pill button--shadow has-loading" data-product-handle="cordless-drill-with-battery" data-product-url="/products/cordless-drill-with-battery" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" tabindex="0" aria-label="Choose Options">
-                <span class="button-text loading-hidden">
-                  
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-                  <span class="small-hide">Choose Options</span>
-                </span>
-                <span class="loading-overlay"></span>
-              </modal-opener></div>
-        </div></a></div>
-  <div class="card-content text-align--center"><div class="card-vendor caption">KRANK</div><div class="card-badges"><span class="badge new-badge">New!</span><span class="badge custom-badge">Torque</span><span class="badge custom-badge">Woodwork</span></div>
-<div class="card-heading"><a class="link link-underline" href="/products/cordless-drill-with-battery" aria-label="Cordless Drill with Battery">
-            Cordless Drill with Battery
-</a></div>
-
-    <div class="card-price">
-      
-<div class="price" data-value="12800"><div class="price-container"><span class="visually-hidden">Regular Price</span>
-        <b class="price-item price-item--regular">
-          From $128.00
-        </b>
 </div>
-  </div>
-    </div>
-<div class="card-swatches">
-        
+<h2 class="shopify-block heading-block heading-size--large uppercase has-highlight-text" data-highlight-type="underline" style="--color-highlight-text: #ff0000;">
+  <strong>Tools for Every </strong><em><strong>Builder</strong></em><strong>.</strong>
+</h2>
 
 
-<ul class="color-swatches swatch-type--image">
+<div class="shopify-block spacer-block" style="padding-top: 0px; padding-bottom: 0px;"></div>
 
-      <li class="color-swatch" data-index="0">
-        <a class="button--clear color color-sds" href="/products/cordless-drill-with-battery?variant=50812864004397" aria-label="Color is SDS" data-toggle="tooltip" data-title="SDS"><div data-placeholder="###SDS" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li>
+<div id="shopify-block-AOE1wbGtEYUd3Y0toN__social_list_KtKFha" class="shopify-block social-list-block">
 
-      <li class="color-swatch" data-index="1">
-        <a class="button--clear color color-sds-plus" href="/products/cordless-drill-with-battery?variant=50812864037165" aria-label="Color is SDS plus" data-toggle="tooltip" data-title="SDS plus"><div data-placeholder="###SDS Plus" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li></ul>
-
-      </div></div><div class="card-horizontal-buttons"><modal-opener class="quick-view-button button button--small button--pill button--shadow has-loading" data-product-handle="cordless-drill-with-battery" data-product-url="/products/cordless-drill-with-battery" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Choose Options" tabindex="0">
-          <a class="button-text fallback-link link loading-hidden" href="/products/cordless-drill-with-battery" tabindex="-1" aria-hidden="true">
-            
+<ul class="social-icons social-list list-unstyled social-style--border social-size--small" role="list"><li class="social-item hover-trigger">
+      <a href="https://facebook.com/shopify" class="link focus-inset" target="_blank">
 
 
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+<svg class="icon icon-meta animate--shake" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.0235 6.50341C19.8529 6.3766 21.267 7.44519 22.2076 8.67737C23.156 9.91976 23.8094 11.5434 24.1673 13.1394C24.5251 14.7347 24.6208 16.4504 24.3239 17.9123C24.0388 19.3161 23.2785 20.9223 21.5568 21.437C19.9375 21.9211 18.5179 21.2167 17.5052 20.3648C16.4894 19.5103 15.6292 18.3122 14.953 17.1885C14.6252 16.6438 14.3272 16.0938 14.0637 15.573C13.8001 16.0938 13.5021 16.6438 13.1743 17.1885C12.4981 18.3122 11.6379 19.5103 10.6221 20.3648C9.60941 21.2167 8.18982 21.9211 6.57048 21.437C4.84884 20.9223 4.08848 19.3161 3.80341 17.9123C3.50655 16.4504 3.60217 14.7347 3.95995 13.1394C4.31789 11.5434 4.97134 9.91976 5.91972 8.67737C6.86029 7.44519 8.27437 6.3766 10.1038 6.50341C11.82 6.62237 13.0675 7.78648 13.8447 8.77187L14.0637 9.0609L14.2827 8.77187C15.0598 7.78648 16.3073 6.62237 18.0235 6.50341ZM9.89637 9.49623C9.47584 9.46708 8.92691 9.68209 8.30436 10.4977C7.68961 11.303 7.17981 12.4913 6.88724 13.7959C6.59453 15.1011 6.5524 16.3747 6.74341 17.3153C6.90819 18.1268 7.17222 18.4174 7.33536 18.5187L7.40277 18.5532L7.42973 18.5627C7.6624 18.6322 8.04382 18.6134 8.69089 18.0691C9.33482 17.5274 9.99318 16.6564 10.6039 15.6416C10.8763 15.189 11.1286 14.7252 11.3556 14.2791L11.6156 13.7541L11.8494 13.2571L12.0548 12.7994L12.23 12.3919L12.373 12.0459C12.2165 11.7331 11.9922 11.3283 11.7103 10.9272C11.0661 10.0105 10.4207 9.53258 9.89637 9.49623ZM18.2309 9.49623C17.7066 9.53258 17.0612 10.0105 16.417 10.9272C16.1351 11.3283 15.9108 11.7331 15.7543 12.0459L15.981 12.5887L16.1716 13.0227C16.2058 13.099 16.2413 13.1773 16.278 13.2571L16.5117 13.7541L16.7717 14.2791C16.9987 14.7252 17.251 15.189 17.5234 15.6416C18.1341 16.6564 18.7925 17.5274 19.4364 18.0691C20.0373 18.5745 20.4091 18.6268 20.6454 18.5761L20.6976 18.5627C20.8279 18.5237 21.1811 18.3141 21.3839 17.3153C21.5749 16.3747 21.5328 15.1011 21.2401 13.7959C20.9475 12.4913 20.4377 11.303 19.8229 10.4977C19.2004 9.68209 18.6515 9.46708 18.2309 9.49623Z" fill="currentColor"></path>
 </svg>
-
-            <span class="small-hide horizontal-hide">Choose Options</span>
-          </a>
-          <span class="loading-overlay"></span>
-        </modal-opener></div></product-card>
-
-        </li><li id="Slide-template--24048560210221__featured_collection_r4q7b7-2" class="slider-slide grid-item focus-inset" tabindex="0" data-product-id="10008106467629">
-          
-          
+<span class="visually-hidden">Facebook</span>
+      </a>
+    </li><li class="social-item hover-trigger">
+      <a href="https://instagram.com/shopify" class="link focus-inset" target="_blank">
 
 
-<product-card class="product-card card card--wrapped color-scheme-1 gradient">
-  <div class="card-media has-secondary-image image-hover-effect--fade">
-    <a class="media media--square media-fit--cover link" href="/products/dewalt-20v-max-cordless-impact-wrench">
-
-
-  
-<div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-  
-<div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="###Red Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="###Blue Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-<div class="media-content">
-          <div class="content-top">
-            <modal-opener class="quick-view-button button button--icon button--mini button--pill button--float has-loading small-hide" data-product-handle="dewalt-20v-max-cordless-impact-wrench" data-product-url="/products/dewalt-20v-max-cordless-impact-wrench" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Quick View" tabindex="0">
-              <span class="button-text loading-hidden">
-                
-
-
-<svg class="icon icon-search" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M19.4513 19.4147L24.5 24.5M22.1667 12.8333C22.1667 17.988 17.988 22.1667 12.8333 22.1667C7.67867 22.1667 3.5 17.988 3.5 12.8333C3.5 7.67867 7.67867 3.5 12.8333 3.5C17.988 3.5 22.1667 7.67867 22.1667 12.8333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<svg class="icon icon-instagram animate--shake" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 5C20.7614 5 23 7.23858 23 10V18C23 20.7614 20.7614 23 18 23H10C7.23858 23 5 20.7614 5 18V10C5 7.23858 7.23858 5 10 5H18ZM18 7H10C8.34315 7 7 8.34315 7 10V18C7 19.6569 8.34315 21 10 21H18C19.6569 21 21 19.6569 21 18V10C21 8.34315 19.6569 7 18 7ZM14 10C16.2091 10 18 11.7909 18 14C18 16.2091 16.2091 18 14 18C11.7909 18 10 16.2091 10 14C10 11.7909 11.7909 10 14 10ZM14 12C12.8954 12 12 12.8954 12 14C12 15.1046 12.8954 16 14 16C15.1046 16 16 15.1046 16 14C16 12.8954 15.1046 12 14 12ZM18.5 8.5C19.0523 8.5 19.5 8.94772 19.5 9.5C19.5 10.0523 19.0523 10.5 18.5 10.5C17.9477 10.5 17.5 10.0523 17.5 9.5C17.5 8.94772 17.9477 8.5 18.5 8.5Z" fill="currentColor"></path>
 </svg>
-
-              </span>
-              <span class="loading-overlay"></span>
-            </modal-opener>
-          </div>
-          <div class="content-bottom"><modal-opener class="quick-view-button button button--pill button--shadow has-loading" data-product-handle="dewalt-20v-max-cordless-impact-wrench" data-product-url="/products/dewalt-20v-max-cordless-impact-wrench" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" tabindex="0" aria-label="Choose Options">
-                <span class="button-text loading-hidden">
-                  
+<span class="visually-hidden">Instagram</span>
+      </a>
+    </li><li class="social-item hover-trigger">
+      <a href="https://www.youtube.com/shopify" class="link focus-inset" target="_blank">
 
 
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+<svg class="icon icon-youtube animate--shake" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M5.62663 4.00001H7.42542L8.58409 7.56541H8.69614L9.80115 4.00001H11.6154L9.53681 9.21872V12.9208H7.75137V9.38475L5.62663 4.00001ZM11.8043 7.84177C11.8043 7.31833 12.0194 6.90232 12.4498 6.59175C12.8797 6.28122 13.4576 6.12596 14.1837 6.12596C14.8448 6.12596 15.3863 6.29003 15.8082 6.61715C16.2311 6.94427 16.4419 7.36518 16.4419 7.88083V11.372C16.4419 11.9501 16.2345 12.4042 15.8209 12.7334C15.4068 13.0624 14.8365 13.2275 14.1111 13.2275C13.4122 13.2275 12.8531 13.0575 12.4334 12.7177C12.0143 12.3779 11.8043 11.9209 11.8043 11.3456V7.84177ZM13.4486 11.4726C13.4486 11.6591 13.5049 11.8017 13.619 11.9042C13.7328 12.0058 13.8951 12.0556 14.1063 12.0556C14.3228 12.0556 14.495 12.0048 14.6222 11.9013C14.7496 11.7968 14.8136 11.6542 14.8136 11.4726V7.79097C14.8136 7.64349 14.7482 7.52435 14.6183 7.43355C14.4884 7.34271 14.3177 7.2968 14.1063 7.2968C13.9117 7.2968 13.753 7.34271 13.6314 7.43355C13.5094 7.52435 13.4486 7.64349 13.4486 7.79097V11.4726ZM22.2857 6.23437V12.9941H20.6855V12.248C20.3902 12.5234 20.0835 12.7323 19.7642 12.8769C19.4453 13.0195 19.1353 13.0918 18.8354 13.0918C18.4654 13.0918 18.186 12.9912 17.9985 12.79C17.811 12.5888 17.7173 12.2871 17.7173 11.8847V6.23437H19.3179V11.416C19.3179 11.5771 19.3516 11.6923 19.4185 11.7646C19.4859 11.8359 19.5943 11.872 19.7442 11.872C19.8623 11.872 20.0113 11.8242 20.1904 11.7294C20.3705 11.6347 20.5356 11.5136 20.6855 11.3662V6.23437H22.2857ZM20.7862 18.1981C20.7076 18.1112 20.5825 18.0663 20.4107 18.0663C20.231 18.0663 20.1021 18.1112 20.024 18.1981C19.9459 18.286 19.9068 18.4315 19.9068 18.6347V19.0556H20.9038V18.6347C20.9038 18.4315 20.8648 18.286 20.7862 18.1981ZM16.0572 21.3671C16.1431 21.4022 16.234 21.4188 16.3296 21.4188C16.4683 21.4188 16.5689 21.3856 16.6343 21.3172C16.6997 21.2498 16.732 21.1375 16.732 20.9833V18.5497C16.732 18.3856 16.6919 18.2616 16.6119 18.1766C16.5313 18.0917 16.4137 18.0497 16.2613 18.0497C16.1807 18.0497 16.1012 18.0653 16.0225 18.0966C15.9439 18.1288 15.8663 18.1786 15.7896 18.245V21.1961C15.8814 21.2762 15.9707 21.3329 16.0572 21.3671ZM23.4796 16.2148C23.4796 15.0429 22.2759 14.0927 20.7925 14.0927C18.6763 14.0214 16.5109 13.9901 14.3016 13.994C12.0931 13.9901 9.92761 14.0213 7.8107 14.0927C6.32808 14.0927 5.12448 15.0429 5.12448 16.2148C5.03536 17.1415 4.99677 18.0692 5.00021 18.997C4.99681 19.9247 5.03536 20.8524 5.12448 21.7801C5.12448 22.951 6.32808 23.9012 7.8107 23.9012C9.92761 23.9715 12.0931 24.0028 14.3016 23.9998C16.5109 24.0028 18.6763 23.9715 20.7925 23.9012C22.2759 23.9012 23.4796 22.951 23.4796 21.7801C23.5684 20.8524 23.6069 19.9247 23.603 18.997C23.6069 18.0692 23.5684 17.1415 23.4796 16.2148ZM9.02769 22.12V22.1903H7.75673V22.12V16.5692H6.44182V16.4999V15.6152V15.5459H10.3429V15.6152V16.4999V16.5692H9.02769V22.12ZM13.5489 17.3397V22.12V22.1903H12.4205V22.12V21.6542C12.212 21.8524 11.9959 22.0018 11.7711 22.1053C11.5458 22.2078 11.3275 22.2596 11.1156 22.2596C10.8549 22.2596 10.6583 22.1873 10.526 22.0438C10.3934 21.8993 10.3272 21.6825 10.3272 21.3934V21.3231V17.3397V17.2704H11.4561V17.3397V20.9881C11.4561 21.1024 11.4796 21.1864 11.5267 21.2372C11.5743 21.2889 11.6509 21.3143 11.7567 21.3143C11.8399 21.3143 11.9446 21.2801 12.0716 21.2127C12.1981 21.1444 12.3143 21.0575 12.4205 20.952V17.3397V17.2704H13.5489V17.3397ZM17.8936 18.495V21.1151V21.1854C17.8936 21.5302 17.8052 21.7938 17.6285 21.9774C17.4517 22.159 17.1958 22.2508 16.8619 22.2508C16.6412 22.2508 16.445 22.2157 16.272 22.1453C16.0987 22.0741 15.9381 21.9647 15.7896 21.8172V22.1199V22.1903H14.6505V22.1199V15.6152V15.5458H15.7896V15.6152V17.662C15.942 17.5136 16.1031 17.4013 16.274 17.3251C16.4454 17.248 16.6188 17.2089 16.7935 17.2089C17.15 17.2089 17.4234 17.3124 17.6114 17.5195C17.7994 17.7265 17.8936 18.0282 17.8936 18.4247V18.495ZM22.0654 18.6435V19.8085V19.8788H19.9068V20.7235C19.9068 20.9784 19.9439 21.1552 20.0181 21.2538C20.0928 21.3525 20.2198 21.4022 20.3994 21.4022C20.5865 21.4022 20.7178 21.3602 20.7925 21.2763C20.8667 21.1932 20.9038 21.0087 20.9038 20.7235V20.4569V20.3866H22.0655V20.4569V20.7509V20.8211C22.0655 21.3182 21.9244 21.6923 21.6412 21.9442C21.3584 22.1962 20.9361 22.3211 20.3741 22.3211C19.8687 22.3211 19.4713 22.1874 19.1807 21.9208C18.8907 21.6542 18.7452 21.287 18.7452 20.8211V20.7509V18.6435V18.5741C18.7452 18.1532 18.9048 17.8105 19.2232 17.5448C19.5421 17.2802 19.9547 17.1474 20.4596 17.1474C20.9761 17.1474 21.3726 17.2704 21.65 17.5155C21.9264 17.7607 22.0655 18.1142 22.0655 18.5741V18.6435H22.0654Z" fill="currentColor"></path>
 </svg>
+<span class="visually-hidden">YouTube</span>
+      </a>
+    </li><li class="social-item hover-trigger">
+      <a href="https://tiktok.com/@shopify" class="link focus-inset" target="_blank">
 
-                  <span class="small-hide">Choose Options</span>
-                </span>
-                <span class="loading-overlay"></span>
-              </modal-opener></div>
-        </div></a><div class="card-sale-badge badge-style--corner-ribbon">
 
-<svg class="icon icon-corner-ribbon icon-sale-badge" xmlns="http://www.w3.org/2000/svg" width="118" height="117" viewBox="0 0 118 117" fill="none" aria-hidden="true" focusable="false">
-  <path d="M5.85638 0.0245243C18.7207 0.0245243 37.5942 0 37.5942 0C41.2242 0 44.6947 1.43467 47.2701 4.00973L113.002 68.3983C115.565 70.9611 117.012 74.4436 117.012 78.0732C117.012 78.0732 117.012 104.069 117.012 113.854C117.012 115.044 116.044 116.012 114.854 116.012H112.953C112.953 116.012 113.174 116.012 113.198 116C115.418 115.546 114.412 113.499 113.517 112.567L95.6249 94.6148H95.6126C71.2697 70.2867 46.9267 45.9463 22.5837 21.6059L4.99794 3.23721C4.6423 2.86934 4.17629 2.66089 3.69802 2.63636C2.87636 2.57505 2.12829 3.13911 1.78492 3.89937L0.987793 5.60381V4.8926C1.00006 2.20719 3.17069 0.0245243 5.85638 0.0245243Z" fill="currentColor"></path>
-  <path d="M48.2388 4.96617C44.7805 1.263 41.2119 0 37.5941 0C37.5941 0 18.7207 0.0122622 5.85633 0.0245243C3.17063 0.0245243 1 2.20719 1 4.88034V5.59154L1.79712 3.8871C2.12824 3.12685 2.87631 2.6241 3.71022 2.6241C4.71583 2.6241 6.56761 4.86808 6.92325 5.23594L48.2388 4.95391V4.96617Z" fill="url(#paint0_linear_2976_2)"></path>
-  <path d="M1.79712 3.88713C2.12824 3.12688 2.87631 2.56282 3.71022 2.62413C4.1885 2.66091 4.64225 2.85711 5.01015 3.22497L7.49963 5.78776C7.45875 5.74689 7.41379 5.70193 7.36473 5.65288H1V5.59157L1.79712 3.88713Z" fill="black" fill-opacity="0.7"></path>
-  <path d="M113.198 112.248C115.516 114.345 114.474 115.865 113.198 115.988C113.174 115.988 111.322 116 111.322 116V110.359C112.843 111.88 113.198 112.248 113.198 112.248Z" fill="black" fill-opacity="0.7"></path>
-  <defs>
-    <linearGradient id="paint0_linear_2976_2" x1="24.6194" y1="0.0613108" x2="24.6194" y2="5.65285" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white" stop-opacity="0.8"></stop>
-      <stop offset="0.92" stop-color="white" stop-opacity="0.1"></stop>
-    </linearGradient>
-  </defs>
+<svg class="icon icon-tiktok animate--shake" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M22.9983 8.99963V10.9994C22.9983 11.2646 22.8929 11.519 22.7054 11.7065C22.5179 11.894 22.2636 11.9993 21.9984 11.9993C20.5935 11.9969 19.214 11.6244 17.9988 10.9194V17.4988C17.9991 18.6533 17.6919 19.787 17.1088 20.7834C16.5257 21.7798 15.6877 22.6029 14.681 23.168C13.6743 23.7332 12.5352 24.02 11.3809 23.9989C10.2266 23.9779 9.09879 23.6498 8.11336 23.0483C7.12793 22.4468 6.32049 21.5938 5.77408 20.5768C5.22766 19.5598 4.96199 18.4156 5.00438 17.2619C5.04678 16.1082 5.39571 14.9867 6.01529 14.0125C6.63488 13.0384 7.50275 12.2469 8.52967 11.7194C8.68333 11.6375 8.8557 11.5972 9.02972 11.6024C9.20375 11.6076 9.37339 11.6582 9.52188 11.7491C9.67036 11.84 9.79253 11.9681 9.87631 12.1207C9.96009 12.2734 10.0026 12.4452 9.99953 12.6193V15.139C9.98884 15.3739 9.88866 15.5957 9.71955 15.759C9.36045 16.1222 9.12176 16.5871 9.03585 17.0906C8.94994 17.5941 9.02096 18.1119 9.23929 18.5736C9.45762 19.0354 9.81269 19.4188 10.2563 19.672C10.7 19.9251 11.2108 20.0356 11.7194 19.9886C12.3581 19.9073 12.9442 19.5928 13.365 19.1055C13.7858 18.6182 14.0117 17.9926 13.9991 17.3488V5.00001C13.9991 4.73482 14.1045 4.48049 14.292 4.29297C14.4795 4.10545 14.7339 4.00011 14.9991 4.00011H17.1089C17.3471 3.99664 17.5787 4.07834 17.762 4.2305C17.9453 4.38265 18.0683 4.59526 18.1088 4.83003C18.2981 5.72287 18.7872 6.5241 19.4947 7.10067C20.2022 7.67725 21.0857 7.99449 21.9984 7.99973C22.2636 7.99973 22.5179 8.10507 22.7054 8.29259C22.8929 8.48011 22.9983 8.73444 22.9983 8.99963Z" fill="currentColor"></path>
 </svg>
+<span class="visually-hidden">TikTok</span>
+      </a>
+    </li><li class="social-item hover-trigger">
+      <a href="https://twitter.com/shopify" class="link focus-inset" target="_blank">
 
-<span class="sale-label">
-          
 
-Sale!
-</span>
-      </div></div>
-  <div class="card-content text-align--center"><div class="card-vendor caption">KRANK</div><div class="card-badges"><span class="badge custom-badge">Durable</span><span class="badge custom-badge">Household</span></div>
-<div class="card-heading"><a class="link link-underline" href="/products/dewalt-20v-max-cordless-impact-wrench" aria-label="20V MAX Impact Wrench">
-            20V MAX Impact Wrench
-</a></div>
+<svg class="icon icon-twitter animate--shake" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.818 5H19.7512L14.6975 10.718L10.3283 5H4L11.5613 14.7871L4.39485 22.8947H7.46351L12.9945 16.6389L17.8285 22.8947H24L16.1179 12.58L22.818 5ZM20.3742 21.0777H18.6748L7.58132 6.72157H9.40482L20.3742 21.0777Z" fill="currentColor"></path>
+</svg>
+<span class="visually-hidden">Twitter</span>
+      </a>
+    </li></ul>
 
-    <div class="card-price">
-      
-<div class="price price--on-sale" data-value="17900"><div class="price-container"><span class="visually-hidden">Sale Price</span>
-        <b class="price-item price-item--sale">
-          From $179.00
-        </b>
-        
 
-          <span class="visually-hidden">Regular Price</span>
-          <s class="price-item price-item--regular">$185.00
-</s>
+
 </div>
-  </div>
-    </div>
-<div class="card-swatches">
-        
-
-
-<ul class="color-swatches swatch-type--image">
-
-      <li class="color-swatch" data-index="0">
-        <a class="button--clear color color-yellow-black" href="/products/dewalt-20v-max-cordless-impact-wrench?variant=50810317046061" aria-label="Color is Yellow Black" data-toggle="tooltip" data-title="Yellow Black"><div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li>
-
-      <li class="color-swatch" data-index="1">
-        <a class="button--clear color color-red-black" href="/products/dewalt-20v-max-cordless-impact-wrench?variant=50810317111597" aria-label="Color is Red Black" data-toggle="tooltip" data-title="Red Black"><div data-placeholder="###Red Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li>
-
-      <li class="color-swatch" data-index="2">
-        <a class="button--clear color color-blue-black" href="/products/dewalt-20v-max-cordless-impact-wrench?variant=50810317177133" aria-label="Color is Blue Black" data-toggle="tooltip" data-title="Blue Black"><div data-placeholder="###Blue Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li></ul>
-
-      </div></div><div class="card-horizontal-buttons"><modal-opener class="quick-view-button button button--small button--pill button--shadow has-loading" data-product-handle="dewalt-20v-max-cordless-impact-wrench" data-product-url="/products/dewalt-20v-max-cordless-impact-wrench" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Choose Options" tabindex="0">
-          <a class="button-text fallback-link link loading-hidden" href="/products/dewalt-20v-max-cordless-impact-wrench" tabindex="-1" aria-hidden="true">
-            
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-            <span class="small-hide horizontal-hide">Choose Options</span>
-          </a>
-          <span class="loading-overlay"></span>
-        </modal-opener></div></product-card>
-
-        </li><li id="Slide-template--24048560210221__featured_collection_r4q7b7-3" class="slider-slide grid-item focus-inset" tabindex="0" data-product-id="10008107188525">
-          
-          
-
-
-<product-card class="product-card card card--wrapped color-scheme-1 gradient">
-  <div class="card-media has-secondary-image image-hover-effect--fade">
-    <a class="media media--square media-fit--cover link" href="/products/dewalt-20v-max-sds-rotary-hammer-drill">
-
-
-  
-<div data-placeholder="###12V" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-  
-<div data-placeholder="###12V" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="###12V" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="###20V" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-<div class="media-content">
-          <div class="content-top">
-            <modal-opener class="quick-view-button button button--icon button--mini button--pill button--float has-loading small-hide" data-product-handle="dewalt-20v-max-sds-rotary-hammer-drill" data-product-url="/products/dewalt-20v-max-sds-rotary-hammer-drill" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Quick View" tabindex="0">
-              <span class="button-text loading-hidden">
-                
-
-
-<svg class="icon icon-search" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M19.4513 19.4147L24.5 24.5M22.1667 12.8333C22.1667 17.988 17.988 22.1667 12.8333 22.1667C7.67867 22.1667 3.5 17.988 3.5 12.8333C3.5 7.67867 7.67867 3.5 12.8333 3.5C17.988 3.5 22.1667 7.67867 22.1667 12.8333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-
-              </span>
-              <span class="loading-overlay"></span>
-            </modal-opener>
-          </div>
-          <div class="content-bottom"><modal-opener class="quick-view-button button button--pill button--shadow has-loading" data-product-handle="dewalt-20v-max-sds-rotary-hammer-drill" data-product-url="/products/dewalt-20v-max-sds-rotary-hammer-drill" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" tabindex="0" aria-label="Choose Options">
-                <span class="button-text loading-hidden">
-                  
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-                  <span class="small-hide">Choose Options</span>
-                </span>
-                <span class="loading-overlay"></span>
-              </modal-opener></div>
-        </div></a></div>
-  <div class="card-content text-align--center"><div class="card-vendor caption">KRANK</div><div class="card-badges"><span class="badge custom-badge">Powerful</span><span class="badge custom-badge">Woodwork</span></div>
-<div class="card-heading"><a class="link link-underline" href="/products/dewalt-20v-max-sds-rotary-hammer-drill" aria-label="MAX SDS Rotary Drill">
-            MAX SDS Rotary Drill
-</a></div>
-
-    <div class="card-price">
-      
-<div class="price" data-value="29900"><div class="price-container"><span class="visually-hidden">Regular Price</span>
-        <b class="price-item price-item--regular">
-          From $299.00
-        </b>
 </div>
-  </div>
-    </div>
-<div class="card-low-stock light">Only 2 left</div><div class="card-swatches">
-        
+      </div>
+    </div></div>
 
 
-<ul class="color-swatches swatch-type--image">
-
-      <li class="color-swatch" data-index="0">
-        <a class="button--clear color color-12v" href="/products/dewalt-20v-max-sds-rotary-hammer-drill?variant=50806586016045" aria-label="Color is 12V" data-toggle="tooltip" data-title="12V"><div data-placeholder="###12V" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li>
-
-      <li class="color-swatch" data-index="1">
-        <a class="button--clear color color-20v" href="/products/dewalt-20v-max-sds-rotary-hammer-drill?variant=50806597419309" aria-label="Color is 20V" data-toggle="tooltip" data-title="20V"><div data-placeholder="###20V" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li></ul>
-
-      </div></div><div class="card-horizontal-buttons"><modal-opener class="quick-view-button button button--small button--pill button--shadow has-loading" data-product-handle="dewalt-20v-max-sds-rotary-hammer-drill" data-product-url="/products/dewalt-20v-max-sds-rotary-hammer-drill" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Choose Options" tabindex="0">
-          <a class="button-text fallback-link link loading-hidden" href="/products/dewalt-20v-max-sds-rotary-hammer-drill" tabindex="-1" aria-hidden="true">
-            
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-            <span class="small-hide horizontal-hide">Choose Options</span>
-          </a>
-          <span class="loading-overlay"></span>
-        </modal-opener></div></product-card>
-
-        </li><li id="Slide-template--24048560210221__featured_collection_r4q7b7-4" class="slider-slide grid-item focus-inset" tabindex="0" data-product-id="10008103289133">
-          
+            </li></ul>
           
 
-
-<product-card class="product-card card card--wrapped color-scheme-1 gradient">
-  <div class="card-media has-secondary-image image-hover-effect--fade">
-    <a class="media media--square media-fit--cover link" href="/products/dewalt-20v-max-xr-jig-saw">
-
-
-  
-<div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-  
-<div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="###Blue Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-<div class="media-content">
-          <div class="content-top">
-            <modal-opener class="quick-view-button button button--icon button--mini button--pill button--float has-loading small-hide" data-product-handle="dewalt-20v-max-xr-jig-saw" data-product-url="/products/dewalt-20v-max-xr-jig-saw" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Quick View" tabindex="0">
-              <span class="button-text loading-hidden">
-                
-
-
-<svg class="icon icon-search" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M19.4513 19.4147L24.5 24.5M22.1667 12.8333C22.1667 17.988 17.988 22.1667 12.8333 22.1667C7.67867 22.1667 3.5 17.988 3.5 12.8333C3.5 7.67867 7.67867 3.5 12.8333 3.5C17.988 3.5 22.1667 7.67867 22.1667 12.8333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-
-              </span>
-              <span class="loading-overlay"></span>
-            </modal-opener>
-          </div>
-          <div class="content-bottom"><modal-opener class="quick-view-button button button--pill button--shadow has-loading" data-product-handle="dewalt-20v-max-xr-jig-saw" data-product-url="/products/dewalt-20v-max-xr-jig-saw" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" tabindex="0" aria-label="Choose Options">
-                <span class="button-text loading-hidden">
-                  
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-                  <span class="small-hide">Choose Options</span>
-                </span>
-                <span class="loading-overlay"></span>
-              </modal-opener></div>
-        </div></a><div class="card-sale-badge badge-style--corner-ribbon">
-
-<svg class="icon icon-corner-ribbon icon-sale-badge" xmlns="http://www.w3.org/2000/svg" width="118" height="117" viewBox="0 0 118 117" fill="none" aria-hidden="true" focusable="false">
-  <path d="M5.85638 0.0245243C18.7207 0.0245243 37.5942 0 37.5942 0C41.2242 0 44.6947 1.43467 47.2701 4.00973L113.002 68.3983C115.565 70.9611 117.012 74.4436 117.012 78.0732C117.012 78.0732 117.012 104.069 117.012 113.854C117.012 115.044 116.044 116.012 114.854 116.012H112.953C112.953 116.012 113.174 116.012 113.198 116C115.418 115.546 114.412 113.499 113.517 112.567L95.6249 94.6148H95.6126C71.2697 70.2867 46.9267 45.9463 22.5837 21.6059L4.99794 3.23721C4.6423 2.86934 4.17629 2.66089 3.69802 2.63636C2.87636 2.57505 2.12829 3.13911 1.78492 3.89937L0.987793 5.60381V4.8926C1.00006 2.20719 3.17069 0.0245243 5.85638 0.0245243Z" fill="currentColor"></path>
-  <path d="M48.2388 4.96617C44.7805 1.263 41.2119 0 37.5941 0C37.5941 0 18.7207 0.0122622 5.85633 0.0245243C3.17063 0.0245243 1 2.20719 1 4.88034V5.59154L1.79712 3.8871C2.12824 3.12685 2.87631 2.6241 3.71022 2.6241C4.71583 2.6241 6.56761 4.86808 6.92325 5.23594L48.2388 4.95391V4.96617Z" fill="url(#paint0_linear_2976_2)"></path>
-  <path d="M1.79712 3.88713C2.12824 3.12688 2.87631 2.56282 3.71022 2.62413C4.1885 2.66091 4.64225 2.85711 5.01015 3.22497L7.49963 5.78776C7.45875 5.74689 7.41379 5.70193 7.36473 5.65288H1V5.59157L1.79712 3.88713Z" fill="black" fill-opacity="0.7"></path>
-  <path d="M113.198 112.248C115.516 114.345 114.474 115.865 113.198 115.988C113.174 115.988 111.322 116 111.322 116V110.359C112.843 111.88 113.198 112.248 113.198 112.248Z" fill="black" fill-opacity="0.7"></path>
-  <defs>
-    <linearGradient id="paint0_linear_2976_2" x1="24.6194" y1="0.0613108" x2="24.6194" y2="5.65285" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white" stop-opacity="0.8"></stop>
-      <stop offset="0.92" stop-color="white" stop-opacity="0.1"></stop>
-    </linearGradient>
-  </defs>
-</svg>
-
-<span class="sale-label">
-          
-
-Sale!
-</span>
-      </div></div>
-  <div class="card-content text-align--center"><div class="card-vendor caption">KRANK</div><div class="card-badges"><span class="badge custom-badge">Heavyduty</span><span class="badge custom-badge">Construction</span></div>
-<div class="card-heading"><a class="link link-underline" href="/products/dewalt-20v-max-xr-jig-saw" aria-label="20V MAX XR Jig Saw">
-            20V MAX XR Jig Saw
-</a></div>
-
-    <div class="card-price">
-      
-<div class="price price--on-sale" data-value="19900"><div class="price-container"><span class="visually-hidden">Sale Price</span>
-        <b class="price-item price-item--sale">
-          $199.00
-        </b>
-        
-
-          <span class="visually-hidden">Regular Price</span>
-          <s class="price-item price-item--regular">$229.00
-</s>
-</div>
-  </div>
-    </div>
-<div class="card-swatches">
-        
-
-
-<ul class="color-swatches swatch-type--image">
-
-      <li class="color-swatch" data-index="0">
-        <a class="button--clear color color-yellow-black" href="/products/dewalt-20v-max-xr-jig-saw?variant=50904740430125" aria-label="Color is Yellow Black" data-toggle="tooltip" data-title="Yellow Black"><div data-placeholder="###Yellow Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li>
-
-      <li class="color-swatch" data-index="1">
-        <a class="button--clear color color-blue-black" href="/products/dewalt-20v-max-xr-jig-saw?variant=50904740528429" aria-label="Color is Blue Black" data-toggle="tooltip" data-title="Blue Black"><div data-placeholder="###Blue Black" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li></ul>
-
-      </div></div><div class="card-horizontal-buttons"><modal-opener class="quick-view-button button button--small button--pill button--shadow has-loading" data-product-handle="dewalt-20v-max-xr-jig-saw" data-product-url="/products/dewalt-20v-max-xr-jig-saw" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Choose Options" tabindex="0">
-          <a class="button-text fallback-link link loading-hidden" href="/products/dewalt-20v-max-xr-jig-saw" tabindex="-1" aria-hidden="true">
-            
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-            <span class="small-hide horizontal-hide">Choose Options</span>
-          </a>
-          <span class="loading-overlay"></span>
-        </modal-opener></div></product-card>
-
-        </li><li id="Slide-template--24048560210221__featured_collection_r4q7b7-5" class="slider-slide grid-item focus-inset" tabindex="0" data-product-id="10008102535469">
-          
-          
-
-
-<product-card class="product-card card card--wrapped color-scheme-1 gradient">
-  <div class="card-media has-secondary-image image-hover-effect--fade">
-    <a class="media media--square media-fit--cover link" href="/products/dewalt-buffer-polisher">
-
-
-  
-<div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-  
-<div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-
-
-
-
-  
-<div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-<div class="media-content">
-          <div class="content-top">
-            <modal-opener class="quick-view-button button button--icon button--mini button--pill button--float has-loading small-hide" data-product-handle="dewalt-buffer-polisher" data-product-url="/products/dewalt-buffer-polisher" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Quick View" tabindex="0">
-              <span class="button-text loading-hidden">
-                
-
-
-<svg class="icon icon-search" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M19.4513 19.4147L24.5 24.5M22.1667 12.8333C22.1667 17.988 17.988 22.1667 12.8333 22.1667C7.67867 22.1667 3.5 17.988 3.5 12.8333C3.5 7.67867 7.67867 3.5 12.8333 3.5C17.988 3.5 22.1667 7.67867 22.1667 12.8333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-
-              </span>
-              <span class="loading-overlay"></span>
-            </modal-opener>
-          </div>
-          <div class="content-bottom"><modal-opener class="quick-view-button button button--pill button--shadow has-loading" data-product-handle="dewalt-buffer-polisher" data-product-url="/products/dewalt-buffer-polisher" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" tabindex="0" aria-label="Choose Options">
-                <span class="button-text loading-hidden">
-                  
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-                  <span class="small-hide">Choose Options</span>
-                </span>
-                <span class="loading-overlay"></span>
-              </modal-opener></div>
-        </div></a></div>
-  <div class="card-content text-align--center"><div class="card-vendor caption">KRANK</div><div class="card-badges"></div>
-<div class="card-heading"><a class="link link-underline" href="/products/dewalt-buffer-polisher" aria-label="Buffer Polisher">
-            Buffer Polisher
-</a></div>
-
-    <div class="card-price">
-      
-<div class="price" data-value="16900"><div class="price-container"><span class="visually-hidden">Regular Price</span>
-        <b class="price-item price-item--regular">
-          From $169.00
-        </b>
-</div>
-  </div>
-    </div>
-<div class="card-swatches">
-        
-
-
-<ul class="color-swatches swatch-type--image">
-
-      <li class="color-swatch" data-index="0">
-        <a class="button--clear color color-yellow" href="/products/dewalt-buffer-polisher?variant=50905005359405" aria-label="Color is Yellow" data-toggle="tooltip" data-title="Yellow"><div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li>
-
-      <li class="color-swatch" data-index="1">
-        <a class="button--clear color color-blue" href="/products/dewalt-buffer-polisher?variant=50905005490477" aria-label="Color is Blue" data-toggle="tooltip" data-title="Blue"><div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li>
-
-      <li class="color-swatch" data-index="2">
-        <a class="button--clear color color-red" href="/products/dewalt-buffer-polisher?variant=50905005556013" aria-label="Color is Red" data-toggle="tooltip" data-title="Red"><div data-placeholder="Buffer Polisher" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225)); border-radius: 4px; display: inline-block;"></div>
-</a>
-      </li></ul>
-
-      </div></div><div class="card-horizontal-buttons"><modal-opener class="quick-view-button button button--small button--pill button--shadow has-loading" data-product-handle="dewalt-buffer-polisher" data-product-url="/products/dewalt-buffer-polisher" role="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="Product-Quick-View-Drawer" aria-label="Choose Options" tabindex="0">
-          <a class="button-text fallback-link link loading-hidden" href="/products/dewalt-buffer-polisher" tabindex="-1" aria-hidden="true">
-            
-
-
-<svg class="icon icon-buy" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M3.90013 24.2654C5.33968 26 8.01893 26 13.3774 26H14.2428C19.6013 26 22.2806 26 23.7202 24.2654M3.90013 24.2654C2.46059 22.5309 2.95434 19.8975 3.94184 14.6308C4.64411 10.8854 4.99525 9.01271 6.32832 7.90635M23.7202 24.2654C25.1597 22.5309 24.6659 19.8975 23.6784 14.6308C22.9762 10.8854 22.625 9.01271 21.292 7.90635M21.292 7.90635C19.9589 6.8 18.0535 6.8 14.2428 6.8H13.3774C9.56674 6.8 7.6614 6.8 6.32832 7.90635" stroke="currentColor" stroke-width="2"></path>
-          <path d="M11.41 16.76C12.0348 17.3223 12.3851 17.6377 13.0099 18.2L16.21 14.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10.21 6.8V5.6C10.21 3.61178 11.8217 2 13.81 2C15.7982 2 17.41 3.61178 17.41 5.6V6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-</svg>
-
-            <span class="small-hide horizontal-hide">Choose Options</span>
-          </a>
-          <span class="loading-overlay"></span>
-        </modal-opener></div></product-card>
-
-        </li></ul>
-
-<div class="slider-nav-buttons">
-  <button type="button" class="nav-button nav-button--prev button button--icon button--float button--pill" name="previous" aria-label="Slide Left" aria-controls="Slider-template--24048560210221__featured_collection_r4q7b7">
+<div class="nav-buttons-position--bottom-right slider-nav-buttons">
+  <button type="button" class="nav-button nav-button--prev button button--icon button--float button--pill" name="previous" aria-label="Slide Left" aria-controls="Slider-template--24048560210221__carousel_t7iURU">
     
 
 
@@ -4761,7 +4294,7 @@ Sale!
 </svg>
 
   </button>
-  <button type="button" class="nav-button nav-button--next button button--icon button--float button--pill" name="next" aria-label="Slide Right" aria-controls="Slider-template--24048560210221__featured_collection_r4q7b7">
+  <button type="button" class="nav-button nav-button--next button button--icon button--float button--pill" name="next" aria-label="Slide Right" aria-controls="Slider-template--24048560210221__carousel_t7iURU">
     
 
 
@@ -4772,15 +4305,11 @@ Sale!
   </button>
 </div>
 
-</div>
-<div class="slider-seek-bar" aria-label="Slide Seek Bar" aria-controls="Slider-template--24048560210221__featured_collection_r4q7b7"></div>
 
-</slider-component>
-
-
+<ul class="slider-page-dots has-dot-animation list-unstyled" aria-label="Slide Dots" aria-controls="Slider-template--24048560210221__carousel_t7iURU" style="--slide-interval: 10000.0ms;"><li class="page-dot current" data-page="1" tabindex="0"></li><li class="page-dot" data-page="2" tabindex="0"></li><li class="page-dot" data-page="3" tabindex="0"></li></ul>
 
 </div>
-
+    </slider-component>
   </div>
 
   
@@ -4788,107 +4317,5 @@ Sale!
 </div>
 
 </section>
-<script>
-var editing = false;
-var currentToolbar = null;
-
-window.addEventListener('message', function(e) {
-  if (e.data === 'EDIT_ON') { editing = true; enableEdit(); }
-  if (e.data === 'EDIT_OFF') { editing = false; disableEdit(); }
-});
-
-function reportHeight() {
-  window.parent.postMessage({ type: 'IFRAME_HEIGHT', height: document.body.scrollHeight }, '*');
-}
-window.addEventListener('load', function() { setTimeout(reportHeight, 300); });
-
-function findBlocks() {
-  // Find all meaningful visual blocks — divs, sections, headers, etc with real content
-  var all = document.querySelectorAll('div, section, header, footer, nav, aside, article, figure, ul, form');
-  var blocks = [];
-  for (var i = 0; i < all.length; i++) {
-    var el = all[i];
-    var rect = el.getBoundingClientRect();
-    // Only elements that are visible, have height, and are not too deeply nested
-    if (rect.height > 30 && rect.width > 100 && !el.classList.contains('block-toolbar')) {
-      // Check depth — max 4 levels deep from body
-      var depth = 0; var p = el;
-      while (p.parentElement && p.parentElement !== document.body) { depth++; p = p.parentElement; }
-      if (depth <= 4) blocks.push(el);
-    }
-  }
-  return blocks;
-}
-
-function enableEdit() {
-  var blocks = findBlocks();
-  blocks.forEach(function(el) { el.classList.add('editable-block'); });
-
-  document.addEventListener('click', onClick, true);
-  document.body.style.overflow = 'auto';
-}
-
-function disableEdit() {
-  document.querySelectorAll('.editable-block').forEach(function(el) { el.classList.remove('editable-block'); });
-  document.querySelectorAll('.block-selected').forEach(function(el) { el.classList.remove('block-selected'); });
-  if (currentToolbar) { currentToolbar.remove(); currentToolbar = null; }
-  document.removeEventListener('click', onClick, true);
-}
-
-function onClick(e) {
-  if (!editing) return;
-  var target = e.target;
-
-  // If clicking toolbar button, let it handle
-  if (target.closest('.block-toolbar')) return;
-
-  e.preventDefault();
-  e.stopPropagation();
-
-  // Find nearest editable block
-  var block = target.closest('.editable-block');
-  if (!block) return;
-
-  // Deselect previous
-  document.querySelectorAll('.block-selected').forEach(function(el) { el.classList.remove('block-selected'); });
-  if (currentToolbar) { currentToolbar.remove(); currentToolbar = null; }
-
-  // Select this block
-  block.classList.add('block-selected');
-
-  // Show toolbar near cursor
-  var toolbar = document.createElement('div');
-  toolbar.className = 'block-toolbar';
-  var rect = block.getBoundingClientRect();
-  toolbar.style.top = (rect.top + window.scrollY + 4) + 'px';
-  toolbar.style.right = '8px';
-
-  var hideBtn = document.createElement('button');
-  hideBtn.className = 'hide-btn';
-  hideBtn.textContent = block.classList.contains('block-hidden') ? 'Show' : 'Hide';
-  hideBtn.onclick = function(ev) {
-    ev.stopPropagation();
-    block.classList.toggle('block-hidden');
-    hideBtn.textContent = block.classList.contains('block-hidden') ? 'Show' : 'Hide';
-    reportHeight();
-  };
-
-  var deleteBtn = document.createElement('button');
-  deleteBtn.className = 'delete-btn';
-  deleteBtn.textContent = 'Delete';
-  deleteBtn.onclick = function(ev) {
-    ev.stopPropagation();
-    block.remove();
-    toolbar.remove();
-    currentToolbar = null;
-    reportHeight();
-  };
-
-  toolbar.appendChild(hideBtn);
-  toolbar.appendChild(deleteBtn);
-  document.body.appendChild(toolbar);
-  currentToolbar = toolbar;
-}
-</script>
 </body>
 </html>

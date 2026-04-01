@@ -184,13 +184,13 @@ const App: React.FC = () => {
             x={(settings.page_width + 100) * 2} y={0}
           />
 
-          {/* Imported sections on canvas (not in any page yet) */}
+          {/* Imported sections on canvas — positioned to the right of all pages */}
           {canvasSections.map((sec, i) => (
             <ImportedSectionCard
               key={sec.id}
               section={sec}
-              x={0}
-              y={-400 - (i * 550)}
+              initialX={(settings.page_width + 100) * 3 + 100}
+              initialY={i * 700}
               onRemove={() => removeCanvasSection(sec.id)}
               onUpdate={(updated) => updateCanvasSection(sec.id, updated)}
             />
@@ -208,35 +208,90 @@ const App: React.FC = () => {
   );
 };
 
-// Imported section card on canvas — with block editor
+// Imported section card on canvas — draggable + iframe with edit overlay
 const ImportedSectionCard: React.FC<{
   section: ThemeSection;
-  x: number;
-  y: number;
+  initialX: number;
+  initialY: number;
   onRemove: () => void;
   onUpdate: (s: ThemeSection) => void;
-}> = ({ section, x, y, onRemove, onUpdate }) => {
+}> = ({ section, initialX, initialY, onRemove, onUpdate }) => {
   const [editing, setEditing] = useState(false);
-  const [selectedBlock, setSelectedBlock] = useState<string | null>(null);
-  const blocks = section.importedBlocks || [];
+  const [iframeHeight, setIframeHeight] = useState(section.height || 600);
+  const iframeRef = React.useRef<HTMLIFrameElement>(null);
+  const [pos, setPos] = useState({ x: initialX, y: initialY });
+  const [dragging, setDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  const toggleBlock = (blockId: string) => {
-    const updated = blocks.map(b => b.id === blockId ? { ...b, visible: !b.visible } : b);
-    onUpdate({ ...section, importedBlocks: updated });
+  const onMouseDown = (e: React.MouseEvent) => {
+    if (editing) return; // don't drag in edit mode
+    if ((e.target as HTMLElement).closest('button')) return; // don't drag from buttons
+    setDragging(true);
+    setDragStart({ x: e.clientX - pos.x, y: e.clientY - pos.y });
+    e.preventDefault();
   };
 
-  const removeBlock = (blockId: string) => {
-    const updated = blocks.filter(b => b.id !== blockId);
-    onUpdate({ ...section, importedBlocks: updated });
+  React.useEffect(() => {
+    if (!dragging) return;
+    const onMove = (e: MouseEvent) => {
+      setPos({ x: e.clientX - dragStart.x, y: e.clientY - dragStart.y });
+    };
+    const onUp = () => setDragging(false);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
+  }, [dragging, dragStart]);
+
+  // Auto-detect iframe content height
+  const onIframeLoad = () => {
+    try {
+      const doc = iframeRef.current?.contentDocument;
+      if (doc) {
+        const h = doc.body.scrollHeight;
+        if (h > 50) setIframeHeight(h);
+      }
+    } catch (e) {}
   };
+
+  // Toggle edit mode via postMessage to iframe
+  React.useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    const send = () => {
+      iframe.contentWindow?.postMessage(editing ? 'EDIT_ON' : 'EDIT_OFF', '*');
+    };
+    // Send after short delay to ensure iframe is loaded
+    const t = setTimeout(send, 300);
+    return () => clearTimeout(t);
+  }, [editing]);
+
+  // Listen for height updates from iframe
+  React.useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      if (e.data?.type === 'IFRAME_HEIGHT') {
+        setIframeHeight(e.data.height);
+      }
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, []);
 
   return (
-    <div style={{ position: 'absolute', left: x, top: y }}>
+    <div
+      style={{
+        position: 'absolute', left: pos.x, top: pos.y,
+        cursor: dragging ? 'grabbing' : editing ? 'default' : 'grab',
+        opacity: dragging ? 0.85 : 1,
+        transition: dragging ? 'none' : 'opacity 0.15s',
+      }}
+      onMouseDown={onMouseDown}
+    >
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <div style={{ width: 8, height: 8, borderRadius: 4, background: '#f59e0b' }} />
           <span style={{ fontSize: 12, fontWeight: 600, color: '#92400e' }}>Imported: {section.type}</span>
+          <span style={{ fontSize: 9, color: '#d97706', fontStyle: 'italic' }}>drag to move</span>
         </div>
         <div style={{ display: 'flex', gap: 3 }}>
           <button
@@ -257,73 +312,28 @@ const ImportedSectionCard: React.FC<{
         </div>
       </div>
 
-      {/* Section content */}
+      {/* Section — always iframe, edit mode via injection */}
       <div style={{
-        width: 1200, background: '#fff', borderRadius: 6,
-        boxShadow: '0 2px 16px rgba(0,0,0,0.08), 0 0 0 2px #f59e0b40',
-        overflow: 'hidden', position: 'relative',
+        width: 1440, background: '#fff', borderRadius: 6,
+        boxShadow: '0 2px 16px rgba(0,0,0,0.08), 0 0 0 2px ' + (editing ? '#6366f140' : '#f59e0b40'),
+        overflow: 'hidden',
       }}>
-        {editing ? (
-          // Block editor mode
-          <div>
-            {blocks.map(block => (
-              <div
-                key={block.id}
-                onClick={() => setSelectedBlock(selectedBlock === block.id ? null : block.id)}
-                style={{
-                  position: 'relative',
-                  opacity: block.visible ? 1 : 0.3,
-                  outline: selectedBlock === block.id ? '2px solid #6366f1' : '1px dashed #e5e7eb',
-                  outlineOffset: -1,
-                  cursor: 'pointer',
-                  minHeight: 20,
-                }}
-              >
-                <div dangerouslySetInnerHTML={{ __html: block.html }} style={{ pointerEvents: 'none' }} />
-
-                {/* Block controls */}
-                {selectedBlock === block.id && (
-                  <div style={{
-                    position: 'absolute', top: 4, right: 4,
-                    display: 'flex', gap: 4, zIndex: 10,
-                  }}>
-                    <button onClick={(e) => { e.stopPropagation(); toggleBlock(block.id); }} style={blockBtn}>
-                      {block.visible ? 'Hide' : 'Show'}
-                    </button>
-                    <button onClick={(e) => { e.stopPropagation(); removeBlock(block.id); }} style={{ ...blockBtn, background: '#ef4444', color: '#fff' }}>
-                      Delete
-                    </button>
-                  </div>
-                )}
-
-                {/* Block label */}
-                <div style={{
-                  position: 'absolute', top: 4, left: 4, fontSize: 9,
-                  background: selectedBlock === block.id ? '#6366f1' : '#000000aa',
-                  color: '#fff', padding: '2px 6px', borderRadius: 3, zIndex: 5,
-                }}>
-                  &lt;{block.tag}&gt; {block.text.slice(0, 30)}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          // Normal render — iframe
-          <iframe
-            src={`http://localhost:3007/extracted/${section.importedHtml}`}
-            style={{ width: '100%', height: section.height, border: 'none', pointerEvents: 'none' }}
-            title={section.type}
-          />
-        )}
+        <iframe
+          ref={iframeRef}
+          src={`http://localhost:3007/extracted/${section.importedHtml}`}
+          style={{
+            width: '100%',
+            height: iframeHeight,
+            border: 'none',
+            pointerEvents: editing ? 'auto' : 'none',
+            display: 'block',
+          }}
+          title={section.type}
+          onLoad={onIframeLoad}
+        />
       </div>
     </div>
   );
-};
-
-const blockBtn: React.CSSProperties = {
-  padding: '3px 8px', borderRadius: 4, fontSize: 10, fontWeight: 600,
-  border: '1px solid #e5e7eb', background: '#fff', color: '#374151',
-  cursor: 'pointer', boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
 };
 
 export default App;
