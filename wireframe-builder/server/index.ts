@@ -728,6 +728,78 @@ window.addEventListener('load', function() { setTimeout(reportHeight, 500); });
   }
 });
 
+// Extract a single section from an already-saved full page HTML
+app.post("/api/extract-from-file", (req, res) => {
+  const { file, sectionId } = req.body;
+  if (!file || !sectionId) return res.status(400).json({ error: "file and sectionId required" });
+
+  try {
+    const filepath = path.join(EXTRACTED_DIR, file);
+    if (!fs.existsSync(filepath)) return res.status(404).json({ error: "file not found" });
+
+    const fullHTML = fs.readFileSync(filepath, "utf-8");
+
+    // Extract <head> content (styles, links)
+    const headMatch = fullHTML.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+    const headContent = headMatch ? headMatch[1] : "";
+
+    // Find the section by ID — grab from opening tag to next shopify-section or end
+    const idEscaped = sectionId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    // Strategy: find the section element, then grab until next sibling section
+    const sectionRegex = new RegExp(
+      `(<[^>]+id="${idEscaped}"[\\s\\S]*?)(<[^/][^>]+id="shopify-section-)`,
+      "i"
+    );
+    let sectionHTML = "";
+    const match = fullHTML.match(sectionRegex);
+    if (match) {
+      sectionHTML = match[1];
+    } else {
+      // Maybe last section — grab from ID to </body>
+      const lastMatch = fullHTML.match(new RegExp(`(<[^>]+id="${idEscaped}"[\\s\\S]*?)(<\\/body>|<script>\\s*\\/\\/ Wait)`, "i"));
+      if (lastMatch) sectionHTML = lastMatch[1];
+    }
+
+    if (!sectionHTML) return res.json({ error: "Section not found in file" });
+
+    // Build self-contained section HTML
+    const outHTML = `<!DOCTYPE html>
+<html>
+<head>
+${headContent}
+<style>
+a { pointer-events: none !important; cursor: default !important; }
+button:not(.block-toolbar button) { pointer-events: none !important; }
+img { background: #c7d2dc !important; }
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+${sectionHTML}
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    window.parent.postMessage({ type: 'IFRAME_HEIGHT', height: document.body.scrollHeight }, '*');
+  }, 500);
+});
+<\/script>
+</body>
+</html>`;
+
+    // Save
+    const themeName = file.replace(/__.*/, "");
+    const typeMatch = sectionId.match(/__(.+?)(?:_[A-Za-z0-9]+)?$/);
+    const sectionType = typeMatch ? typeMatch[1] : "section";
+    const outFilename = `${themeName}__${sectionType}_picked.html`;
+    fs.writeFileSync(path.join(EXTRACTED_DIR, outFilename), outHTML, "utf-8");
+
+    console.log(`Extracted ${sectionType} from ${file} → ${outFilename} (${outHTML.length} bytes)`);
+    res.json({ success: true, file: outFilename, sectionType });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Screenshot a page with section bounding boxes overlay
 app.post("/api/screenshot", async (req, res) => {
   const { url } = req.body;

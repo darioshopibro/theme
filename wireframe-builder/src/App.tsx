@@ -87,34 +87,27 @@ const App: React.FC = () => {
     }]);
   };
 
-  // When user clicks a section in imported page → extract it via server and add to canvas
+  // When user clicks a section in imported page → extract just that section and add to canvas
   const handleSectionPick = async (sectionId: string, sectionType: string, height: number, sourceFile: string) => {
     try {
-      // Call server to extract this section from the full page file
-      const url = sourceFile.includes('_full.html')
-        ? `http://localhost:3007/extracted/${sourceFile}`.replace('/extracted/extracted/', '/extracted/')
-        : '';
-
-      const res = await fetch('http://localhost:3007/api/extract', {
+      const res = await fetch('http://localhost:3007/api/extract-from-file', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          demoUrl: 'file://' + sourceFile, // won't be used for URL, just for naming
-          sectionMatch: sectionType,
-        }),
+        body: JSON.stringify({ file: sourceFile, sectionId }),
       });
+      const data = await res.json();
 
-      // For now, create section pointing to source file with section type
-      // The iframe will show the full page but we track which section was picked
+      if (data.error) { console.error('Extract failed:', data.error); return; }
+
       const newSection: ThemeSection = {
         id: `picked-${Date.now()}`,
-        type: sectionType,
-        heading: `Picked: ${sectionType}`,
+        type: data.sectionType || sectionType,
+        heading: `Picked: ${data.sectionType || sectionType}`,
         visible: true,
         order: 999,
         height: height || 500,
         settings: { ...DEFAULT_SECTION_SETTINGS },
-        importedHtml: sourceFile,
+        importedHtml: data.file,
       };
       setCanvasSections(prev => [...prev, newSection]);
     } catch (e) {
@@ -331,11 +324,11 @@ const ImportedSectionCard: React.FC<{
     return () => clearTimeout(t);
   }, [editing]);
 
-  // Listen for height updates from iframe
+  // Listen for height updates — only from OUR iframe
   React.useEffect(() => {
     const handler = (e: MessageEvent) => {
-      if (e.data?.type === 'IFRAME_HEIGHT') {
-        setIframeHeight(e.data.height);
+      if (iframeRef.current && e.source === iframeRef.current.contentWindow) {
+        if (e.data?.type === 'IFRAME_HEIGHT') setIframeHeight(e.data.height);
       }
     };
     window.addEventListener('message', handler);
@@ -433,14 +426,18 @@ const ImportedPageCard: React.FC<{
     return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
   }, [dragging, dragStart]);
 
-  // Listen for section picks from iframe
+  const iframeRef = React.useRef<HTMLIFrameElement>(null);
+
+  // Listen for section picks — only from OUR iframe
   React.useEffect(() => {
     const handler = (e: MessageEvent) => {
-      if (e.data?.type === 'SECTION_PICKED') {
-        onSectionPick(e.data.sectionId, e.data.sectionType, e.data.height, file);
-      }
-      if (e.data?.type === 'IFRAME_HEIGHT' && e.data.height > 100) {
-        setIframeHeight(e.data.height);
+      if (iframeRef.current && e.source === iframeRef.current.contentWindow) {
+        if (e.data?.type === 'SECTION_PICKED') {
+          onSectionPick(e.data.sectionId, e.data.sectionType, e.data.height, file);
+        }
+        if (e.data?.type === 'IFRAME_HEIGHT' && e.data.height > 100) {
+          setIframeHeight(e.data.height);
+        }
       }
     };
     window.addEventListener('message', handler);
@@ -481,6 +478,7 @@ const ImportedPageCard: React.FC<{
         overflow: 'hidden',
       }}>
         <iframe
+          ref={iframeRef}
           src={`http://localhost:3007/extracted/${file}`}
           style={{ width: '100%', height: iframeHeight, border: 'none', pointerEvents: picking ? 'auto' : 'none', display: 'block' }}
           title={name}
