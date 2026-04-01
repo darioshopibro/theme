@@ -1,0 +1,1729 @@
+[2026-04-01T13:43:27.113Z] ========================================
+[2026-04-01T13:43:27.114Z] FULL SHOPIFY THEME STORE SCRAPER
+[2026-04-01T13:43:27.114Z] ========================================
+[2026-04-01T13:43:27.114Z] Scraping ALL themes (no review limit)
+[2026-04-01T13:43:27.114Z] Delay: 5-10s
+[2026-04-01T13:43:27.114Z] Log: /Users/dario61/Desktop/shopify-theme-research/scrape_full_2026-04-01T13-43-27.txt
+[2026-04-01T13:43:27.114Z] 
+[2026-04-01T13:43:28.298Z] 
+========================================
+[2026-04-01T13:43:28.299Z] LISTING PAGE 1: https://themes.shopify.com/themes?sort_by=newest&page=1
+[2026-04-01T13:43:28.299Z] ========================================
+[2026-04-01T13:43:28.299Z] Themes: 0 | Skipped: 0 | Errors: 0
+[2026-04-01T13:43:32.976Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T13:43:32.979Z] Found 8 themes: atlas, zap, dynamic, prompt, pebble, gentech, seventh, zeal
+[2026-04-01T13:43:32.979Z]   [1/8] Waiting 5.0s → atlas
+[2026-04-01T13:43:42.524Z]     Theme page loaded in 4506ms
+[2026-04-01T13:43:42.531Z]     ✓ Atlas | $280 | 0 rev | null% | 45 features | ? presets | Alloy Themes
+[2026-04-01T13:43:42.531Z]     breakdown: +null ~null -null | niches: electronics | launch: February 20, 2026
+[2026-04-01T13:43:42.531Z]     presets: ? | demo: https://alloy-themes-atlas-demo.myshopify.com/
+[2026-04-01T13:43:42.531Z]     Scraping demo sections: https://alloy-themes-atlas-demo.myshopify.com/
+[2026-04-01T13:43:54.918Z]     Demo scraped in 12387ms — HP: 15 sections | Collection: 3 | Product: 11
+[2026-04-01T13:43:54.920Z]     TOTAL: 1 unique themes
+[2026-04-01T13:43:54.920Z]   [2/8] Waiting 6.9s → zap
+[2026-04-01T13:44:05.757Z]     Theme page loaded in 3976ms
+[2026-04-01T13:44:05.760Z]     ✓ Zap | $320 | 0 rev | null% | 49 features | 5 presets | Almost Perfect Studio
+[2026-04-01T13:44:05.760Z]     breakdown: +null ~null -null | niches: food and drink | launch: March 23, 2026
+[2026-04-01T13:44:05.760Z]     presets: Zap, Rays, Portable, Fluff, Refuel | demo: https://zap-main.myshopify.com/
+[2026-04-01T13:44:05.760Z]     Scraping demo sections: https://zap-main.myshopify.com/
+[2026-04-01T13:44:16.186Z]     Demo scraped in 10426ms — HP: 12 sections | Collection: 7 | Product: 12
+[2026-04-01T13:44:16.187Z]     TOTAL: 2 unique themes
+[2026-04-01T13:44:16.187Z]   [3/8] Waiting 9.7s → dynamic
+[2026-04-01T13:44:29.576Z]     Theme page loaded in 3665ms
+[2026-04-01T13:44:29.580Z]     ✓ Dynamic | $290 | 0 rev | null% | 49 features | 2 presets | Vowel Web
+[2026-04-01T13:44:29.580Z]     breakdown: +null ~null -null | niches: beauty | launch: March 24, 2026
+[2026-04-01T13:44:29.580Z]     presets: Dynamic, Regalia | demo: https://bright-demo.myshopify.com/
+[2026-04-01T13:44:29.580Z]     Scraping demo sections: https://bright-demo.myshopify.com/
+[2026-04-01T13:44:42.491Z]     Demo scraped in 12911ms — HP: 26 sections | Collection: 6 | Product: 8
+[2026-04-01T13:44:42.493Z]     TOTAL: 3 unique themes
+[2026-04-01T13:44:42.493Z]   [4/8] Waiting 9.1s → prompt
+[2026-04-01T13:44:55.364Z]     Theme page loaded in 3811ms
+[2026-04-01T13:44:55.369Z]     ✓ Prompt | $320 | 1 rev | 100% | 48 features | 5 presets | Noord
+[2026-04-01T13:44:55.370Z]     breakdown: +1 ~0 -0 | niches: electronics | launch: March 05, 2026
+[2026-04-01T13:44:55.370Z]     presets: Prompt, Bookmark, Imagine, Well, Rapid | demo: https://snap-main.myshopify.com/
+[2026-04-01T13:44:55.370Z]     Scraping demo sections: https://snap-main.myshopify.com/
+[2026-04-01T13:45:07.136Z]     Demo scraped in 11766ms — HP: 17 sections | Collection: 5 | Product: 6
+[2026-04-01T13:45:07.136Z]     TOTAL: 4 unique themes
+[2026-04-01T13:45:07.137Z]   [5/8] Waiting 7.5s → pebble
+[2026-04-01T13:45:17.961Z]     Theme page loaded in 3293ms
+[2026-04-01T13:45:17.969Z]     ✓ Pebble | $400 | 6 rev | 100% | 40 features | ? presets | FoxEcom
+[2026-04-01T13:45:17.969Z]     breakdown: +6 ~0 -0 | niches: kids | launch: February 20, 2026
+[2026-04-01T13:45:17.969Z]     presets: ? | demo: https://pebble-little.myshopify.com/
+[2026-04-01T13:45:17.969Z]     Scraping demo sections: https://pebble-little.myshopify.com/
+[2026-04-01T13:45:31.260Z]     Demo scraped in 13291ms — HP: 18 sections | Collection: 9 | Product: 15
+[2026-04-01T13:45:31.261Z]     TOTAL: 5 unique themes
+[2026-04-01T13:45:31.261Z]   [6/8] Waiting 7.0s → gentech
+[2026-04-01T13:45:41.375Z]     Theme page loaded in 3077ms
+[2026-04-01T13:45:41.378Z]     ✓ Gentech | $360 | 1 rev | 100% | 53 features | 4 presets | Xotiny
+[2026-04-01T13:45:41.378Z]     breakdown: +1 ~0 -0 | niches: home | launch: March 19, 2026
+[2026-04-01T13:45:41.378Z]     presets: Gentech, Medtech, Beautech, Cooktech | demo: https://xo-gentech.myshopify.com
+[2026-04-01T13:45:41.378Z]     Scraping demo sections: https://xo-gentech.myshopify.com
+[2026-04-01T13:45:57.861Z]     Demo scraped in 16483ms — HP: 17 sections | Collection: 6 | Product: 7
+[2026-04-01T13:45:57.862Z]     TOTAL: 6 unique themes
+[2026-04-01T13:45:57.862Z]   [7/8] Waiting 9.6s → seventh
+[2026-04-01T13:46:10.768Z]     Theme page loaded in 3266ms
+[2026-04-01T13:46:10.777Z]     ✓ Seventh | $420 | 2 rev | 100% | 54 features | 2 presets | Krown Themes
+[2026-04-01T13:46:10.777Z]     breakdown: +2 ~0 -0 | niches: clothing | launch: March 31, 2026
+[2026-04-01T13:46:10.777Z]     presets: Seventh, Nora | demo: https://seventh-main.myshopify.com/
+[2026-04-01T13:46:10.777Z]     Scraping demo sections: https://seventh-main.myshopify.com/
+[2026-04-01T13:46:23.841Z]     Demo scraped in 13064ms — HP: 18 sections | Collection: 8 | Product: 11
+[2026-04-01T13:46:23.842Z]     TOTAL: 7 unique themes
+[2026-04-01T13:46:23.843Z]   [8/8] Waiting 8.9s → zeal
+[2026-04-01T13:46:36.362Z]     Theme page loaded in 3595ms
+[2026-04-01T13:46:36.366Z]     ✓ Zeal | $290 | 2 rev | 100% | 53 features | 5 presets | Fresco Solutions
+[2026-04-01T13:46:36.367Z]     breakdown: +2 ~0 -0 | niches: wellness | launch: March 27, 2026
+[2026-04-01T13:46:36.367Z]     presets: Zeal, Transform, Evolve, Petzen, Pulse | demo: https://wellness-demo1.myshopify.com/
+[2026-04-01T13:46:36.367Z]     Scraping demo sections: https://wellness-demo1.myshopify.com/
+[2026-04-01T13:46:48.260Z]     Demo scraped in 11893ms — HP: 20 sections | Collection: 5 | Product: 8
+[2026-04-01T13:46:48.261Z]     TOTAL: 8 unique themes
+[2026-04-01T13:46:48.261Z] 
+--- Page 1 done | 8 themes | 3.3 min | waiting 9.9s ---
+[2026-04-01T13:46:58.172Z] 
+========================================
+[2026-04-01T13:46:58.173Z] LISTING PAGE 2: https://themes.shopify.com/themes?sort_by=newest&page=2
+[2026-04-01T13:46:58.173Z] ========================================
+[2026-04-01T13:46:58.174Z] Themes: 8 | Skipped: 0 | Errors: 0
+[2026-04-01T13:47:01.663Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T13:47:01.665Z] Found 10 themes: zeal, force, filo, zenith, poco, unity, sweet, metro, homage, victory
+[2026-04-01T13:47:01.665Z]   [1/10] SKIP "zeal" — duplicate
+[2026-04-01T13:47:01.666Z]   [2/10] Waiting 7.9s → force
+[2026-04-01T13:47:13.008Z]     Theme page loaded in 3422ms
+[2026-04-01T13:47:13.014Z]     ✓ Force | $380 | 2 rev | 100% | 49 features | 5 presets | Creative Commerce
+[2026-04-01T13:47:13.015Z]     breakdown: +2 ~0 -0 | niches: real results., electronics | launch: March 10, 2026
+[2026-04-01T13:47:13.015Z]     presets: Force, Challenge, Statement, Kick, Turbo | demo: https://vault-main.myshopify.com/
+[2026-04-01T13:47:13.015Z]     Scraping demo sections: https://vault-main.myshopify.com/
+[2026-04-01T13:47:25.576Z]     Demo scraped in 12561ms — HP: 16 sections | Collection: 6 | Product: 11
+[2026-04-01T13:47:25.577Z]     TOTAL: 9 unique themes
+[2026-04-01T13:47:25.577Z]   [3/10] Waiting 9.8s → filo
+[2026-04-01T13:47:38.734Z]     Theme page loaded in 3316ms
+[2026-04-01T13:47:38.739Z]     ✓ Filo | $140 | 0 rev | null% | 45 features | ? presets | MUUP
+[2026-04-01T13:47:38.740Z]     breakdown: +null ~null -null | niches: clothing | launch: March 09, 2026
+[2026-04-01T13:47:38.740Z]     presets: ? | demo: https://filo-demo.myshopify.com
+[2026-04-01T13:47:38.740Z]     Scraping demo sections: https://filo-demo.myshopify.com
+[2026-04-01T13:47:53.440Z]     Demo scraped in 14700ms — HP: 17 sections | Collection: 10 | Product: 15
+[2026-04-01T13:47:53.441Z]     TOTAL: 10 unique themes
+[2026-04-01T13:47:53.441Z]   [4/10] Waiting 5.6s → zenith
+[2026-04-01T13:48:02.274Z]     Theme page loaded in 3277ms
+[2026-04-01T13:48:02.282Z]     ✓ Zenith | $380 | 7 rev | 100% | 49 features | 5 presets | Apparent Collective
+[2026-04-01T13:48:02.283Z]     breakdown: +7 ~0 -0 | niches: high-visual brand storytelling., clothing | launch: February 27, 2026
+[2026-04-01T13:48:02.283Z]     presets: Zenith, Aspect, Method, Escape, Artify | demo: https://zenith-main.myshopify.com/
+[2026-04-01T13:48:02.283Z]     Scraping demo sections: https://zenith-main.myshopify.com/
+[2026-04-01T13:48:15.384Z]     Demo scraped in 13101ms — HP: 18 sections | Collection: 6 | Product: 12
+[2026-04-01T13:48:15.384Z]     TOTAL: 11 unique themes
+[2026-04-01T13:48:15.385Z]   [5/10] Waiting 8.2s → poco
+[2026-04-01T13:48:27.358Z]     Theme page loaded in 3774ms
+[2026-04-01T13:48:27.366Z]     ✓ Poco | $220 | 9 rev | 100% | 34 features | 3 presets | Webibazaar Templates
+[2026-04-01T13:48:27.366Z]     breakdown: +9 ~0 -0 | niches: food and drink | launch: March 10, 2026
+[2026-04-01T13:48:27.367Z]     presets: Poco, Techmart, Woodmart | demo: https://porto-demo-store.myshopify.com/
+[2026-04-01T13:48:27.367Z]     Scraping demo sections: https://porto-demo-store.myshopify.com/
+[2026-04-01T13:48:43.887Z]     Demo scraped in 16520ms — HP: 21 sections | Collection: 8 | Product: 7
+[2026-04-01T13:48:43.888Z]     TOTAL: 12 unique themes
+[2026-04-01T13:48:43.888Z]   [6/10] Waiting 6.5s → unity
+[2026-04-01T13:48:53.696Z]     Theme page loaded in 3323ms
+[2026-04-01T13:48:53.702Z]     ✓ Unity | $150 | 5 rev | 100% | 58 features | 2 presets | BoostifyThemes
+[2026-04-01T13:48:53.703Z]     breakdown: +5 ~0 -0 | niches: wellness | launch: March 05, 2026
+[2026-04-01T13:48:53.703Z]     presets: Unity, Liora | demo: https://boostify-unity.myshopify.com/
+[2026-04-01T13:48:53.703Z]     Scraping demo sections: https://boostify-unity.myshopify.com/
+[2026-04-01T13:49:07.290Z]     Demo scraped in 13587ms — HP: 13 sections | Collection: 5 | Product: 13
+[2026-04-01T13:49:07.291Z]     TOTAL: 13 unique themes
+[2026-04-01T13:49:07.291Z]   [7/10] Waiting 7.2s → sweet
+[2026-04-01T13:49:17.670Z]     Theme page loaded in 3151ms
+[2026-04-01T13:49:17.679Z]     ✓ Sweet | $320 | 0 rev | null% | 52 features | ? presets | Omelatte FZ-LLC
+[2026-04-01T13:49:17.680Z]     breakdown: +null ~null -null | niches: food and drink | launch: January 05, 2026
+[2026-04-01T13:49:17.680Z]     presets: ? | demo: https://sweet-bakery-demo.myshopify.com
+[2026-04-01T13:49:17.680Z]     Scraping demo sections: https://sweet-bakery-demo.myshopify.com
+[2026-04-01T13:49:29.354Z]     Demo scraped in 11674ms — HP: 16 sections | Collection: 6 | Product: 10
+[2026-04-01T13:49:29.355Z]     TOTAL: 14 unique themes
+[2026-04-01T13:49:29.355Z]   [8/10] Waiting 6.5s → metro
+[2026-04-01T13:49:39.115Z]     Theme page loaded in 3288ms
+[2026-04-01T13:49:39.119Z]     ✓ Metro | $250 | 2 rev | 100% | 57 features | 3 presets | Shine Dezign Infonet
+[2026-04-01T13:49:39.120Z]     breakdown: +2 ~0 -0 | niches: home | launch: February 04, 2026
+[2026-04-01T13:49:39.120Z]     presets: Metro, Beam, Clove | demo: https://metro-theme-demo.myshopify.com/
+[2026-04-01T13:49:39.120Z]     Scraping demo sections: https://metro-theme-demo.myshopify.com/
+[2026-04-01T13:49:51.346Z]     Demo scraped in 12226ms — HP: 20 sections | Collection: 5 | Product: 8
+[2026-04-01T13:49:51.348Z]     TOTAL: 15 unique themes
+[2026-04-01T13:49:51.349Z]   [9/10] Waiting 7.2s → homage
+[2026-04-01T13:50:02.167Z]     Theme page loaded in 3630ms
+[2026-04-01T13:50:02.172Z]     ✓ Homage | $250 | 0 rev | null% | 32 features | ? presets | Ourselves
+[2026-04-01T13:50:02.172Z]     breakdown: +null ~null -null | niches: an immersive brand experience with editorial-style layouts that transform your products into lifestyle statements., clothing | launch: December 12, 2025
+[2026-04-01T13:50:02.172Z]     presets: ? | demo: https://homage-theme-demo-01.myshopify.com/
+[2026-04-01T13:50:02.172Z]     Scraping demo sections: https://homage-theme-demo-01.myshopify.com/
+[2026-04-01T13:50:23.077Z]     Demo scraped in 20905ms — HP: 19 sections | Collection: 6 | Product: 10
+[2026-04-01T13:50:23.078Z]     TOTAL: 16 unique themes
+[2026-04-01T13:50:23.078Z]   [10/10] Waiting 5.1s → victory
+[2026-04-01T13:50:31.950Z]     Theme page loaded in 3800ms
+[2026-04-01T13:50:31.955Z]     ✓ Victory | $320 | 7 rev | 100% | 57 features | 5 presets | UTD
+[2026-04-01T13:50:31.956Z]     breakdown: +7 ~0 -0 | niches: food and drink | launch: March 18, 2026
+[2026-04-01T13:50:31.956Z]     presets: Victory, Flip, Roast, Athletica, Nitro | demo: https://demo-bobabam.myshopify.com/
+[2026-04-01T13:50:31.956Z]     Scraping demo sections: https://demo-bobabam.myshopify.com/
+[2026-04-01T13:50:43.943Z]     Demo scraped in 11987ms — HP: 18 sections | Collection: 6 | Product: 9
+[2026-04-01T13:50:43.944Z]     TOTAL: 17 unique themes
+[2026-04-01T13:50:43.944Z] 
+--- Page 2 done | 17 themes | 7.3 min | waiting 8.7s ---
+[2026-04-01T13:50:52.611Z] 
+========================================
+[2026-04-01T13:50:52.611Z] LISTING PAGE 3: https://themes.shopify.com/themes?sort_by=newest&page=3
+[2026-04-01T13:50:52.612Z] ========================================
+[2026-04-01T13:50:52.612Z] Themes: 17 | Skipped: 1 | Errors: 0
+[2026-04-01T13:50:56.441Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T13:50:56.445Z] Found 6 themes: victory, vetro, flaunt, mix, supreme, fullframe
+[2026-04-01T13:50:56.445Z]   [1/6] SKIP "victory" — duplicate
+[2026-04-01T13:50:56.445Z]   [2/6] Waiting 9.6s → vetro
+[2026-04-01T13:51:09.366Z]     Theme page loaded in 3281ms
+[2026-04-01T13:51:09.373Z]     ✓ Vetro | $280 | 23 rev | 100% | 60 features | 3 presets | The4
+[2026-04-01T13:51:09.373Z]     breakdown: +23 ~0 -0 | niches: beauty | launch: February 10, 2026
+[2026-04-01T13:51:09.373Z]     presets: Vetro, Arrok, Gario | demo: https://smootify-theme-pralise.myshopify.com/
+[2026-04-01T13:51:09.374Z]     Scraping demo sections: https://smootify-theme-pralise.myshopify.com/
+[2026-04-01T13:51:22.699Z]     Demo scraped in 13325ms — HP: 23 sections | Collection: 8 | Product: 14
+[2026-04-01T13:51:22.699Z]     TOTAL: 18 unique themes
+[2026-04-01T13:51:22.700Z]   [3/6] Waiting 5.1s → flaunt
+[2026-04-01T13:51:31.505Z]     Theme page loaded in 3723ms
+[2026-04-01T13:51:31.510Z]     ✓ Flaunt | $290 | 4 rev | 100% | 53 features | 5 presets | Vowel Web
+[2026-04-01T13:51:31.510Z]     breakdown: +4 ~0 -0 | niches: a clean and timeless appeal., clothing | launch: February 20, 2026
+[2026-04-01T13:51:31.510Z]     presets: Flaunt, Sundrift, Clear, Polish, Advance | demo: https://womensclothingtest.myshopify.com/
+[2026-04-01T13:51:31.510Z]     Scraping demo sections: https://womensclothingtest.myshopify.com/
+[2026-04-01T13:51:43.587Z]     Demo scraped in 12077ms — HP: 23 sections | Collection: 5 | Product: 11
+[2026-04-01T13:51:43.587Z]     TOTAL: 19 unique themes
+[2026-04-01T13:51:43.588Z]   [4/6] Waiting 8.6s → mix
+[2026-04-01T13:51:55.957Z]     Theme page loaded in 3738ms
+[2026-04-01T13:51:55.964Z]     ✓ Mix | $380 | 4 rev | 100% | 40 features | 5 presets | Creative Commerce
+[2026-04-01T13:51:55.964Z]     breakdown: +4 ~0 -0 | niches: electronics | launch: March 10, 2026
+[2026-04-01T13:51:55.964Z]     presets: Mix, Moda, Camp, Casa, Watt | demo: https://restock-main.myshopify.com/
+[2026-04-01T13:51:55.964Z]     Scraping demo sections: https://restock-main.myshopify.com/
+[2026-04-01T13:52:09.823Z]     Demo scraped in 13858ms — HP: 17 sections | Collection: 7 | Product: 7
+[2026-04-01T13:52:09.824Z]     TOTAL: 20 unique themes
+[2026-04-01T13:52:09.824Z]   [5/6] Waiting 6.3s → supreme
+[2026-04-01T13:52:19.695Z]     Theme page loaded in 3576ms
+[2026-04-01T13:52:19.703Z]     ✓ Supreme | $150 | 10 rev | 90% | 50 features | 5 presets | Grixio
+[2026-04-01T13:52:19.703Z]     breakdown: +9 ~0 -1 | niches: clothing | launch: February 27, 2026
+[2026-04-01T13:52:19.703Z]     presets: Supreme, Rose, Heatwave, Realm, Royce | demo: https://adore-elite.myshopify.com/
+[2026-04-01T13:52:19.704Z]     Scraping demo sections: https://adore-elite.myshopify.com/
+[2026-04-01T13:52:31.640Z]     Demo scraped in 11936ms — HP: 15 sections | Collection: 4 | Product: 14
+[2026-04-01T13:52:31.641Z]     TOTAL: 21 unique themes
+[2026-04-01T13:52:31.642Z]   [6/6] Waiting 5.7s → fullframe
+[2026-04-01T13:52:40.923Z]     Theme page loaded in 3537ms
+[2026-04-01T13:52:40.932Z]     ✓ Fullframe | $260 | 1 rev | 100% | 42 features | 3 presets | Xotiny
+[2026-04-01T13:52:40.932Z]     breakdown: +1 ~0 -0 | niches: home | launch: December 02, 2025
+[2026-04-01T13:52:40.932Z]     presets: Fullframe, Florence, Merida | demo: https://xo-florence-seville.myshopify.com/
+[2026-04-01T13:52:40.932Z]     Scraping demo sections: https://xo-florence-seville.myshopify.com/
+[2026-04-01T13:52:54.610Z]     Demo scraped in 13678ms — HP: 11 sections | Collection: 4 | Product: 6
+[2026-04-01T13:52:54.611Z]     TOTAL: 22 unique themes
+[2026-04-01T13:52:54.611Z] 
+--- Page 3 done | 22 themes | 9.4 min | waiting 7.3s ---
+[2026-04-01T13:53:01.923Z] 
+========================================
+[2026-04-01T13:53:01.925Z] LISTING PAGE 4: https://themes.shopify.com/themes?sort_by=newest&page=4
+[2026-04-01T13:53:01.925Z] ========================================
+[2026-04-01T13:53:01.925Z] Themes: 22 | Skipped: 2 | Errors: 0
+[2026-04-01T13:53:05.341Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T13:53:05.343Z] Found 7 themes: stockist, maximize, zyra, krank, line, flute, purity
+[2026-04-01T13:53:05.343Z]   [1/7] Waiting 6.0s → stockist
+[2026-04-01T13:53:14.986Z]     Theme page loaded in 3675ms
+[2026-04-01T13:53:14.992Z]     ✓ Stockist | $320 | 5 rev | 100% | 45 features | 5 presets | Noord
+[2026-04-01T13:53:14.993Z]     breakdown: +5 ~0 -0 | niches: office | launch: March 04, 2026
+[2026-04-01T13:53:14.993Z]     presets: Stockist, Residence, Porter, Verve, Optic | demo: https://mart-vinyl.myshopify.com/
+[2026-04-01T13:53:14.993Z]     Scraping demo sections: https://mart-vinyl.myshopify.com/
+[2026-04-01T13:53:26.801Z]     Demo scraped in 11808ms — HP: 23 sections | Collection: 8 | Product: 9
+[2026-04-01T13:53:26.802Z]     TOTAL: 23 unique themes
+[2026-04-01T13:53:26.803Z]   [2/7] Waiting 7.1s → maximize
+[2026-04-01T13:53:37.844Z]     Theme page loaded in 3938ms
+[2026-04-01T13:53:37.847Z]     ✓ Maximize | $200 | 24 rev | 100% | 54 features | 5 presets | Omni Themes
+[2026-04-01T13:53:37.847Z]     breakdown: +24 ~0 -0 | niches: electronics | launch: March 20, 2026
+[2026-04-01T13:53:37.847Z]     presets: Maximize, Vigor, Vast, Various, Swift | demo: https://maximize-evolutions.myshopify.com/
+[2026-04-01T13:53:37.847Z]     Scraping demo sections: https://maximize-evolutions.myshopify.com/
+[2026-04-01T13:53:59.247Z]     Demo scraped in 21400ms — HP: 25 sections | Collection: 9 | Product: 12
+[2026-04-01T13:53:59.248Z]     TOTAL: 24 unique themes
+[2026-04-01T13:53:59.248Z]   [3/7] Waiting 7.4s → zyra
+[2026-04-01T13:54:09.667Z]     Theme page loaded in 3000ms
+[2026-04-01T13:54:09.676Z]     ✓ Zyra | $220 | 3 rev | 100% | 55 features | 2 presets | Shine Dezign Infonet
+[2026-04-01T13:54:09.677Z]     breakdown: +3 ~0 -0 | niches: clothing | launch: December 24, 2025
+[2026-04-01T13:54:09.677Z]     presets: Zyra, Matrix | demo: https://zyra-theme-demo.myshopify.com/
+[2026-04-01T13:54:09.678Z]     Scraping demo sections: https://zyra-theme-demo.myshopify.com/
+[2026-04-01T13:54:22.656Z]     Demo scraped in 12978ms — HP: 15 sections | Collection: 4 | Product: 9
+[2026-04-01T13:54:22.657Z]     TOTAL: 25 unique themes
+[2026-04-01T13:54:22.657Z]   [4/7] Waiting 7.5s → krank
+[2026-04-01T13:54:33.563Z]     Theme page loaded in 3403ms
+[2026-04-01T13:54:33.569Z]     ✓ Krank | $320 | 14 rev | 93% | 58 features | 4 presets | Webvista Studio
+[2026-04-01T13:54:33.569Z]     breakdown: +13 ~0 -1 | niches: hardware | launch: March 23, 2026
+[2026-04-01T13:54:33.569Z]     presets: Krank, Drive, Florona, Feast | demo: https://ecommerce-power-tools.myshopify.com
+[2026-04-01T13:54:33.569Z]     Scraping demo sections: https://ecommerce-power-tools.myshopify.com
+[2026-04-01T13:54:45.077Z]     Demo scraped in 11508ms — HP: 26 sections | Collection: 9 | Product: 10
+[2026-04-01T13:54:45.079Z]     TOTAL: 26 unique themes
+[2026-04-01T13:54:45.079Z]   [5/7] Waiting 7.2s → line
+[2026-04-01T13:54:55.316Z]     Theme page loaded in 3080ms
+[2026-04-01T13:54:55.323Z]     ✓ Line | $260 | 2 rev | 100% | 41 features | 3 presets | Xotiny
+[2026-04-01T13:54:55.324Z]     breakdown: +2 ~0 -0 | niches: beauty | launch: December 02, 2025
+[2026-04-01T13:54:55.324Z]     presets: Line, Charm, Snacks | demo: https://xo-line.myshopify.com/
+[2026-04-01T13:54:55.324Z]     Scraping demo sections: https://xo-line.myshopify.com/
+[2026-04-01T13:55:07.326Z]     Demo scraped in 12002ms — HP: 12 sections | Collection: 4 | Product: 7
+[2026-04-01T13:55:07.327Z]     TOTAL: 27 unique themes
+[2026-04-01T13:55:07.327Z]   [6/7] Waiting 6.6s → flute
+[2026-04-01T13:55:17.469Z]     Theme page loaded in 3494ms
+[2026-04-01T13:55:17.477Z]     ✓ Flute | $230 | 8 rev | 100% | 41 features | 4 presets | Webibazaar Templates
+[2026-04-01T13:55:17.478Z]     breakdown: +8 ~0 -0 | niches: clothing | launch: March 26, 2026
+[2026-04-01T13:55:17.478Z]     presets: Flute, Track, Pretiosa, Glaze | demo: https://flute-theme.myshopify.com/
+[2026-04-01T13:55:17.478Z]     Scraping demo sections: https://flute-theme.myshopify.com/
+[2026-04-01T13:55:33.670Z]     Demo scraped in 16192ms — HP: 16 sections | Collection: 7 | Product: 10
+[2026-04-01T13:55:33.672Z]     TOTAL: 28 unique themes
+[2026-04-01T13:55:33.672Z]   [7/7] Waiting 6.8s → purity
+[2026-04-01T13:55:43.745Z]     Theme page loaded in 3223ms
+[2026-04-01T13:55:43.748Z]     ✓ Purity | $300 | 73 rev | 99% | 49 features | 2 presets | NextSky
+[2026-04-01T13:55:43.748Z]     breakdown: +72 ~1 -0 | niches: beauty | launch: March 02, 2026
+[2026-04-01T13:55:43.748Z]     presets: Purity, Velyn | demo: https://purity.nextsky.co/
+[2026-04-01T13:55:43.748Z]     Scraping demo sections: https://purity.nextsky.co/
+[2026-04-01T13:55:55.244Z]     Demo scraped in 11496ms — HP: 22 sections | Collection: 6 | Product: 12
+[2026-04-01T13:55:55.246Z]     TOTAL: 29 unique themes
+[2026-04-01T13:55:55.246Z] 
+--- Page 4 done | 29 themes | 12.4 min | waiting 5.9s ---
+[2026-04-01T13:56:01.150Z] 
+========================================
+[2026-04-01T13:56:01.151Z] LISTING PAGE 5: https://themes.shopify.com/themes?sort_by=newest&page=5
+[2026-04-01T13:56:01.152Z] ========================================
+[2026-04-01T13:56:01.152Z] Themes: 29 | Skipped: 2 | Errors: 0
+[2026-04-01T13:56:04.545Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T13:56:04.547Z] Found 8 themes: purity, beautify, elemento, lollipop, haven, rad, edge, allure
+[2026-04-01T13:56:04.547Z]   [1/8] SKIP "purity" — duplicate
+[2026-04-01T13:56:04.547Z]   [2/8] Waiting 8.7s → beautify
+[2026-04-01T13:56:16.652Z]     Theme page loaded in 3391ms
+[2026-04-01T13:56:16.660Z]     ✓ Beautify | $420 | 3 rev | 100% | 47 features | 2 presets | world-leading theme experts Clean Canvas, who have shaped the success of 100K+ stores worldwide.
+[2026-04-01T13:56:16.660Z]     breakdown: +3 ~0 -0 | niches: beauty | launch: March 13, 2026
+[2026-04-01T13:56:16.660Z]     presets: Beautify, Cherish | demo: https://beautify-theme-cosmetics.myshopify.com/
+[2026-04-01T13:56:16.661Z]     Scraping demo sections: https://beautify-theme-cosmetics.myshopify.com/
+[2026-04-01T13:56:33.294Z]     Demo scraped in 16633ms — HP: 19 sections | Collection: 6 | Product: 10
+[2026-04-01T13:56:33.296Z]     TOTAL: 30 unique themes
+[2026-04-01T13:56:33.297Z]   [3/8] Waiting 9.7s → elemento
+[2026-04-01T13:56:46.046Z]     Theme page loaded in 3082ms
+[2026-04-01T13:56:46.050Z]     ✓ Elemento | $390 | 2 rev | 100% | 50 features | 4 presets | KROKOD sp. z o.o.
+[2026-04-01T13:56:46.051Z]     breakdown: +2 ~0 -0 | niches: clothing | launch: September 17, 2025
+[2026-04-01T13:56:46.051Z]     presets: Elemento, Brume, Lunel, Terra | demo: https://elemento-blaze.myshopify.com/
+[2026-04-01T13:56:46.051Z]     Scraping demo sections: https://elemento-blaze.myshopify.com/
+[2026-04-01T13:56:58.218Z]     Demo scraped in 12167ms — HP: 18 sections | Collection: 5 | Product: 9
+[2026-04-01T13:56:58.219Z]     TOTAL: 31 unique themes
+[2026-04-01T13:56:58.219Z]   [4/8] Waiting 8.2s → lollipop
+[2026-04-01T13:57:09.445Z]     Theme page loaded in 3012ms
+[2026-04-01T13:57:09.453Z]     ✓ Lollipop | $100 | 4 rev | 100% | 38 features | 2 presets | Designthemes
+[2026-04-01T13:57:09.453Z]     breakdown: +4 ~0 -0 | niches: beauty | launch: February 06, 2026
+[2026-04-01T13:57:09.453Z]     presets: Lollipop, Nysa | demo: https://lollipop-theme.myshopify.com/
+[2026-04-01T13:57:09.454Z]     Scraping demo sections: https://lollipop-theme.myshopify.com/
+[2026-04-01T13:57:22.242Z]     Demo scraped in 12788ms — HP: 19 sections | Collection: 6 | Product: 7
+[2026-04-01T13:57:22.243Z]     TOTAL: 32 unique themes
+[2026-04-01T13:57:22.244Z]   [5/8] Waiting 5.3s → haven
+[2026-04-01T13:57:30.578Z]     Theme page loaded in 3040ms
+[2026-04-01T13:57:30.581Z]     ✓ Haven | $260 | 6 rev | 100% | 39 features | 4 presets | Hex Switch Studios
+[2026-04-01T13:57:30.582Z]     breakdown: +6 ~0 -0 | niches: home | launch: February 05, 2026
+[2026-04-01T13:57:30.582Z]     presets: Haven, Vignette, Platform, Renew | demo: https://hexswitch-hush-demo.myshopify.com
+[2026-04-01T13:57:30.582Z]     Scraping demo sections: https://hexswitch-hush-demo.myshopify.com
+[2026-04-01T13:57:42.039Z]     Demo scraped in 11457ms — HP: 15 sections | Collection: 5 | Product: 9
+[2026-04-01T13:57:42.040Z]     TOTAL: 33 unique themes
+[2026-04-01T13:57:42.040Z]   [6/8] Waiting 5.6s → rad
+[2026-04-01T13:57:50.970Z]     Theme page loaded in 3319ms
+[2026-04-01T13:57:50.974Z]     ✓ Rad | $260 | 3 rev | 100% | 35 features | 2 presets | Radikal
+[2026-04-01T13:57:50.974Z]     breakdown: +3 ~0 -0 | niches: maximum creative control, letting your brand's personality shine., beauty | launch: January 05, 2026
+[2026-04-01T13:57:50.974Z]     presets: Rad, Nine | demo: https://rad-trois.myshopify.com/
+[2026-04-01T13:57:50.974Z]     Scraping demo sections: https://rad-trois.myshopify.com/
+[2026-04-01T13:58:02.692Z]     Demo scraped in 11718ms — HP: 14 sections | Collection: 6 | Product: 5
+[2026-04-01T13:58:02.694Z]     TOTAL: 34 unique themes
+[2026-04-01T13:58:02.695Z]   [7/8] Waiting 8.8s → edge
+[2026-04-01T13:58:15.076Z]     Theme page loaded in 3605ms
+[2026-04-01T13:58:15.089Z]     ✓ Edge | $320 | 17 rev | 100% | 61 features | 5 presets | OranThemes
+[2026-04-01T13:58:15.090Z]     breakdown: +17 ~0 -0 | niches: jewelry and accessories | launch: March 03, 2026
+[2026-04-01T13:58:15.090Z]     presets: Edge, Layer, Sundown, Step, Linea | demo: https://edge-theme-brilliant.myshopify.com/
+[2026-04-01T13:58:15.090Z]     Scraping demo sections: https://edge-theme-brilliant.myshopify.com/
+[2026-04-01T13:58:27.710Z]     Demo scraped in 12620ms — HP: 25 sections | Collection: 7 | Product: 15
+[2026-04-01T13:58:27.711Z]     TOTAL: 35 unique themes
+[2026-04-01T13:58:27.711Z]   [8/8] Waiting 5.2s → allure
+[2026-04-01T13:58:36.394Z]     Theme page loaded in 3501ms
+[2026-04-01T13:58:36.401Z]     ✓ Allure | $100 | 22 rev | 100% | 57 features | 5 presets | UTD
+[2026-04-01T13:58:36.401Z]     breakdown: +22 ~0 -0 | niches: clothing | launch: March 19, 2026
+[2026-04-01T13:58:36.401Z]     presets: Allure, Stitch, Carrara, Pristine, Bijou | demo: https://demo-store-mini-pollheim-suits.myshopify.com/
+[2026-04-01T13:58:36.402Z]     Scraping demo sections: https://demo-store-mini-pollheim-suits.myshopify.com/
+[2026-04-01T13:58:47.952Z]     Demo scraped in 11550ms — HP: 16 sections | Collection: 6 | Product: 8
+[2026-04-01T13:58:47.953Z]     TOTAL: 36 unique themes
+[2026-04-01T13:58:47.953Z] 
+--- Page 5 done | 36 themes | 15.3 min | waiting 6.3s ---
+[2026-04-01T13:58:54.215Z] 
+========================================
+[2026-04-01T13:58:54.217Z] LISTING PAGE 6: https://themes.shopify.com/themes?sort_by=newest&page=6
+[2026-04-01T13:58:54.217Z] ========================================
+[2026-04-01T13:58:54.217Z] Themes: 36 | Skipped: 3 | Errors: 0
+[2026-04-01T13:58:57.586Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T13:58:57.589Z] Found 6 themes: allure, grove, adorn, lyra, pastarina, megastore
+[2026-04-01T13:58:57.589Z]   [1/6] SKIP "allure" — duplicate
+[2026-04-01T13:58:57.589Z]   [2/6] Waiting 6.3s → grove
+[2026-04-01T13:59:07.417Z]     Theme page loaded in 3567ms
+[2026-04-01T13:59:07.422Z]     ✓ Grove | $320 | 2 rev | 100% | 37 features | 5 presets | Omelatte FZ-LLC
+[2026-04-01T13:59:07.422Z]     breakdown: +2 ~0 -0 | niches: jewelry and accessories | launch: January 22, 2026
+[2026-04-01T13:59:07.422Z]     presets: Grove, Sticky, Aircon, Chair, Nuts | demo: https://grove-theme.myshopify.com/
+[2026-04-01T13:59:07.422Z]     Scraping demo sections: https://grove-theme.myshopify.com/
+[2026-04-01T13:59:19.910Z]     Demo scraped in 12488ms — HP: 22 sections | Collection: 6 | Product: 10
+[2026-04-01T13:59:19.911Z]     TOTAL: 37 unique themes
+[2026-04-01T13:59:19.912Z]   [3/6] Waiting 9.6s → adorn
+[2026-04-01T13:59:32.826Z]     Theme page loaded in 3323ms
+[2026-04-01T13:59:32.832Z]     ✓ Adorn | $270 | 27 rev | 96% | 55 features | 5 presets | Vowel Web
+[2026-04-01T13:59:32.832Z]     breakdown: +26 ~0 -1 | niches: beauty | launch: February 10, 2026
+[2026-04-01T13:59:32.832Z]     presets: Adorn, Choice, Closet, Precious, Ace | demo: https://adorn-demo.myshopify.com/
+[2026-04-01T13:59:32.832Z]     Scraping demo sections: https://adorn-demo.myshopify.com/
+[2026-04-01T13:59:46.523Z]     Demo scraped in 13691ms — HP: 20 sections | Collection: 4 | Product: 10
+[2026-04-01T13:59:46.524Z]     TOTAL: 38 unique themes
+[2026-04-01T13:59:46.525Z]   [4/6] Waiting 5.8s → lyra
+[2026-04-01T13:59:55.869Z]     Theme page loaded in 3541ms
+[2026-04-01T13:59:55.874Z]     ✓ Lyra | $260 | 12 rev | 100% | 44 features | 5 presets | Webibazaar Templates
+[2026-04-01T13:59:55.875Z]     breakdown: +12 ~0 -0 | niches: jewelry brands., jewelry and accessories | launch: March 17, 2026
+[2026-04-01T13:59:55.875Z]     presets: Lyra, Thread, Pixel, Glossy, Bonsai | demo: https://lyra-theme.myshopify.com/
+[2026-04-01T13:59:55.875Z]     Scraping demo sections: https://lyra-theme.myshopify.com/
+[2026-04-01T14:00:10.548Z]     Demo scraped in 14673ms — HP: 19 sections | Collection: 5 | Product: 8
+[2026-04-01T14:00:10.549Z]     TOTAL: 39 unique themes
+[2026-04-01T14:00:10.549Z]   [5/6] Waiting 6.8s → pastarina
+[2026-04-01T14:00:21.067Z]     Theme page loaded in 3760ms
+[2026-04-01T14:00:21.070Z]     ✓ Pastarina | $320 | 1 rev | 100% | 24 features | 3 presets | Xotiny
+[2026-04-01T14:00:21.070Z]     breakdown: +1 ~0 -0 | niches: food and drink | launch: December 02, 2025
+[2026-04-01T14:00:21.070Z]     presets: Pastarina, Buncheeze, Gourmet | demo: https://xo-pastarina.myshopify.com/
+[2026-04-01T14:00:21.070Z]     Scraping demo sections: https://xo-pastarina.myshopify.com/
+[2026-04-01T14:00:34.288Z]     Demo scraped in 13218ms — HP: 12 sections | Collection: 6 | Product: 7
+[2026-04-01T14:00:34.290Z]     TOTAL: 40 unique themes
+[2026-04-01T14:00:34.290Z]   [6/6] Waiting 8.1s → megastore
+[2026-04-01T14:00:45.530Z]     Theme page loaded in 3109ms
+[2026-04-01T14:00:45.539Z]     ✓ Megastore | $380 | 3 rev | 67% | 48 features | 5 presets | Creative Commerce
+[2026-04-01T14:00:45.540Z]     breakdown: +2 ~0 -1 | niches: clothing | launch: March 10, 2026
+[2026-04-01T14:00:45.540Z]     presets: Megastore, Idea, Fit, Makeup, Bride | demo: https://megastore-modern.myshopify.com/
+[2026-04-01T14:00:45.540Z]     Scraping demo sections: https://megastore-modern.myshopify.com/
+[2026-04-01T14:00:58.911Z]     Demo scraped in 13371ms — HP: 17 sections | Collection: 7 | Product: 7
+[2026-04-01T14:00:58.912Z]     TOTAL: 41 unique themes
+[2026-04-01T14:00:58.912Z] 
+--- Page 6 done | 41 themes | 17.5 min | waiting 5.0s ---
+[2026-04-01T14:01:03.954Z] 
+========================================
+[2026-04-01T14:01:03.956Z] LISTING PAGE 7: https://themes.shopify.com/themes?sort_by=newest&page=7
+[2026-04-01T14:01:03.960Z] ========================================
+[2026-04-01T14:01:03.960Z] Themes: 41 | Skipped: 4 | Errors: 0
+[2026-04-01T14:01:07.381Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:01:07.384Z] Found 14 themes: genie, maya, fabric, savor, vessel, dwell, tinker, pitch, atelier, heritage, ritual, nova, carbon, sampo
+[2026-04-01T14:01:07.384Z]   [1/14] Waiting 7.5s → genie
+[2026-04-01T14:01:17.981Z]     Theme page loaded in 3108ms
+[2026-04-01T14:01:17.987Z]     ✓ Genie | $180 | 0 rev | null% | 49 features | 2 presets | Shine Dezign Infonet
+[2026-04-01T14:01:17.987Z]     breakdown: +null ~null -null | niches: kids | launch: December 02, 2025
+[2026-04-01T14:01:17.988Z]     presets: Genie, Jasmine | demo: https://genie-theme-lamp.myshopify.com/
+[2026-04-01T14:01:17.988Z]     Scraping demo sections: https://genie-theme-lamp.myshopify.com/
+[2026-04-01T14:01:31.952Z]     Demo scraped in 13964ms — HP: 23 sections | Collection: 6 | Product: 10
+[2026-04-01T14:01:31.953Z]     TOTAL: 42 unique themes
+[2026-04-01T14:01:31.953Z]   [2/14] Waiting 7.4s → maya
+[2026-04-01T14:01:42.647Z]     Theme page loaded in 3269ms
+[2026-04-01T14:01:42.651Z]     ✓ Maya | $500 | 7 rev | 71% | 55 features | 3 presets | Shine Dezign Infonet
+[2026-04-01T14:01:42.651Z]     breakdown: +5 ~1 -1 | niches: clothing | launch: January 26, 2026
+[2026-04-01T14:01:42.652Z]     presets: Maya, Magic, Citrus | demo: https://maya-theme-empower.myshopify.com/
+[2026-04-01T14:01:42.652Z]     Scraping demo sections: https://maya-theme-empower.myshopify.com/
+[2026-04-01T14:01:57.301Z]     Demo scraped in 14649ms — HP: 17 sections | Collection: 6 | Product: 8
+[2026-04-01T14:01:57.302Z]     TOTAL: 43 unique themes
+[2026-04-01T14:01:57.303Z]   [3/14] Waiting 5.3s → fabric
+[2026-04-01T14:02:05.735Z]     Theme page loaded in 3121ms
+[2026-04-01T14:02:05.741Z]     ✓ Fabric | Free | 59 rev | 32% | 45 features | ? presets | Shopify
+[2026-04-01T14:02:05.741Z]     breakdown: +19 ~14 -26 | niches: clothing | launch: March 30, 2026
+[2026-04-01T14:02:05.741Z]     presets: ? | demo: https://theme-fabric-demo.myshopify.com/
+[2026-04-01T14:02:05.741Z]     Scraping demo sections: https://theme-fabric-demo.myshopify.com/
+[2026-04-01T14:02:21.736Z]     Demo scraped in 15995ms — HP: 10 sections | Collection: 5 | Product: 5
+[2026-04-01T14:02:21.738Z]     TOTAL: 44 unique themes
+[2026-04-01T14:02:21.738Z]   [4/14] Waiting 6.1s → savor
+[2026-04-01T14:02:31.048Z]     Theme page loaded in 3162ms
+[2026-04-01T14:02:31.052Z]     ✓ Savor | Free | 57 rev | 23% | 44 features | ? presets | Shopify
+[2026-04-01T14:02:31.052Z]     breakdown: +13 ~21 -23 | niches: food and drink | launch: March 30, 2026
+[2026-04-01T14:02:31.053Z]     presets: ? | demo: https://savor-theme-demo.myshopify.com/
+[2026-04-01T14:02:31.053Z]     Scraping demo sections: https://savor-theme-demo.myshopify.com/
+[2026-04-01T14:02:44.231Z]     Demo scraped in 13178ms — HP: 5 sections | Collection: 4 | Product: 4
+[2026-04-01T14:02:44.232Z]     TOTAL: 45 unique themes
+[2026-04-01T14:02:44.232Z]   [5/14] Waiting 5.2s → vessel
+[2026-04-01T14:02:52.379Z]     Theme page loaded in 2988ms
+[2026-04-01T14:02:52.388Z]     ✓ Vessel | Free | 29 rev | 24% | 44 features | ? presets | Shopify
+[2026-04-01T14:02:52.389Z]     breakdown: +7 ~8 -14 | niches: home | launch: March 30, 2026
+[2026-04-01T14:02:52.389Z]     presets: ? | demo: https://theme-vessel-demo.myshopify.com/
+[2026-04-01T14:02:52.389Z]     Scraping demo sections: https://theme-vessel-demo.myshopify.com/
+[2026-04-01T14:03:05.568Z]     Demo scraped in 13179ms — HP: 8 sections | Collection: 5 | Product: 6
+[2026-04-01T14:03:05.570Z]     TOTAL: 46 unique themes
+[2026-04-01T14:03:05.570Z]   [6/14] Waiting 6.1s → dwell
+[2026-04-01T14:03:14.779Z]     Theme page loaded in 3062ms
+[2026-04-01T14:03:14.783Z]     ✓ Dwell | Free | 34 rev | 26% | 44 features | ? presets | Shopify
+[2026-04-01T14:03:14.783Z]     breakdown: +9 ~9 -16 | niches: home | launch: March 30, 2026
+[2026-04-01T14:03:14.783Z]     presets: ? | demo: https://theme-dwell-demo.myshopify.com/
+[2026-04-01T14:03:14.783Z]     Scraping demo sections: https://theme-dwell-demo.myshopify.com/
+[2026-04-01T14:03:28.743Z]     Demo scraped in 13960ms — HP: 12 sections | Collection: 6 | Product: 7
+[2026-04-01T14:03:28.744Z]     TOTAL: 47 unique themes
+[2026-04-01T14:03:28.744Z]   [7/14] Waiting 5.8s → tinker
+[2026-04-01T14:03:37.511Z]     Theme page loaded in 3003ms
+[2026-04-01T14:03:37.515Z]     ✓ Tinker | Free | 69 rev | 36% | 45 features | ? presets | Shopify
+[2026-04-01T14:03:37.515Z]     breakdown: +25 ~18 -26 | niches: office | launch: March 30, 2026
+[2026-04-01T14:03:37.515Z]     presets: ? | demo: https://theme-tinker-demo.myshopify.com/
+[2026-04-01T14:03:37.515Z]     Scraping demo sections: https://theme-tinker-demo.myshopify.com/
+[2026-04-01T14:03:50.046Z]     Demo scraped in 12531ms — HP: 8 sections | Collection: 7 | Product: 8
+[2026-04-01T14:03:50.050Z]     TOTAL: 48 unique themes
+[2026-04-01T14:03:50.050Z]   [8/14] Waiting 8.2s → pitch
+[2026-04-01T14:04:01.224Z]     Theme page loaded in 3008ms
+[2026-04-01T14:04:01.230Z]     ✓ Pitch | Free | 28 rev | 32% | 41 features | ? presets | Shopify
+[2026-04-01T14:04:01.230Z]     breakdown: +9 ~10 -9 | niches: beauty | launch: March 30, 2026
+[2026-04-01T14:04:01.230Z]     presets: ? | demo: https://theme-pitch-demo.myshopify.com/
+[2026-04-01T14:04:01.230Z]     Scraping demo sections: https://theme-pitch-demo.myshopify.com/
+[2026-04-01T14:04:14.888Z]     Demo scraped in 13657ms — HP: 8 sections | Collection: 6 | Product: 9
+[2026-04-01T14:04:14.889Z]     TOTAL: 49 unique themes
+[2026-04-01T14:04:14.889Z]   [9/14] Waiting 8.0s → atelier
+[2026-04-01T14:04:25.989Z]     Theme page loaded in 3138ms
+[2026-04-01T14:04:25.997Z]     ✓ Atelier | Free | 66 rev | 30% | 45 features | ? presets | Shopify
+[2026-04-01T14:04:25.997Z]     breakdown: +20 ~26 -20 | niches: bags | launch: March 30, 2026
+[2026-04-01T14:04:25.997Z]     presets: ? | demo: https://theme-atelier-demo.myshopify.com/
+[2026-04-01T14:04:25.997Z]     Scraping demo sections: https://theme-atelier-demo.myshopify.com/
+[2026-04-01T14:04:38.625Z]     Demo scraped in 12628ms — HP: 8 sections | Collection: 5 | Product: 4
+[2026-04-01T14:04:38.625Z]     TOTAL: 50 unique themes
+[2026-04-01T14:04:38.626Z]   [10/14] Waiting 9.0s → heritage
+[2026-04-01T14:04:50.790Z]     Theme page loaded in 3159ms
+[2026-04-01T14:04:50.798Z]     ✓ Heritage | Free | 10 rev | 50% | 45 features | ? presets | Shopify
+[2026-04-01T14:04:50.799Z]     breakdown: +5 ~2 -3 | niches: brands with a strong editorial aesthetic. Immersive galleries with asymmetrical, organic layouts let your brand voice shine., clothing | launch: March 30, 2026
+[2026-04-01T14:04:50.799Z]     presets: ? | demo: https://theme-heritage-demo.myshopify.com/
+[2026-04-01T14:04:50.799Z]     Scraping demo sections: https://theme-heritage-demo.myshopify.com/
+[2026-04-01T14:05:02.798Z]     Demo scraped in 11999ms — HP: 8 sections | Collection: 6 | Product: 6
+[2026-04-01T14:05:02.800Z]     TOTAL: 51 unique themes
+[2026-04-01T14:05:02.800Z]   [11/14] Waiting 8.6s → ritual
+[2026-04-01T14:05:14.749Z]     Theme page loaded in 3335ms
+[2026-04-01T14:05:14.759Z]     ✓ Ritual | Free | 21 rev | 33% | 44 features | ? presets | Shopify
+[2026-04-01T14:05:14.759Z]     breakdown: +7 ~8 -6 | niches: clothing | launch: March 30, 2026
+[2026-04-01T14:05:14.759Z]     presets: ? | demo: https://theme-ritual-demo.myshopify.com/
+[2026-04-01T14:05:14.760Z]     Scraping demo sections: https://theme-ritual-demo.myshopify.com/
+[2026-04-01T14:05:27.886Z]     Demo scraped in 13126ms — HP: 8 sections | Collection: 5 | Product: 5
+[2026-04-01T14:05:27.888Z]     TOTAL: 52 unique themes
+[2026-04-01T14:05:27.888Z]   [12/14] Waiting 8.5s → nova
+[2026-04-01T14:05:40.161Z]     Theme page loaded in 3788ms
+[2026-04-01T14:05:40.167Z]     ✓ Nova | $350 | 2 rev | 100% | 42 features | 5 presets | Mile High Themes
+[2026-04-01T14:05:40.167Z]     breakdown: +2 ~0 -0 | niches: sports | launch: December 12, 2025
+[2026-04-01T14:05:40.168Z]     presets: Nova, Lumen, Orion, Altair, Sirius | demo: https://nova-demo-1.myshopify.com
+[2026-04-01T14:05:40.169Z]     Scraping demo sections: https://nova-demo-1.myshopify.com
+[2026-04-01T14:05:52.130Z]     Demo scraped in 11959ms — HP: 10 sections | Collection: 6 | Product: 8
+[2026-04-01T14:05:52.132Z]     TOTAL: 53 unique themes
+[2026-04-01T14:05:52.132Z]   [13/14] Waiting 7.0s → carbon
+[2026-04-01T14:06:02.321Z]     Theme page loaded in 3209ms
+[2026-04-01T14:06:02.325Z]     ✓ Carbon | $280 | 8 rev | 88% | 37 features | 2 presets | E-commerce Studio
+[2026-04-01T14:06:02.326Z]     breakdown: +7 ~0 -1 | niches: clothing | launch: February 04, 2026
+[2026-04-01T14:06:02.326Z]     presets: Carbon, Eternal | demo: https://carbon-ecs.myshopify.com/
+[2026-04-01T14:06:02.326Z]     Scraping demo sections: https://carbon-ecs.myshopify.com/
+[2026-04-01T14:06:14.693Z]     Demo scraped in 12367ms — HP: 14 sections | Collection: 6 | Product: 10
+[2026-04-01T14:06:14.694Z]     TOTAL: 54 unique themes
+[2026-04-01T14:06:14.694Z]   [14/14] Waiting 8.7s → sampo
+[2026-04-01T14:06:26.497Z]     Theme page loaded in 3117ms
+[2026-04-01T14:06:26.501Z]     ✓ Sampo | $390 | 3 rev | 100% | 50 features | 4 presets | Woolman
+[2026-04-01T14:06:26.501Z]     breakdown: +3 ~0 -0 | niches: jewelry and accessories | launch: December 02, 2025
+[2026-04-01T14:06:26.501Z]     presets: Sampo, Mighty, Resonance, Carry | demo: https://sampo-demo-elegant.myshopify.com
+[2026-04-01T14:06:26.501Z]     Scraping demo sections: https://sampo-demo-elegant.myshopify.com
+[2026-04-01T14:06:40.187Z]     Demo scraped in 13686ms — HP: 21 sections | Collection: 11 | Product: 11
+[2026-04-01T14:06:40.187Z]     TOTAL: 55 unique themes
+[2026-04-01T14:06:40.188Z] 
+--- Page 7 done | 55 themes | 23.2 min | waiting 9.7s ---
+[2026-04-01T14:06:49.933Z] 
+========================================
+[2026-04-01T14:06:49.934Z] LISTING PAGE 8: https://themes.shopify.com/themes?sort_by=newest&page=8
+[2026-04-01T14:06:49.934Z] ========================================
+[2026-04-01T14:06:49.934Z] Themes: 55 | Skipped: 4 | Errors: 0
+[2026-04-01T14:06:53.471Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:06:53.473Z] Found 9 themes: sampo, loka, strong, monochrome, elixira, horizon, desert, volume, primavera
+[2026-04-01T14:06:53.473Z]   [1/9] SKIP "sampo" — duplicate
+[2026-04-01T14:06:53.473Z]   [2/9] Waiting 7.0s → loka
+[2026-04-01T14:07:05.213Z]     Theme page loaded in 4751ms
+[2026-04-01T14:07:05.221Z]     ✓ Loka | $140 | 1 rev | 100% | 42 features | 4 presets | MUUP
+[2026-04-01T14:07:05.221Z]     breakdown: +1 ~0 -0 | niches: food and drink | launch: March 30, 2026
+[2026-04-01T14:07:05.221Z]     presets: Loka, Kofe, Karma, Staplr | demo: https://loka-demo.myshopify.com/
+[2026-04-01T14:07:05.221Z]     Scraping demo sections: https://loka-demo.myshopify.com/
+[2026-04-01T14:07:19.529Z]     Demo scraped in 14308ms — HP: 26 sections | Collection: 11 | Product: 17
+[2026-04-01T14:07:19.531Z]     TOTAL: 56 unique themes
+[2026-04-01T14:07:19.531Z]   [3/9] Waiting 7.0s → strong
+[2026-04-01T14:07:30.074Z]     Theme page loaded in 3496ms
+[2026-04-01T14:07:30.083Z]     ✓ Strong | $320 | 7 rev | 100% | 44 features | 3 presets | BoostifyThemes
+[2026-04-01T14:07:30.083Z]     breakdown: +7 ~0 -0 | niches: shoes | launch: February 16, 2026
+[2026-04-01T14:07:30.083Z]     presets: Strong, Bend, Velvet | demo: https://boostify-strong.myshopify.com
+[2026-04-01T14:07:30.083Z]     Scraping demo sections: https://boostify-strong.myshopify.com
+[2026-04-01T14:07:42.529Z]     Demo scraped in 12446ms — HP: 13 sections | Collection: 5 | Product: 8
+[2026-04-01T14:07:42.530Z]     TOTAL: 57 unique themes
+[2026-04-01T14:07:42.530Z]   [4/9] Waiting 8.3s → monochrome
+[2026-04-01T14:07:54.100Z]     Theme page loaded in 3248ms
+[2026-04-01T14:07:54.107Z]     ✓ Monochrome | $320 | 17 rev | 94% | 42 features | 5 presets | Superfine
+[2026-04-01T14:07:54.107Z]     breakdown: +16 ~0 -1 | niches: immersive visual storytelling., art | launch: March 04, 2026
+[2026-04-01T14:07:54.107Z]     presets: Monochrome, Homme, Capsule, Ultraviolet, Specialty | demo: https://monochrome-modern.myshopify.com/
+[2026-04-01T14:07:54.107Z]     Scraping demo sections: https://monochrome-modern.myshopify.com/
+[2026-04-01T14:08:05.007Z]     Demo scraped in 10900ms — HP: 25 sections | Collection: 6 | Product: 8
+[2026-04-01T14:08:05.008Z]     TOTAL: 58 unique themes
+[2026-04-01T14:08:05.008Z]   [5/9] Waiting 8.4s → elixira
+[2026-04-01T14:08:16.957Z]     Theme page loaded in 3499ms
+[2026-04-01T14:08:16.960Z]     ✓ Elixira | $140 | 2 rev | 100% | 47 features | 4 presets | MUUP
+[2026-04-01T14:08:16.960Z]     breakdown: +2 ~0 -0 | niches: Mobile, Electronics, electronics | launch: March 09, 2026
+[2026-04-01T14:08:16.961Z]     presets: Elixira, Sona, Plantella, Ovelia | demo: https://elektra-theme-demo.myshopify.com/
+[2026-04-01T14:08:16.961Z]     Scraping demo sections: https://elektra-theme-demo.myshopify.com/
+[2026-04-01T14:08:29.777Z]     Demo scraped in 12816ms — HP: 24 sections | Collection: 10 | Product: 15
+[2026-04-01T14:08:29.777Z]     TOTAL: 59 unique themes
+[2026-04-01T14:08:29.778Z]   [6/9] Waiting 9.9s → horizon
+[2026-04-01T14:08:42.870Z]     Theme page loaded in 3216ms
+[2026-04-01T14:08:42.878Z]     ✓ Horizon | Free | 154 rev | 37% | 45 features | ? presets | Shopify
+[2026-04-01T14:08:42.878Z]     breakdown: +57 ~45 -52 | niches: clothing | launch: March 30, 2026
+[2026-04-01T14:08:42.878Z]     presets: ? | demo: https://theme-horizon-demo.myshopify.com/
+[2026-04-01T14:08:42.878Z]     Scraping demo sections: https://theme-horizon-demo.myshopify.com/
+[2026-04-01T14:08:54.080Z]     Demo scraped in 11202ms — HP: 5 sections | Collection: 5 | Product: 5
+[2026-04-01T14:08:54.080Z]     TOTAL: 60 unique themes
+[2026-04-01T14:08:54.081Z]   [7/9] Waiting 5.3s → desert
+[2026-04-01T14:09:02.595Z]     Theme page loaded in 3244ms
+[2026-04-01T14:09:02.601Z]     ✓ Desert | $100 | 12 rev | 100% | 47 features | 3 presets | Crown Studio
+[2026-04-01T14:09:02.601Z]     breakdown: +12 ~0 -0 | niches: clothing | launch: October 06, 2025
+[2026-04-01T14:09:02.602Z]     presets: Desert, Luxury, Royale | demo: https://desert-super.myshopify.com/
+[2026-04-01T14:09:02.602Z]     Scraping demo sections: https://desert-super.myshopify.com/
+[2026-04-01T14:09:13.830Z]     Demo scraped in 11228ms — HP: 16 sections | Collection: 4 | Product: 9
+[2026-04-01T14:09:13.830Z]     TOTAL: 61 unique themes
+[2026-04-01T14:09:13.831Z]   [8/9] Waiting 5.0s → volume
+[2026-04-01T14:09:22.345Z]     Theme page loaded in 3509ms
+[2026-04-01T14:09:22.351Z]     ✓ Volume | $290 | 27 rev | 93% | 56 features | 2 presets | Staylime
+[2026-04-01T14:09:22.351Z]     breakdown: +25 ~0 -2 | niches: high-volume stores with rich navigation, clothing | launch: February 13, 2026
+[2026-04-01T14:09:22.351Z]     presets: Volume, Laceup | demo: https://volume-theme-crisp.myshopify.com/
+[2026-04-01T14:09:22.351Z]     Scraping demo sections: https://volume-theme-crisp.myshopify.com/
+[2026-04-01T14:09:34.949Z]     Demo scraped in 12598ms — HP: 28 sections | Collection: 8 | Product: 7
+[2026-04-01T14:09:34.951Z]     TOTAL: 62 unique themes
+[2026-04-01T14:09:34.951Z]   [9/9] Waiting 8.4s → primavera
+[2026-04-01T14:09:47.074Z]     Theme page loaded in 3689ms
+[2026-04-01T14:09:47.080Z]     ✓ Primavera | $400 | 16 rev | 100% | 50 features | 5 presets | Ultramarina
+[2026-04-01T14:09:47.082Z]     breakdown: +16 ~0 -0 | niches: jewelry and accessories | launch: January 06, 2026
+[2026-04-01T14:09:47.083Z]     presets: Primavera, Savoir, Gloss, Gaia, Composition | demo: https://primavera-precision.myshopify.com/
+[2026-04-01T14:09:47.083Z]     Scraping demo sections: https://primavera-precision.myshopify.com/
+[2026-04-01T14:09:59.478Z]     Demo scraped in 12395ms — HP: 20 sections | Collection: 10 | Product: 8
+[2026-04-01T14:09:59.479Z]     TOTAL: 63 unique themes
+[2026-04-01T14:09:59.479Z] 
+--- Page 8 done | 63 themes | 26.5 min | waiting 9.9s ---
+[2026-04-01T14:10:09.396Z] 
+========================================
+[2026-04-01T14:10:09.398Z] LISTING PAGE 9: https://themes.shopify.com/themes?sort_by=newest&page=9
+[2026-04-01T14:10:09.399Z] ========================================
+[2026-04-01T14:10:09.399Z] Themes: 63 | Skipped: 5 | Errors: 0
+[2026-04-01T14:10:12.958Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:10:12.960Z] Found 6 themes: primavera, zero, etheryx, purely, futurer, normcore
+[2026-04-01T14:10:12.961Z]   [1/6] SKIP "primavera" — duplicate
+[2026-04-01T14:10:12.961Z]   [2/6] Waiting 6.1s → zero
+[2026-04-01T14:10:22.445Z]     Theme page loaded in 3415ms
+[2026-04-01T14:10:22.450Z]     ✓ Zero | $320 | 2 rev | 100% | 52 features | 5 presets | Omelatte FZ-LLC
+[2026-04-01T14:10:22.450Z]     breakdown: +2 ~0 -0 | niches: shoes | launch: January 22, 2026
+[2026-04-01T14:10:22.450Z]     presets: Zero, Wag, Printing, Tattoo, Property | demo: https://zero-sports-demo.myshopify.com/
+[2026-04-01T14:10:22.450Z]     Scraping demo sections: https://zero-sports-demo.myshopify.com/
+[2026-04-01T14:10:36.417Z]     Demo scraped in 13967ms — HP: 15 sections | Collection: 4 | Product: 5
+[2026-04-01T14:10:36.417Z]     TOTAL: 64 unique themes
+[2026-04-01T14:10:36.418Z]   [3/6] Waiting 8.5s → etheryx
+[2026-04-01T14:10:48.081Z]     Theme page loaded in 3132ms
+[2026-04-01T14:10:48.085Z]     ✓ Etheryx | $360 | 8 rev | 100% | 48 features | 3 presets | OpenThinking
+[2026-04-01T14:10:48.085Z]     breakdown: +8 ~0 -0 | niches: clothing | launch: March 04, 2026
+[2026-04-01T14:10:48.086Z]     presets: Etheryx, Ethereal, Ethernity | demo: https://etheryx.myshopify.com/
+[2026-04-01T14:10:48.086Z]     Scraping demo sections: https://etheryx.myshopify.com/
+[2026-04-01T14:11:00.944Z]     Demo scraped in 12858ms — HP: 12 sections | Collection: 5 | Product: 8
+[2026-04-01T14:11:00.945Z]     TOTAL: 65 unique themes
+[2026-04-01T14:11:00.945Z]   [4/6] Waiting 8.7s → purely
+[2026-04-01T14:11:12.786Z]     Theme page loaded in 3141ms
+[2026-04-01T14:11:12.790Z]     ✓ Purely | $150 | 18 rev | 100% | 35 features | 4 presets | BoostifyThemes
+[2026-04-01T14:11:12.790Z]     breakdown: +18 ~0 -0 | niches: food and drink | launch: October 31, 2025
+[2026-04-01T14:11:12.790Z]     presets: Purely, Bean, Sight, Atomic | demo: https://pure-boostify.myshopify.com
+[2026-04-01T14:11:12.791Z]     Scraping demo sections: https://pure-boostify.myshopify.com
+[2026-04-01T14:11:23.904Z]     Demo scraped in 11113ms — HP: 11 sections | Collection: 4 | Product: 6
+[2026-04-01T14:11:23.906Z]     TOTAL: 66 unique themes
+[2026-04-01T14:11:23.906Z]   [5/6] Waiting 6.2s → futurer
+[2026-04-01T14:11:33.575Z]     Theme page loaded in 3509ms
+[2026-04-01T14:11:33.579Z]     ✓ Futurer | $320 | 45 rev | 96% | 35 features | 5 presets | Xotiny
+[2026-04-01T14:11:33.579Z]     breakdown: +43 ~0 -2 | niches: electronics | launch: March 10, 2026
+[2026-04-01T14:11:33.579Z]     presets: Futurer, Basser, Gearer, Solo, Mealtime | demo: https://xo-futurer.myshopify.com/
+[2026-04-01T14:11:33.579Z]     Scraping demo sections: https://xo-futurer.myshopify.com/
+[2026-04-01T14:11:46.846Z]     Demo scraped in 13267ms — HP: 13 sections | Collection: 6 | Product: 7
+[2026-04-01T14:11:46.847Z]     TOTAL: 67 unique themes
+[2026-04-01T14:11:46.847Z]   [6/6] Waiting 7.6s → normcore
+[2026-04-01T14:11:58.457Z]     Theme page loaded in 4052ms
+[2026-04-01T14:11:58.464Z]     ✓ Normcore | $320 | 29 rev | 100% | 55 features | 5 presets | SalesHunterThemes
+[2026-04-01T14:11:58.464Z]     breakdown: +29 ~0 -0 | niches: home | launch: October 09, 2025
+[2026-04-01T14:11:58.464Z]     presets: Normcore, Subtle, Elementary, Matte, RAW | demo: https://normcore-fundamental.myshopify.com/
+[2026-04-01T14:11:58.464Z]     Scraping demo sections: https://normcore-fundamental.myshopify.com/
+[2026-04-01T14:12:12.076Z]     Demo scraped in 13612ms — HP: 20 sections | Collection: 6 | Product: 8
+[2026-04-01T14:12:12.077Z]     TOTAL: 68 unique themes
+[2026-04-01T14:12:12.078Z] 
+--- Page 9 done | 68 themes | 28.7 min | waiting 7.7s ---
+[2026-04-01T14:12:19.770Z] 
+========================================
+[2026-04-01T14:12:19.771Z] LISTING PAGE 10: https://themes.shopify.com/themes?sort_by=newest&page=10
+[2026-04-01T14:12:19.772Z] ========================================
+[2026-04-01T14:12:19.773Z] Themes: 68 | Skipped: 6 | Errors: 0
+[2026-04-01T14:12:23.165Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:12:23.167Z] Found 7 themes: normcore, stretch, hyper, ascension, lumin, san-francisco, bespoke
+[2026-04-01T14:12:23.168Z]   [1/7] SKIP "normcore" — duplicate
+[2026-04-01T14:12:23.168Z]   [2/7] Waiting 5.4s → stretch
+[2026-04-01T14:12:31.821Z]     Theme page loaded in 3285ms
+[2026-04-01T14:12:31.827Z]     ✓ Stretch | $400 | 38 rev | 87% | 55 features | 3 presets | Maestrooo
+[2026-04-01T14:12:31.827Z]     breakdown: +33 ~2 -3 | niches: beauty | launch: March 25, 2026
+[2026-04-01T14:12:31.828Z]     presets: Stretch, Snow, Diffuse | demo: https://stretch-theme-sand.myshopify.com/
+[2026-04-01T14:12:31.828Z]     Scraping demo sections: https://stretch-theme-sand.myshopify.com/
+[2026-04-01T14:12:45.894Z]     Demo scraped in 14066ms — HP: 21 sections | Collection: 9 | Product: 10
+[2026-04-01T14:12:45.894Z]     TOTAL: 69 unique themes
+[2026-04-01T14:12:45.895Z]   [3/7] Waiting 8.1s → hyper
+[2026-04-01T14:12:57.842Z]     Theme page loaded in 3848ms
+[2026-04-01T14:12:57.849Z]     ✓ Hyper | $400 | 377 rev | 99% | 58 features | 5 presets | FoxEcom
+[2026-04-01T14:12:57.849Z]     breakdown: +373 ~1 -3 | niches: home | launch: March 05, 2026
+[2026-04-01T14:12:57.849Z]     presets: Hyper, Ceramide, Trove, Pillar, Nexvo | demo: https://hyper-theme-demo.myshopify.com/
+[2026-04-01T14:12:57.849Z]     Scraping demo sections: https://hyper-theme-demo.myshopify.com/
+[2026-04-01T14:13:09.422Z]     Demo scraped in 11573ms — HP: 23 sections | Collection: 7 | Product: 8
+[2026-04-01T14:13:09.422Z]     TOTAL: 70 unique themes
+[2026-04-01T14:13:09.423Z]   [4/7] Waiting 9.9s → ascension
+[2026-04-01T14:13:22.608Z]     Theme page loaded in 3260ms
+[2026-04-01T14:13:22.614Z]     ✓ Ascension | $400 | 15 rev | 93% | 61 features | 3 presets | Fuel Themes
+[2026-04-01T14:13:22.615Z]     breakdown: +14 ~0 -1 | niches: clothing | launch: March 03, 2026
+[2026-04-01T14:13:22.615Z]     presets: Ascension, Aeroform, Opus | demo: https://ascension-main.myshopify.com/
+[2026-04-01T14:13:22.615Z]     Scraping demo sections: https://ascension-main.myshopify.com/
+[2026-04-01T14:13:36.450Z]     Demo scraped in 13835ms — HP: 22 sections | Collection: 6 | Product: 15
+[2026-04-01T14:13:36.450Z]     TOTAL: 71 unique themes
+[2026-04-01T14:13:36.450Z]   [5/7] Waiting 6.0s → lumin
+[2026-04-01T14:13:45.697Z]     Theme page loaded in 3275ms
+[2026-04-01T14:13:45.703Z]     ✓ Lumin | $290 | 3 rev | 100% | 47 features | 5 presets | 1o1development
+[2026-04-01T14:13:45.704Z]     breakdown: +3 ~0 -0 | niches: art | launch: January 22, 2026
+[2026-04-01T14:13:45.704Z]     presets: Lumin, Vital, Strap, Innovations, Meltis | demo: https://lumin-art-demo.myshopify.com/
+[2026-04-01T14:13:45.704Z]     Scraping demo sections: https://lumin-art-demo.myshopify.com/
+[2026-04-01T14:13:59.388Z]     Demo scraped in 13684ms — HP: 15 sections | Collection: 5 | Product: 8
+[2026-04-01T14:13:59.390Z]     TOTAL: 72 unique themes
+[2026-04-01T14:13:59.390Z]   [6/7] Waiting 5.1s → san-francisco
+[2026-04-01T14:14:07.692Z]     Theme page loaded in 3162ms
+[2026-04-01T14:14:07.699Z]     ✓ San Francisco | $380 | 5 rev | 100% | 42 features | 5 presets | Apparent Collective
+[2026-04-01T14:14:07.699Z]     breakdown: +5 ~0 -0 | niches: electronics | launch: March 04, 2026
+[2026-04-01T14:14:07.699Z]     presets: San Francisco, Bike, Leash, Shot, Cuddle | demo: https://san-francisco-minimal.myshopify.com/
+[2026-04-01T14:14:07.699Z]     Scraping demo sections: https://san-francisco-minimal.myshopify.com/
+[2026-04-01T14:14:18.827Z]     Demo scraped in 11128ms — HP: 20 sections | Collection: 5 | Product: 5
+[2026-04-01T14:14:18.828Z]     TOTAL: 73 unique themes
+[2026-04-01T14:14:18.829Z]   [7/7] Waiting 5.6s → bespoke
+[2026-04-01T14:14:27.625Z]     Theme page loaded in 3206ms
+[2026-04-01T14:14:27.629Z]     ✓ Bespoke | $360 | 2 rev | 100% | 55 features | 3 presets | Red Plug Design Co.
+[2026-04-01T14:14:27.629Z]     breakdown: +2 ~0 -0 | niches: clothing | launch: March 16, 2026
+[2026-04-01T14:14:27.629Z]     presets: Bespoke, Workshop, Nature | demo: https://bespoke-clothing-theme.myshopify.com/
+[2026-04-01T14:14:27.629Z]     Scraping demo sections: https://bespoke-clothing-theme.myshopify.com/
+[2026-04-01T14:14:40.268Z]     Demo scraped in 12639ms — HP: 14 sections | Collection: 10 | Product: 9
+[2026-04-01T14:14:40.269Z]     TOTAL: 74 unique themes
+[2026-04-01T14:14:40.269Z] 
+--- Page 10 done | 74 themes | 31.2 min | waiting 8.0s ---
+[2026-04-01T14:14:48.263Z] 
+========================================
+[2026-04-01T14:14:48.263Z] LISTING PAGE 11: https://themes.shopify.com/themes?sort_by=newest&page=11
+[2026-04-01T14:14:48.263Z] ========================================
+[2026-04-01T14:14:48.263Z] Themes: 74 | Skipped: 7 | Errors: 0
+[2026-04-01T14:14:51.767Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:14:51.768Z] Found 8 themes: bespoke, azzel, flux, master, motto, swiss, redefine, nimbus
+[2026-04-01T14:14:51.768Z]   [1/8] SKIP "bespoke" — duplicate
+[2026-04-01T14:14:51.768Z]   [2/8] Waiting 5.3s → azzel
+[2026-04-01T14:15:00.621Z]     Theme page loaded in 3592ms
+[2026-04-01T14:15:00.629Z]     ✓ Azzel | $200 | 16 rev | 100% | 36 features | 5 presets | Tapita
+[2026-04-01T14:15:00.629Z]     breakdown: +16 ~0 -0 | niches: jewelry and accessories | launch: December 02, 2025
+[2026-04-01T14:15:00.629Z]     presets: Azzel, Mood, Anysound, Docket, Audion | demo: https://theme-azzel.myshopify.com/
+[2026-04-01T14:15:00.629Z]     Scraping demo sections: https://theme-azzel.myshopify.com/
+[2026-04-01T14:15:15.782Z]     Demo scraped in 15153ms — HP: 16 sections | Collection: 5 | Product: 7
+[2026-04-01T14:15:15.783Z]     TOTAL: 75 unique themes
+[2026-04-01T14:15:15.783Z]   [3/8] Waiting 8.3s → flux
+[2026-04-01T14:15:27.612Z]     Theme page loaded in 3529ms
+[2026-04-01T14:15:27.621Z]     ✓ Flux | $270 | 33 rev | 100% | 43 features | 5 presets | Mana Themes
+[2026-04-01T14:15:27.621Z]     breakdown: +33 ~0 -0 | niches: food and drink | launch: March 19, 2026
+[2026-04-01T14:15:27.622Z]     presets: Flux, Olivelle, Scribbly, Tinki, Paws | demo: https://fuel-theme.myshopify.com/
+[2026-04-01T14:15:27.622Z]     Scraping demo sections: https://fuel-theme.myshopify.com/
+[2026-04-01T14:15:40.229Z]     Demo scraped in 12607ms — HP: 18 sections | Collection: 5 | Product: 13
+[2026-04-01T14:15:40.230Z]     TOTAL: 76 unique themes
+[2026-04-01T14:15:40.230Z]   [4/8] Waiting 7.1s → master
+[2026-04-01T14:15:50.405Z]     Theme page loaded in 3087ms
+[2026-04-01T14:15:50.408Z]     ✓ Master | $100 | 2 rev | 100% | 52 features | ? presets | Shine Dezign Infonet
+[2026-04-01T14:15:50.409Z]     breakdown: +2 ~0 -0 | niches: clothing | launch: December 02, 2025
+[2026-04-01T14:15:50.409Z]     presets: ? | demo: https://master-theme-guru.myshopify.com/
+[2026-04-01T14:15:50.409Z]     Scraping demo sections: https://master-theme-guru.myshopify.com/
+[2026-04-01T14:16:16.479Z]     Demo scraped in 26070ms — HP: 20 sections | Collection: 4 | Product: 7
+[2026-04-01T14:16:16.480Z]     TOTAL: 77 unique themes
+[2026-04-01T14:16:16.480Z]   [5/8] Waiting 5.7s → motto
+[2026-04-01T14:16:32.468Z]     Theme page loaded in 10314ms
+[2026-04-01T14:16:32.476Z]     ✓ Motto | $320 | 23 rev | 100% | 43 features | 5 presets | Noord
+[2026-04-01T14:16:32.477Z]     breakdown: +23 ~0 -0 | niches: electronics | launch: March 10, 2026
+[2026-04-01T14:16:32.477Z]     presets: Motto, Retouch, Spin, Unwind, Bezel | demo: https://motto-connect.myshopify.com/
+[2026-04-01T14:16:32.477Z]     Scraping demo sections: https://motto-connect.myshopify.com/
+[2026-04-01T14:16:43.151Z]     Demo scraped in 10674ms — HP: 21 sections | Collection: 5 | Product: 11
+[2026-04-01T14:16:43.153Z]     TOTAL: 78 unique themes
+[2026-04-01T14:16:43.153Z]   [6/8] Waiting 7.0s → swiss
+[2026-04-01T14:16:53.933Z]     Theme page loaded in 3766ms
+[2026-04-01T14:16:53.941Z]     ✓ Swiss | $250 | 8 rev | 100% | 54 features | 2 presets | Slash Themes
+[2026-04-01T14:16:53.941Z]     breakdown: +8 ~0 -0 | niches: home | launch: June 18, 2025
+[2026-04-01T14:16:53.941Z]     presets: Swiss, Elite | demo: https://swiss-handloom.myshopify.com/
+[2026-04-01T14:16:53.941Z]     Scraping demo sections: https://swiss-handloom.myshopify.com/
+[2026-04-01T14:17:07.117Z]     Demo scraped in 13176ms — HP: 18 sections | Collection: 5 | Product: 7
+[2026-04-01T14:17:07.117Z]     TOTAL: 79 unique themes
+[2026-04-01T14:17:07.117Z]   [7/8] Waiting 7.8s → redefine
+[2026-04-01T14:17:18.483Z]     Theme page loaded in 3528ms
+[2026-04-01T14:17:18.486Z]     ✓ Redefine | $320 | 5 rev | 100% | 35 features | 3 presets | Xotiny
+[2026-04-01T14:17:18.486Z]     breakdown: +5 ~0 -0 | niches: home | launch: December 02, 2025
+[2026-04-01T14:17:18.486Z]     presets: Redefine, Scentella, Binderia | demo: https://xo-craftopia-redefine.myshopify.com/
+[2026-04-01T14:17:18.486Z]     Scraping demo sections: https://xo-craftopia-redefine.myshopify.com/
+[2026-04-01T14:17:32.533Z]     Demo scraped in 14046ms — HP: 12 sections | Collection: 3 | Product: 10
+[2026-04-01T14:17:32.534Z]     TOTAL: 80 unique themes
+[2026-04-01T14:17:32.534Z]   [8/8] Waiting 6.3s → nimbus
+[2026-04-01T14:17:42.359Z]     Theme page loaded in 3565ms
+[2026-04-01T14:17:42.366Z]     ✓ Nimbus | $300 | 48 rev | 94% | 60 features | 5 presets | OranThemes
+[2026-04-01T14:17:42.366Z]     breakdown: +45 ~0 -3 | niches: clothing | launch: January 15, 2026
+[2026-04-01T14:17:42.366Z]     presets: Nimbus, Morna, Esselle, Paletia, Puddle | demo: https://nimbus-theme-bright.myshopify.com/
+[2026-04-01T14:17:42.366Z]     Scraping demo sections: https://nimbus-theme-bright.myshopify.com/
+[2026-04-01T14:17:55.445Z]     Demo scraped in 13079ms — HP: 27 sections | Collection: 7 | Product: 14
+[2026-04-01T14:17:55.446Z]     TOTAL: 81 unique themes
+[2026-04-01T14:17:55.447Z] 
+--- Page 11 done | 81 themes | 34.5 min | waiting 8.1s ---
+[2026-04-01T14:18:03.561Z] 
+========================================
+[2026-04-01T14:18:03.562Z] LISTING PAGE 12: https://themes.shopify.com/themes?sort_by=newest&page=12
+[2026-04-01T14:18:03.562Z] ========================================
+[2026-04-01T14:18:03.562Z] Themes: 81 | Skipped: 8 | Errors: 0
+[2026-04-01T14:18:07.102Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:18:07.105Z] Found 6 themes: nimbus, ascent, boutique, eclipse, vincent, keystone
+[2026-04-01T14:18:07.105Z]   [1/6] SKIP "nimbus" — duplicate
+[2026-04-01T14:18:07.105Z]   [2/6] Waiting 6.0s → ascent
+[2026-04-01T14:18:16.674Z]     Theme page loaded in 3592ms
+[2026-04-01T14:18:16.678Z]     ✓ Ascent | $320 | 71 rev | 96% | 55 features | 5 presets | Webvista Studio
+[2026-04-01T14:18:16.678Z]     breakdown: +68 ~0 -3 | niches: electronics | launch: December 03, 2025
+[2026-04-01T14:18:16.678Z]     presets: Ascent, Elevated, Joyfy, Livique, Snout | demo: https://ascent-vortex.myshopify.com/
+[2026-04-01T14:18:16.678Z]     Scraping demo sections: https://ascent-vortex.myshopify.com/
+[2026-04-01T14:18:28.624Z]     Demo scraped in 11945ms — HP: 23 sections | Collection: 6 | Product: 8
+[2026-04-01T14:18:28.625Z]     TOTAL: 82 unique themes
+[2026-04-01T14:18:28.625Z]   [3/6] Waiting 5.1s → boutique
+[2026-04-01T14:18:37.441Z]     Theme page loaded in 3696ms
+[2026-04-01T14:18:37.446Z]     ✓ Boutique | $160 | 20 rev | 100% | 59 features | 5 presets | UTD
+[2026-04-01T14:18:37.447Z]     breakdown: +20 ~0 -0 | niches: clothing | launch: March 19, 2026
+[2026-04-01T14:18:37.447Z]     presets: Boutique, Noom, Reflections, Jade, Aurum | demo: https://demo-the-lace-boutique.myshopify.com/
+[2026-04-01T14:18:37.447Z]     Scraping demo sections: https://demo-the-lace-boutique.myshopify.com/
+[2026-04-01T14:18:51.869Z]     Demo scraped in 14422ms — HP: 24 sections | Collection: 7 | Product: 9
+[2026-04-01T14:18:51.870Z]     TOTAL: 83 unique themes
+[2026-04-01T14:18:51.870Z]   [4/6] Waiting 9.7s → eclipse
+[2026-04-01T14:19:04.771Z]     Theme page loaded in 3239ms
+[2026-04-01T14:19:04.777Z]     ✓ Eclipse | $340 | 23 rev | 87% | 37 features | 4 presets | Fluorescent Design Inc.
+[2026-04-01T14:19:04.777Z]     breakdown: +20 ~2 -1 | niches: clothing | launch: March 04, 2026
+[2026-04-01T14:19:04.777Z]     presets: Eclipse, Coastal, Ripple, Purse | demo: https://eclipse-theme-journey.myshopify.com/
+[2026-04-01T14:19:04.777Z]     Scraping demo sections: https://eclipse-theme-journey.myshopify.com/
+[2026-04-01T14:19:18.972Z]     Demo scraped in 14195ms — HP: 15 sections | Collection: 6 | Product: 9
+[2026-04-01T14:19:18.972Z]     TOTAL: 84 unique themes
+[2026-04-01T14:19:18.972Z]   [5/6] Waiting 9.2s → vincent
+[2026-04-01T14:19:32.412Z]     Theme page loaded in 4229ms
+[2026-04-01T14:19:32.414Z]     ✓ Vincent | $340 | 8 rev | 88% | 27 features | 5 presets | Moodboard Creations
+[2026-04-01T14:19:32.414Z]     breakdown: +7 ~0 -1 | niches: food and drink | launch: November 17, 2025
+[2026-04-01T14:19:32.414Z]     presets: Vincent, Oakland, Nurture, Pint, Bouquet | demo: https://quiet-ground-coffee.myshopify.com/
+[2026-04-01T14:19:32.415Z]     Scraping demo sections: https://quiet-ground-coffee.myshopify.com/
+[2026-04-01T14:19:44.047Z]     Demo scraped in 11632ms — HP: 13 sections | Collection: 6 | Product: 9
+[2026-04-01T14:19:44.048Z]     TOTAL: 85 unique themes
+[2026-04-01T14:19:44.048Z]   [6/6] Waiting 7.9s → keystone
+[2026-04-01T14:19:55.199Z]     Theme page loaded in 3269ms
+[2026-04-01T14:19:55.205Z]     ✓ Keystone | $440 | 12 rev | 100% | 58 features | 5 presets | Brickspace Lab
+[2026-04-01T14:19:55.205Z]     breakdown: +12 ~0 -0 | niches: clothing | launch: March 02, 2026
+[2026-04-01T14:19:55.206Z]     presets: Keystone, Kingpin, Kindred, Kettle, Kaleidoscope | demo: https://keystonethemedemo1.myshopify.com/
+[2026-04-01T14:19:55.206Z]     Scraping demo sections: https://keystonethemedemo1.myshopify.com/
+[2026-04-01T14:20:06.972Z]     Demo scraped in 11766ms — HP: 15 sections | Collection: 6 | Product: 6
+[2026-04-01T14:20:06.972Z]     TOTAL: 86 unique themes
+[2026-04-01T14:20:06.973Z] 
+--- Page 12 done | 86 themes | 36.6 min | waiting 5.5s ---
+[2026-04-01T14:20:12.486Z] 
+========================================
+[2026-04-01T14:20:12.487Z] LISTING PAGE 13: https://themes.shopify.com/themes?sort_by=newest&page=13
+[2026-04-01T14:20:12.487Z] ========================================
+[2026-04-01T14:20:12.487Z] Themes: 86 | Skipped: 9 | Errors: 0
+[2026-04-01T14:20:16.008Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:20:16.010Z] Found 6 themes: keystone, divine, wonder, noire, ultra, ignite
+[2026-04-01T14:20:16.010Z]   [1/6] SKIP "keystone" — duplicate
+[2026-04-01T14:20:16.010Z]   [2/6] Waiting 6.5s → divine
+[2026-04-01T14:20:25.871Z]     Theme page loaded in 3314ms
+[2026-04-01T14:20:25.875Z]     ✓ Divine | $120 | 16 rev | 100% | 44 features | 3 presets | Swissuplabs
+[2026-04-01T14:20:25.876Z]     breakdown: +16 ~0 -0 | niches: clothing | launch: March 11, 2026
+[2026-04-01T14:20:25.876Z]     presets: Divine, Oldmoney, Enduro | demo: https://shop-divine.swissuplabs.com/
+[2026-04-01T14:20:25.876Z]     Scraping demo sections: https://shop-divine.swissuplabs.com/
+[2026-04-01T14:20:38.584Z]     Demo scraped in 12708ms — HP: 25 sections | Collection: 10 | Product: 11
+[2026-04-01T14:20:38.584Z]     TOTAL: 87 unique themes
+[2026-04-01T14:20:38.585Z]   [3/6] Waiting 5.7s → wonder
+[2026-04-01T14:20:48.122Z]     Theme page loaded in 3858ms
+[2026-04-01T14:20:48.129Z]     ✓ Wonder | $390 | 118 rev | 99% | 48 features | 4 presets | NETHYPE
+[2026-04-01T14:20:48.129Z]     breakdown: +117 ~0 -1 | niches: beauty | launch: January 23, 2026
+[2026-04-01T14:20:48.130Z]     presets: Wonder, Root, Velour, Nook | demo: https://wonder-theme-beauty.myshopify.com/
+[2026-04-01T14:20:48.130Z]     Scraping demo sections: https://wonder-theme-beauty.myshopify.com/
+[2026-04-01T14:21:14.033Z]     Demo scraped in 25903ms — HP: 25 sections | Collection: 11 | Product: 14
+[2026-04-01T14:21:14.033Z]     TOTAL: 88 unique themes
+[2026-04-01T14:21:14.034Z]   [4/6] Waiting 8.5s → noire
+[2026-04-01T14:21:32.552Z]     Theme page loaded in 9973ms
+[2026-04-01T14:21:32.557Z]     ✓ Noire | $280 | 7 rev | 100% | 48 features | 4 presets | BoostifyThemes
+[2026-04-01T14:21:32.558Z]     breakdown: +7 ~0 -0 | niches: pets | launch: October 30, 2025
+[2026-04-01T14:21:32.558Z]     presets: Noire, Lignum, Neon, Binky | demo: https://noire-boostify.myshopify.com
+[2026-04-01T14:21:32.558Z]     Scraping demo sections: https://noire-boostify.myshopify.com
+[2026-04-01T14:21:45.588Z]     Demo scraped in 13030ms — HP: 14 sections | Collection: 7 | Product: 7
+[2026-04-01T14:21:45.589Z]     TOTAL: 89 unique themes
+[2026-04-01T14:21:45.589Z]   [5/6] Waiting 9.8s → ultra
+[2026-04-01T14:21:58.940Z]     Theme page loaded in 3549ms
+[2026-04-01T14:21:58.944Z]     ✓ Ultra | $100 | 27 rev | 89% | 59 features | 5 presets | UTD
+[2026-04-01T14:21:58.944Z]     breakdown: +24 ~1 -2 | niches: electronics | launch: March 17, 2026
+[2026-04-01T14:21:58.944Z]     presets: Ultra, Harbor, Grip, Sprout, Grace | demo: https://demo-store-ultra-electronic.myshopify.com/
+[2026-04-01T14:21:58.944Z]     Scraping demo sections: https://demo-store-ultra-electronic.myshopify.com/
+[2026-04-01T14:22:12.685Z]     Demo scraped in 13741ms — HP: 23 sections | Collection: 8 | Product: 10
+[2026-04-01T14:22:12.685Z]     TOTAL: 90 unique themes
+[2026-04-01T14:22:12.685Z]   [6/6] Waiting 5.2s → ignite
+[2026-04-01T14:22:21.260Z]     Theme page loaded in 3327ms
+[2026-04-01T14:22:21.264Z]     ✓ Ignite | $340 | 95 rev | 99% | 60 features | 5 presets | Benchmark Themes
+[2026-04-01T14:22:21.264Z]     breakdown: +94 ~0 -1 | niches: electronics | launch: March 19, 2026
+[2026-04-01T14:22:21.264Z]     presets: Ignite, Playtime, Tails, Alpha, Peak | demo: https://benchmark-electronics-demo.myshopify.com
+[2026-04-01T14:22:21.264Z]     Scraping demo sections: https://benchmark-electronics-demo.myshopify.com
+[2026-04-01T14:22:33.754Z]     Demo scraped in 12490ms — HP: 27 sections | Collection: 12 | Product: 22
+[2026-04-01T14:22:33.759Z]     TOTAL: 91 unique themes
+[2026-04-01T14:22:33.759Z] 
+--- Page 13 done | 91 themes | 39.1 min | waiting 9.7s ---
+[2026-04-01T14:22:43.411Z] 
+========================================
+[2026-04-01T14:22:43.413Z] LISTING PAGE 14: https://themes.shopify.com/themes?sort_by=newest&page=14
+[2026-04-01T14:22:43.413Z] ========================================
+[2026-04-01T14:22:43.414Z] Themes: 91 | Skipped: 10 | Errors: 0
+[2026-04-01T14:22:46.987Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:22:46.989Z] Found 7 themes: ignite, koto, outsiders, satoshi, infinity, madrid, soul
+[2026-04-01T14:22:46.989Z]   [1/7] SKIP "ignite" — duplicate
+[2026-04-01T14:22:46.989Z]   [2/7] Waiting 6.7s → koto
+[2026-04-01T14:22:57.194Z]     Theme page loaded in 3500ms
+[2026-04-01T14:22:57.198Z]     ✓ Koto | $290 | 34 rev | 100% | 43 features | 5 presets | Webibazaar Templates
+[2026-04-01T14:22:57.198Z]     breakdown: +34 ~0 -0 | niches: clothing | launch: March 03, 2026
+[2026-04-01T14:22:57.198Z]     presets: Koto, Rinku, Mochi, Spanner, Carnival | demo: https://koto-theme.myshopify.com
+[2026-04-01T14:22:57.198Z]     Scraping demo sections: https://koto-theme.myshopify.com
+[2026-04-01T14:23:11.988Z]     Demo scraped in 14790ms — HP: 17 sections | Collection: 6 | Product: 7
+[2026-04-01T14:23:11.989Z]     TOTAL: 92 unique themes
+[2026-04-01T14:23:11.989Z]   [3/7] Waiting 9.6s → outsiders
+[2026-04-01T14:23:24.851Z]     Theme page loaded in 3244ms
+[2026-04-01T14:23:24.857Z]     ✓ Outsiders | $380 | 20 rev | 100% | 47 features | 5 presets | Segment
+[2026-04-01T14:23:24.857Z]     breakdown: +20 ~0 -0 | niches: creative brands that defy convention., clothing | launch: March 04, 2026
+[2026-04-01T14:23:24.857Z]     presets: Outsiders, Rebels, Misfits, Wrong, Eccentrics | demo: https://outsiders-outsiders.myshopify.com/
+[2026-04-01T14:23:24.857Z]     Scraping demo sections: https://outsiders-outsiders.myshopify.com/
+[2026-04-01T14:23:39.262Z]     Demo scraped in 14405ms — HP: 17 sections | Collection: 8 | Product: 11
+[2026-04-01T14:23:39.262Z]     TOTAL: 93 unique themes
+[2026-04-01T14:23:39.262Z]   [4/7] Waiting 8.6s → satoshi
+[2026-04-01T14:23:51.136Z]     Theme page loaded in 3229ms
+[2026-04-01T14:23:51.139Z]     ✓ Satoshi | $100 | 27 rev | 96% | 32 features | 5 presets | scandiweb
+[2026-04-01T14:23:51.140Z]     breakdown: +26 ~1 -0 | niches: clothing | launch: March 10, 2026
+[2026-04-01T14:23:51.140Z]     presets: Satoshi, Luma, Solitaire, Leather, Chalet | demo: https://satoshi-demo-4.myshopify.com/
+[2026-04-01T14:23:51.140Z]     Scraping demo sections: https://satoshi-demo-4.myshopify.com/
+[2026-04-01T14:24:01.899Z]     Demo scraped in 10759ms — HP: 0 sections | Collection: 0 | Product: 0
+[2026-04-01T14:24:01.901Z]     TOTAL: 94 unique themes
+[2026-04-01T14:24:01.901Z]   [5/7] Waiting 9.6s → infinity
+[2026-04-01T14:24:14.594Z]     Theme page loaded in 3135ms
+[2026-04-01T14:24:14.600Z]     ✓ Infinity | $100 | 6 rev | 67% | 27 features | 2 presets | EM Softech LLP
+[2026-04-01T14:24:14.600Z]     breakdown: +4 ~0 -2 | niches: electronics | launch: January 15, 2026
+[2026-04-01T14:24:14.600Z]     presets: Infinity, Mystic | demo: https://emsoftech-infinity.myshopify.com/
+[2026-04-01T14:24:14.600Z]     Scraping demo sections: https://emsoftech-infinity.myshopify.com/
+[2026-04-01T14:24:26.144Z]     Demo scraped in 11543ms — HP: 13 sections | Collection: 5 | Product: 6
+[2026-04-01T14:24:26.146Z]     TOTAL: 95 unique themes
+[2026-04-01T14:24:26.147Z]   [6/7] Waiting 8.4s → madrid
+[2026-04-01T14:24:38.204Z]     Theme page loaded in 3688ms
+[2026-04-01T14:24:38.210Z]     ✓ Madrid | $380 | 47 rev | 94% | 47 features | 5 presets | Apparent Collective
+[2026-04-01T14:24:38.210Z]     breakdown: +44 ~0 -3 | niches: clothing | launch: March 31, 2026
+[2026-04-01T14:24:38.210Z]     presets: Madrid, Tote, Heat, Affair, Furnish | demo: https://madrid-modern.myshopify.com/
+[2026-04-01T14:24:38.211Z]     Scraping demo sections: https://madrid-modern.myshopify.com/
+[2026-04-01T14:24:49.535Z]     Demo scraped in 11324ms — HP: 19 sections | Collection: 5 | Product: 7
+[2026-04-01T14:24:49.536Z]     TOTAL: 96 unique themes
+[2026-04-01T14:24:49.536Z]   [7/7] Waiting 9.7s → soul
+[2026-04-01T14:25:02.598Z]     Theme page loaded in 3376ms
+[2026-04-01T14:25:02.604Z]     ✓ Soul | $190 | 8 rev | 100% | 50 features | 4 presets | HaloThemes
+[2026-04-01T14:25:02.606Z]     breakdown: +8 ~0 -0 | niches: clothing | launch: December 02, 2025
+[2026-04-01T14:25:02.609Z]     presets: Soul, Hearth, Stride, Boule | demo: https://soul-theme-elegant.myshopify.com/
+[2026-04-01T14:25:02.609Z]     Scraping demo sections: https://soul-theme-elegant.myshopify.com/
+[2026-04-01T14:25:16.120Z]     Demo scraped in 13511ms — HP: 16 sections | Collection: 5 | Product: 7
+[2026-04-01T14:25:16.121Z]     TOTAL: 97 unique themes
+[2026-04-01T14:25:16.121Z] 
+--- Page 14 done | 97 themes | 41.8 min | waiting 10.0s ---
+[2026-04-01T14:25:26.077Z] 
+========================================
+[2026-04-01T14:25:26.079Z] LISTING PAGE 15: https://themes.shopify.com/themes?sort_by=newest&page=15
+[2026-04-01T14:25:26.079Z] ========================================
+[2026-04-01T14:25:26.079Z] Themes: 97 | Skipped: 11 | Errors: 0
+[2026-04-01T14:25:29.639Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:25:29.641Z] Found 6 themes: soul, king, nexa, machina, meka, refine
+[2026-04-01T14:25:29.642Z]   [1/6] SKIP "soul" — duplicate
+[2026-04-01T14:25:29.642Z]   [2/6] Waiting 5.7s → king
+[2026-04-01T14:25:38.536Z]     Theme page loaded in 3227ms
+[2026-04-01T14:25:38.539Z]     ✓ King | $500 | 19 rev | 84% | 50 features | 5 presets | Shine Dezign Infonet
+[2026-04-01T14:25:38.539Z]     breakdown: +16 ~1 -2 | niches: clothing | launch: February 16, 2026
+[2026-04-01T14:25:38.539Z]     presets: King, Castle, Regal, Noor, Throne | demo: https://theking-castle.myshopify.com/
+[2026-04-01T14:25:38.539Z]     Scraping demo sections: https://theking-castle.myshopify.com/
+[2026-04-01T14:25:53.693Z]     Demo scraped in 15154ms — HP: 23 sections | Collection: 6 | Product: 9
+[2026-04-01T14:25:53.694Z]     TOTAL: 98 unique themes
+[2026-04-01T14:25:53.694Z]   [3/6] Waiting 9.9s → nexa
+[2026-04-01T14:26:06.986Z]     Theme page loaded in 3382ms
+[2026-04-01T14:26:06.992Z]     ✓ Nexa | $290 | 1 rev | 100% | 46 features | 4 presets | 1o1development
+[2026-04-01T14:26:06.992Z]     breakdown: +1 ~0 -0 | niches: sports | launch: February 04, 2026
+[2026-04-01T14:26:06.992Z]     presets: Nexa, Smile, Artisan, Garment | demo: https://nexa-clothing.myshopify.com/
+[2026-04-01T14:26:06.992Z]     Scraping demo sections: https://nexa-clothing.myshopify.com/
+[2026-04-01T14:26:22.660Z]     Demo scraped in 15668ms — HP: 22 sections | Collection: 6 | Product: 8
+[2026-04-01T14:26:22.661Z]     TOTAL: 99 unique themes
+[2026-04-01T14:26:22.661Z]   [4/6] Waiting 5.7s → machina
+[2026-04-01T14:26:31.483Z]     Theme page loaded in 3124ms
+[2026-04-01T14:26:31.491Z]     ✓ Machina | $220 | 0 rev | null% | 43 features | 3 presets | Koding Themes
+[2026-04-01T14:26:31.491Z]     breakdown: +null ~null -null | niches: wellness | launch: January 28, 2026
+[2026-04-01T14:26:31.491Z]     presets: Machina, Whisper, Bare | demo: https://odyssey-demo-store.myshopify.com/
+[2026-04-01T14:26:31.491Z]     Scraping demo sections: https://odyssey-demo-store.myshopify.com/
+[2026-04-01T14:26:42.620Z]     Demo scraped in 11129ms — HP: 12 sections | Collection: 5 | Product: 7
+[2026-04-01T14:26:42.621Z]     TOTAL: 100 unique themes
+[2026-04-01T14:26:42.621Z]   [5/6] Waiting 7.3s → meka
+[2026-04-01T14:26:53.649Z]     Theme page loaded in 3709ms
+[2026-04-01T14:26:53.657Z]     ✓ Meka | $320 | 8 rev | 88% | 47 features | 5 presets | MUUP
+[2026-04-01T14:26:53.657Z]     breakdown: +7 ~0 -1 | niches: Auto Parts, Car Part, auto | launch: December 02, 2025
+[2026-04-01T14:26:53.657Z]     presets: Meka, Constructive, Livora, Equipta, Mediva | demo: https://meka-auto-parts-demo.myshopify.com/
+[2026-04-01T14:26:53.657Z]     Scraping demo sections: https://meka-auto-parts-demo.myshopify.com/
+[2026-04-01T14:27:06.387Z]     Demo scraped in 12730ms — HP: 22 sections | Collection: 11 | Product: 13
+[2026-04-01T14:27:06.388Z]     TOTAL: 101 unique themes
+[2026-04-01T14:27:06.389Z]   [6/6] Waiting 5.8s → refine
+[2026-04-01T14:27:15.766Z]     Theme page loaded in 3538ms
+[2026-04-01T14:27:15.774Z]     ✓ Refine | $100 | 27 rev | 81% | 54 features | 4 presets | AgniHD
+[2026-04-01T14:27:15.774Z]     breakdown: +22 ~2 -3 | niches: sports | launch: February 27, 2026
+[2026-04-01T14:27:15.775Z]     presets: Refine, Hipster, Evara, Haula | demo: https://refine-theme-active.myshopify.com/
+[2026-04-01T14:27:15.775Z]     Scraping demo sections: https://refine-theme-active.myshopify.com/
+[2026-04-01T14:27:26.961Z]     Demo scraped in 11185ms — HP: 24 sections | Collection: 5 | Product: 10
+[2026-04-01T14:27:26.962Z]     TOTAL: 102 unique themes
+[2026-04-01T14:27:26.962Z] 
+--- Page 15 done | 102 themes | 44.0 min | waiting 9.2s ---
+[2026-04-01T14:27:36.163Z] 
+========================================
+[2026-04-01T14:27:36.164Z] LISTING PAGE 16: https://themes.shopify.com/themes?sort_by=newest&page=16
+[2026-04-01T14:27:36.165Z] ========================================
+[2026-04-01T14:27:36.165Z] Themes: 102 | Skipped: 12 | Errors: 0
+[2026-04-01T14:27:39.713Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:27:39.715Z] Found 6 themes: pinnacle, swipe, piano, space, aisle, retro
+[2026-04-01T14:27:39.715Z]   [1/6] Waiting 9.2s → pinnacle
+[2026-04-01T14:27:52.372Z]     Theme page loaded in 3495ms
+[2026-04-01T14:27:52.379Z]     ✓ Pinnacle | $430 | 35 rev | 89% | 54 features | 5 presets | Fuel Themes
+[2026-04-01T14:27:52.379Z]     breakdown: +31 ~2 -2 | niches: home | launch: March 26, 2026
+[2026-04-01T14:27:52.379Z]     presets: Pinnacle, Bastion, Pawmart, Patissiere, Everleaf | demo: https://pinnacle-main.myshopify.com
+[2026-04-01T14:27:52.379Z]     Scraping demo sections: https://pinnacle-main.myshopify.com
+[2026-04-01T14:28:08.286Z]     Demo scraped in 15907ms — HP: 24 sections | Collection: 9 | Product: 9
+[2026-04-01T14:28:08.287Z]     TOTAL: 103 unique themes
+[2026-04-01T14:28:08.287Z]   [2/6] Waiting 9.5s → swipe
+[2026-04-01T14:28:21.030Z]     Theme page loaded in 3283ms
+[2026-04-01T14:28:21.036Z]     ✓ Swipe | $380 | 5 rev | 100% | 45 features | 5 presets | Segment
+[2026-04-01T14:28:21.036Z]     breakdown: +5 ~0 -0 | niches: clothing | launch: March 04, 2026
+[2026-04-01T14:28:21.036Z]     presets: Swipe, Case, Practice, Inspiration, Blend | demo: https://swipe-modern.myshopify.com/
+[2026-04-01T14:28:21.037Z]     Scraping demo sections: https://swipe-modern.myshopify.com/
+[2026-04-01T14:28:32.784Z]     Demo scraped in 11747ms — HP: 18 sections | Collection: 6 | Product: 6
+[2026-04-01T14:28:32.785Z]     TOTAL: 104 unique themes
+[2026-04-01T14:28:32.785Z]   [3/6] Waiting 9.5s → piano
+[2026-04-01T14:28:45.902Z]     Theme page loaded in 3602ms
+[2026-04-01T14:28:45.911Z]     ✓ Piano | $160 | 40 rev | 98% | 42 features | 5 presets | Webibazaar Templates
+[2026-04-01T14:28:45.911Z]     breakdown: +39 ~1 -0 | niches: clothing | launch: March 17, 2026
+[2026-04-01T14:28:45.911Z]     presets: Piano, Sparkle, Giggles, Buffet, Doodle | demo: https://piano-diamond.myshopify.com
+[2026-04-01T14:28:45.911Z]     Scraping demo sections: https://piano-diamond.myshopify.com
+[2026-04-01T14:29:00.445Z]     Demo scraped in 14534ms — HP: 19 sections | Collection: 11 | Product: 9
+[2026-04-01T14:29:00.446Z]     TOTAL: 105 unique themes
+[2026-04-01T14:29:00.446Z]   [4/6] Waiting 9.5s → space
+[2026-04-01T14:29:13.625Z]     Theme page loaded in 3685ms
+[2026-04-01T14:29:13.629Z]     ✓ Space | $320 | 22 rev | 95% | 54 features | 5 presets | Brickspace Lab
+[2026-04-01T14:29:13.629Z]     breakdown: +21 ~0 -1 | niches: shoes | launch: March 02, 2026
+[2026-04-01T14:29:13.629Z]     presets: Space, Shimmer, Silk, Spice, Saga | demo: https://spacethemedemo2.myshopify.com/
+[2026-04-01T14:29:13.629Z]     Scraping demo sections: https://spacethemedemo2.myshopify.com/
+[2026-04-01T14:29:26.551Z]     Demo scraped in 12922ms — HP: 17 sections | Collection: 8 | Product: 8
+[2026-04-01T14:29:26.553Z]     TOTAL: 106 unique themes
+[2026-04-01T14:29:26.553Z]   [5/6] Waiting 6.8s → aisle
+[2026-04-01T14:29:37.222Z]     Theme page loaded in 3836ms
+[2026-04-01T14:29:37.226Z]     ✓ Aisle | $300 | 6 rev | 83% | 38 features | ? presets | Electric Maybe
+[2026-04-01T14:29:37.227Z]     breakdown: +5 ~0 -1 | niches: food and drink | launch: June 24, 2025
+[2026-04-01T14:29:37.227Z]     presets: ? | demo: https://aisle-aisle.myshopify.com
+[2026-04-01T14:29:37.227Z]     Scraping demo sections: https://aisle-aisle.myshopify.com
+[2026-04-01T14:29:51.606Z]     Demo scraped in 14379ms — HP: 20 sections | Collection: 7 | Product: 7
+[2026-04-01T14:29:51.607Z]     TOTAL: 107 unique themes
+[2026-04-01T14:29:51.608Z]   [6/6] Waiting 8.6s → retro
+[2026-04-01T14:30:03.480Z]     Theme page loaded in 3236ms
+[2026-04-01T14:30:03.489Z]     ✓ Retro | $250 | 19 rev | 89% | 50 features | 3 presets | Slash Themes
+[2026-04-01T14:30:03.489Z]     breakdown: +17 ~0 -2 | niches: clothing | launch: June 24, 2025
+[2026-04-01T14:30:03.489Z]     presets: Retro, Shadow, Skinny | demo: https://the-retro-summer.myshopify.com/
+[2026-04-01T14:30:03.489Z]     Scraping demo sections: https://the-retro-summer.myshopify.com/
+[2026-04-01T14:30:19.655Z]     Demo scraped in 16166ms — HP: 22 sections | Collection: 5 | Product: 9
+[2026-04-01T14:30:19.657Z]     TOTAL: 108 unique themes
+[2026-04-01T14:30:19.657Z] 
+--- Page 16 done | 108 themes | 46.9 min | waiting 6.2s ---
+[2026-04-01T14:30:25.895Z] 
+========================================
+[2026-04-01T14:30:25.896Z] LISTING PAGE 17: https://themes.shopify.com/themes?sort_by=newest&page=17
+[2026-04-01T14:30:25.896Z] ========================================
+[2026-04-01T14:30:25.896Z] Themes: 108 | Skipped: 12 | Errors: 0
+[2026-04-01T14:30:29.427Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:30:29.429Z] Found 6 themes: takeout, flawless, urban, luxe, paris, sleek
+[2026-04-01T14:30:29.429Z]   [1/6] Waiting 6.1s → takeout
+[2026-04-01T14:30:39.297Z]     Theme page loaded in 3726ms
+[2026-04-01T14:30:39.304Z]     ✓ Takeout | $190 | 3 rev | 67% | 25 features | 5 presets | Ecom Noon
+[2026-04-01T14:30:39.305Z]     breakdown: +2 ~0 -1 | niches: food and drink | launch: October 08, 2025
+[2026-04-01T14:30:39.305Z]     presets: Takeout, Crumbs, Pantry, Orchid, Potion | demo: https://macho-nacho-demo.myshopify.com/
+[2026-04-01T14:30:39.305Z]     Scraping demo sections: https://macho-nacho-demo.myshopify.com/
+[2026-04-01T14:30:51.343Z]     Demo scraped in 12038ms — HP: 16 sections | Collection: 5 | Product: 8
+[2026-04-01T14:30:51.344Z]     TOTAL: 109 unique themes
+[2026-04-01T14:30:51.345Z]   [2/6] Waiting 7.8s → flawless
+[2026-04-01T14:31:02.555Z]     Theme page loaded in 3446ms
+[2026-04-01T14:31:02.562Z]     ✓ Flawless | $300 | 35 rev | 100% | 53 features | 4 presets | Ascend Themes
+[2026-04-01T14:31:02.562Z]     breakdown: +35 ~0 -0 | niches: jewelry and accessories | launch: March 12, 2026
+[2026-04-01T14:31:02.562Z]     presets: Flawless, Heal, Routine, Persona | demo: https://flawless-demo-3.myshopify.com/
+[2026-04-01T14:31:02.562Z]     Scraping demo sections: https://flawless-demo-3.myshopify.com/
+[2026-04-01T14:31:19.225Z]     Demo scraped in 16663ms — HP: 22 sections | Collection: 7 | Product: 9
+[2026-04-01T14:31:19.225Z]     TOTAL: 110 unique themes
+[2026-04-01T14:31:19.225Z]   [3/6] Waiting 9.7s → urban
+[2026-04-01T14:31:32.355Z]     Theme page loaded in 3381ms
+[2026-04-01T14:31:32.363Z]     ✓ Urban | $320 | 9 rev | 100% | 40 features | 5 presets | 1o1development
+[2026-04-01T14:31:32.363Z]     breakdown: +9 ~0 -0 | niches: home | launch: January 22, 2026
+[2026-04-01T14:31:32.363Z]     presets: Urban, Waverly, Attire, Mechline, Floralis | demo: https://urban-furniture-demo.myshopify.com/
+[2026-04-01T14:31:32.363Z]     Scraping demo sections: https://urban-furniture-demo.myshopify.com/
+[2026-04-01T14:31:48.241Z]     Demo scraped in 15878ms — HP: 16 sections | Collection: 5 | Product: 6
+[2026-04-01T14:31:48.242Z]     TOTAL: 111 unique themes
+[2026-04-01T14:31:48.242Z]   [4/6] Waiting 8.1s → luxe
+[2026-04-01T14:31:59.596Z]     Theme page loaded in 3205ms
+[2026-04-01T14:31:59.605Z]     ✓ Luxe | $490 | 59 rev | 100% | 53 features | 4 presets | Winter Studio
+[2026-04-01T14:31:59.605Z]     breakdown: +59 ~0 -0 | niches: high-end and luxury brands, beauty | launch: March 24, 2026
+[2026-04-01T14:31:59.605Z]     presets: Luxe, Soho, Mayfair, Milton | demo: https://luxethemedemoone.myshopify.com/
+[2026-04-01T14:31:59.605Z]     Scraping demo sections: https://luxethemedemoone.myshopify.com/
+[2026-04-01T14:32:11.044Z]     Demo scraped in 11439ms — HP: 13 sections | Collection: 6 | Product: 7
+[2026-04-01T14:32:11.046Z]     TOTAL: 112 unique themes
+[2026-04-01T14:32:11.046Z]   [5/6] Waiting 7.7s → paris
+[2026-04-01T14:32:21.952Z]     Theme page loaded in 3243ms
+[2026-04-01T14:32:21.958Z]     ✓ Paris | $100 | 24 rev | 79% | 45 features | 4 presets | Crown Studio
+[2026-04-01T14:32:21.958Z]     breakdown: +19 ~1 -4 | niches: clothing | launch: March 30, 2026
+[2026-04-01T14:32:21.959Z]     presets: Paris, Intense, Desire, Passion | demo: https://paris-desire.myshopify.com/
+[2026-04-01T14:32:21.959Z]     Scraping demo sections: https://paris-desire.myshopify.com/
+[2026-04-01T14:32:34.222Z]     Demo scraped in 12263ms — HP: 16 sections | Collection: 6 | Product: 7
+[2026-04-01T14:32:34.224Z]     TOTAL: 113 unique themes
+[2026-04-01T14:32:34.225Z]   [6/6] Waiting 5.4s → sleek
+[2026-04-01T14:32:43.047Z]     Theme page loaded in 3467ms
+[2026-04-01T14:32:43.056Z]     ✓ Sleek | $350 | 499 rev | 100% | 57 features | 5 presets | FoxEcom
+[2026-04-01T14:32:43.056Z]     breakdown: +498 ~1 -0 | niches: beauty | launch: March 17, 2026
+[2026-04-01T14:32:43.056Z]     presets: Sleek, Wildpeak, Jumped, Modiva, Glint | demo: https://sleek-theme-demo.myshopify.com/
+[2026-04-01T14:32:43.056Z]     Scraping demo sections: https://sleek-theme-demo.myshopify.com/
+[2026-04-01T14:32:57.605Z]     Demo scraped in 14549ms — HP: 21 sections | Collection: 7 | Product: 14
+[2026-04-01T14:32:57.607Z]     TOTAL: 114 unique themes
+[2026-04-01T14:32:57.607Z] 
+--- Page 17 done | 114 themes | 49.5 min | waiting 9.6s ---
+[2026-04-01T14:33:07.164Z] 
+========================================
+[2026-04-01T14:33:07.166Z] LISTING PAGE 18: https://themes.shopify.com/themes?sort_by=newest&page=18
+[2026-04-01T14:33:07.166Z] ========================================
+[2026-04-01T14:33:07.166Z] Themes: 114 | Skipped: 12 | Errors: 0
+[2026-04-01T14:33:10.690Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:33:10.692Z] Found 7 themes: sleek, noblesse, polyform, nordic, energy, release, sitar
+[2026-04-01T14:33:10.692Z]   [1/7] SKIP "sleek" — duplicate
+[2026-04-01T14:33:10.693Z]   [2/7] Waiting 5.2s → noblesse
+[2026-04-01T14:33:19.553Z]     Theme page loaded in 3682ms
+[2026-04-01T14:33:19.559Z]     ✓ Noblesse | $180 | 8 rev | 100% | 40 features | 3 presets | Vevol Themes
+[2026-04-01T14:33:19.559Z]     breakdown: +8 ~0 -0 | niches: food and drink | launch: August 01, 2025
+[2026-04-01T14:33:19.559Z]     presets: Noblesse, Riviera, Oppulence | demo: https://noblesse-default-demo.myshopify.com/
+[2026-04-01T14:33:19.559Z]     Scraping demo sections: https://noblesse-default-demo.myshopify.com/
+[2026-04-01T14:33:31.679Z]     Demo scraped in 12120ms — HP: 8 sections | Collection: 5 | Product: 4
+[2026-04-01T14:33:31.681Z]     TOTAL: 115 unique themes
+[2026-04-01T14:33:31.681Z]   [3/7] Waiting 7.5s → polyform
+[2026-04-01T14:33:42.826Z]     Theme page loaded in 3618ms
+[2026-04-01T14:33:42.830Z]     ✓ Polyform | $320 | 3 rev | 100% | 49 features | 2 presets | SmartBase®
+[2026-04-01T14:33:42.831Z]     breakdown: +3 ~0 -0 | niches: home | launch: February 19, 2026
+[2026-04-01T14:33:42.831Z]     presets: Polyform, Mellow | demo: https://smartshop-theme.myshopify.com/
+[2026-04-01T14:33:42.831Z]     Scraping demo sections: https://smartshop-theme.myshopify.com/
+[2026-04-01T14:33:55.640Z]     Demo scraped in 12809ms — HP: 16 sections | Collection: 6 | Product: 7
+[2026-04-01T14:33:55.641Z]     TOTAL: 116 unique themes
+[2026-04-01T14:33:55.641Z]   [4/7] Waiting 10.0s → nordic
+[2026-04-01T14:34:08.871Z]     Theme page loaded in 3256ms
+[2026-04-01T14:34:08.876Z]     ✓ Nordic | $320 | 22 rev | 95% | 43 features | 5 presets | Noord
+[2026-04-01T14:34:08.876Z]     breakdown: +21 ~0 -1 | niches: home | launch: March 10, 2026
+[2026-04-01T14:34:08.876Z]     presets: Nordic, Appeal, Selfcare, Pearl, Wonderland | demo: https://divided-white-oak.myshopify.com/
+[2026-04-01T14:34:08.877Z]     Scraping demo sections: https://divided-white-oak.myshopify.com/
+[2026-04-01T14:34:23.260Z]     Demo scraped in 14383ms — HP: 19 sections | Collection: 7 | Product: 10
+[2026-04-01T14:34:23.261Z]     TOTAL: 117 unique themes
+[2026-04-01T14:34:23.261Z]   [5/7] Waiting 9.1s → energy
+[2026-04-01T14:34:35.850Z]     Theme page loaded in 3492ms
+[2026-04-01T14:34:35.857Z]     ✓ Energy | $160 | 26 rev | 100% | 46 features | 3 presets | IT-Geeks
+[2026-04-01T14:34:35.858Z]     breakdown: +26 ~0 -0 | niches: sports | launch: June 30, 2025
+[2026-04-01T14:34:35.858Z]     presets: Energy, Aether, Titan | demo: https://energy-demo.myshopify.com
+[2026-04-01T14:34:35.858Z]     Scraping demo sections: https://energy-demo.myshopify.com
+[2026-04-01T14:34:48.083Z]     Demo scraped in 12225ms — HP: 21 sections | Collection: 8 | Product: 14
+[2026-04-01T14:34:48.084Z]     TOTAL: 118 unique themes
+[2026-04-01T14:34:48.084Z]   [6/7] Waiting 6.8s → release
+[2026-04-01T14:34:58.477Z]     Theme page loaded in 3572ms
+[2026-04-01T14:34:58.484Z]     ✓ Release | $400 | 101 rev | 94% | 60 features | 4 presets | DigiFist.
+[2026-04-01T14:34:58.484Z]     breakdown: +95 ~2 -4 | niches: clothing | launch: March 10, 2026
+[2026-04-01T14:34:58.484Z]     presets: Release, Grasse, Serenity, Forest | demo: https://release-main.myshopify.com/
+[2026-04-01T14:34:58.484Z]     Scraping demo sections: https://release-main.myshopify.com/
+[2026-04-01T14:35:11.542Z]     Demo scraped in 13058ms — HP: 25 sections | Collection: 7 | Product: 10
+[2026-04-01T14:35:11.544Z]     TOTAL: 119 unique themes
+[2026-04-01T14:35:11.544Z]   [7/7] Waiting 5.8s → sitar
+[2026-04-01T14:35:21.084Z]     Theme page loaded in 3725ms
+[2026-04-01T14:35:21.087Z]     ✓ Sitar | $160 | 50 rev | 98% | 39 features | 5 presets | Winter Infotech
+[2026-04-01T14:35:21.088Z]     breakdown: +49 ~0 -1 | niches: home | launch: March 06, 2026
+[2026-04-01T14:35:21.088Z]     presets: Sitar, Aspire, Notes, Optimum, Device | demo: https://sitar-theme.myshopify.com
+[2026-04-01T14:35:21.088Z]     Scraping demo sections: https://sitar-theme.myshopify.com
+[2026-04-01T14:35:37.644Z]     Demo scraped in 16556ms — HP: 20 sections | Collection: 6 | Product: 5
+[2026-04-01T14:35:37.645Z]     TOTAL: 120 unique themes
+[2026-04-01T14:35:37.645Z] 
+--- Page 18 done | 120 themes | 52.2 min | waiting 5.3s ---
+[2026-04-01T14:35:42.936Z] 
+========================================
+[2026-04-01T14:35:42.936Z] LISTING PAGE 19: https://themes.shopify.com/themes?sort_by=newest&page=19
+[2026-04-01T14:35:42.937Z] ========================================
+[2026-04-01T14:35:42.937Z] Themes: 120 | Skipped: 13 | Errors: 0
+[2026-04-01T14:35:46.364Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:35:46.365Z] Found 9 themes: sitar, toyo, agile, rise, shine, murmel, elysian, trade, copenhagen
+[2026-04-01T14:35:46.365Z]   [1/9] SKIP "sitar" — duplicate
+[2026-04-01T14:35:46.365Z]   [2/9] Waiting 5.3s → toyo
+[2026-04-01T14:35:55.103Z]     Theme page loaded in 3480ms
+[2026-04-01T14:35:55.111Z]     ✓ Toyo | $140 | 18 rev | 94% | 47 features | 5 presets | MUUP
+[2026-04-01T14:35:55.111Z]     breakdown: +17 ~0 -1 | niches: busy parents—our fast, kid-friendly cart makes shopping for Kids, Baby, toys | launch: December 05, 2025
+[2026-04-01T14:35:55.112Z]     presets: Toyo, Totsy, Zupet, Leafin, Lumora | demo: https://toyo-u-demo.myshopify.com/
+[2026-04-01T14:35:55.112Z]     Scraping demo sections: https://toyo-u-demo.myshopify.com/
+[2026-04-01T14:36:08.839Z]     Demo scraped in 13727ms — HP: 20 sections | Collection: 8 | Product: 9
+[2026-04-01T14:36:08.841Z]     TOTAL: 121 unique themes
+[2026-04-01T14:36:08.841Z]   [3/9] Waiting 5.9s → agile
+[2026-04-01T14:36:18.151Z]     Theme page loaded in 3360ms
+[2026-04-01T14:36:18.156Z]     ✓ Agile | $320 | 27 rev | 100% | 44 features | 5 presets | NextSky
+[2026-04-01T14:36:18.156Z]     breakdown: +27 ~0 -0 | niches: clothing | launch: December 02, 2025
+[2026-04-01T14:36:18.156Z]     presets: Agile, Merza, Glina, Serums, Brana | demo: https://agile-default.myshopify.com
+[2026-04-01T14:36:18.156Z]     Scraping demo sections: https://agile-default.myshopify.com
+[2026-04-01T14:36:30.733Z]     Demo scraped in 12576ms — HP: 20 sections | Collection: 6 | Product: 8
+[2026-04-01T14:36:30.733Z]     TOTAL: 122 unique themes
+[2026-04-01T14:36:30.734Z]   [4/9] Waiting 7.0s → rise
+[2026-04-01T14:36:41.182Z]     Theme page loaded in 3463ms
+[2026-04-01T14:36:41.186Z]     ✓ Rise | Free | 14 rev | 43% | 26 features | ? presets | Shopify
+[2026-04-01T14:36:41.186Z]     breakdown: +6 ~5 -3 | niches: clothing | launch: January 16, 2026
+[2026-04-01T14:36:41.186Z]     presets: ? | demo: https://theme-rise-demo.myshopify.com/
+[2026-04-01T14:36:41.186Z]     Scraping demo sections: https://theme-rise-demo.myshopify.com/
+[2026-04-01T14:36:50.631Z]     Demo scraped in 9445ms — HP: 9 sections | Collection: 4 | Product: 6
+[2026-04-01T14:36:50.632Z]     TOTAL: 123 unique themes
+[2026-04-01T14:36:50.632Z]   [5/9] Waiting 8.1s → shine
+[2026-04-01T14:37:02.585Z]     Theme page loaded in 3858ms
+[2026-04-01T14:37:02.592Z]     ✓ Shine | $210 | 23 rev | 96% | 42 features | 3 presets | SalesHunterThemes
+[2026-04-01T14:37:02.592Z]     breakdown: +22 ~0 -1 | niches: wellness | launch: July 29, 2025
+[2026-04-01T14:37:02.592Z]     presets: Shine, Serene, Energetic | demo: https://shine-serene.myshopify.com/
+[2026-04-01T14:37:02.593Z]     Scraping demo sections: https://shine-serene.myshopify.com/
+[2026-04-01T14:37:14.309Z]     Demo scraped in 11716ms — HP: 18 sections | Collection: 6 | Product: 9
+[2026-04-01T14:37:14.310Z]     TOTAL: 124 unique themes
+[2026-04-01T14:37:14.310Z]   [6/9] Waiting 5.9s → murmel
+[2026-04-01T14:37:23.342Z]     Theme page loaded in 3151ms
+[2026-04-01T14:37:23.349Z]     ✓ Murmel | $320 | 2 rev | 100% | 26 features | ? presets | Prettifyweb
+[2026-04-01T14:37:23.350Z]     breakdown: +2 ~0 -0 | niches: kids and baby niches., kids | launch: December 02, 2025
+[2026-04-01T14:37:23.350Z]     presets: ? | demo: https://murmel-demo.myshopify.com/
+[2026-04-01T14:37:23.350Z]     Scraping demo sections: https://murmel-demo.myshopify.com/
+[2026-04-01T14:37:36.230Z]     Demo scraped in 12880ms — HP: 16 sections | Collection: 4 | Product: 6
+[2026-04-01T14:37:36.231Z]     TOTAL: 125 unique themes
+[2026-04-01T14:37:36.231Z]   [7/9] Waiting 7.1s → elysian
+[2026-04-01T14:37:46.847Z]     Theme page loaded in 3518ms
+[2026-04-01T14:37:46.855Z]     ✓ Elysian | $180 | 2 rev | 50% | 42 features | 3 presets | Koding Themes
+[2026-04-01T14:37:46.856Z]     breakdown: +1 ~0 -1 | niches: jewelry and accessories | launch: January 28, 2026
+[2026-04-01T14:37:46.856Z]     presets: Elysian, Voltage, Compass | demo: https://elysian-demo-store.myshopify.com
+[2026-04-01T14:37:46.856Z]     Scraping demo sections: https://elysian-demo-store.myshopify.com
+[2026-04-01T14:37:59.636Z]     Demo scraped in 12780ms — HP: 12 sections | Collection: 5 | Product: 5
+[2026-04-01T14:37:59.637Z]     TOTAL: 126 unique themes
+[2026-04-01T14:37:59.637Z]   [8/9] Waiting 6.1s → trade
+[2026-04-01T14:38:08.938Z]     Theme page loaded in 3212ms
+[2026-04-01T14:38:08.943Z]     ✓ Trade | Free | 37 rev | 32% | 28 features | ? presets | Shopify
+[2026-04-01T14:38:08.944Z]     breakdown: +12 ~15 -10 | niches: wholesale., home | launch: December 05, 2025
+[2026-04-01T14:38:08.944Z]     presets: ? | demo: https://theme-trade-demo.myshopify.com/
+[2026-04-01T14:38:08.944Z]     Scraping demo sections: https://theme-trade-demo.myshopify.com/
+[2026-04-01T14:38:18.874Z]     Demo scraped in 9930ms — HP: 11 sections | Collection: 5 | Product: 6
+[2026-04-01T14:38:18.875Z]     TOTAL: 127 unique themes
+[2026-04-01T14:38:18.875Z]   [9/9] Waiting 5.3s → copenhagen
+[2026-04-01T14:38:27.443Z]     Theme page loaded in 3258ms
+[2026-04-01T14:38:27.448Z]     ✓ Copenhagen | $380 | 9 rev | 100% | 44 features | 5 presets | Apparent Collective
+[2026-04-01T14:38:27.448Z]     breakdown: +9 ~0 -0 | niches: clothing | launch: March 04, 2026
+[2026-04-01T14:38:27.448Z]     presets: Copenhagen, Interior, Care, Pendant, Oil | demo: https://copenhagen-primary.myshopify.com/
+[2026-04-01T14:38:27.449Z]     Scraping demo sections: https://copenhagen-primary.myshopify.com/
+[2026-04-01T14:38:40.369Z]     Demo scraped in 12920ms — HP: 16 sections | Collection: 7 | Product: 6
+[2026-04-01T14:38:40.370Z]     TOTAL: 128 unique themes
+[2026-04-01T14:38:40.370Z] 
+--- Page 19 done | 128 themes | 55.2 min | waiting 6.4s ---
+[2026-04-01T14:38:46.788Z] 
+========================================
+[2026-04-01T14:38:46.789Z] LISTING PAGE 20: https://themes.shopify.com/themes?sort_by=newest&page=20
+[2026-04-01T14:38:46.789Z] ========================================
+[2026-04-01T14:38:46.789Z] Themes: 128 | Skipped: 14 | Errors: 0
+[2026-04-01T14:38:50.330Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:38:50.331Z] Found 9 themes: copenhagen, shark, monk, essence, zora, iris, tokyo, digital, relax
+[2026-04-01T14:38:50.331Z]   [1/9] SKIP "copenhagen" — duplicate
+[2026-04-01T14:38:50.331Z]   [2/9] Waiting 8.4s → shark
+[2026-04-01T14:39:02.065Z]     Theme page loaded in 3295ms
+[2026-04-01T14:39:02.070Z]     ✓ Shark | $230 | 11 rev | 91% | 52 features | 3 presets | Shine Dezign Infonet
+[2026-04-01T14:39:02.070Z]     breakdown: +10 ~0 -1 | niches: clothing | launch: March 13, 2026
+[2026-04-01T14:39:02.070Z]     presets: Shark, Antique, Boston | demo: https://shark-bright.myshopify.com/
+[2026-04-01T14:39:02.070Z]     Scraping demo sections: https://shark-bright.myshopify.com/
+[2026-04-01T14:39:18.407Z]     Demo scraped in 16337ms — HP: 19 sections | Collection: 4 | Product: 12
+[2026-04-01T14:39:18.408Z]     TOTAL: 129 unique themes
+[2026-04-01T14:39:18.408Z]   [3/9] Waiting 8.9s → monk
+[2026-04-01T14:39:30.793Z]     Theme page loaded in 3528ms
+[2026-04-01T14:39:30.796Z]     ✓ Monk | $300 | 23 rev | 100% | 54 features | 3 presets | Slash Themes
+[2026-04-01T14:39:30.796Z]     breakdown: +23 ~0 -0 | niches: electronics | launch: September 17, 2025
+[2026-04-01T14:39:30.796Z]     presets: Monk, Sea, Restore | demo: https://the-monk-theme.myshopify.com/
+[2026-04-01T14:39:30.796Z]     Scraping demo sections: https://the-monk-theme.myshopify.com/
+[2026-04-01T14:39:42.935Z]     Demo scraped in 12138ms — HP: 22 sections | Collection: 5 | Product: 9
+[2026-04-01T14:39:42.937Z]     TOTAL: 130 unique themes
+[2026-04-01T14:39:42.937Z]   [4/9] Waiting 9.9s → essence
+[2026-04-01T14:39:57.960Z]     Theme page loaded in 5109ms
+[2026-04-01T14:39:57.966Z]     ✓ Essence | $280 | 8 rev | 100% | 35 features | 2 presets | Alloy Themes
+[2026-04-01T14:39:57.966Z]     breakdown: +8 ~0 -0 | niches: sports | launch: December 02, 2025
+[2026-04-01T14:39:57.966Z]     presets: Essence, Cadence | demo: https://essence-theme-bold.myshopify.com/
+[2026-04-01T14:39:57.967Z]     Scraping demo sections: https://essence-theme-bold.myshopify.com/
+[2026-04-01T14:40:10.062Z]     Demo scraped in 12095ms — HP: 14 sections | Collection: 6 | Product: 7
+[2026-04-01T14:40:10.063Z]     TOTAL: 131 unique themes
+[2026-04-01T14:40:10.063Z]   [5/9] Waiting 7.9s → zora
+[2026-04-01T14:40:21.625Z]     Theme page loaded in 3621ms
+[2026-04-01T14:40:21.629Z]     ✓ Zora | $300 | 1 rev | 100% | 24 features | ? presets | NOVL
+[2026-04-01T14:40:21.629Z]     breakdown: +1 ~0 -0 | niches: entertainment | launch: January 05, 2026
+[2026-04-01T14:40:21.629Z]     presets: ? | demo: https://zora-theme.myshopify.com
+[2026-04-01T14:40:21.629Z]     Scraping demo sections: https://zora-theme.myshopify.com
+[2026-04-01T14:40:33.897Z]     Demo scraped in 12268ms — HP: 11 sections | Collection: 3 | Product: 3
+[2026-04-01T14:40:33.899Z]     TOTAL: 132 unique themes
+[2026-04-01T14:40:33.899Z]   [6/9] Waiting 9.4s → iris
+[2026-04-01T14:40:46.681Z]     Theme page loaded in 3399ms
+[2026-04-01T14:40:46.687Z]     ✓ Iris | $270 | 10 rev | 100% | 42 features | 3 presets | Mana Themes
+[2026-04-01T14:40:46.687Z]     breakdown: +10 ~0 -0 | niches: bags | launch: March 11, 2026
+[2026-04-01T14:40:46.687Z]     presets: Iris, Aurelle, Sonik | demo: https://iris-aurelle.myshopify.com/
+[2026-04-01T14:40:46.687Z]     Scraping demo sections: https://iris-aurelle.myshopify.com/
+[2026-04-01T14:41:03.623Z]     Demo scraped in 16936ms — HP: 20 sections | Collection: 8 | Product: 9
+[2026-04-01T14:41:03.624Z]     TOTAL: 133 unique themes
+[2026-04-01T14:41:03.624Z]   [7/9] Waiting 6.7s → tokyo
+[2026-04-01T14:41:13.868Z]     Theme page loaded in 3561ms
+[2026-04-01T14:41:13.875Z]     ✓ Tokyo | $250 | 5 rev | 100% | 42 features | 3 presets | Truly Fine Pixels
+[2026-04-01T14:41:13.876Z]     breakdown: +5 ~0 -0 | niches: our B2C / B2B business. The support team has been super responsive and helpful along the way to help us improve our website and adjust some of the features when needed. Highly recommend it, hardware | launch: January 12, 2026
+[2026-04-01T14:41:13.876Z]     presets: Tokyo, Torque, Paw Prints | demo: https://tokyo-theme.myshopify.com/
+[2026-04-01T14:41:13.876Z]     Scraping demo sections: https://tokyo-theme.myshopify.com/
+[2026-04-01T14:41:26.699Z]     Demo scraped in 12823ms — HP: 16 sections | Collection: 5 | Product: 5
+[2026-04-01T14:41:26.700Z]     TOTAL: 134 unique themes
+[2026-04-01T14:41:26.700Z]   [8/9] Waiting 7.4s → digital
+[2026-04-01T14:41:37.309Z]     Theme page loaded in 3210ms
+[2026-04-01T14:41:37.314Z]     ✓ Digital | $380 | 32 rev | 88% | 46 features | 5 presets | Segment
+[2026-04-01T14:41:37.315Z]     breakdown: +28 ~1 -3 | niches: impactful product presentation., electronics | launch: March 04, 2026
+[2026-04-01T14:41:37.315Z]     presets: Digital, Wearables, Workflow, Cardio, Recharge | demo: https://digital-theme-electric.myshopify.com/
+[2026-04-01T14:41:37.315Z]     Scraping demo sections: https://digital-theme-electric.myshopify.com/
+[2026-04-01T14:41:49.139Z]     Demo scraped in 11824ms — HP: 20 sections | Collection: 6 | Product: 18
+[2026-04-01T14:41:49.140Z]     TOTAL: 135 unique themes
+[2026-04-01T14:41:49.141Z]   [9/9] Waiting 7.0s → relax
+[2026-04-01T14:41:59.510Z]     Theme page loaded in 3349ms
+[2026-04-01T14:41:59.516Z]     ✓ Relax | $170 | 24 rev | 100% | 40 features | 3 presets | Swissuplabs
+[2026-04-01T14:41:59.516Z]     breakdown: +24 ~0 -0 | niches: home | launch: March 06, 2026
+[2026-04-01T14:41:59.517Z]     presets: Relax, Venus, Okinawa | demo: https://shop-relax.swissuplabs.com/
+[2026-04-01T14:41:59.517Z]     Scraping demo sections: https://shop-relax.swissuplabs.com/
+[2026-04-01T14:42:12.800Z]     Demo scraped in 13283ms — HP: 18 sections | Collection: 11 | Product: 11
+[2026-04-01T14:42:12.801Z]     TOTAL: 136 unique themes
+[2026-04-01T14:42:12.801Z] 
+--- Page 20 done | 136 themes | 58.7 min | waiting 8.3s ---
+[2026-04-01T14:42:21.101Z] 
+========================================
+[2026-04-01T14:42:21.102Z] LISTING PAGE 21: https://themes.shopify.com/themes?sort_by=newest&page=21
+[2026-04-01T14:42:21.102Z] ========================================
+[2026-04-01T14:42:21.102Z] Themes: 136 | Skipped: 15 | Errors: 0
+[2026-04-01T14:42:24.642Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:42:24.644Z] Found 5 themes: aesthetic, kidu, cello, veena, essentials
+[2026-04-01T14:42:24.644Z]   [1/5] Waiting 7.5s → aesthetic
+[2026-04-01T14:42:35.631Z]     Theme page loaded in 3464ms
+[2026-04-01T14:42:35.636Z]     ✓ Aesthetic | $320 | 5 rev | 100% | 33 features | 5 presets | Noord
+[2026-04-01T14:42:35.637Z]     breakdown: +5 ~0 -0 | niches: home | launch: March 10, 2026
+[2026-04-01T14:42:35.637Z]     presets: Aesthetic, Basics, Formula, Love, Palette | demo: https://aesthetic-wood-ash.myshopify.com/
+[2026-04-01T14:42:35.637Z]     Scraping demo sections: https://aesthetic-wood-ash.myshopify.com/
+[2026-04-01T14:42:47.779Z]     Demo scraped in 12142ms — HP: 14 sections | Collection: 6 | Product: 5
+[2026-04-01T14:42:47.780Z]     TOTAL: 137 unique themes
+[2026-04-01T14:42:47.780Z]   [2/5] Waiting 9.3s → kidu
+[2026-04-01T14:43:01.701Z]     Theme page loaded in 4586ms
+[2026-04-01T14:43:01.710Z]     ✓ Kidu | $320 | 24 rev | 100% | 38 features | 5 presets | 1o1development
+[2026-04-01T14:43:01.711Z]     breakdown: +24 ~0 -0 | niches: kids | launch: March 26, 2026
+[2026-04-01T14:43:01.711Z]     presets: Kidu, Dresser, Stroll, Gentle, Claw | demo: https://kidu-default.myshopify.com/
+[2026-04-01T14:43:01.711Z]     Scraping demo sections: https://kidu-default.myshopify.com/
+[2026-04-01T14:43:14.277Z]     Demo scraped in 12566ms — HP: 20 sections | Collection: 7 | Product: 10
+[2026-04-01T14:43:14.278Z]     TOTAL: 138 unique themes
+[2026-04-01T14:43:14.278Z]   [3/5] Waiting 6.5s → cello
+[2026-04-01T14:43:24.326Z]     Theme page loaded in 3575ms
+[2026-04-01T14:43:24.331Z]     ✓ Cello | $160 | 74 rev | 100% | 38 features | 5 presets | Webibazaar Templates
+[2026-04-01T14:43:24.331Z]     breakdown: +74 ~0 -0 | niches: electronics | launch: March 05, 2026
+[2026-04-01T14:43:24.331Z]     presets: Cello, Strings, Dazzle, Snitch, Crescendo | demo: https://cello-melody-theme.myshopify.com
+[2026-04-01T14:43:24.331Z]     Scraping demo sections: https://cello-melody-theme.myshopify.com
+[2026-04-01T14:43:38.864Z]     Demo scraped in 14533ms — HP: 18 sections | Collection: 6 | Product: 9
+[2026-04-01T14:43:38.865Z]     TOTAL: 139 unique themes
+[2026-04-01T14:43:38.865Z]   [4/5] Waiting 9.7s → veena
+[2026-04-01T14:43:52.210Z]     Theme page loaded in 3599ms
+[2026-04-01T14:43:52.216Z]     ✓ Veena | $240 | 101 rev | 99% | 42 features | 5 presets | Webibazaar Templates
+[2026-04-01T14:43:52.216Z]     breakdown: +100 ~0 -1 | niches: electronics | launch: March 02, 2026
+[2026-04-01T14:43:52.216Z]     presets: Veena, Outfit, Spoken, Uproot, Buddy | demo: https://veena-theme.myshopify.com
+[2026-04-01T14:43:52.216Z]     Scraping demo sections: https://veena-theme.myshopify.com
+[2026-04-01T14:44:05.989Z]     Demo scraped in 13773ms — HP: 18 sections | Collection: 6 | Product: 5
+[2026-04-01T14:44:05.990Z]     TOTAL: 140 unique themes
+[2026-04-01T14:44:05.990Z]   [5/5] Waiting 9.9s → essentials
+[2026-04-01T14:44:19.397Z]     Theme page loaded in 3506ms
+[2026-04-01T14:44:19.404Z]     ✓ Essentials | $320 | 11 rev | 100% | 34 features | 5 presets | Noord
+[2026-04-01T14:44:19.404Z]     breakdown: +11 ~0 -0 | niches: immersive visual storytelling., clothing | launch: March 10, 2026
+[2026-04-01T14:44:19.404Z]     presets: Essentials, Chronograph, Cut, Volt, Filter | demo: https://essentials-monochrome.myshopify.com/
+[2026-04-01T14:44:19.404Z]     Scraping demo sections: https://essentials-monochrome.myshopify.com/
+[2026-04-01T14:44:32.023Z]     Demo scraped in 12619ms — HP: 15 sections | Collection: 6 | Product: 5
+[2026-04-01T14:44:32.023Z]     TOTAL: 141 unique themes
+[2026-04-01T14:44:32.023Z] 
+--- Page 21 done | 141 themes | 61.1 min | waiting 7.1s ---
+[2026-04-01T14:44:39.130Z] 
+========================================
+[2026-04-01T14:44:39.132Z] LISTING PAGE 22: https://themes.shopify.com/themes?sort_by=newest&page=22
+[2026-04-01T14:44:39.132Z] ========================================
+[2026-04-01T14:44:39.132Z] Themes: 141 | Skipped: 15 | Errors: 0
+[2026-04-01T14:44:42.691Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:44:42.693Z] Found 7 themes: essentials, select, concept, minimalista, starlite, borders, distinctive
+[2026-04-01T14:44:42.693Z]   [1/7] SKIP "essentials" — duplicate
+[2026-04-01T14:44:42.693Z]   [2/7] Waiting 6.0s → select
+[2026-04-01T14:44:51.975Z]     Theme page loaded in 3283ms
+[2026-04-01T14:44:51.982Z]     ✓ Select | $380 | 10 rev | 100% | 48 features | 5 presets | Segment
+[2026-04-01T14:44:51.982Z]     breakdown: +10 ~0 -0 | niches: clothing | launch: March 04, 2026
+[2026-04-01T14:44:51.982Z]     presets: Select, Adventure, Apartment, Steel, Espresso | demo: https://select-refined.myshopify.com/
+[2026-04-01T14:44:51.982Z]     Scraping demo sections: https://select-refined.myshopify.com/
+[2026-04-01T14:45:04.116Z]     Demo scraped in 12134ms — HP: 19 sections | Collection: 7 | Product: 6
+[2026-04-01T14:45:04.117Z]     TOTAL: 142 unique themes
+[2026-04-01T14:45:04.117Z]   [3/7] Waiting 7.2s → concept
+[2026-04-01T14:45:15.165Z]     Theme page loaded in 3827ms
+[2026-04-01T14:45:15.175Z]     ✓ Concept | $400 | 576 rev | 99% | 63 features | 2 presets | RoarTheme
+[2026-04-01T14:45:15.176Z]     breakdown: +570 ~1 -5 | niches: electronics | launch: February 23, 2026
+[2026-04-01T14:45:15.176Z]     presets: Concept, Inova | demo: https://concept-theme-tech.myshopify.com
+[2026-04-01T14:45:15.176Z]     Scraping demo sections: https://concept-theme-tech.myshopify.com
+[2026-04-01T14:45:29.613Z]     Demo scraped in 14437ms — HP: 21 sections | Collection: 7 | Product: 14
+[2026-04-01T14:45:29.614Z]     TOTAL: 143 unique themes
+[2026-04-01T14:45:29.614Z]   [4/7] Waiting 9.7s → minimalista
+[2026-04-01T14:45:42.523Z]     Theme page loaded in 3179ms
+[2026-04-01T14:45:42.530Z]     ✓ Minimalista | $380 | 26 rev | 96% | 45 features | 5 presets | Segment
+[2026-04-01T14:45:42.530Z]     breakdown: +25 ~1 -0 | niches: home | launch: March 20, 2026
+[2026-04-01T14:45:42.530Z]     presets: Minimalista, Yoga, Cosmetica, Gold, Portfolio | demo: https://minimalista-graphite.myshopify.com
+[2026-04-01T14:45:42.530Z]     Scraping demo sections: https://minimalista-graphite.myshopify.com
+[2026-04-01T14:45:54.307Z]     Demo scraped in 11777ms — HP: 19 sections | Collection: 7 | Product: 8
+[2026-04-01T14:45:54.308Z]     TOTAL: 144 unique themes
+[2026-04-01T14:45:54.308Z]   [5/7] Waiting 8.3s → starlite
+[2026-04-01T14:46:06.386Z]     Theme page loaded in 3740ms
+[2026-04-01T14:46:06.392Z]     ✓ Starlite | $280 | 23 rev | 91% | 55 features | 4 presets | Shine Dezign Infonet
+[2026-04-01T14:46:06.392Z]     breakdown: +21 ~1 -1 | niches: electronics | launch: December 02, 2025
+[2026-04-01T14:46:06.392Z]     presets: Starlite, Echo, Nyra, Beetle | demo: https://starlite-echo.myshopify.com/
+[2026-04-01T14:46:06.392Z]     Scraping demo sections: https://starlite-echo.myshopify.com/
+[2026-04-01T14:46:20.612Z]     Demo scraped in 14220ms — HP: 19 sections | Collection: 4 | Product: 9
+[2026-04-01T14:46:20.613Z]     TOTAL: 145 unique themes
+[2026-04-01T14:46:20.614Z]   [6/7] Waiting 9.1s → borders
+[2026-04-01T14:46:32.959Z]     Theme page loaded in 3218ms
+[2026-04-01T14:46:32.964Z]     ✓ Borders | $380 | 17 rev | 94% | 55 features | 5 presets | Krown Themes
+[2026-04-01T14:46:32.964Z]     breakdown: +16 ~1 -0 | niches: clothing | launch: March 05, 2026
+[2026-04-01T14:46:32.964Z]     presets: Borders, Objekts, Readers, Folio, Mosaic | demo: https://borders-theme-main.myshopify.com/
+[2026-04-01T14:46:32.964Z]     Scraping demo sections: https://borders-theme-main.myshopify.com/
+[2026-04-01T14:46:44.690Z]     Demo scraped in 11726ms — HP: 21 sections | Collection: 5 | Product: 6
+[2026-04-01T14:46:44.691Z]     TOTAL: 146 unique themes
+[2026-04-01T14:46:44.691Z]   [7/7] Waiting 8.6s → distinctive
+[2026-04-01T14:46:56.673Z]     Theme page loaded in 3367ms
+[2026-04-01T14:46:56.681Z]     ✓ Distinctive | $360 | 36 rev | 92% | 55 features | 4 presets | Fuel Themes
+[2026-04-01T14:46:56.681Z]     breakdown: +33 ~0 -3 | niches: clothing | launch: March 03, 2026
+[2026-04-01T14:46:56.681Z]     presets: Distinctive, Playstyle, Monark, Lineage | demo: https://distinctive-main.myshopify.com/
+[2026-04-01T14:46:56.682Z]     Scraping demo sections: https://distinctive-main.myshopify.com/
+[2026-04-01T14:47:10.424Z]     Demo scraped in 13742ms — HP: 22 sections | Collection: 12 | Product: 19
+[2026-04-01T14:47:10.425Z]     TOTAL: 147 unique themes
+[2026-04-01T14:47:10.426Z] 
+--- Page 22 done | 147 themes | 63.7 min | waiting 8.7s ---
+[2026-04-01T14:47:19.095Z] 
+========================================
+[2026-04-01T14:47:19.096Z] LISTING PAGE 23: https://themes.shopify.com/themes?sort_by=newest&page=23
+[2026-04-01T14:47:19.096Z] ========================================
+[2026-04-01T14:47:19.096Z] Themes: 147 | Skipped: 16 | Errors: 0
+[2026-04-01T14:47:22.861Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:47:22.863Z] Found 7 themes: distinctive, pesto, igloo, barcelona, divide, stylescape, multi
+[2026-04-01T14:47:22.863Z]   [1/7] SKIP "distinctive" — duplicate
+[2026-04-01T14:47:22.863Z]   [2/7] Waiting 9.7s → pesto
+[2026-04-01T14:47:36.347Z]     Theme page loaded in 3758ms
+[2026-04-01T14:47:36.350Z]     ✓ Pesto | $260 | 12 rev | 100% | 32 features | 5 presets | ShopiDevs
+[2026-04-01T14:47:36.350Z]     breakdown: +12 ~0 -0 | niches: conversions, food and drink | launch: March 18, 2026
+[2026-04-01T14:47:36.350Z]     presets: Pesto, Koffe, Juicery, Cakelet, Meatzo | demo: https://pesto-restaurant.myshopify.com/
+[2026-04-01T14:47:36.350Z]     Scraping demo sections: https://pesto-restaurant.myshopify.com/
+[2026-04-01T14:47:51.122Z]     Demo scraped in 14772ms — HP: 18 sections | Collection: 6 | Product: 4
+[2026-04-01T14:47:51.123Z]     TOTAL: 148 unique themes
+[2026-04-01T14:47:51.123Z]   [3/7] Waiting 7.6s → igloo
+[2026-04-01T14:48:02.156Z]     Theme page loaded in 3448ms
+[2026-04-01T14:48:02.160Z]     ✓ Igloo | $160 | 45 rev | 100% | 50 features | 3 presets | IT-Geeks
+[2026-04-01T14:48:02.160Z]     breakdown: +45 ~0 -0 | niches: sports | launch: June 20, 2025
+[2026-04-01T14:48:02.160Z]     presets: Igloo, Drift, Bella | demo: https://igloo-theme.myshopify.com
+[2026-04-01T14:48:02.160Z]     Scraping demo sections: https://igloo-theme.myshopify.com
+[2026-04-01T14:48:20.668Z]     Demo scraped in 18508ms — HP: 17 sections | Collection: 7 | Product: 6
+[2026-04-01T14:48:20.669Z]     TOTAL: 149 unique themes
+[2026-04-01T14:48:20.669Z]   [4/7] Waiting 6.7s → barcelona
+[2026-04-01T14:48:30.598Z]     Theme page loaded in 3200ms
+[2026-04-01T14:48:30.602Z]     ✓ Barcelona | $380 | 11 rev | 100% | 46 features | 5 presets | Apparent Collective
+[2026-04-01T14:48:30.602Z]     breakdown: +11 ~0 -0 | niches: beauty | launch: March 04, 2026
+[2026-04-01T14:48:30.602Z]     presets: Barcelona, Loom, Cashmere, Lights, Beats | demo: https://barcelona-clean.myshopify.com/
+[2026-04-01T14:48:30.602Z]     Scraping demo sections: https://barcelona-clean.myshopify.com/
+[2026-04-01T14:48:43.364Z]     Demo scraped in 12762ms — HP: 20 sections | Collection: 8 | Product: 10
+[2026-04-01T14:48:43.366Z]     TOTAL: 150 unique themes
+[2026-04-01T14:48:43.366Z]   [5/7] Waiting 8.9s → divide
+[2026-04-01T14:48:55.964Z]     Theme page loaded in 3714ms
+[2026-04-01T14:48:55.967Z]     ✓ Divide | $350 | 11 rev | 91% | 29 features | 5 presets | Squiggle & Code
+[2026-04-01T14:48:55.967Z]     breakdown: +10 ~1 -0 | niches: toys | launch: March 25, 2026
+[2026-04-01T14:48:55.967Z]     presets: Divide, Explore, Leap, Move, Treat | demo: https://divide-play.myshopify.com/
+[2026-04-01T14:48:55.967Z]     Scraping demo sections: https://divide-play.myshopify.com/
+[2026-04-01T14:49:07.635Z]     Demo scraped in 11668ms — HP: 13 sections | Collection: 5 | Product: 7
+[2026-04-01T14:49:07.637Z]     TOTAL: 151 unique themes
+[2026-04-01T14:49:07.637Z]   [6/7] Waiting 9.0s → stylescape
+[2026-04-01T14:49:20.155Z]     Theme page loaded in 3562ms
+[2026-04-01T14:49:20.160Z]     ✓ StyleScape | $250 | 4 rev | 100% | 34 features | 3 presets | Baad Themes
+[2026-04-01T14:49:20.160Z]     breakdown: +4 ~0 -0 | niches: bags | launch: December 04, 2025
+[2026-04-01T14:49:20.160Z]     presets: StyleScape, Vibe, Bolt | demo: https://stylescapetheme.myshopify.com/
+[2026-04-01T14:49:20.160Z]     Scraping demo sections: https://stylescapetheme.myshopify.com/
+[2026-04-01T14:49:34.068Z]     Demo scraped in 13908ms — HP: 20 sections | Collection: 5 | Product: 6
+[2026-04-01T14:49:34.069Z]     TOTAL: 152 unique themes
+[2026-04-01T14:49:34.069Z]   [7/7] Waiting 7.6s → multi
+[2026-04-01T14:49:45.935Z]     Theme page loaded in 4218ms
+[2026-04-01T14:49:45.939Z]     ✓ Multi | $380 | 19 rev | 100% | 47 features | 5 presets | Mile High Themes
+[2026-04-01T14:49:45.940Z]     breakdown: +19 ~0 -0 | niches: electronics | launch: March 13, 2026
+[2026-04-01T14:49:45.940Z]     presets: Multi, Cobalt, Moment, Giant, Vanguard | demo: https://multi-themes.myshopify.com/
+[2026-04-01T14:49:45.940Z]     Scraping demo sections: https://multi-themes.myshopify.com/
+[2026-04-01T14:49:59.116Z]     Demo scraped in 13176ms — HP: 22 sections | Collection: 9 | Product: 16
+[2026-04-01T14:49:59.117Z]     TOTAL: 153 unique themes
+[2026-04-01T14:49:59.117Z] 
+--- Page 23 done | 153 themes | 66.5 min | waiting 9.0s ---
+[2026-04-01T14:50:08.127Z] 
+========================================
+[2026-04-01T14:50:08.128Z] LISTING PAGE 24: https://themes.shopify.com/themes?sort_by=newest&page=24
+[2026-04-01T14:50:08.129Z] ========================================
+[2026-04-01T14:50:08.129Z] Themes: 153 | Skipped: 17 | Errors: 0
+[2026-04-01T14:50:11.596Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:50:11.599Z] Found 6 themes: multi, avante, next, cornerstone, amber, area
+[2026-04-01T14:50:11.599Z]   [1/6] SKIP "multi" — duplicate
+[2026-04-01T14:50:11.599Z]   [2/6] Waiting 9.7s → avante
+[2026-04-01T14:50:24.833Z]     Theme page loaded in 3570ms
+[2026-04-01T14:50:24.838Z]     ✓ Avante | $290 | 90 rev | 100% | 58 features | 5 presets | Staylime
+[2026-04-01T14:50:24.838Z]     breakdown: +90 ~0 -0 | niches: clothing. Designed to impress., clothing | launch: March 26, 2026
+[2026-04-01T14:50:24.838Z]     presets: Avante, Bloop, Adelle, Vortex, Fairmont | demo: https://avante-theme-fashion.myshopify.com/
+[2026-04-01T14:50:24.838Z]     Scraping demo sections: https://avante-theme-fashion.myshopify.com/
+[2026-04-01T14:50:40.007Z]     Demo scraped in 15169ms — HP: 28 sections | Collection: 6 | Product: 14
+[2026-04-01T14:50:40.009Z]     TOTAL: 154 unique themes
+[2026-04-01T14:50:40.009Z]   [3/6] Waiting 6.6s → next
+[2026-04-01T14:50:49.957Z]     Theme page loaded in 3309ms
+[2026-04-01T14:50:49.961Z]     ✓ Next | $100 | 82 rev | 96% | 54 features | 5 presets | Someone You Know
+[2026-04-01T14:50:49.962Z]     breakdown: +79 ~1 -2 | niches: home | launch: January 22, 2026
+[2026-04-01T14:50:49.962Z]     presets: Next, Badge, Hue, Rush, Fleet | demo: https://theme-next-wood.myshopify.com/
+[2026-04-01T14:50:49.962Z]     Scraping demo sections: https://theme-next-wood.myshopify.com/
+[2026-04-01T14:51:00.923Z]     Demo scraped in 10961ms — HP: 11 sections | Collection: 7 | Product: 8
+[2026-04-01T14:51:00.924Z]     TOTAL: 155 unique themes
+[2026-04-01T14:51:00.924Z]   [4/6] Waiting 7.9s → cornerstone
+[2026-04-01T14:51:12.337Z]     Theme page loaded in 3465ms
+[2026-04-01T14:51:12.344Z]     ✓ Cornerstone | $360 | 42 rev | 88% | 47 features | 5 presets | Fluorescent Design Inc.
+[2026-04-01T14:51:12.344Z]     breakdown: +37 ~0 -5 | niches: home | launch: March 04, 2026
+[2026-04-01T14:51:12.344Z]     presets: Cornerstone, Glow, Barista, Botanical, Origami | demo: https://cornerstone-theme-flair.myshopify.com/
+[2026-04-01T14:51:12.344Z]     Scraping demo sections: https://cornerstone-theme-flair.myshopify.com/
+[2026-04-01T14:51:26.410Z]     Demo scraped in 14065ms — HP: 25 sections | Collection: 9 | Product: 12
+[2026-04-01T14:51:26.410Z]     TOTAL: 156 unique themes
+[2026-04-01T14:51:26.410Z]   [5/6] Waiting 6.4s → amber
+[2026-04-01T14:51:36.456Z]     Theme page loaded in 3644ms
+[2026-04-01T14:51:36.464Z]     ✓ Amber | $220 | 11 rev | 100% | 44 features | 3 presets | BigStart
+[2026-04-01T14:51:36.464Z]     breakdown: +11 ~0 -0 | niches: clothing | launch: February 17, 2026
+[2026-04-01T14:51:36.464Z]     presets: Amber, Alora, Rascals | demo: https://amber-theme-demo.myshopify.com/
+[2026-04-01T14:51:36.464Z]     Scraping demo sections: https://amber-theme-demo.myshopify.com/
+[2026-04-01T14:51:56.316Z]     Demo scraped in 19852ms — HP: 23 sections | Collection: 6 | Product: 8
+[2026-04-01T14:51:56.317Z]     TOTAL: 157 unique themes
+[2026-04-01T14:51:56.318Z]   [6/6] Waiting 9.9s → area
+[2026-04-01T14:52:10.283Z]     Theme page loaded in 4023ms
+[2026-04-01T14:52:10.292Z]     ✓ Area | $100 | 12 rev | 83% | 43 features | 5 presets | 20+ years experienced team make Area a powerful rapid builder of webpages that sells.
+[2026-04-01T14:52:10.292Z]     breakdown: +10 ~1 -1 | niches: clothing | launch: February 18, 2026
+[2026-04-01T14:52:10.292Z]     presets: Area, Flavor, Medicines, Technical, Winery | demo: https://area-theme-sneakers.myshopify.com/
+[2026-04-01T14:52:10.293Z]     Scraping demo sections: https://area-theme-sneakers.myshopify.com/
+[2026-04-01T14:52:21.828Z]     Demo scraped in 11535ms — HP: 20 sections | Collection: 6 | Product: 6
+[2026-04-01T14:52:21.829Z]     TOTAL: 158 unique themes
+[2026-04-01T14:52:21.829Z] 
+--- Page 24 done | 158 themes | 68.9 min | waiting 9.7s ---
+[2026-04-01T14:52:31.509Z] 
+========================================
+[2026-04-01T14:52:31.509Z] LISTING PAGE 25: https://themes.shopify.com/themes?sort_by=newest&page=25
+[2026-04-01T14:52:31.510Z] ========================================
+[2026-04-01T14:52:31.510Z] Themes: 158 | Skipped: 18 | Errors: 0
+[2026-04-01T14:52:35.063Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:52:35.065Z] Found 8 themes: area, monaco, vivid, cama, brava, woodstock, kairo, nostalgia
+[2026-04-01T14:52:35.065Z]   [1/8] SKIP "area" — duplicate
+[2026-04-01T14:52:35.066Z]   [2/8] Waiting 8.8s → monaco
+[2026-04-01T14:52:47.077Z]     Theme page loaded in 3226ms
+[2026-04-01T14:52:47.084Z]     ✓ Monaco | $380 | 30 rev | 97% | 41 features | 5 presets | Apparent Collective
+[2026-04-01T14:52:47.085Z]     breakdown: +29 ~0 -1 | niches: clothing | launch: March 26, 2026
+[2026-04-01T14:52:47.085Z]     presets: Monaco, Memories, Moisturize, Tableware, Chocolate | demo: https://monaco-allure.myshopify.com/
+[2026-04-01T14:52:47.085Z]     Scraping demo sections: https://monaco-allure.myshopify.com/
+[2026-04-01T14:52:58.439Z]     Demo scraped in 11354ms — HP: 17 sections | Collection: 5 | Product: 5
+[2026-04-01T14:52:58.440Z]     TOTAL: 159 unique themes
+[2026-04-01T14:52:58.440Z]   [3/8] Waiting 8.6s → vivid
+[2026-04-01T14:53:10.711Z]     Theme page loaded in 3623ms
+[2026-04-01T14:53:10.715Z]     ✓ Vivid | $300 | 88 rev | 95% | 56 features | 4 presets | Slash Themes
+[2026-04-01T14:53:10.716Z]     breakdown: +84 ~1 -3 | niches: jewelry and accessories | launch: October 03, 2025
+[2026-04-01T14:53:10.716Z]     presets: Vivid, Beachly, Pure, Aero | demo: https://the-vivid-theme.myshopify.com/
+[2026-04-01T14:53:10.716Z]     Scraping demo sections: https://the-vivid-theme.myshopify.com/
+[2026-04-01T14:53:36.997Z]     Demo scraped in 26281ms — HP: 20 sections | Collection: 6 | Product: 7
+[2026-04-01T14:53:36.997Z]     TOTAL: 160 unique themes
+[2026-04-01T14:53:36.997Z]   [4/8] Waiting 8.2s → cama
+[2026-04-01T14:53:54.806Z]     Theme page loaded in 9630ms
+[2026-04-01T14:53:54.813Z]     ✓ Cama | $240 | 7 rev | 86% | 35 features | 3 presets | Trafik Plus
+[2026-04-01T14:53:54.813Z]     breakdown: +6 ~1 -0 | niches: home | launch: January 14, 2026
+[2026-04-01T14:53:54.814Z]     presets: Cama, Vanity, Critter | demo: https://cama-theme-demo-3.myshopify.com/
+[2026-04-01T14:53:54.814Z]     Scraping demo sections: https://cama-theme-demo-3.myshopify.com/
+[2026-04-01T14:54:05.664Z]     Demo scraped in 10850ms — HP: 13 sections | Collection: 4 | Product: 9
+[2026-04-01T14:54:05.665Z]     TOTAL: 161 unique themes
+[2026-04-01T14:54:05.666Z]   [5/8] Waiting 9.4s → brava
+[2026-04-01T14:54:18.255Z]     Theme page loaded in 3227ms
+[2026-04-01T14:54:18.264Z]     ✓ Brava | $220 | 3 rev | 100% | 48 features | 3 presets | Koding Themes
+[2026-04-01T14:54:18.264Z]     breakdown: +3 ~0 -0 | niches: electronics | launch: January 28, 2026
+[2026-04-01T14:54:18.264Z]     presets: Brava, Lyfted, Rogue | demo: https://bravo-demo-store.myshopify.com/
+[2026-04-01T14:54:18.265Z]     Scraping demo sections: https://bravo-demo-store.myshopify.com/
+[2026-04-01T14:54:33.821Z]     Demo scraped in 15556ms — HP: 14 sections | Collection: 4 | Product: 16
+[2026-04-01T14:54:33.821Z]     TOTAL: 162 unique themes
+[2026-04-01T14:54:33.822Z]   [6/8] Waiting 9.3s → woodstock
+[2026-04-01T14:54:46.796Z]     Theme page loaded in 3720ms
+[2026-04-01T14:54:46.802Z]     ✓ Woodstock | $270 | 59 rev | 97% | 58 features | 4 presets | Boostheme
+[2026-04-01T14:54:46.802Z]     breakdown: +57 ~0 -2 | niches: electronics | launch: March 11, 2026
+[2026-04-01T14:54:46.803Z]     presets: Woodstock, Obsidian, Vita, Roomio | demo: https://woodstock-theme-light.myshopify.com/
+[2026-04-01T14:54:46.803Z]     Scraping demo sections: https://woodstock-theme-light.myshopify.com/
+[2026-04-01T14:54:59.311Z]     Demo scraped in 12508ms — HP: 18 sections | Collection: 8 | Product: 19
+[2026-04-01T14:54:59.311Z]     TOTAL: 163 unique themes
+[2026-04-01T14:54:59.311Z]   [7/8] Waiting 8.9s → kairo
+[2026-04-01T14:55:11.643Z]     Theme page loaded in 3472ms
+[2026-04-01T14:55:11.651Z]     ✓ Kairo | $100 | 2 rev | 50% | 21 features | ? presets | Harmoniks
+[2026-04-01T14:55:11.651Z]     breakdown: +1 ~0 -1 | niches: jewelry and accessories | launch: December 20, 2023
+[2026-04-01T14:55:11.651Z]     presets: ? | demo: https://kairo-demo.myshopify.com
+[2026-04-01T14:55:11.651Z]     Scraping demo sections: https://kairo-demo.myshopify.com
+[2026-04-01T14:55:23.011Z]     Demo scraped in 11360ms — HP: 11 sections | Collection: 4 | Product: 5
+[2026-04-01T14:55:23.012Z]     TOTAL: 164 unique themes
+[2026-04-01T14:55:23.012Z]   [8/8] Waiting 7.2s → nostalgia
+[2026-04-01T14:55:33.777Z]     Theme page loaded in 3578ms
+[2026-04-01T14:55:33.785Z]     ✓ Nostalgia | $250 | 15 rev | 87% | 38 features | 4 presets | AgniHD
+[2026-04-01T14:55:33.785Z]     breakdown: +13 ~1 -1 | niches: clothing | launch: December 02, 2025
+[2026-04-01T14:55:33.785Z]     presets: Nostalgia, Earthy, Pouch, Scandina | demo: https://nostalgia-theme.myshopify.com/
+[2026-04-01T14:55:33.785Z]     Scraping demo sections: https://nostalgia-theme.myshopify.com/
+[2026-04-01T14:55:45.563Z]     Demo scraped in 11778ms — HP: 18 sections | Collection: 5 | Product: 10
+[2026-04-01T14:55:45.564Z]     TOTAL: 165 unique themes
+[2026-04-01T14:55:45.564Z] 
+--- Page 25 done | 165 themes | 72.3 min | waiting 6.2s ---
+[2026-04-01T14:55:51.747Z] 
+========================================
+[2026-04-01T14:55:51.748Z] LISTING PAGE 26: https://themes.shopify.com/themes?sort_by=newest&page=26
+[2026-04-01T14:55:51.748Z] ========================================
+[2026-04-01T14:55:51.748Z] Themes: 165 | Skipped: 19 | Errors: 0
+[2026-04-01T14:55:55.283Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:55:55.285Z] Found 6 themes: nostalgia, unicorn, abode, xclusive, berlin, sydney
+[2026-04-01T14:55:55.285Z]   [1/6] SKIP "nostalgia" — duplicate
+[2026-04-01T14:55:55.285Z]   [2/6] Waiting 9.7s → unicorn
+[2026-04-01T14:56:09.068Z]     Theme page loaded in 4126ms
+[2026-04-01T14:56:09.073Z]     ✓ Unicorn | $100 | 15 rev | 80% | 56 features | 5 presets | MPIthemes
+[2026-04-01T14:56:09.073Z]     breakdown: +12 ~1 -2 | niches: home | launch: February 09, 2026
+[2026-04-01T14:56:09.073Z]     presets: Unicorn, Cargo, Dandy, Illumination, Sunkissed | demo: https://unicorn-theme-valuable.mpthemes.net/
+[2026-04-01T14:56:09.073Z]     Scraping demo sections: https://unicorn-theme-valuable.mpthemes.net/
+[2026-04-01T14:56:21.861Z]     Demo scraped in 12788ms — HP: 12 sections | Collection: 6 | Product: 11
+[2026-04-01T14:56:21.862Z]     TOTAL: 166 unique themes
+[2026-04-01T14:56:21.862Z]   [3/6] Waiting 6.2s → abode
+[2026-04-01T14:56:31.811Z]     Theme page loaded in 3784ms
+[2026-04-01T14:56:31.822Z]     ✓ Abode | $140 | 17 rev | 88% | 43 features | 5 presets | MUUP
+[2026-04-01T14:56:31.823Z]     breakdown: +15 ~0 -2 | niches: garden | launch: March 03, 2026
+[2026-04-01T14:56:31.823Z]     presets: Abode, Bramble, Gifter, Velora, Javelin | demo: https://abode-for-home.myshopify.com/
+[2026-04-01T14:56:31.823Z]     Scraping demo sections: https://abode-for-home.myshopify.com/
+[2026-04-01T14:56:43.828Z]     Demo scraped in 12005ms — HP: 17 sections | Collection: 7 | Product: 7
+[2026-04-01T14:56:43.830Z]     TOTAL: 167 unique themes
+[2026-04-01T14:56:43.830Z]   [4/6] Waiting 7.8s → xclusive
+[2026-04-01T14:56:54.903Z]     Theme page loaded in 3257ms
+[2026-04-01T14:56:54.911Z]     ✓ Xclusive | $100 | 150 rev | 98% | 58 features | 5 presets | Someone You Know
+[2026-04-01T14:56:54.911Z]     breakdown: +147 ~0 -3 | niches: clothing | launch: January 22, 2026
+[2026-04-01T14:56:54.912Z]     presets: Xclusive, Pace, Cozy, Deck, Voyage | demo: https://theme-xclusive-couture.myshopify.com/
+[2026-04-01T14:56:54.912Z]     Scraping demo sections: https://theme-xclusive-couture.myshopify.com/
+[2026-04-01T14:57:05.601Z]     Demo scraped in 10689ms — HP: 13 sections | Collection: 6 | Product: 6
+[2026-04-01T14:57:05.603Z]     TOTAL: 168 unique themes
+[2026-04-01T14:57:05.603Z]   [5/6] Waiting 9.7s → berlin
+[2026-04-01T14:57:18.600Z]     Theme page loaded in 3270ms
+[2026-04-01T14:57:18.608Z]     ✓ Berlin | $380 | 23 rev | 96% | 45 features | 5 presets | Apparent Collective
+[2026-04-01T14:57:18.609Z]     breakdown: +22 ~0 -1 | niches: clothing | launch: March 04, 2026
+[2026-04-01T14:57:18.609Z]     presets: Berlin, Slope, Lens, Shave, Stereo | demo: https://berlin-lifestyle.myshopify.com/
+[2026-04-01T14:57:18.609Z]     Scraping demo sections: https://berlin-lifestyle.myshopify.com/
+[2026-04-01T14:57:29.661Z]     Demo scraped in 11052ms — HP: 21 sections | Collection: 8 | Product: 8
+[2026-04-01T14:57:29.663Z]     TOTAL: 169 unique themes
+[2026-04-01T14:57:29.664Z]   [6/6] Waiting 5.0s → sydney
+[2026-04-01T14:57:37.948Z]     Theme page loaded in 3248ms
+[2026-04-01T14:57:37.950Z]     ✓ Sydney | $380 | 13 rev | 85% | 44 features | 5 presets | Apparent Collective
+[2026-04-01T14:57:37.950Z]     breakdown: +11 ~0 -2 | niches: jewelry and accessories | launch: March 04, 2026
+[2026-04-01T14:57:37.951Z]     presets: Sydney, Secrets, Silhouette, Vineyard, Magazine | demo: https://sydney-demo-sophisticated.myshopify.com/
+[2026-04-01T14:57:37.951Z]     Scraping demo sections: https://sydney-demo-sophisticated.myshopify.com/
+[2026-04-01T14:57:49.637Z]     Demo scraped in 11686ms — HP: 11 sections | Collection: 6 | Product: 7
+[2026-04-01T14:57:49.640Z]     TOTAL: 170 unique themes
+[2026-04-01T14:57:49.640Z] 
+--- Page 26 done | 170 themes | 74.4 min | waiting 6.5s ---
+[2026-04-01T14:57:56.156Z] 
+========================================
+[2026-04-01T14:57:56.157Z] LISTING PAGE 27: https://themes.shopify.com/themes?sort_by=newest&page=27
+[2026-04-01T14:57:56.157Z] ========================================
+[2026-04-01T14:57:56.157Z] Themes: 170 | Skipped: 20 | Errors: 0
+[2026-04-01T14:57:59.679Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T14:57:59.681Z] Found 7 themes: sydney, neat, charge, electro, exhibit, lute, honey
+[2026-04-01T14:57:59.682Z]   [1/7] SKIP "sydney" — duplicate
+[2026-04-01T14:57:59.682Z]   [2/7] Waiting 7.5s → neat
+[2026-04-01T14:58:10.464Z]     Theme page loaded in 3236ms
+[2026-04-01T14:58:10.471Z]     ✓ Neat | $250 | 24 rev | 100% | 32 features | 4 presets | BoostifyThemes
+[2026-04-01T14:58:10.472Z]     breakdown: +24 ~0 -0 | niches: clothing | launch: February 16, 2026
+[2026-04-01T14:58:10.472Z]     presets: Neat, Razor, Wilderness, Limitless | demo: https://boostify-neatwear.myshopify.com/
+[2026-04-01T14:58:10.472Z]     Scraping demo sections: https://boostify-neatwear.myshopify.com/
+[2026-04-01T14:58:23.254Z]     Demo scraped in 12782ms — HP: 15 sections | Collection: 5 | Product: 7
+[2026-04-01T14:58:23.256Z]     TOTAL: 171 unique themes
+[2026-04-01T14:58:23.256Z]   [3/7] Waiting 6.0s → charge
+[2026-04-01T14:58:32.747Z]     Theme page loaded in 3491ms
+[2026-04-01T14:58:32.757Z]     ✓ Charge | $170 | 57 rev | 98% | 43 features | 4 presets | Swissuplabs
+[2026-04-01T14:58:32.757Z]     breakdown: +56 ~0 -1 | niches: electronics | launch: March 24, 2026
+[2026-04-01T14:58:32.757Z]     presets: Charge, Gorpcore, Garage, Metalware | demo: https://shop-charge.swissuplabs.com
+[2026-04-01T14:58:32.757Z]     Scraping demo sections: https://shop-charge.swissuplabs.com
+[2026-04-01T14:58:45.092Z]     Demo scraped in 12335ms — HP: 18 sections | Collection: 6 | Product: 10
+[2026-04-01T14:58:45.093Z]     TOTAL: 172 unique themes
+[2026-04-01T14:58:45.093Z]   [4/7] Waiting 7.1s → electro
+[2026-04-01T14:58:55.372Z]     Theme page loaded in 3208ms
+[2026-04-01T14:58:55.379Z]     ✓ Electro | $200 | 85 rev | 99% | 43 features | 4 presets | SalesHunterThemes
+[2026-04-01T14:58:55.379Z]     breakdown: +84 ~0 -1 | niches: electronics | launch: October 28, 2025
+[2026-04-01T14:58:55.379Z]     presets: Electro, Surveillance, Skatewear, Gizmo | demo: https://electro-audio-demo.myshopify.com/
+[2026-04-01T14:58:55.380Z]     Scraping demo sections: https://electro-audio-demo.myshopify.com/
+[2026-04-01T14:59:07.718Z]     Demo scraped in 12338ms — HP: 19 sections | Collection: 9 | Product: 15
+[2026-04-01T14:59:07.719Z]     TOTAL: 173 unique themes
+[2026-04-01T14:59:07.720Z]   [5/7] Waiting 7.5s → exhibit
+[2026-04-01T14:59:19.297Z]     Theme page loaded in 4082ms
+[2026-04-01T14:59:19.301Z]     ✓ Exhibit | $350 | 16 rev | 100% | 21 features | 4 presets | Switch
+[2026-04-01T14:59:19.301Z]     breakdown: +16 ~0 -0 | niches: art | launch: January 30, 2026
+[2026-04-01T14:59:19.301Z]     presets: Exhibit, Exposure, Curate, Display | demo: https://exhibit-theme-preset-1.myshopify.com
+[2026-04-01T14:59:19.301Z]     Scraping demo sections: https://exhibit-theme-preset-1.myshopify.com
+[2026-04-01T14:59:31.071Z]     Demo scraped in 11770ms — HP: 16 sections | Collection: 5 | Product: 5
+[2026-04-01T14:59:31.072Z]     TOTAL: 174 unique themes
+[2026-04-01T14:59:31.072Z]   [6/7] Waiting 7.0s → lute
+[2026-04-01T14:59:41.368Z]     Theme page loaded in 3259ms
+[2026-04-01T14:59:41.375Z]     ✓ Lute | $360 | 3 rev | 100% | 45 features | 2 presets | ThemeGoal
+[2026-04-01T14:59:41.376Z]     breakdown: +3 ~0 -0 | niches: your brand and audience., toys | launch: February 20, 2026
+[2026-04-01T14:59:41.376Z]     presets: Lute, Fauve | demo: https://lute-vibrant.myshopify.com/
+[2026-04-01T14:59:41.376Z]     Scraping demo sections: https://lute-vibrant.myshopify.com/
+[2026-04-01T14:59:52.601Z]     Demo scraped in 11225ms — HP: 10 sections | Collection: 6 | Product: 8
+[2026-04-01T14:59:52.602Z]     TOTAL: 175 unique themes
+[2026-04-01T14:59:52.602Z]   [7/7] Waiting 7.7s → honey
+[2026-04-01T15:00:04.063Z]     Theme page loaded in 3713ms
+[2026-04-01T15:00:04.070Z]     ✓ Honey | $400 | 49 rev | 94% | 46 features | 5 presets | Archer Commerce
+[2026-04-01T15:00:04.071Z]     breakdown: +46 ~0 -3 | niches: pets | launch: January 20, 2026
+[2026-04-01T15:00:04.071Z]     presets: Honey, Noteable, Maravella, Roadster, Treasure | demo: https://honey-paws-theme.myshopify.com/
+[2026-04-01T15:00:04.071Z]     Scraping demo sections: https://honey-paws-theme.myshopify.com/
+[2026-04-01T15:00:16.526Z]     Demo scraped in 12455ms — HP: 29 sections | Collection: 6 | Product: 8
+[2026-04-01T15:00:16.527Z]     TOTAL: 176 unique themes
+[2026-04-01T15:00:16.527Z] 
+--- Page 27 done | 176 themes | 76.8 min | waiting 6.6s ---
+[2026-04-01T15:00:23.144Z] 
+========================================
+[2026-04-01T15:00:23.146Z] LISTING PAGE 28: https://themes.shopify.com/themes?sort_by=newest&page=28
+[2026-04-01T15:00:23.146Z] ========================================
+[2026-04-01T15:00:23.146Z] Themes: 176 | Skipped: 21 | Errors: 0
+[2026-04-01T15:00:26.673Z] Page title: "Ecommerce Website Templates - Free and Premium Themes for Your Online Store."
+[2026-04-01T15:00:26.674Z] Found 6 themes: honey, maranello, fame, stockmart, align, gain
+[2026-04-01T15:00:26.674Z]   [1/6] SKIP "honey" — duplicate
+[2026-04-01T15:00:26.675Z]   [2/6] Waiting 9.0s → maranello
+[2026-04-01T15:00:39.067Z]     Theme page loaded in 3390ms
+[2026-04-01T15:00:39.074Z]     ✓ Maranello | $300 | 30 rev | 100% | 58 features | 4 presets | Truly Fine Pixels
+[2026-04-01T15:00:39.075Z]     breakdown: +30 ~0 -0 | niches: auto | launch: March 19, 2026
+[2026-04-01T15:00:39.075Z]     presets: Maranello, Records, Sneakers, Chroma | demo: https://maranello-theme.myshopify.com/
+[2026-04-01T15:00:39.075Z]     Scraping demo sections: https://maranello-theme.myshopify.com/
+[2026-04-01T15:00:51.819Z]     Demo scraped in 12744ms — HP: 24 sections | Collection: 6 | Product: 6
+[2026-04-01T15:00:51.820Z]     TOTAL: 177 unique themes
+[2026-04-01T15:00:51.820Z]   [3/6] Waiting 9.7s → fame
+[2026-04-01T15:01:05.121Z]     Theme page loaded in 3627ms
+[2026-04-01T15:01:05.126Z]     ✓ Fame | $300 | 13 rev | 85% | 55 features | 5 presets | Shine Dezign Infonet
+[2026-04-01T15:01:05.126Z]     breakdown: +11 ~1 -1 | niches: clothing | launch: February 16, 2026
+[2026-04-01T15:01:05.126Z]     presets: Fame, Diva, Power, Crystal, Hunger | demo: https://fame-theme-dark.myshopify.com/
+[2026-04-01T15:01:05.126Z]     Scraping demo sections: https://fame-theme-dark.myshopify.com/
+[2026-04-01T15:01:18.649Z]     Demo scraped in 13523ms — HP: 16 sections | Collection: 3 | Product: 6
+[2026-04-01T15:01:18.650Z]     TOTAL: 178 unique themes
+[2026-04-01T15:01:18.650Z]   [4/6] Waiting 9.3s → stockmart
+[2026-04-01T15:01:31.137Z]     Theme page loaded in 3226ms
+[2026-04-01T15:01:31.143Z]     ✓ Stockmart | $380 | 28 rev | 100% | 46 features | 5 presets | Segment
+[2026-04-01T15:01:31.144Z]     breakdown: +28 ~0 -0 | niches: extensive product collections., electronics | launch: March 04, 2026
+[2026-04-01T15:01:31.144Z]     presets: Stockmart, Motor, Workspace, Playground, Bark | demo: https://stockmart-modern.myshopify.com/
+[2026-04-01T15:01:31.144Z]     Scraping demo sections: https://stockmart-modern.myshopify.com/
+[2026-04-01T15:01:43.409Z]     Demo scraped in 12265ms — HP: 15 sections | Collection: 7 | Product: 6
+[2026-04-01T15:01:43.409Z]     TOTAL: 179 unique themes
+[2026-04-01T15:01:43.409Z]   [5/6] Waiting 7.2s → align
+[2026-04-01T15:01:54.306Z]     Theme page loaded in 3719ms
+[2026-04-01T15:01:54.313Z]     ✓ Align | $320 | 38 rev | 100% | 42 features | 4 presets | Company XYZ
+[2026-04-01T15:01:54.313Z]     breakdown: +38 ~0 -0 | niches: beauty | launch: November 14, 2025
+[2026-04-01T15:01:54.313Z]     presets: Align, Darkroom, Playroom, Verdant | demo: https://theme-a-demo-01.myshopify.com/
+[2026-04-01T15:01:54.313Z]     Scraping demo sections: https://theme-a-demo-01.myshopify.com/
+[2026-04-01T15:02:09.331Z]     Demo scraped in 15018ms — HP: 21 sections | Collection: 7 | Product: 13
+[2026-04-01T15:02:09.332Z]     TOTAL: 180 unique themes
+[2026-04-01T15:02:09.333Z]   [6/6] Waiting 5.9s → gain
+[2026-04-01T15:02:18.801Z]     Theme page loaded in 3575ms
+[2026-04-01T15:02:18.810Z]     ✓ Gain | $100 | 65 rev | 92% | 59 features | 5 presets | UTD
+[2026-04-01T15:02:18.811Z]     breakdown: +60 ~2 -3 | niches: clothing | launch: March 19, 2026
+[2026-04-01T15:02:18.811Z]     presets: Gain, Lace, Mio, Sable, Maison | demo: https://gain-demo2-store.myshopify.com/
+[2026-04-01T15:02:18.811Z]     Scraping demo sections: https://gain-demo2-store.myshopify.com/
+[2026-04-01T15:02:33.388Z]     Demo scraped in 14577ms — HP: 21 sections | Collection: 6 | Product: 7
+[2026-04-01T15:02:33.389Z]     TOTAL: 181 unique themes
+[2026-04-01T15:02:33.389Z] 
+--- Page 28 done | 181 themes | 79.1 min | waiting 8.7s ---
