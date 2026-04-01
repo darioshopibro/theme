@@ -24,7 +24,14 @@ const STORAGE_KEY = 'wireframe-builder-state';
 function loadState() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) return JSON.parse(saved);
+    if (saved) {
+      const data = JSON.parse(saved);
+      // Clean up: remove sections with undefined importedHtml
+      if (data.canvasSections) {
+        data.canvasSections = data.canvasSections.filter((s: any) => !s.importedHtml || s.importedHtml !== 'undefined');
+      }
+      return data;
+    }
   } catch (e) {}
   return null;
 }

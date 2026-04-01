@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { ThemeSettings, ThemeSection, PageType, SectionSettings, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS } from './types';
 import { Eye, Smartphone, Monitor, CircleAlert } from 'lucide-react';
+import { useZoom } from './ZoomContext';
 import SectionBlock from './SectionBlock';
 import SectionSettingsPopup from './SectionSettingsPopup';
 
@@ -95,6 +96,8 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
   const handleDragEnd = () => { setDragId(null); setDropTarget(null); };
 
   const [showChecklist, setShowChecklist] = useState(false);
+  const zoom = useZoom();
+  const counterScale = Math.max(1, 1 / zoom);  // scale up when zoomed out, never below 1x
 
   const availableSections = Object.entries(SECTION_TEMPLATES).filter(([_, t]) => t.pages.includes(pageType));
   const selectedSectionData = selectedSection ? sections.find(s => s.id === selectedSection) : null;
@@ -104,8 +107,8 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
 
   return (
     <div style={{ position: 'absolute', left: x, top: y }}>
-      {/* Frame header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, padding: '0 2px' }}>
+      {/* Frame header — zoom resistant */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 * counterScale, padding: '0 2px', transform: `scale(${counterScale})`, transformOrigin: 'top left', height: 20 * counterScale }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 12, fontWeight: 600, color: '#888' }}>{label}</span>
           <span style={{ fontSize: 10, color: '#bbb', fontFamily: 'monospace' }}>{width}px</span>
@@ -120,8 +123,8 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
         </div>
       </div>
 
-      {/* Progress bar */}
-      <div style={{ marginBottom: 6, position: 'relative' }}>
+      {/* Progress bar — zoom resistant */}
+      <div style={{ marginBottom: 6 * counterScale, position: 'relative', transform: `scale(${counterScale})`, transformOrigin: 'top left', height: 20 * counterScale }}>
         <div
           onClick={() => setShowChecklist(!showChecklist)}
           style={{

@@ -49,7 +49,7 @@ const BottomDrawer: React.FC<Props> = ({
 
   return (
     <div style={{
-      position: 'absolute', bottom: 0, left: 240, right: 0, zIndex: 100,
+      position: 'fixed', bottom: 0, left: 240, right: 0, zIndex: 100,
       display: 'flex', flexDirection: 'column',
     }}>
       {/* Toggle bar */}

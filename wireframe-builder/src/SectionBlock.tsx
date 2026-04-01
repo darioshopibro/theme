@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ThemeSettings, ThemeSection, SECTION_TEMPLATES, SECTION_PREVIEWS } from './types';
 import { settingsToCSS } from './css-vars';
 import { Trash2, EyeOff, GripVertical, RotateCcw, Paintbrush } from 'lucide-react';
+import { useZoom } from './ZoomContext';
 
 interface Props {
   section: ThemeSection;
@@ -19,6 +20,8 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
   const [hovered, setHovered] = useState(false);
   const [showOriginal, setShowOriginal] = useState(true);
   const [resizing, setResizing] = useState(false);
+  const zoom = useZoom();
+  const counterScale = Math.max(1, 1 / zoom);
   const [localHeight, setLocalHeight] = useState(section.height);
   const resizeStartY = React.useRef(0);
   const resizeStartH = React.useRef(0);
@@ -105,6 +108,7 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
             position: 'absolute', top: 4, right: 4, display: 'flex', gap: 2, alignItems: 'center',
             background: '#fff', borderRadius: 6, padding: '3px 6px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.12)', zIndex: 10, border: '1px solid #e5e7eb',
+            transform: `scale(${counterScale})`, transformOrigin: 'top right',
           }}>
             <GripVertical size={12} color="#ccc" />
             <span style={{ fontSize: 10, color: '#f59e0b', fontWeight: 600, padding: '0 4px' }}>
@@ -328,7 +332,7 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
 
           {/* Preview tooltip */}
           <div style={{
-            position: 'absolute', top: -36, left: '50%', transform: 'translateX(-50%)',
+            position: 'absolute', top: -36 * counterScale, left: '50%', transform: `translateX(-50%) scale(${counterScale})`,
             background: '#1f2937', color: '#f9fafb', fontSize: 10, padding: '5px 10px',
             borderRadius: 6, whiteSpace: 'nowrap', zIndex: 20,
             boxShadow: '0 4px 12px rgba(0,0,0,0.2)',

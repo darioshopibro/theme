@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { ZoomProvider } from './ZoomContext';
 
 interface Props {
   children: React.ReactNode;
@@ -92,13 +93,15 @@ const Canvas: React.FC<Props> = ({ children }) => {
       onMouseUp={onMouseUp}
       onMouseLeave={onMouseUp}
     >
-      <div style={{
-        transform: `translate(${panX}px, ${panY}px) scale(${zoom})`,
-        transformOrigin: '0 0',
-        position: 'absolute', top: 0, left: 0,
-      }}>
-        {children}
-      </div>
+      <ZoomProvider value={zoom}>
+        <div style={{
+          transform: `translate(${panX}px, ${panY}px) scale(${zoom})`,
+          transformOrigin: '0 0',
+          position: 'absolute', top: 0, left: 0,
+        }}>
+          {children}
+        </div>
+      </ZoomProvider>
 
       <div style={{
         position: 'absolute', bottom: 12, right: 12,
