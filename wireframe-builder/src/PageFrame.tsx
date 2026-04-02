@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { ThemeSettings, ThemeSection, PageType, SectionSettings, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS } from './types';
-import { Eye, Smartphone, Monitor, CircleAlert } from 'lucide-react';
+
 import { useZoom } from './ZoomContext';
 import SectionBlock from './SectionBlock';
 import SectionSettingsPopup from './SectionSettingsPopup';
@@ -98,7 +98,6 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
 
   const handleDragEnd = () => { setDragId(null); setDropTarget(null); };
 
-  const [showChecklist, setShowChecklist] = useState(false);
   const zoom = useZoom();
   const counterScale = Math.max(1, 1 / zoom);
 
@@ -111,101 +110,43 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
   const selectedSectionData = selectedSection ? sections.find(s => s.id === selectedSection) : null;
 
   // Progress calculation
-  const progress = calcProgress(pageType, sections, settings);
-
   return (
-    <div style={{ position: 'absolute', left: x, top: y }}>
-      {/* Frame header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, padding: '0 2px' }}>
+    <div style={{ position: 'absolute', left: x, top: y, width: width + 2 }}>
+      {/* Dark header bar — matches LivePageFrame */}
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '8px 12px', background: '#18181b', borderRadius: '8px 8px 0 0',
+        borderBottom: '2px solid #6366f1',
+      }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 12, fontWeight: 600, color: '#888' }}>{label}</span>
-          <span style={{ fontSize: 10, color: '#bbb', fontFamily: 'monospace' }}>{width}px</span>
-        </div>
-        <div style={{ display: 'flex', gap: 3 }}>
-          <IconBtn title={isMobile ? 'Desktop' : 'Mobile'} onClick={() => setIsMobile(!isMobile)} active={isMobile}>
-            {isMobile ? <Smartphone size={13} /> : <Monitor size={13} />}
-          </IconBtn>
-          <IconBtn title="Preview" onClick={() => onPreview(pageType, isMobile)}>
-            <Eye size={13} />
-          </IconBtn>
-        </div>
-      </div>
-
-      {/* Progress bar */}
-      <div style={{ marginBottom: 6, position: 'relative' }}>
-        <div
-          onClick={() => setShowChecklist(!showChecklist)}
-          style={{
-            display: 'flex', alignItems: 'center', gap: 6,
-            cursor: 'pointer', padding: '4px 0',
-          }}
-        >
-          <div style={{
-            flex: 1, height: 4, background: '#e5e7eb', borderRadius: 2, overflow: 'hidden',
-          }}>
-            <div style={{
-              height: '100%', borderRadius: 2, transition: 'width 0.3s ease',
-              width: `${progress.percent}%`,
-              background: progress.percent === 100 ? '#22c55e' : progress.percent > 60 ? '#6366f1' : progress.percent > 30 ? '#f59e0b' : '#ef4444',
-            }} />
-          </div>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#a78bfa' }} />
+          <span style={{ fontSize: 12, fontWeight: 600, color: '#e5e7eb' }}>{label}</span>
           <span style={{
-            fontSize: 10, fontWeight: 600, fontFamily: 'monospace', minWidth: 32,
-            color: progress.percent === 100 ? '#22c55e' : '#9ca3af',
-          }}>
-            {progress.percent}%
-          </span>
-          <CircleAlert size={12} color={progress.missing.length > 0 ? '#f59e0b' : '#22c55e'} />
+            fontSize: 10, color: '#a78bfa', background: '#a78bfa20',
+            padding: '2px 8px', borderRadius: 10, fontWeight: 600,
+          }}>WIREFRAME</span>
         </div>
-
-        {/* Checklist popup */}
-        {showChecklist && (
-          <>
-            <div style={{ position: 'fixed', inset: 0, zIndex: 9998 }} onClick={() => setShowChecklist(false)} />
-            <div style={{
-              position: 'absolute', top: 28, left: 0, width: 280,
-              background: '#fff', borderRadius: 10, zIndex: 9999,
-              boxShadow: '0 8px 32px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.06)',
-              overflow: 'hidden',
-            }}>
-              <div style={{ padding: '10px 14px', borderBottom: '1px solid #f3f4f6', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: 12, fontWeight: 600, color: '#374151' }}>Checklist — {label}</span>
-                <span style={{ fontSize: 10, color: '#9ca3af' }}>{progress.done}/{progress.total}</span>
-              </div>
-              <div style={{ padding: '8px 14px', maxHeight: 300, overflowY: 'auto' }}>
-                {progress.items.map((item, i) => (
-                  <div key={i} style={{
-                    display: 'flex', alignItems: 'center', gap: 8, padding: '5px 0',
-                    borderBottom: i < progress.items.length - 1 ? '1px solid #f9fafb' : 'none',
-                  }}>
-                    <div style={{
-                      width: 16, height: 16, borderRadius: 4, flexShrink: 0,
-                      border: item.done ? 'none' : '1.5px solid #d1d5db',
-                      background: item.done ? '#22c55e' : 'none',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 10, color: '#fff',
-                    }}>
-                      {item.done && '✓'}
-                    </div>
-                    <span style={{
-                      fontSize: 11, color: item.done ? '#9ca3af' : '#374151',
-                      textDecoration: item.done ? 'line-through' : 'none',
-                    }}>
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </>
-        )}
+        <div style={{ display: 'flex', gap: 4 }}>
+          <button title={isMobile ? 'Desktop' : 'Mobile'} onClick={() => setIsMobile(!isMobile)} style={{
+            padding: '3px 10px', borderRadius: 4, border: '1px solid #3f3f46',
+            background: isMobile ? '#4338ca' : '#27272a', color: isMobile ? '#e5e7eb' : '#a1a1aa', fontSize: 10, cursor: 'pointer',
+          }}>
+            {isMobile ? 'Mobile' : 'Desktop'}
+          </button>
+          <button title="Preview" onClick={() => onPreview(pageType, isMobile)} style={{
+            padding: '3px 10px', borderRadius: 4, border: '1px solid #3f3f46',
+            background: '#27272a', color: '#a1a1aa', fontSize: 10, cursor: 'pointer',
+          }}>Preview</button>
+        </div>
       </div>
 
-      {/* Frame body */}
+      {/* Frame body — no scroll, full height */}
       <div ref={frameRef} style={{
-        width, minHeight: 400, background: '#fff', borderRadius: 4,
+        width, minHeight: 400, background: '#fff',
+        borderRadius: '0 0 8px 8px',
         boxShadow: '0 2px 20px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06)',
-        overflow: 'hidden', position: 'relative', transition: 'width 0.3s ease',
+        position: 'relative', transition: 'width 0.3s ease',
+        border: '1px solid #e5e7eb', borderTop: 'none',
       }}>
         {visibleSections.map((section) => {
           const realIdx = sections.indexOf(section);
@@ -372,15 +313,5 @@ function calcProgress(pageType: PageType, sections: ThemeSection[], settings: Th
 
   return { percent, done, total, items, missing };
 }
-
-const IconBtn: React.FC<{ children: React.ReactNode; onClick: () => void; title?: string; active?: boolean }> = ({ children, onClick, title, active }) => (
-  <button title={title} onClick={onClick} style={{
-    background: active ? '#eef2ff' : '#fff', border: '1px solid ' + (active ? '#6366f1' : '#d1d5db'),
-    borderRadius: 5, cursor: 'pointer', padding: '3px 5px', display: 'flex', alignItems: 'center',
-    color: active ? '#6366f1' : '#9ca3af', transition: 'all 0.15s',
-  }}>
-    {children}
-  </button>
-);
 
 export default PageFrame;

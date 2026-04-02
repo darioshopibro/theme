@@ -2,3 +2,7 @@ node_modules/
 debug-*.txt
 debug-*.png
 .claude/
+.env
+dist/
+wireframe-builder/app-state.json
+wireframe-builder/extracted/live-preview-*.html

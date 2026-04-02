@@ -1,3 +1,15 @@
+// === Shopify Connection ===
+
+export interface ShopifyConnection {
+  connected: boolean;
+  storeUrl: string;
+  shopName: string;
+  themeName: string;
+  themeId: number | null;
+}
+
+export type ViewMode = 'wireframe' | 'live';
+
 // === Theme Settings (maps to Shopify settings_schema.json) ===
 
 export interface ThemeSettings {

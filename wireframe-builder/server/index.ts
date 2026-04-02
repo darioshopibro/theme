@@ -4,6 +4,7 @@ import puppeteer from "puppeteer";
 import fs from "fs";
 import path from "path";
 import { execFile } from "child_process";
+import * as shopify from "./shopify.js";
 
 const app = express();
 app.use(cors());
@@ -1301,6 +1302,683 @@ app.post("/api/suggest-group", (req, res) => {
     groupName: suggestedName,
     confidence: match ? 0.9 : 0.7,
   });
+});
+
+// ══════════════════════════════════════════════════════════
+// ── Shopify Store Integration ──
+// ══════════════════════════════════════════════════════════
+
+// Check connection status
+app.get("/api/shopify/status", async (_req, res) => {
+  try {
+    const config = shopify.getConfig();
+    if (!config) return res.json({ connected: false });
+
+    const shop = await shopify.getShopInfo();
+    const theme = await shopify.getActiveTheme();
+    res.json({
+      connected: true,
+      storeUrl: config.storeUrl,
+      shopName: shop.name,
+      themeName: theme?.name || "Unknown",
+      themeId: theme?.id || null,
+    });
+  } catch (e: any) {
+    res.json({ connected: false, error: e.message });
+  }
+});
+
+// Connect to store (validate + save credentials)
+app.post("/api/shopify/connect", async (req, res) => {
+  const { storeUrl, accessToken } = req.body;
+  if (!storeUrl || !accessToken) {
+    return res.status(400).json({ error: "storeUrl and accessToken required" });
+  }
+
+  // Normalize store URL
+  const normalized = storeUrl
+    .replace(/^https?:\/\//, "")
+    .replace(/\/$/, "");
+
+  // Save temporarily to test
+  shopify.saveConfig(normalized, accessToken);
+
+  try {
+    const shop = await shopify.getShopInfo();
+    const theme = await shopify.getActiveTheme();
+    console.log(`Connected to Shopify store: ${shop.name}`);
+    res.json({
+      connected: true,
+      storeUrl: normalized,
+      shopName: shop.name,
+      themeName: theme?.name || "Unknown",
+      themeId: theme?.id || null,
+    });
+  } catch (e: any) {
+    // Remove bad creds
+    fs.writeFileSync(path.join(process.cwd(), ".env"), "", "utf-8");
+    res.status(400).json({ error: `Connection failed: ${e.message}` });
+  }
+});
+
+// Disconnect
+app.post("/api/shopify/disconnect", (_req, res) => {
+  const envFile = path.join(process.cwd(), ".env");
+  if (fs.existsSync(envFile)) fs.writeFileSync(envFile, "", "utf-8");
+  res.json({ ok: true });
+});
+
+// List themes
+app.get("/api/shopify/themes", async (_req, res) => {
+  try {
+    const themes = await shopify.getThemes();
+    res.json(themes);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Get template JSON for a page (index, collection, product)
+app.get("/api/shopify/theme/:id/template/:page", async (req, res) => {
+  try {
+    const themeId = Number(req.params.id);
+    const page = req.params.page; // "index", "collection", "product"
+    const template = await shopify.getTemplateJson(themeId, page);
+    res.json(template);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// List all section files in a theme
+app.get("/api/shopify/theme/:id/sections", async (req, res) => {
+  try {
+    const sections = await shopify.listSections(Number(req.params.id));
+    res.json(sections);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Read any theme asset
+app.get("/api/shopify/theme/:id/asset", async (req, res) => {
+  try {
+    const key = req.query.key as string;
+    if (!key) return res.status(400).json({ error: "key query param required" });
+    const asset = await shopify.getThemeAsset(Number(req.params.id), key);
+    res.json(asset);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ══════════════════════════════════════════════════════════
+// ── CMS: Push changes to Shopify ──
+// ══════════════════════════════════════════════════════════
+
+// Push theme settings
+app.post("/api/shopify/push-settings", async (req, res) => {
+  try {
+    const { themeId, settings } = req.body;
+    if (!themeId || !settings) return res.status(400).json({ error: "themeId and settings required" });
+
+    // Map our settings format to Shopify's settings_data.json format
+    const shopifySettings: Record<string, any> = {};
+
+    // Color scheme mapping — update scheme-1 (primary scheme)
+    if (settings.color_background || settings.color_foreground || settings.color_primary ||
+        settings.color_secondary || settings.color_accent) {
+      // Read current to get color_schemes structure
+      const asset = await shopify.getThemeAsset(themeId, "config/settings_data.json");
+      const data = JSON.parse(asset.value);
+      const schemes = data.current?.color_schemes || {};
+      const scheme1 = schemes["scheme-1"]?.settings || {};
+
+      if (settings.color_background) scheme1.background = settings.color_background;
+      if (settings.color_foreground) {
+        scheme1.foreground = settings.color_foreground;
+        scheme1.foreground_heading = settings.color_foreground;
+      }
+      if (settings.color_primary) {
+        scheme1.primary = settings.color_primary;
+        scheme1.primary_button_background = settings.color_primary;
+        scheme1.primary_button_border = settings.color_primary;
+      }
+
+      shopifySettings.color_schemes = {
+        ...schemes,
+        "scheme-1": { settings: scheme1 },
+      };
+    }
+
+    // Layout
+    if (settings.page_width) {
+      // Map pixel value to Shopify's width options
+      const pw = settings.page_width;
+      shopifySettings.page_width = pw <= 1200 ? "narrow" : pw <= 1400 ? "default" : "wide";
+    }
+
+    // Buttons
+    if (settings.button_radius !== undefined) shopifySettings.button_border_radius_primary = settings.button_radius;
+    if (settings.button_border_width !== undefined) shopifySettings.primary_button_border_width = settings.button_border_width;
+
+    // Inputs
+    if (settings.input_radius !== undefined) shopifySettings.inputs_border_radius = settings.input_radius;
+    if (settings.input_border_width !== undefined) shopifySettings.input_border_width = settings.input_border_width;
+
+    // Cards
+    if (settings.card_radius !== undefined) shopifySettings.card_corner_radius = settings.card_radius;
+    if (settings.badge_radius !== undefined) shopifySettings.badge_corner_radius = settings.badge_radius;
+
+    await shopify.pushSettings(themeId, shopifySettings);
+
+    // Invalidate ALL preview caches
+    for (const key of Object.keys(PREVIEW_CACHE)) delete PREVIEW_CACHE[key];
+
+    console.log("Settings pushed to Shopify");
+    res.json({ ok: true, invalidated: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Push section order
+app.post("/api/shopify/push-section-order", async (req, res) => {
+  try {
+    const { themeId, page, order } = req.body;
+    const templateName = page === "homepage" ? "index" : page;
+    await shopify.pushSectionOrder(themeId, templateName, order);
+
+    // Invalidate preview cache for this page
+    delete PREVIEW_CACHE[page];
+
+    res.json({ ok: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Add section to page
+app.post("/api/shopify/add-section", async (req, res) => {
+  try {
+    const { themeId, page, sectionKey, sectionType, settings: sectionSettings, position } = req.body;
+    const templateName = page === "homepage" ? "index" : page;
+    await shopify.addSectionToTemplate(themeId, templateName, sectionKey, sectionType, sectionSettings, position);
+
+    // Invalidate preview cache for this page
+    delete PREVIEW_CACHE[page];
+
+    res.json({ ok: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Remove section from page
+app.post("/api/shopify/remove-section", async (req, res) => {
+  try {
+    const { themeId, page, sectionKey } = req.body;
+    const templateName = page === "homepage" ? "index" : page;
+    await shopify.removeSectionFromTemplate(themeId, templateName, sectionKey);
+
+    // Invalidate preview cache for this page
+    delete PREVIEW_CACHE[page];
+
+    res.json({ ok: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Update section settings
+app.post("/api/shopify/update-section", async (req, res) => {
+  try {
+    const { themeId, page, sectionKey, settings: sectionSettings } = req.body;
+    const templateName = page === "homepage" ? "index" : page;
+    await shopify.updateSectionSettings(themeId, templateName, sectionKey, sectionSettings);
+
+    delete PREVIEW_CACHE[page];
+
+    res.json({ ok: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Invalidate preview cache (called after any push)
+app.post("/api/shopify/invalidate-preview", (req, res) => {
+  const { pages } = req.body;
+  if (pages && Array.isArray(pages)) {
+    for (const page of pages) delete PREVIEW_CACHE[page];
+  } else {
+    // Invalidate all
+    for (const key of Object.keys(PREVIEW_CACHE)) delete PREVIEW_CACHE[key];
+  }
+  res.json({ ok: true, timestamp: Date.now() });
+});
+
+// Sync settings FROM Shopify theme → our format
+app.get("/api/shopify/sync-settings/:themeId", async (req, res) => {
+  try {
+    const themeId = Number(req.params.themeId);
+    const asset = await shopify.getThemeAsset(themeId, "config/settings_data.json");
+    const data = JSON.parse(asset.value);
+    const current = data.current || {};
+
+    // Extract color scheme 1
+    const scheme1 = current.color_schemes?.["scheme-1"]?.settings || {};
+
+    // Map Shopify settings to our format
+    const mapped: Record<string, any> = {
+      // Colors from scheme-1
+      color_background: scheme1.background || "#ffffff",
+      color_foreground: scheme1.foreground_heading || scheme1.foreground || "#000000",
+      color_primary: scheme1.primary_button_background || scheme1.primary || "#000000",
+      color_secondary: scheme1.secondary_button_background || "#334fb4",
+      color_accent: scheme1.primary_hover || "#ff6b35",
+
+      // Fonts
+      font_heading: mapShopifyFont(current.type_heading_font),
+      font_body: mapShopifyFont(current.type_body_font),
+
+      // Layout
+      page_width: current.page_width === "wide" ? 1600 : current.page_width === "narrow" ? 1200 : 1400,
+      section_spacing: 40,
+
+      // Buttons
+      button_radius: current.button_border_radius_primary ?? 0,
+      button_border_width: current.primary_button_border_width ?? 1,
+
+      // Inputs
+      input_radius: current.inputs_border_radius ?? 0,
+      input_border_width: current.input_border_width ?? 1,
+
+      // Cards
+      card_radius: current.card_corner_radius ?? 0,
+      badge_radius: current.badge_corner_radius ?? 40,
+    };
+
+    res.json(mapped);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Map Shopify font identifier to Google Font name
+function mapShopifyFont(shopifyFont: string | undefined): string {
+  if (!shopifyFont) return "Inter";
+  // Shopify format: "inter_n4", "playfair_display_n7", etc.
+  const name = shopifyFont
+    .replace(/_n\d$/, "")  // remove weight suffix
+    .replace(/_i\d$/, "")  // remove italic suffix
+    .split("_")
+    .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+  return name || "Inter";
+}
+
+// Section Rendering API proxy
+app.get("/api/shopify/render-section", async (req, res) => {
+  try {
+    const { page, section_id } = req.query;
+    if (!section_id) return res.status(400).json({ error: "section_id required" });
+
+    const pagePath = (page as string) || "/";
+    const html = await shopify.storefrontFetch(pagePath, {
+      section_id: section_id as string,
+    });
+
+    res.setHeader("Content-Type", "text/html");
+    res.send(html);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── Live Preview via Puppeteer Proxy ──
+
+const PREVIEW_CACHE: Record<string, { html: string; timestamp: number }> = {};
+const PREVIEW_TTL = 30000; // 30s cache
+
+app.get("/api/shopify/preview/:page", async (req, res) => {
+  const page = req.params.page as string; // homepage, collection, product
+  const forceRefresh = req.query.refresh === "1";
+
+  try {
+    const config = shopify.getConfig();
+    if (!config) return res.status(400).send("Shopify not connected");
+
+    // Check cache
+    const cached = PREVIEW_CACHE[page];
+    if (!forceRefresh && cached && Date.now() - cached.timestamp < PREVIEW_TTL) {
+      res.setHeader("Content-Type", "text/html");
+      return res.send(cached.html);
+    }
+
+    // Determine URL to fetch
+    let targetPath = "/";
+    if (page === "collection") {
+      try {
+        const collections = await shopify.getCollections(1);
+        if (collections.length > 0) targetPath = `/collections/${collections[0].handle}`;
+        else targetPath = "/collections/all";
+      } catch { targetPath = "/collections/all"; }
+    } else if (page === "product") {
+      try {
+        const products = await shopify.getProducts(1);
+        if (products.length > 0) targetPath = `/products/${products[0].handle}`;
+        else targetPath = "/products";
+      } catch { targetPath = "/products"; }
+    }
+
+    const storeUrl = `https://${config.storeUrl}${targetPath}`;
+    console.log(`Live preview: fetching ${storeUrl}`);
+
+    const browser = await puppeteer.launch({ headless: "new" as any, args: ["--no-sandbox"] });
+    const browserPage = await browser.newPage();
+    await browserPage.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36");
+    await browserPage.setViewport({ width: 1440, height: 900 });
+
+    // First, navigate to store — check if password-protected
+    await browserPage.goto(`https://${config.storeUrl}/`, { waitUntil: "networkidle2", timeout: 60000 });
+
+    // Handle password page: check for password form
+    const hasPasswordPage = await browserPage.evaluate(() => {
+      return !!document.querySelector('form[action="/password"]') ||
+             !!document.querySelector('input[name="password"]') ||
+             document.title.toLowerCase().includes('password');
+    });
+
+    if (hasPasswordPage) {
+      // Read storefront password from .env
+      const env = fs.readFileSync(path.join(process.cwd(), ".env"), "utf-8");
+      const pwMatch = env.match(/^SHOPIFY_STOREFRONT_PASSWORD=(.+)$/m);
+      const storefrontPw = pwMatch?.[1]?.trim();
+
+      if (storefrontPw) {
+        console.log("Password page detected, entering storefront password...");
+        // Type password and submit
+        await browserPage.type('input[name="password"]', storefrontPw);
+        await browserPage.click('button[type="submit"], input[type="submit"]');
+        await browserPage.waitForNavigation({ waitUntil: "networkidle2", timeout: 30000 });
+      } else {
+        await browser.close();
+        return res.status(400).send(`<html><body style="font-family:sans-serif;padding:40px;color:#666;text-align:center">
+          <h2>Store is password-protected</h2>
+          <p>Add your storefront password to <code>.env</code>:</p>
+          <pre style="background:#f3f4f6;padding:12px;border-radius:8px;display:inline-block">SHOPIFY_STOREFRONT_PASSWORD=your_password</pre>
+          <p style="margin-top:16px;font-size:12px;color:#9ca3af">This is the visitor password, not your admin password</p>
+        </body></html>`);
+      }
+    }
+
+    // Now navigate to the actual target page (if not already there)
+    if (targetPath !== "/") {
+      await browserPage.goto(`https://${config.storeUrl}${targetPath}`, { waitUntil: "networkidle2", timeout: 60000 });
+    }
+
+    // Scroll to trigger lazy content
+    await browserPage.evaluate(async () => {
+      const h = document.body.scrollHeight;
+      for (let y = 0; y < h; y += 500) {
+        window.scrollTo(0, y);
+        await new Promise(r => setTimeout(r, 150));
+      }
+      window.scrollTo(0, 0);
+    });
+    await new Promise(r => setTimeout(r, 1500));
+
+    // Get the full page HTML
+    let html = await browserPage.content();
+    await browser.close();
+
+    // Inject <base> tag for absolute URLs
+    const baseTag = `<base href="https://${config.storeUrl}/">`;
+    const injectCSS = `<style>
+      /* Highlight Shopify sections on hover */
+      [id^="shopify-section"]:hover { outline: 2px dashed rgba(99,102,241,0.5); outline-offset: -2px; }
+      /* Remove any fixed/sticky positioning that breaks iframe */
+      .shopify-section-header, header { position: relative !important; }
+      /* No internal scroll */
+      html, body { overflow: hidden !important; }
+    </style>`;
+    // Inject script that reports page height to parent (with page identifier)
+    const pageId = page === 'homepage' ? 'homepage' : page;
+    const injectScript = `<script>
+      (function() {
+        var pageId = '${pageId}';
+        function reportHeight() {
+          var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+          window.parent.postMessage({ type: 'iframeHeight', page: pageId, height: h }, '*');
+        }
+        window.addEventListener('load', function() { setTimeout(reportHeight, 500); setTimeout(reportHeight, 2000); setTimeout(reportHeight, 5000); });
+        new MutationObserver(reportHeight).observe(document.body, { childList: true, subtree: true });
+        setTimeout(reportHeight, 100);
+      })();
+    </script>`;
+    html = html.replace("<head>", `<head>${baseTag}${injectCSS}`);
+    html = html.replace("</body>", `${injectScript}</body>`);
+
+    // Strip CSP meta tags that block framing
+    html = html.replace(/<meta[^>]*content-security-policy[^>]*>/gi, "");
+    html = html.replace(/<meta[^>]*http-equiv\s*=\s*["']?content-security-policy["']?[^>]*>/gi, "");
+
+    // Cache it
+    PREVIEW_CACHE[page] = { html, timestamp: Date.now() };
+
+    // Save to disk too (for debugging)
+    const previewFile = path.join(EXTRACTED_DIR, `live-preview-${page}.html`);
+    fs.writeFileSync(previewFile, html, "utf-8");
+
+    res.setHeader("Content-Type", "text/html");
+    res.setHeader("X-Frame-Options", "ALLOWALL");
+    res.setHeader("Content-Security-Policy", "frame-ancestors *");
+    res.send(html);
+  } catch (e: any) {
+    console.error(`Preview failed for ${page}:`, e.message);
+    res.status(500).send(`<html><body style="font-family:sans-serif;padding:40px;color:#666">
+      <h2>Preview failed</h2><p>${e.message}</p>
+      <button onclick="location.reload()">Retry</button>
+    </body></html>`);
+  }
+});
+
+// Get section list from the live theme's template JSON (for overlay labels)
+app.get("/api/shopify/theme/:id/page-sections/:page", async (req, res) => {
+  try {
+    const themeId = Number(req.params.id);
+    const pageName = req.params.page === "homepage" ? "index" : req.params.page;
+    const template = await shopify.getTemplateJson(themeId, pageName);
+
+    const sections = [];
+    const order = template.order || [];
+    for (const key of order) {
+      const sec = template.sections?.[key];
+      if (sec) {
+        sections.push({
+          key,
+          type: sec.type,
+          settings: sec.settings || {},
+        });
+      }
+    }
+    res.json({ sections });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── Sync theme sections to wireframe format ──
+// Returns all 3 pages' sections mapped to our wireframe ThemeSection type
+
+// Map Shopify section types to our wireframe types
+const SHOPIFY_TYPE_MAP: Record<string, string> = {
+  // Layout
+  "announcement-bar": "announcement-bar",
+  "header": "header",
+  "footer": "footer",
+  // Hero
+  "image-banner": "hero",
+  "slideshow": "hero",
+  "hero": "hero",
+  "hero-banner": "hero",
+  // Products
+  "featured-collection": "featured-collection",
+  "product-list": "featured-collection",
+  "featured-product": "featured-collection",
+  "product-recommendations": "related-products",
+  "recently-viewed-products": "recently-viewed",
+  // Product page
+  "main-product": "product-main",
+  "product-information": "product-main",
+  // Collection page
+  "main-collection-product-grid": "main-collection",
+  "main-collection": "main-collection",
+  "collection-banner": "collection-banner",
+  "collection-list": "collection-icons",
+  "section": "main-collection",
+  // Content
+  "rich-text": "rich-text",
+  "image-with-text": "media-with-text",
+  "multicolumn": "multicolumn",
+  "multirow": "multicolumn",
+  "collage": "image-gallery",
+  "video": "video",
+  "featured-blog": "featured-blog",
+  // Social proof
+  "testimonials": "testimonials",
+  "logo-list": "logo-list",
+  // Lead capture
+  "newsletter": "newsletter",
+  "contact-form": "newsletter",
+  "email-signup-banner": "newsletter",
+  // Navigation
+  "breadcrumbs": "breadcrumb",
+  "breadcrumb": "breadcrumb",
+};
+
+// Default heights per section type
+const SECTION_HEIGHTS: Record<string, number> = {
+  "announcement-bar": 40, "header": 80, "hero": 500, "footer": 300,
+  "featured-collection": 400, "rich-text": 200, "newsletter": 250,
+  "media-with-text": 350, "multicolumn": 300, "video": 400,
+  "image-gallery": 400, "collection-icons": 250, "featured-blog": 350,
+  "product-main": 600, "main-collection": 800, "collection-banner": 250,
+  "breadcrumb": 40, "related-products": 350, "testimonials": 300,
+};
+
+app.get("/api/shopify/sync-wireframe/:themeId", async (req, res) => {
+  try {
+    const themeId = Number(req.params.themeId);
+    const pages: Record<string, string> = {
+      homepage: "index",
+      collection: "collection",
+      product: "product",
+    };
+
+    const result: Record<string, any[]> = {};
+
+    for (const [pageType, templateName] of Object.entries(pages)) {
+      try {
+        const template = await shopify.getTemplateJson(themeId, templateName);
+        const order = template.order || [];
+        const sections: any[] = [];
+
+        // Always add header at top (Shopify renders it from layout, not template)
+        sections.push({
+          id: `theme-${pageType}-header`,
+          type: "header",
+          heading: null,
+          visible: true,
+          order: 0,
+          height: 80,
+          settings: { heading: "", subheading: "", columns: 4, text_align: "center", full_width: true, button_text: "", button_style: "solid", image_ratio: "1:1", content_position: "center", products_count: 4, show_price: true, show_vendor: false },
+          shopifyKey: "header",
+          shopifyType: "header",
+        });
+
+        for (let i = 0; i < order.length; i++) {
+          const key = order[i];
+          const sec = template.sections?.[key];
+          if (!sec) continue;
+
+          const shopifyType = sec.type || key;
+          const wireframeType = SHOPIFY_TYPE_MAP[shopifyType] || "rich-text";
+
+          // Extract heading from settings or blocks
+          let heading = sec.settings?.title || sec.settings?.heading || sec.settings?.text || null;
+          // Check blocks for heading text
+          if (!heading && sec.blocks) {
+            for (const block of Object.values(sec.blocks) as any[]) {
+              if (block.type === "text" || block.type === "heading") {
+                const text = block.settings?.text || "";
+                // Strip HTML tags
+                const clean = text.replace(/<[^>]*>/g, "").trim();
+                if (clean) { heading = clean; break; }
+              }
+            }
+          }
+          // Extract button text from blocks
+          let buttonText = sec.settings?.button_label || sec.settings?.button_text || "Shop Now";
+          if (sec.blocks) {
+            for (const block of Object.values(sec.blocks) as any[]) {
+              if (block.type === "button" && block.settings?.label) {
+                buttonText = block.settings.label;
+                break;
+              }
+            }
+          }
+
+          sections.push({
+            id: `theme-${pageType}-${key}`,
+            type: wireframeType,
+            heading: heading,
+            visible: true,
+            order: i,
+            height: SECTION_HEIGHTS[wireframeType] || 300,
+            settings: {
+              heading: heading || "",
+              subheading: sec.settings?.subheading || sec.settings?.subtitle || "",
+              columns: sec.settings?.columns_desktop || sec.settings?.columns || 4,
+              text_align: sec.settings?.text_alignment || "center",
+              full_width: sec.settings?.full_width || false,
+              button_text: buttonText,
+              button_style: "solid",
+              image_ratio: "1:1",
+              content_position: sec.settings?.desktop_content_position || "center",
+              products_count: sec.settings?.products_to_show || 4,
+              show_price: true,
+              show_vendor: false,
+            },
+            shopifyKey: key,
+            shopifyType: shopifyType,
+          });
+        }
+
+        // Always add footer at bottom
+        sections.push({
+          id: `theme-${pageType}-footer`,
+          type: "footer",
+          heading: null,
+          visible: true,
+          order: sections.length,
+          height: 300,
+          settings: { heading: "", subheading: "", columns: 4, text_align: "center", full_width: true, button_text: "", button_style: "solid", image_ratio: "1:1", content_position: "center", products_count: 4, show_price: true, show_vendor: false },
+          shopifyKey: "footer",
+          shopifyType: "footer",
+        });
+
+        result[pageType] = sections;
+      } catch (e: any) {
+        console.log(`Could not read template ${templateName}: ${e.message}`);
+        result[pageType] = [];
+      }
+    }
+
+    res.json(result);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
 });
 
 const PORT = 3007;
