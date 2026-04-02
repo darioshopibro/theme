@@ -5,3 +5,4 @@ debug-*.png
 .env
 dist/
 wireframe-builder/app-state.json
+wireframe-builder/queue/
