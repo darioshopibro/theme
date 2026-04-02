@@ -1749,7 +1749,7 @@ app.get("/api/shopify/preview/:page", async (req, res) => {
         // Type password and submit
         await browserPage.type('input[name="password"]', storefrontPw);
         await browserPage.click('button[type="submit"], input[type="submit"]');
-        await browserPage.waitForNavigation({ waitUntil: "networkidle2", timeout: 30000 });
+        await browserPage.waitForNavigation({ waitUntil: "networkidle2", timeout: 60000 });
       } else {
         await browser.close();
         return res.status(400).send(`<html><body style="font-family:sans-serif;padding:40px;color:#666;text-align:center">
@@ -1791,19 +1791,169 @@ app.get("/api/shopify/preview/:page", async (req, res) => {
       /* No internal scroll */
       html, body { overflow: hidden !important; }
     </style>`;
-    // Inject script that reports page height to parent (with page identifier)
+    // Inject section editor + height reporter
     const pageId = page === 'homepage' ? 'homepage' : page;
     const injectScript = `<script>
-      (function() {
-        var pageId = '${pageId}';
-        function reportHeight() {
-          var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-          window.parent.postMessage({ type: 'iframeHeight', page: pageId, height: h }, '*');
+    (function() {
+      var pageId = '${pageId}';
+      var selectedId = null;
+
+      // ── Height reporting ──
+      function reportHeight() {
+        var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        window.parent.postMessage({ type: 'iframeHeight', page: pageId, height: h }, '*');
+      }
+      window.addEventListener('load', function() { setTimeout(reportHeight, 500); setTimeout(reportHeight, 2000); setTimeout(reportHeight, 5000); });
+      new MutationObserver(reportHeight).observe(document.body, { childList: true, subtree: true });
+      setTimeout(reportHeight, 100);
+
+      // ── Section detection ──
+      function getSections() {
+        return Array.from(document.querySelectorAll('[id^="shopify-section"]'));
+      }
+
+      // ── Inject editor styles ──
+      var style = document.createElement('style');
+      style.textContent = \`
+        [id^="shopify-section"] { position: relative; transition: outline 0.15s, box-shadow 0.15s; }
+        [id^="shopify-section"]:hover { outline: 2px dashed rgba(99,102,241,0.5); outline-offset: -2px; cursor: pointer; }
+        [id^="shopify-section"].wf-selected { outline: 2px solid #6366f1; outline-offset: -2px; box-shadow: inset 0 0 0 9999px rgba(99,102,241,0.03); }
+        .wf-toolbar { position: absolute; top: 4px; right: 4px; z-index: 99999; display: flex; gap: 3px; background: #18181b; border-radius: 6px; padding: 3px 5px; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+        .wf-toolbar button { background: none; border: none; color: #e5e7eb; font-size: 11px; cursor: pointer; padding: 3px 8px; border-radius: 4px; font-family: system-ui; font-weight: 600; }
+        .wf-toolbar button:hover { background: #3f3f46; }
+        .wf-toolbar button.wf-delete:hover { background: #dc2626; }
+        .wf-section-label { position: absolute; top: 4px; left: 4px; z-index: 99999; background: #6366f1; color: #fff; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; font-family: system-ui; pointer-events: none; opacity: 0; transition: opacity 0.15s; }
+        [id^="shopify-section"]:hover .wf-section-label, [id^="shopify-section"].wf-selected .wf-section-label { opacity: 1; }
+        .wf-add-bar { display: flex; align-items: center; justify-content: center; padding: 4px 0; opacity: 0; transition: opacity 0.2s; position: relative; z-index: 99998; }
+        .wf-add-bar:hover { opacity: 1; }
+        .wf-add-btn { background: #6366f1; color: #fff; border: none; font-size: 11px; font-weight: 600; padding: 4px 14px; border-radius: 20px; cursor: pointer; font-family: system-ui; box-shadow: 0 2px 8px rgba(99,102,241,0.4); }
+        .wf-add-btn:hover { background: #4f46e5; }
+      \`;
+      document.head.appendChild(style);
+
+      // ── Add labels + add-section bars ──
+      function setupSections() {
+        var sections = getSections();
+        // Remove old UI
+        document.querySelectorAll('.wf-toolbar, .wf-section-label, .wf-add-bar').forEach(function(el) { el.remove(); });
+
+        sections.forEach(function(sec, idx) {
+          // Section type label
+          var typeMatch = sec.id.match(/shopify-section-(.+)/);
+          var sectionId = typeMatch ? typeMatch[1] : sec.id;
+          var label = document.createElement('div');
+          label.className = 'wf-section-label';
+          label.textContent = sectionId.replace(/_/g, ' ').replace(/[A-Z][a-z0-9]+$/g, '');
+          sec.appendChild(label);
+
+          // Click to select
+          sec.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            selectSection(sec, sectionId, idx, sections.length);
+          });
+        });
+
+        // Add bars between sections
+        sections.forEach(function(sec, idx) {
+          if (idx === 0) return;
+          var bar = document.createElement('div');
+          bar.className = 'wf-add-bar';
+          var btn = document.createElement('button');
+          btn.className = 'wf-add-btn';
+          btn.textContent = '+ Add section';
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            window.parent.postMessage({ type: 'addSection', page: pageId, position: idx }, '*');
+          });
+          bar.appendChild(btn);
+          sec.parentNode.insertBefore(bar, sec);
+        });
+
+        // Add bar at bottom
+        if (sections.length > 0) {
+          var lastSec = sections[sections.length - 1];
+          var bottomBar = document.createElement('div');
+          bottomBar.className = 'wf-add-bar';
+          bottomBar.style.opacity = '0.5';
+          var bottomBtn = document.createElement('button');
+          bottomBtn.className = 'wf-add-btn';
+          bottomBtn.textContent = '+ Add section';
+          bottomBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            window.parent.postMessage({ type: 'addSection', page: pageId, position: sections.length }, '*');
+          });
+          bottomBar.appendChild(bottomBtn);
+          lastSec.parentNode.insertBefore(bottomBar, lastSec.nextSibling);
         }
-        window.addEventListener('load', function() { setTimeout(reportHeight, 500); setTimeout(reportHeight, 2000); setTimeout(reportHeight, 5000); });
-        new MutationObserver(reportHeight).observe(document.body, { childList: true, subtree: true });
-        setTimeout(reportHeight, 100);
-      })();
+
+        reportHeight();
+      }
+
+      // ── Select section + show toolbar ──
+      function selectSection(el, sectionId, idx, total) {
+        // Deselect previous
+        document.querySelectorAll('.wf-selected').forEach(function(s) { s.classList.remove('wf-selected'); });
+        document.querySelectorAll('.wf-toolbar').forEach(function(t) { t.remove(); });
+
+        if (selectedId === sectionId) { selectedId = null; return; }
+        selectedId = sectionId;
+        el.classList.add('wf-selected');
+
+        // Toolbar
+        var toolbar = document.createElement('div');
+        toolbar.className = 'wf-toolbar';
+
+        if (idx > 0) {
+          var upBtn = document.createElement('button');
+          upBtn.textContent = '\\u2191';
+          upBtn.title = 'Move up';
+          upBtn.addEventListener('click', function(e) { e.stopPropagation(); window.parent.postMessage({ type: 'moveSection', page: pageId, sectionId: sectionId, direction: 'up' }, '*'); });
+          toolbar.appendChild(upBtn);
+        }
+
+        if (idx < total - 1) {
+          var downBtn = document.createElement('button');
+          downBtn.textContent = '\\u2193';
+          downBtn.title = 'Move down';
+          downBtn.addEventListener('click', function(e) { e.stopPropagation(); window.parent.postMessage({ type: 'moveSection', page: pageId, sectionId: sectionId, direction: 'down' }, '*'); });
+          toolbar.appendChild(downBtn);
+        }
+
+        var delBtn = document.createElement('button');
+        delBtn.className = 'wf-delete';
+        delBtn.textContent = '\\u2715';
+        delBtn.title = 'Remove section';
+        delBtn.addEventListener('click', function(e) { e.stopPropagation(); window.parent.postMessage({ type: 'removeSection', page: pageId, sectionId: sectionId }, '*'); });
+        toolbar.appendChild(delBtn);
+
+        el.appendChild(toolbar);
+
+        // Notify parent
+        window.parent.postMessage({ type: 'sectionSelected', page: pageId, sectionId: sectionId }, '*');
+      }
+
+      // Deselect on click outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('[id^="shopify-section"]')) {
+          selectedId = null;
+          document.querySelectorAll('.wf-selected').forEach(function(s) { s.classList.remove('wf-selected'); });
+          document.querySelectorAll('.wf-toolbar').forEach(function(t) { t.remove(); });
+        }
+      });
+
+      // Listen for commands from parent
+      window.addEventListener('message', function(e) {
+        if (e.data.type === 'refresh') { location.reload(); }
+      });
+
+      // Init
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupSections);
+      } else {
+        setTimeout(setupSections, 200);
+      }
+    })();
     </script>`;
     html = html.replace("<head>", `<head>${baseTag}${injectCSS}`);
     html = html.replace("</body>", `${injectScript}</body>`);

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { ThemeSettings, PageType } from './types';
 
 const API = 'http://localhost:3007';
@@ -11,12 +11,13 @@ interface Props {
   x: number;
   y: number;
   refreshTrigger?: number;
+  onAddSection?: (page: PageType, position: number) => void;
 }
 
-const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x, y, refreshTrigger = 0 }) => {
-  const [loading, setLoading] = useState(false);
+const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x, y, refreshTrigger = 0, onAddSection }) => {
   const [refreshKey, setRefreshKey] = useState(0);
   const [iframeHeight, setIframeHeight] = useState(3000);
+  const [refreshing, setRefreshing] = useState(false);
   const initialLoad = useRef(true);
   const [sections, setSections] = useState<{ key: string; type: string }[]>([]);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -26,24 +27,100 @@ const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x,
   // Auto-refresh when parent triggers (after settings/section push)
   useEffect(() => {
     if (initialLoad.current) { initialLoad.current = false; return; }
-    // Delay slightly to let Shopify process the API write
     const timer = setTimeout(() => {
-      setLoading(true);
-      setRefreshKey(k => k + 1);
-    }, 1000);
+      setRefreshing(true);
+      // Force re-fetch from Puppeteer
+      fetch(`${API}/api/shopify/preview/${pageType}?refresh=1&page=${pageType}`)
+        .then(() => {
+          setRefreshKey(k => k + 1);
+          setRefreshing(false);
+        })
+        .catch(() => setRefreshing(false));
+    }, 1500);
     return () => clearTimeout(timer);
-  }, [refreshTrigger]);
+  }, [refreshTrigger, pageType]);
 
-  // Listen for height reports from THIS iframe only (matched by pageType)
-  useEffect(() => {
-    const onMessage = (e: MessageEvent) => {
-      if (e.data?.type === 'iframeHeight' && e.data.page === pageType && e.data.height > 100) {
-        setIframeHeight(e.data.height);
+  // Handle messages from iframe (section interactions)
+  const handleIframeMessage = useCallback((e: MessageEvent) => {
+    if (!e.data?.page || e.data.page !== pageType) return;
+
+    switch (e.data.type) {
+      case 'iframeHeight':
+        if (e.data.height > 100) setIframeHeight(e.data.height);
+        break;
+
+      case 'addSection':
+        if (onAddSection) onAddSection(pageType, e.data.position);
+        break;
+
+      case 'moveSection': {
+        const { sectionId, direction } = e.data;
+        const currentOrder = sections.map(s => s.key);
+        const idx = currentOrder.indexOf(sectionId);
+        if (idx < 0) break;
+        const newIdx = direction === 'up' ? idx - 1 : idx + 1;
+        if (newIdx < 0 || newIdx >= currentOrder.length) break;
+        // Swap
+        [currentOrder[idx], currentOrder[newIdx]] = [currentOrder[newIdx], currentOrder[idx]];
+        // Push to Shopify
+        const templateName = pageType === 'homepage' ? 'index' : pageType;
+        fetch(`${API}/api/shopify/push-section-order`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ themeId, page: pageType, order: currentOrder }),
+        }).then(() => {
+          // Invalidate + refresh
+          fetch(`${API}/api/shopify/invalidate-preview`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pages: [pageType] }),
+          }).then(() => {
+            setRefreshing(true);
+            fetch(`${API}/api/shopify/preview/${pageType}?refresh=1&page=${pageType}`)
+              .then(() => {
+                setRefreshKey(k => k + 1);
+                setSections(currentOrder.map(k => ({ key: k, type: sections.find(s => s.key === k)?.type || k })));
+                setRefreshing(false);
+              });
+          });
+        }).catch(e => console.error('Move failed:', e));
+        break;
       }
-    };
-    window.addEventListener('message', onMessage);
-    return () => window.removeEventListener('message', onMessage);
-  }, [pageType]);
+
+      case 'removeSection': {
+        const { sectionId: removeId } = e.data;
+        fetch(`${API}/api/shopify/remove-section`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ themeId, page: pageType, sectionKey: removeId }),
+        }).then(() => {
+          fetch(`${API}/api/shopify/invalidate-preview`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pages: [pageType] }),
+          }).then(() => {
+            setRefreshing(true);
+            fetch(`${API}/api/shopify/preview/${pageType}?refresh=1&page=${pageType}`)
+              .then(() => {
+                setRefreshKey(k => k + 1);
+                setSections(prev => prev.filter(s => s.key !== removeId));
+                setRefreshing(false);
+              });
+          });
+        }).catch(e => console.error('Remove failed:', e));
+        break;
+      }
+
+      case 'sectionSelected':
+        // Could show settings panel in future
+        break;
+    }
+  }, [pageType, themeId, sections, onAddSection]);
+
+  useEffect(() => {
+    window.addEventListener('message', handleIframeMessage);
+    return () => window.removeEventListener('message', handleIframeMessage);
+  }, [handleIframeMessage]);
 
   // Fetch section labels from template JSON
   useEffect(() => {
@@ -56,13 +133,21 @@ const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x,
   }, [themeId, pageType, refreshKey]);
 
   const handleRefresh = () => {
-    setLoading(true);
-    setRefreshKey(k => k + 1);
+    setRefreshing(true);
+    fetch(`${API}/api/shopify/invalidate-preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pages: [pageType] }),
+    }).then(() => {
+      fetch(`${API}/api/shopify/preview/${pageType}?refresh=1&page=${pageType}`)
+        .then(() => {
+          setRefreshKey(k => k + 1);
+          setRefreshing(false);
+        });
+    });
   };
 
   const onIframeLoad = () => {
-    setLoading(false);
-    // Also try reading height directly (works for same-origin)
     try {
       const doc = iframeRef.current?.contentDocument;
       if (doc) {
@@ -88,21 +173,23 @@ const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <div style={{
-            width: 8, height: 8, borderRadius: '50%', background: '#22c55e',
+            width: 8, height: 8, borderRadius: '50%',
+            background: refreshing ? '#f59e0b' : '#22c55e',
           }} />
           <span style={{ fontSize: 12, fontWeight: 600, color: '#e5e7eb' }}>{label}</span>
           <span style={{
             fontSize: 10, color: '#6366f1', background: '#6366f120',
             padding: '2px 8px', borderRadius: 10, fontWeight: 600,
           }}>LIVE</span>
+          {refreshing && (
+            <span style={{ fontSize: 10, color: '#f59e0b' }}>Updating...</span>
+          )}
         </div>
         <div style={{ display: 'flex', gap: 4 }}>
           <button onClick={handleRefresh} style={{
             padding: '3px 10px', borderRadius: 4, border: '1px solid #3f3f46',
             background: '#27272a', color: '#a1a1aa', fontSize: 10, cursor: 'pointer',
-          }}>
-            {loading ? 'Loading...' : 'Refresh'}
-          </button>
+          }}>Refresh</button>
         </div>
       </div>
 
@@ -124,7 +211,7 @@ const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x,
         </div>
       )}
 
-      {/* Iframe container — no scroll, full height */}
+      {/* Iframe container */}
       <div style={{
         position: 'relative',
         border: '1px solid #e5e7eb',
