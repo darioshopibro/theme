@@ -62,7 +62,8 @@ const Canvas: React.FC<Props> = ({ children, onCanvasClick }) => {
   }, []);
 
   const onMouseDown = (e: React.MouseEvent) => {
-    if (spaceHeld || e.button === 1) {
+    // Pan on: left click on canvas background, space+click, or middle click
+    if (spaceHeld || e.button === 1 || (e.button === 0 && e.target === e.currentTarget)) {
       setIsPanning(true);
       setLastMouse({ x: e.clientX, y: e.clientY });
     }
@@ -83,7 +84,9 @@ const Canvas: React.FC<Props> = ({ children, onCanvasClick }) => {
       ref={containerRef}
       style={{
         flex: 1, overflow: 'hidden', position: 'relative',
-        cursor: spaceHeld || isPanning ? 'grabbing' : 'default',
+        cursor: spaceHeld || isPanning ? 'grabbing' : 'grab',
+        overscrollBehavior: 'none',
+        touchAction: 'none',
         background: '#e8e8e8',
         backgroundImage: `radial-gradient(circle, #d0d0d0 1px, transparent 1px)`,
         backgroundSize: `${24 * zoom}px ${24 * zoom}px`,
