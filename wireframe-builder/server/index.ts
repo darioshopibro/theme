@@ -1473,7 +1473,7 @@ app.post("/api/shopify/push-settings", async (req, res) => {
     await shopify.pushSettings(themeId, shopifySettings);
 
     // Invalidate ALL preview caches
-    for (const key of Object.keys(PREVIEW_CACHE)) delete PREVIEW_CACHE[key];
+    invalidateCachedPreview();
 
     console.log("Settings pushed to Shopify");
     res.json({ ok: true, invalidated: true });
@@ -1490,7 +1490,7 @@ app.post("/api/shopify/push-section-order", async (req, res) => {
     await shopify.pushSectionOrder(themeId, templateName, order);
 
     // Invalidate preview cache for this page
-    delete PREVIEW_CACHE[page];
+    invalidateCachedPreview(page);
 
     res.json({ ok: true });
   } catch (e: any) {
@@ -1506,7 +1506,7 @@ app.post("/api/shopify/add-section", async (req, res) => {
     await shopify.addSectionToTemplate(themeId, templateName, sectionKey, sectionType, sectionSettings, position);
 
     // Invalidate preview cache for this page
-    delete PREVIEW_CACHE[page];
+    invalidateCachedPreview(page);
 
     res.json({ ok: true });
   } catch (e: any) {
@@ -1522,7 +1522,7 @@ app.post("/api/shopify/remove-section", async (req, res) => {
     await shopify.removeSectionFromTemplate(themeId, templateName, sectionKey);
 
     // Invalidate preview cache for this page
-    delete PREVIEW_CACHE[page];
+    invalidateCachedPreview(page);
 
     res.json({ ok: true });
   } catch (e: any) {
@@ -1537,7 +1537,7 @@ app.post("/api/shopify/update-section", async (req, res) => {
     const templateName = page === "homepage" ? "index" : page;
     await shopify.updateSectionSettings(themeId, templateName, sectionKey, sectionSettings);
 
-    delete PREVIEW_CACHE[page];
+    invalidateCachedPreview(page);
 
     res.json({ ok: true });
   } catch (e: any) {
@@ -1549,10 +1549,10 @@ app.post("/api/shopify/update-section", async (req, res) => {
 app.post("/api/shopify/invalidate-preview", (req, res) => {
   const { pages } = req.body;
   if (pages && Array.isArray(pages)) {
-    for (const page of pages) delete PREVIEW_CACHE[page];
+    for (const page of pages) invalidateCachedPreview(page);
   } else {
     // Invalidate all
-    for (const key of Object.keys(PREVIEW_CACHE)) delete PREVIEW_CACHE[key];
+    invalidateCachedPreview();
   }
   res.json({ ok: true, timestamp: Date.now() });
 });
@@ -1637,22 +1637,71 @@ app.get("/api/shopify/render-section", async (req, res) => {
 
 // ── Live Preview via Puppeteer Proxy ──
 
-const PREVIEW_CACHE: Record<string, { html: string; timestamp: number }> = {};
-const PREVIEW_TTL = 30000; // 30s cache
+// Pre-fetch all 3 pages in background (called on connect)
+app.post("/api/shopify/prefetch-previews", async (_req, res) => {
+  res.json({ ok: true, message: "Pre-fetching started" });
+
+  // Fetch in background — don't block response
+  for (const page of ["homepage", "collection", "product"]) {
+    if (!getCachedPreview(page)) {
+      console.log(`Pre-fetching ${page}...`);
+      try {
+        await fetch(`http://localhost:${PORT}/api/shopify/preview/${page}`);
+        console.log(`Pre-fetched ${page}`);
+      } catch (e: any) {
+        console.error(`Pre-fetch failed for ${page}:`, e.message);
+      }
+    } else {
+      console.log(`${page} already cached, skipping`);
+    }
+  }
+});
+
+// Persistent disk cache — survives server restarts, no TTL
+const PREVIEW_CACHE_DIR = path.join(process.cwd(), "extracted");
+const PREVIEW_CACHE: Record<string, boolean> = {}; // in-memory flag for "currently fetching"
+
+function getCachedPreview(page: string): string | null {
+  const file = path.join(PREVIEW_CACHE_DIR, `live-preview-${page}.html`);
+  if (fs.existsSync(file)) return fs.readFileSync(file, "utf-8");
+  return null;
+}
+
+function saveCachedPreview(page: string, html: string) {
+  const file = path.join(PREVIEW_CACHE_DIR, `live-preview-${page}.html`);
+  fs.writeFileSync(file, html, "utf-8");
+}
+
+function invalidateCachedPreview(page?: string) {
+  if (page) {
+    const file = path.join(PREVIEW_CACHE_DIR, `live-preview-${page}.html`);
+    if (fs.existsSync(file)) fs.unlinkSync(file);
+  } else {
+    for (const p of ["homepage", "collection", "product"]) {
+      const file = path.join(PREVIEW_CACHE_DIR, `live-preview-${p}.html`);
+      if (fs.existsSync(file)) fs.unlinkSync(file);
+    }
+  }
+}
 
 app.get("/api/shopify/preview/:page", async (req, res) => {
-  const page = req.params.page as string; // homepage, collection, product
+  const page = req.params.page as string;
   const forceRefresh = req.query.refresh === "1";
 
   try {
     const config = shopify.getConfig();
     if (!config) return res.status(400).send("Shopify not connected");
 
-    // Check cache
-    const cached = PREVIEW_CACHE[page];
-    if (!forceRefresh && cached && Date.now() - cached.timestamp < PREVIEW_TTL) {
-      res.setHeader("Content-Type", "text/html");
-      return res.send(cached.html);
+    // Check disk cache (permanent until invalidated)
+    if (!forceRefresh) {
+      const cached = getCachedPreview(page);
+      if (cached) {
+        res.setHeader("Content-Type", "text/html");
+        res.setHeader("X-Frame-Options", "ALLOWALL");
+        res.setHeader("Content-Security-Policy", "frame-ancestors *");
+        res.setHeader("X-Cache", "HIT");
+        return res.send(cached);
+      }
     }
 
     // Determine URL to fetch
@@ -1764,15 +1813,13 @@ app.get("/api/shopify/preview/:page", async (req, res) => {
     html = html.replace(/<meta[^>]*http-equiv\s*=\s*["']?content-security-policy["']?[^>]*>/gi, "");
 
     // Cache it
-    PREVIEW_CACHE[page] = { html, timestamp: Date.now() };
-
-    // Save to disk too (for debugging)
-    const previewFile = path.join(EXTRACTED_DIR, `live-preview-${page}.html`);
-    fs.writeFileSync(previewFile, html, "utf-8");
+    // Save to disk (permanent cache)
+    saveCachedPreview(page, html);
 
     res.setHeader("Content-Type", "text/html");
     res.setHeader("X-Frame-Options", "ALLOWALL");
     res.setHeader("Content-Security-Policy", "frame-ancestors *");
+    res.setHeader("X-Cache", "MISS");
     res.send(html);
   } catch (e: any) {
     console.error(`Preview failed for ${page}:`, e.message);

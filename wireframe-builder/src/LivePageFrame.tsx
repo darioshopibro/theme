@@ -14,7 +14,7 @@ interface Props {
 }
 
 const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x, y, refreshTrigger = 0 }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
   const [iframeHeight, setIframeHeight] = useState(3000);
   const initialLoad = useRef(true);
@@ -132,24 +132,6 @@ const LivePageFrame: React.FC<Props> = ({ pageType, label, settings, themeId, x,
         borderRadius: '0 0 8px 8px',
         background: '#fff',
       }}>
-        {loading && (
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 10, minHeight: 400,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: 'rgba(255,255,255,0.9)',
-          }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                width: 32, height: 32, border: '3px solid #e5e7eb',
-                borderTopColor: '#6366f1', borderRadius: '50%',
-                animation: 'spin 0.8s linear infinite', margin: '0 auto 8px',
-              }} />
-              <div style={{ fontSize: 12, color: '#6b7280' }}>Loading store preview...</div>
-              <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 4 }}>This may take a few seconds</div>
-            </div>
-            <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-          </div>
-        )}
         <iframe
           ref={iframeRef}
           src={previewUrl}

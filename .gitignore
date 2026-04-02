@@ -6,3 +6,4 @@ debug-*.png
 dist/
 wireframe-builder/app-state.json
 wireframe-builder/extracted/live-preview-*.html
+wireframe-builder/queue/

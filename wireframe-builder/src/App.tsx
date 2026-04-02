@@ -130,6 +130,8 @@ const App: React.FC = () => {
         setShopify(data as ShopifyConnection);
         syncThemeSections(data.themeId);
         syncThemeSettings(data.themeId);
+        // Pre-fetch live previews in background
+        fetch(`${API}/api/shopify/prefetch-previews`, { method: 'POST' }).catch(() => {});
       }
     }).catch(() => {});
   }, []);
