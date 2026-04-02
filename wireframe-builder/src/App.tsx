@@ -54,6 +54,11 @@ const App: React.FC = () => {
   const [preview, setPreview] = useState<{ page: PageType; mobile: boolean; width: number } | null>(null);
   const [showImport, setShowImport] = useState(false);
 
+  // Section pick popup — shown when user clicks a section on imported page
+  const [pendingPick, setPendingPick] = useState<{
+    sectionId: string; sectionType: string; height: number; sourceFile: string;
+  } | null>(null);
+
   // Shopify connection
   const [shopify, setShopify] = useState<ShopifyConnection | null>(null);
   const [showShopifyConnect, setShowShopifyConnect] = useState(false);
@@ -258,8 +263,17 @@ const App: React.FC = () => {
     }]);
   };
 
-  // When user clicks a section in imported page → extract and add to Library
-  const handleSectionPick = async (sectionId: string, sectionType: string, height: number, sourceFile: string) => {
+  // When user clicks a section in imported page → show destination picker
+  const handleSectionPick = (sectionId: string, sectionType: string, height: number, sourceFile: string) => {
+    setPendingPick({ sectionId, sectionType, height, sourceFile });
+  };
+
+  // Actually extract + add to library + optionally add to page
+  const executeSectionPick = async (targetPage: PageType | 'library') => {
+    if (!pendingPick) return;
+    const { sectionId, sectionType, height, sourceFile } = pendingPick;
+    setPendingPick(null);
+
     try {
       const res = await fetch('http://localhost:3007/api/extract-from-file', {
         method: 'POST',
@@ -271,9 +285,10 @@ const App: React.FC = () => {
 
       const normalizedType = (data.sectionType || sectionType).replace(/_/g, '-');
       const theme = (data.file || sourceFile).split('__')[0] || 'unknown';
+      const libId = `lib-${Date.now()}`;
       const libSection: LibrarySection = {
-        id: `lib-${Date.now()}`,
-        status: 'imported',
+        id: libId,
+        status: 'processing',
         sourceTheme: theme,
         sourceFile: data.file || sourceFile,
         importedAt: new Date().toISOString(),
@@ -282,7 +297,88 @@ const App: React.FC = () => {
       };
 
       setLibrarySections(prev => [...prev, libSection]);
-      setDrawerOpen(true);
+
+      // If adding to a page, insert placeholder immediately
+      let placeholderId: string | null = null;
+      if (targetPage !== 'library') {
+        pushHistory();
+        placeholderId = `queued-${Date.now()}`;
+        const wireframe: ThemeSection = {
+          id: placeholderId,
+          type: normalizedType,
+          heading: `Analyzing: ${normalizedType}...`,
+          visible: true,
+          order: sections[targetPage].length,
+          height: height || 400,
+          settings: { ...DEFAULT_SECTION_SETTINGS },
+        };
+        setSections(prev => ({ ...prev, [targetPage]: [...prev[targetPage], wireframe] }));
+      }
+
+      // Auto-process: queue for AI analysis
+      const htmlRes = await fetch(`http://localhost:3007/extracted/${data.file || sourceFile}`);
+      const sectionHtml = await htmlRes.text();
+
+      const queueRes = await fetch('http://localhost:3007/api/queue-section', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sectionHtml: sectionHtml.slice(0, 50000),
+          sectionType: normalizedType,
+          themeSettings: settings,
+          targetPage: targetPage !== 'library' ? targetPage : undefined,
+          sourceFile: data.file || sourceFile,
+        }),
+      });
+      const { id: queueId } = await queueRes.json();
+
+      setLibrarySections(prev => prev.map(s => s.id === libId ? { ...s, queueId } : s));
+
+      // Poll for result
+      let cancelled = false;
+      const poll = async () => {
+        if (cancelled) return;
+        try {
+          const checkRes = await fetch(`http://localhost:3007/api/queue/${queueId}`);
+          const checkData = await checkRes.json();
+          if (checkData.status === 'done' && checkData.result) {
+            const r = checkData.result;
+            const resultType = (r.wireframeSection.type || '').replace(/_/g, '-');
+            const resultHeading = r.wireframeSection.settings?.heading || r.wireframeSection.heading || '';
+            const resultSettings = r.wireframeSection.settings;
+
+            // Update library section
+            setLibrarySections(prev => prev.map(s => s.id === libId ? {
+              ...s,
+              status: 'ready' as const,
+              wireframeResult: {
+                type: resultType,
+                heading: resultHeading,
+                settings: resultSettings,
+                analysis: r.analysis,
+                recommendedThemeChanges: r.recommendedThemeChanges,
+              },
+            } : s));
+
+            // Update page placeholder if we added one
+            if (placeholderId && targetPage !== 'library') {
+              setSections(prev => ({
+                ...prev,
+                [targetPage]: prev[targetPage].map(s => s.id === placeholderId ? {
+                  ...s,
+                  type: resultType,
+                  heading: resultHeading || null,
+                  settings: { ...DEFAULT_SECTION_SETTINGS, ...resultSettings },
+                } : s),
+              }));
+            }
+            return;
+          }
+        } catch (e) {}
+        if (!cancelled) setTimeout(poll, 2000);
+      };
+      setTimeout(poll, 1500);
+      setTimeout(() => { cancelled = true; }, 60000);
 
       // AI group suggestion (fire and forget)
       fetch('http://localhost:3007/api/suggest-group', {
@@ -290,7 +386,7 @@ const App: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sectionType: normalizedType, existingGroups: groups.map(g => ({ id: g.id, name: g.name })) }),
       }).then(r => r.json()).then(suggestion => {
-        setLibrarySections(prev => prev.map(ls => ls.id === libSection.id ? {
+        setLibrarySections(prev => prev.map(ls => ls.id === libId ? {
           ...ls,
           suggestedGroupId: suggestion.groupId,
           suggestedGroupName: suggestion.groupName,
@@ -772,6 +868,47 @@ const App: React.FC = () => {
             />
           ))}
         </Canvas>
+
+        {/* Section destination picker — shown when user clicks a section on imported page */}
+        {pendingPick && (
+          <div style={{
+            position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', zIndex: 9999,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }} onClick={() => setPendingPick(null)}>
+            <div style={{
+              background: '#fff', borderRadius: 12, padding: 24, minWidth: 320,
+              boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+            }} onClick={e => e.stopPropagation()}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#111', marginBottom: 4 }}>
+                Add section to...
+              </div>
+              <div style={{ fontSize: 11, color: '#6b7280', marginBottom: 16 }}>
+                {pendingPick.sectionType.replace(/-/g, ' ')}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {([['homepage', 'Homepage', '#6366f1'], ['collection', 'Collection', '#22c55e'], ['product', 'Product', '#f59e0b']] as const).map(([page, label, color]) => (
+                  <button key={page} onClick={() => executeSectionPick(page)} style={{
+                    padding: '10px 16px', borderRadius: 8, border: 'none',
+                    background: color, color: '#fff', fontSize: 13, fontWeight: 600,
+                    cursor: 'pointer', textAlign: 'left',
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                  }}>
+                    {label}
+                    <span style={{ fontSize: 10, opacity: 0.8 }}>+ auto-analyze</span>
+                  </button>
+                ))}
+                <div style={{ height: 1, background: '#e5e7eb', margin: '4px 0' }} />
+                <button onClick={() => executeSectionPick('library')} style={{
+                  padding: '8px 16px', borderRadius: 8, border: '1px solid #d1d5db',
+                  background: '#fff', color: '#374151', fontSize: 12, cursor: 'pointer',
+                  textAlign: 'left',
+                }}>
+                  Just add to Library
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {showShopifyConnect && (
           <ShopifyConnect
