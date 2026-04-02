@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeSettings, ThemeSection, SectionGroup, LibrarySection, PageType, ImportedBlock, ShopifyConnection, ViewMode, DEFAULT_SETTINGS, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS, GROUP_COLORS } from './types';
+import { ThemeSettings, ThemeSection, SectionGroup, LibrarySection, PageType, ImportedBlock, ShopifyConnection, DEFAULT_SETTINGS, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS, GROUP_COLORS } from './types';
 import { getFontImportUrl, settingsToCSS } from './css-vars';
 import SettingsSidebar from './SettingsSidebar';
 import Canvas from './Canvas';
@@ -8,7 +8,6 @@ import SectionBlock from './SectionBlock';
 import ImportModal from './ImportModal';
 import BottomDrawer from './BottomDrawer';
 import ShopifyConnect from './ShopifyConnect';
-import LivePageFrame from './LivePageFrame';
 
 function getDefaultSections(pageType: PageType): ThemeSection[] {
   return Object.entries(SECTION_TEMPLATES)
@@ -58,27 +57,6 @@ const App: React.FC = () => {
   // Shopify connection
   const [shopify, setShopify] = useState<ShopifyConnection | null>(null);
   const [showShopifyConnect, setShowShopifyConnect] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>('wireframe');
-  const [liveRefreshKey, setLiveRefreshKey] = useState(0);
-
-  // Debounced push settings to Shopify
-  const settingsPushTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
-  const pushSettingsToShopify = React.useCallback((newSettings: ThemeSettings) => {
-    if (!shopify?.themeId) return;
-    if (settingsPushTimer.current) clearTimeout(settingsPushTimer.current);
-    settingsPushTimer.current = setTimeout(() => {
-      fetch(`${API}/api/shopify/push-settings`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ themeId: shopify.themeId, settings: newSettings }),
-      }).then(r => r.json()).then(data => {
-        if (data.ok) {
-          console.log('Settings pushed to Shopify');
-          setLiveRefreshKey(k => k + 1);
-        }
-      }).catch(e => console.error('Push settings failed:', e));
-    }, 1500); // 1.5s debounce
-  }, [shopify?.themeId]);
 
   // Sync wireframe sections from Shopify theme
   const syncThemeSections = async (themeId: number) => {
@@ -124,14 +102,11 @@ const App: React.FC = () => {
       setLoaded(true);
     });
 
-    // Check Shopify connection and sync sections
+    // Check Shopify connection and sync settings
     fetch(`${API}/api/shopify/status`).then(r => r.json()).then(data => {
       if (data.connected) {
         setShopify(data as ShopifyConnection);
-        syncThemeSections(data.themeId);
         syncThemeSettings(data.themeId);
-        // Pre-fetch live previews in background
-        fetch(`${API}/api/shopify/prefetch-previews`, { method: 'POST' }).catch(() => {});
       }
     }).catch(() => {});
   }, []);
@@ -211,28 +186,7 @@ const App: React.FC = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const updateSections = (page: PageType, s: ThemeSection[]) => {
-    pushHistory();
-    setSections(prev => ({ ...prev, [page]: s }));
-
-    // Push section order to Shopify if connected
-    if (shopify?.themeId) {
-      const shopifyKeys = s.filter(sec => sec.visible).map(sec => {
-        // Use shopifyKey if available (synced from theme), otherwise section type
-        return (sec as any).shopifyKey || sec.id;
-      });
-      // Only push if sections have shopifyKeys (came from theme sync)
-      if (s.some((sec: any) => sec.shopifyKey)) {
-        fetch(`${API}/api/shopify/push-section-order`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ themeId: shopify.themeId, page, order: shopifyKeys }),
-        }).then(() => {
-          setLiveRefreshKey(k => k + 1);
-        }).catch(e => console.error('Push order failed:', e));
-      }
-    }
-  };
+  const updateSections = (page: PageType, s: ThemeSection[]) => { pushHistory(); setSections(prev => ({ ...prev, [page]: s })); };
 
   const exportConfig = () => {
     const blob = new Blob([JSON.stringify({ settings, sections }, null, 2)], { type: 'application/json' });
@@ -712,37 +666,15 @@ const App: React.FC = () => {
       style={{ display: 'flex', height: '100vh', overflow: 'hidden', outline: 'none' }}
       onMouseDown={(e) => { (e.currentTarget as HTMLElement).focus(); }}
     >
-      <SettingsSidebar settings={settings} onChange={(s) => { setSettings(s); pushSettingsToShopify(s); }} minimized={sidebarMinimized} onMinimizeChange={setSidebarMinimized} />
+      <SettingsSidebar settings={settings} onChange={setSettings} minimized={sidebarMinimized} onMinimizeChange={setSidebarMinimized} />
 
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <div style={{
           padding: '6px 16px', background: '#fff', borderBottom: '1px solid #e5e7eb',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0,
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#374151' }}>
-              Theme Wireframe
-            </div>
-            {/* View mode toggle */}
-            {shopify?.connected && (
-              <div style={{
-                display: 'flex', borderRadius: 6, overflow: 'hidden',
-                border: '1px solid #e5e7eb',
-              }}>
-                {(['wireframe', 'live'] as ViewMode[]).map(mode => (
-                  <button key={mode} onClick={() => setViewMode(mode)} style={{
-                    padding: '3px 12px', border: 'none', fontSize: 11, fontWeight: 600,
-                    cursor: 'pointer', transition: 'all 0.15s',
-                    background: viewMode === mode
-                      ? (mode === 'live' ? '#22c55e' : '#6366f1')
-                      : '#f9fafb',
-                    color: viewMode === mode ? '#fff' : '#6b7280',
-                  }}>
-                    {mode === 'wireframe' ? 'Wireframe' : 'Live'}
-                  </button>
-                ))}
-              </div>
-            )}
+          <div style={{ fontSize: 13, fontWeight: 600, color: '#374151' }}>
+            Theme Wireframe
           </div>
           <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
             {/* Shopify connection indicator */}
@@ -769,51 +701,42 @@ const App: React.FC = () => {
         </div>
 
         <Canvas onCanvasClick={() => setSelectedElement(null)}>
-          {/* Live frames — always mounted when connected, hidden when wireframe mode */}
-          {shopify?.themeId && (
-            <div style={{ display: viewMode === 'live' ? 'contents' : 'none' }}>
-              <LivePageFrame pageType="homepage" label="Homepage" settings={settings} themeId={shopify.themeId} x={0} y={0} refreshTrigger={liveRefreshKey} />
-              <LivePageFrame pageType="collection" label="Collection" settings={settings} themeId={shopify.themeId} x={settings.page_width + 100} y={0} refreshTrigger={liveRefreshKey} />
-              <LivePageFrame pageType="product" label="Product" settings={settings} themeId={shopify.themeId} x={(settings.page_width + 100) * 2} y={0} refreshTrigger={liveRefreshKey} />
-            </div>
-          )}
+          <PageFrame
+            pageType="homepage" label="Homepage"
+            sections={sections.homepage} settings={settings}
+            onSectionsChange={s => updateSections('homepage', s)}
+            onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
+            onExtractSection={handleExtractFromFrame}
+            onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
+            selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
+            clearSelection={selectedElement === null}
 
-          {/* Wireframe frames — hidden when live mode */}
-          <div style={{ display: viewMode === 'wireframe' ? 'contents' : 'none' }}>
-            <PageFrame
-              pageType="homepage" label="Homepage"
-              sections={sections.homepage} settings={settings}
-              onSectionsChange={s => updateSections('homepage', s)}
-              onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
-              onExtractSection={handleExtractFromFrame}
-              onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
-              selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
-              clearSelection={selectedElement === null}
-              x={0} y={0}
-            />
-            <PageFrame
-              pageType="collection" label="Collection"
-              sections={sections.collection} settings={settings}
-              onSectionsChange={s => updateSections('collection', s)}
-              onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
-              onExtractSection={handleExtractFromFrame}
-              onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
-              selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
-              clearSelection={selectedElement === null}
-              x={settings.page_width + 100} y={0}
-            />
-            <PageFrame
-              pageType="product" label="Product"
-              sections={sections.product} settings={settings}
-              onSectionsChange={s => updateSections('product', s)}
-              onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
-              onExtractSection={handleExtractFromFrame}
-              onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
-              selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
-              clearSelection={selectedElement === null}
-              x={(settings.page_width + 100) * 2} y={0}
-            />
-          </div>
+            x={0} y={0}
+          />
+          <PageFrame
+            pageType="collection" label="Collection"
+            sections={sections.collection} settings={settings}
+            onSectionsChange={s => updateSections('collection', s)}
+            onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
+            onExtractSection={handleExtractFromFrame}
+            onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
+            selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
+            clearSelection={selectedElement === null}
+
+            x={settings.page_width + 100} y={0}
+          />
+          <PageFrame
+            pageType="product" label="Product"
+            sections={sections.product} settings={settings}
+            onSectionsChange={s => updateSections('product', s)}
+            onPreview={(p, m) => setPreview({ page: p, mobile: m, width: m ? 375 : settings.page_width })}
+            onExtractSection={handleExtractFromFrame}
+            onSelectSection={(id, page) => setSelectedElement({ type: 'page-section', id, page })}
+            selectedSectionId={selectedElement?.type === 'page-section' ? selectedElement.id : null}
+            clearSelection={selectedElement === null}
+
+            x={(settings.page_width + 100) * 2} y={0}
+          />
 
           {/* Imported full pages — far right, always calculated from current page_width */}
           {canvasPages.map((pg, i) => {
@@ -848,7 +771,7 @@ const App: React.FC = () => {
 
         {showShopifyConnect && (
           <ShopifyConnect
-            onConnect={(conn) => { setShopify(conn); setShowShopifyConnect(false); setViewMode('live'); if (conn.themeId) { syncThemeSections(conn.themeId); syncThemeSettings(conn.themeId); } }}
+            onConnect={(conn) => { setShopify(conn); setShowShopifyConnect(false); if (conn.themeId) { syncThemeSettings(conn.themeId); } }}
             onClose={() => setShowShopifyConnect(false)}
           />
         )}
