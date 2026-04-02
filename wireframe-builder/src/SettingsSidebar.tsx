@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ThemeSettings, SETTINGS_META, SettingMeta, FONT_OPTIONS } from './types';
 import { Settings, Palette, Type, Space, RectangleHorizontal, TextCursorInput, CreditCard, Tag } from 'lucide-react';
 
@@ -24,7 +24,11 @@ const SettingsSidebar: React.FC<Props> = ({ settings, onChange, minimized: minim
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
   const minimized = minimizedProp ?? false;
   const setMinimized = (v: boolean) => onMinimizeChange?.(v);
-  const update = (id: keyof ThemeSettings, value: string | number) => onChange({ ...settings, [id]: value });
+  const settingsRef = React.useRef(settings);
+  settingsRef.current = settings;
+  const update = useCallback((id: keyof ThemeSettings, value: string | number) => {
+    onChange({ ...settingsRef.current, [id]: value });
+  }, [onChange]);
 
   const groups = SETTINGS_META.reduce<Record<string, SettingMeta[]>>((acc, m) => {
     if (!acc[m.group]) acc[m.group] = [];
@@ -72,7 +76,7 @@ const SettingsSidebar: React.FC<Props> = ({ settings, onChange, minimized: minim
             </div>
             {!collapsed[group] && (
               <div style={{ padding: '4px 14px 10px' }}>
-                {metas.map(m => <Control key={m.id} meta={m} value={settings[m.id]} onChange={v => update(m.id, v)} />)}
+                {metas.map(m => <Control key={m.id} meta={m} value={settings[m.id]} settingId={m.id} onUpdate={update} />)}
               </div>
             )}
           </div>
@@ -82,7 +86,8 @@ const SettingsSidebar: React.FC<Props> = ({ settings, onChange, minimized: minim
   );
 };
 
-const Control: React.FC<{ meta: SettingMeta; value: string | number; onChange: (v: string | number) => void }> = ({ meta, value, onChange }) => {
+const Control: React.FC<{ meta: SettingMeta; value: string | number; settingId: keyof ThemeSettings; onUpdate: (id: keyof ThemeSettings, v: string | number) => void }> = React.memo(({ meta, value, settingId, onUpdate }) => {
+  const onChange = (v: string | number) => onUpdate(settingId, v);
   if (meta.type === 'range') {
     return (
       <div style={{ marginBottom: 8 }}>
@@ -137,6 +142,6 @@ const Control: React.FC<{ meta: SettingMeta; value: string | number; onChange: (
     );
   }
   return null;
-};
+});
 
 export default SettingsSidebar;

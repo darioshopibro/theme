@@ -16,10 +16,11 @@ interface Props {
 }
 
 
-const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, onToggleVisibility, onExtractToCanvas, onResize, isSelected }) => {
+const SectionBlock: React.FC<Props> = React.memo(({ section, settings, isMobile, onRemove, onToggleVisibility, onExtractToCanvas, onResize, isSelected }) => {
   const [hovered, setHovered] = useState(false);
   const [showOriginal, setShowOriginal] = useState(true);
   const [resizing, setResizing] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
   const zoom = useZoom();
   const counterScale = Math.max(1, 1 / zoom);
   const [localHeight, setLocalHeight] = useState(section.height);
@@ -192,7 +193,6 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
 
     // ── Hero / Carousel: slides with overlay text ──
     if (section.type === 'hero' && blocks.length > 0) {
-      const [activeSlide, setActiveSlide] = React.useState(0);
       const slide = blocks[activeSlide] || blocks[0];
       const parts = (slide.description || '').split(' — ');
       const subtext = parts.length > 1 ? parts[1] : parts[0] || '';
@@ -793,7 +793,7 @@ const SectionBlock: React.FC<Props> = ({ section, settings, isMobile, onRemove, 
       )}
     </div>
   );
-};
+});
 
 const iconBtnStyle: React.CSSProperties = {
   background: 'none', border: 'none', cursor: 'pointer', color: '#9ca3af',

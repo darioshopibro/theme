@@ -111,10 +111,10 @@ const App: React.FC = () => {
     }).catch(() => {});
   }, []);
 
-  // Undo system
+  // Undo system — use structuredClone instead of JSON.parse/stringify
   const [history, setHistory] = useState<{ sections: Record<PageType, ThemeSection[]>; canvasSections: ThemeSection[]; groups: SectionGroup[] }[]>([]);
   const pushHistory = () => {
-    setHistory(prev => [...prev.slice(-30), { sections: JSON.parse(JSON.stringify(sections)), canvasSections: JSON.parse(JSON.stringify(canvasSections)), groups: JSON.parse(JSON.stringify(groups)) }]);
+    setHistory(prev => [...prev.slice(-30), { sections: structuredClone(sections), canvasSections: structuredClone(canvasSections), groups: structuredClone(groups) }]);
   };
   const undo = () => {
     if (history.length === 0) return;
@@ -375,8 +375,10 @@ const App: React.FC = () => {
 
       setLibrarySections(prev => prev.map(s => s.id === libSectionId ? { ...s, queueId } : s));
 
-      // Poll for result — no timeout, keeps checking until result arrives
+      // Poll for result with proper cleanup
+      let cancelled = false;
       const poll = async () => {
+        if (cancelled) return;
         try {
           const checkRes = await fetch(`http://localhost:3007/api/queue/${queueId}`);
           const checkData = await checkRes.json();
@@ -396,9 +398,11 @@ const App: React.FC = () => {
             return;
           }
         } catch (e) {}
-        setTimeout(poll, 2000);
+        if (!cancelled) setTimeout(poll, 2000);
       };
       setTimeout(poll, 1500);
+      // Stop polling after 60s
+      setTimeout(() => { cancelled = true; }, 60000);
     } catch (e) {
       setLibrarySections(prev => prev.map(s => s.id === libSectionId ? { ...s, status: 'error' as const, error: String(e) } : s));
     }

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { ThemeSettings, ThemeSection, PageType, SectionSettings, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS } from './types';
 import { Eye, Smartphone, Monitor, CircleAlert } from 'lucide-react';
 import { useZoom } from './ZoomContext';
@@ -20,7 +20,7 @@ interface Props {
   y: number;
 }
 
-const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSectionsChange, onPreview, onExtractSection, onSelectSection, selectedSectionId, clearSelection, x, y }) => {
+const PageFrame: React.FC<Props> = React.memo(({ pageType, label, sections, settings, onSectionsChange, onPreview, onExtractSection, onSelectSection, selectedSectionId, clearSelection, x, y }) => {
   const [showAddMenu, setShowAddMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showImport, setShowImport] = useState(false);
@@ -110,8 +110,8 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
   const availableSections = Object.entries(SECTION_TEMPLATES).filter(([_, t]) => t.pages.includes(pageType));
   const selectedSectionData = selectedSection ? sections.find(s => s.id === selectedSection) : null;
 
-  // Progress calculation
-  const progress = calcProgress(pageType, sections, settings);
+  // Progress calculation (memoized to avoid recalc on every render)
+  const progress = useMemo(() => calcProgress(pageType, sections, settings), [pageType, sections, settings]);
 
   return (
     <div style={{ position: 'absolute', left: x, top: y }}>
@@ -314,7 +314,7 @@ const PageFrame: React.FC<Props> = ({ pageType, label, sections, settings, onSec
       )}
     </div>
   );
-};
+});
 
 // Progress checker
 interface CheckItem { label: string; done: boolean }
