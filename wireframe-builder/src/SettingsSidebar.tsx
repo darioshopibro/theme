@@ -5,6 +5,8 @@ import { Settings, Palette, Type, Space, RectangleHorizontal, TextCursorInput, C
 interface Props {
   settings: ThemeSettings;
   onChange: (settings: ThemeSettings) => void;
+  minimized?: boolean;
+  onMinimizeChange?: (minimized: boolean) => void;
 }
 
 const GROUP_ICONS: Record<string, React.ReactNode> = {
@@ -18,8 +20,10 @@ const GROUP_ICONS: Record<string, React.ReactNode> = {
   'Badges': <Tag size={13} />,
 };
 
-const SettingsSidebar: React.FC<Props> = ({ settings, onChange }) => {
+const SettingsSidebar: React.FC<Props> = ({ settings, onChange, minimized: minimizedProp, onMinimizeChange }) => {
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
+  const minimized = minimizedProp ?? false;
+  const setMinimized = (v: boolean) => onMinimizeChange?.(v);
   const update = (id: keyof ThemeSettings, value: string | number) => onChange({ ...settings, [id]: value });
 
   const groups = SETTINGS_META.reduce<Record<string, SettingMeta[]>>((acc, m) => {
@@ -28,11 +32,26 @@ const SettingsSidebar: React.FC<Props> = ({ settings, onChange }) => {
     return acc;
   }, {});
 
+  if (minimized) {
+    return (
+      <div style={{ width: 40, background: '#fafafa', borderRight: '1px solid #e5e7eb', display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', flexShrink: 0, paddingTop: 10 }}>
+        <button onClick={() => setMinimized(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6, borderRadius: 6, color: '#6b7280' }} title="Expand settings">
+          <Settings size={16} />
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div style={{ width: 240, background: '#fafafa', borderRight: '1px solid #e5e7eb', display: 'flex', flexDirection: 'column', height: '100vh', flexShrink: 0 }}>
-      <div style={{ padding: '10px 14px', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', gap: 8 }}>
-        <div style={{ width: 6, height: 6, borderRadius: 3, background: '#6366f1' }} />
-        <span style={{ fontWeight: 600, fontSize: 12, color: '#374151' }}>Theme Settings</span>
+      <div style={{ padding: '10px 14px', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <div style={{ width: 6, height: 6, borderRadius: 3, background: '#6366f1' }} />
+          <span style={{ fontWeight: 600, fontSize: 12, color: '#374151' }}>Theme Settings</span>
+        </div>
+        <button onClick={() => setMinimized(true)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 2, color: '#9ca3af', fontSize: 14 }} title="Minimize">
+          ‹
+        </button>
       </div>
       <div style={{ flex: 1, overflowY: 'auto' }}>
         {Object.entries(groups).map(([group, metas]) => (

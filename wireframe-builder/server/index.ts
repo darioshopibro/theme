@@ -3,6 +3,7 @@ import cors from "cors";
 import puppeteer from "puppeteer";
 import fs from "fs";
 import path from "path";
+import { execFile } from "child_process";
 
 const app = express();
 app.use(cors());
@@ -961,7 +962,7 @@ app.post("/api/extract-settings", async (req, res) => {
 
 // Queue a section for AI analysis (Claude Code hook picks this up)
 app.post("/api/queue-section", (req, res) => {
-  const { sectionHtml, sectionType, themeSettings, targetPage, sourceUrl } = req.body;
+  const { sectionHtml, sectionType, themeSettings, targetPage, sourceUrl, sourceFile } = req.body;
   if (!sectionHtml) return res.status(400).json({ error: "sectionHtml required" });
 
   const id = `req-${Date.now()}`;
@@ -972,6 +973,7 @@ app.post("/api/queue-section", (req, res) => {
     sectionType: sectionType || "unknown",
     targetPage: targetPage || "homepage",
     sourceUrl: sourceUrl || "",
+    sourceFile: sourceFile || "",
     themeSettings,
     sectionHtml: sectionHtml.slice(0, 50000), // limit size
   };
@@ -979,6 +981,7 @@ app.post("/api/queue-section", (req, res) => {
   fs.writeFileSync(path.join(QUEUE_DIR, `${id}.json`), JSON.stringify(request, null, 2), "utf-8");
   console.log(`Queued section: ${id} (${sectionType}, ${targetPage})`);
   res.json({ id, status: "pending" });
+  // No auto-process — Claude (via /analyze-section skill) handles this
 });
 
 // Check queue result
@@ -1210,6 +1213,94 @@ app.post("/api/screenshot", async (req, res) => {
   } finally {
     if (browser) await browser.close();
   }
+});
+
+// ── Persist app state to disk instead of localStorage ──
+const STATE_FILE = path.join(process.cwd(), "app-state.json");
+
+app.get("/api/state", (_req, res) => {
+  try {
+    if (fs.existsSync(STATE_FILE)) {
+      const data = JSON.parse(fs.readFileSync(STATE_FILE, "utf-8"));
+      res.json(data);
+    } else {
+      res.json(null);
+    }
+  } catch (e) {
+    res.json(null);
+  }
+});
+
+app.post("/api/state", (req, res) => {
+  try {
+    fs.writeFileSync(STATE_FILE, JSON.stringify(req.body, null, 2), "utf-8");
+    res.json({ ok: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── Write queue result (used by Claude /analyze-section skill) ──
+app.post("/api/queue/:id/result", (req, res) => {
+  const resultPath = path.join(QUEUE_DIR, `${req.params.id}-result.json`);
+  fs.writeFileSync(resultPath, JSON.stringify(req.body, null, 2), "utf-8");
+  console.log(`Result written for ${req.params.id}`);
+  res.json({ ok: true });
+});
+
+// ── AI group suggestion (heuristic fallback, no API key needed) ──
+app.post("/api/suggest-group", (req, res) => {
+  const { sectionType, existingGroups } = req.body;
+  const type = (sectionType || "").toLowerCase();
+
+  // Smart mapping of section types to group names
+  const typeToGroup: Record<string, string> = {
+    "hero": "Hero & Banners",
+    "banner": "Hero & Banners",
+    "slideshow": "Hero & Banners",
+    "carousel": "Hero & Banners",
+    "featured-collection": "Product Sections",
+    "featured-products-grid": "Product Sections",
+    "collection-tabs": "Product Sections",
+    "main-collection": "Product Sections",
+    "related-products": "Product Sections",
+    "recently-viewed": "Product Sections",
+    "shop-the-look": "Product Sections",
+    "testimonials": "Social Proof",
+    "reviews": "Social Proof",
+    "press": "Social Proof",
+    "logo-list": "Social Proof",
+    "newsletter": "Lead Capture & CTA",
+    "countdown": "Lead Capture & CTA",
+    "media-with-text": "Content Sections",
+    "multicolumn": "Content Sections",
+    "rich-text": "Content Sections",
+    "image-gallery": "Content Sections",
+    "video": "Content Sections",
+    "featured-blog": "Content Sections",
+    "trust-badges": "Utility",
+    "announcement-bar": "Utility",
+    "header": "Utility",
+    "footer": "Utility",
+    "breadcrumb": "Utility",
+    "collection-icons": "Navigation",
+    "collection-banner": "Navigation",
+  };
+
+  const suggestedName = typeToGroup[type] || "Uncategorized";
+
+  // Check if an existing group matches
+  const groups = existingGroups || [];
+  const match = groups.find((g: any) =>
+    g.name.toLowerCase() === suggestedName.toLowerCase() ||
+    g.name.toLowerCase().includes(suggestedName.split(" ")[0].toLowerCase())
+  );
+
+  res.json({
+    groupId: match?.id || null,
+    groupName: suggestedName,
+    confidence: match ? 0.9 : 0.7,
+  });
 });
 
 const PORT = 3007;

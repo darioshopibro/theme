@@ -45,6 +45,49 @@ export interface SectionSettings {
   products_count?: number;
   show_price?: boolean;
   show_vendor?: boolean;
+  blocks?: WireframeBlock[];
+}
+
+// Extracted content block — real data from imported section
+export interface WireframeBlock {
+  heading?: string;
+  description?: string;
+  button_text?: string;
+  has_image?: boolean;
+  image_placeholder?: string; // color or gradient for placeholder
+}
+
+// === Library Section (imported sections with lifecycle) ===
+
+export type LibrarySectionStatus = 'imported' | 'processing' | 'ready' | 'error';
+
+export interface LibrarySection {
+  id: string;
+  status: LibrarySectionStatus;
+  sourceTheme: string;
+  sourceFile: string;
+  importedAt: string;
+  sectionType: string;
+  height: number;
+
+  // AI group suggestion
+  suggestedGroupId?: string;
+  suggestedGroupName?: string;
+
+  // Queue tracking
+  queueId?: string;
+
+  // Result after processing
+  wireframeResult?: {
+    type: string;
+    heading: string;
+    settings: SectionSettings;
+    analysis: string;
+    wireframeFile?: string; // HTML file in extracted/ folder
+    recommendedThemeChanges?: Record<string, any>;
+  };
+
+  error?: string;
 }
 
 // === Section types ===
@@ -63,6 +106,7 @@ export interface SectionGroup {
   name: string;
   color: string;
   sections: ThemeSection[];
+  librarySectionIds?: string[];
 }
 
 export const GROUP_COLORS = ['#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#ec4899', '#8b5cf6', '#14b8a6', '#f97316'];
@@ -223,32 +267,32 @@ export const SECTION_TEMPLATES: Record<string, SectionTypeDef> = {
 
 // Section preview descriptions
 export const SECTION_PREVIEWS: Record<string, string> = {
-  'announcement-bar': '📢 Promo banner',
-  'header': '🔝 Logo + nav + cart',
-  'hero': '🖼 Full-width hero + CTA',
-  'trust-badges': '✅ Shipping, returns, etc',
-  'featured-collection': '🛍 Product grid',
-  'collection-tabs': '📑 Tabbed collections',
-  'media-with-text': '📰 Image + text',
-  'featured-products-grid': '⊞ Large product grid',
-  'testimonials': '💬 Review cards',
-  'newsletter': '📧 Email signup',
-  'featured-blog': '📝 Blog cards',
-  'logo-list': '🏢 Partner logos',
-  'press': '📰 Press mentions',
-  'rich-text': '📄 Text block',
-  'image-gallery': '🖼 Gallery',
-  'shop-the-look': '👀 Shoppable image',
-  'countdown': '⏰ Sale timer',
-  'video': '▶️ Video',
-  'multicolumn': '▥ Multi-column',
-  'collection-icons': '🏷 Category icons',
-  'footer': '⬇ Footer',
-  'collection-banner': '🏔 Collection header',
-  'breadcrumb': '🔗 Breadcrumb',
-  'main-collection': '🛒 Grid + filters',
-  'product-main': '📦 Product + add to cart',
-  'product-description': '📋 Description tabs',
-  'related-products': '🔗 Related products',
-  'recently-viewed': '👁 Recently viewed',
+  'announcement-bar': 'Promo banner',
+  'header': 'Logo + nav + cart',
+  'hero': 'Full-width hero + CTA',
+  'trust-badges': 'Shipping, returns, etc',
+  'featured-collection': 'Product grid',
+  'collection-tabs': 'Tabbed collections',
+  'media-with-text': 'Image + text',
+  'featured-products-grid': 'Large product grid',
+  'testimonials': 'Review cards',
+  'newsletter': 'Email signup',
+  'featured-blog': 'Blog cards',
+  'logo-list': 'Partner logos',
+  'press': 'Press mentions',
+  'rich-text': 'Text block',
+  'image-gallery': 'Gallery',
+  'shop-the-look': 'Shoppable image',
+  'countdown': 'Sale timer',
+  'video': 'Video',
+  'multicolumn': 'Multi-column',
+  'collection-icons': 'Category icons',
+  'footer': 'Footer',
+  'collection-banner': 'Collection header',
+  'breadcrumb': 'Breadcrumb',
+  'main-collection': 'Grid + filters',
+  'product-main': 'Product + add to cart',
+  'product-description': 'Description tabs',
+  'related-products': 'Related products',
+  'recently-viewed': 'Recently viewed',
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeSettings, ThemeSection, SectionGroup, PageType, ImportedBlock, DEFAULT_SETTINGS, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS, GROUP_COLORS } from './types';
+import { ThemeSettings, ThemeSection, SectionGroup, LibrarySection, PageType, ImportedBlock, DEFAULT_SETTINGS, SECTION_TEMPLATES, DEFAULT_SECTION_SETTINGS, GROUP_COLORS } from './types';
 import { getFontImportUrl, settingsToCSS } from './css-vars';
 import SettingsSidebar from './SettingsSidebar';
 import Canvas from './Canvas';
@@ -18,41 +18,55 @@ function getDefaultSections(pageType: PageType): ThemeSection[] {
     }));
 }
 
-// LocalStorage helpers
-const STORAGE_KEY = 'wireframe-builder-state';
+// State persistence — disk via server API (not localStorage)
+const API = 'http://localhost:3007';
 
-function loadState() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      const data = JSON.parse(saved);
-      // Clean up: remove sections with undefined importedHtml
-      if (data.canvasSections) {
-        data.canvasSections = data.canvasSections.filter((s: any) => !s.importedHtml || s.importedHtml !== 'undefined');
-      }
-      return data;
+function loadStateFromServer(): Promise<any> {
+  return fetch(`${API}/api/state`).then(r => r.json()).then(data => {
+    if (!data) return null;
+    if (data.canvasSections) {
+      data.canvasSections = data.canvasSections.filter((s: any) => !s.importedHtml || s.importedHtml !== 'undefined');
     }
-  } catch (e) {}
-  return null;
+    if (data.canvasPages) {
+      data.canvasPages = data.canvasPages.map((p: any) => ({ id: p.id, file: p.file, name: p.name }));
+    }
+    return data;
+  }).catch(() => null);
 }
 
 function saveState(data: any) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+  fetch(`${API}/api/state`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  }).catch(() => {});
 }
 
 const App: React.FC = () => {
-  const saved = React.useRef(loadState());
-
-  const [settings, setSettings] = useState<ThemeSettings>(saved.current?.settings || DEFAULT_SETTINGS);
-  const [sections, setSections] = useState<Record<PageType, ThemeSection[]>>(
-    saved.current?.sections || {
-      homepage: getDefaultSections('homepage'),
-      collection: getDefaultSections('collection'),
-      product: getDefaultSections('product'),
-    }
-  );
+  const [loaded, setLoaded] = useState(false);
+  const [settings, setSettings] = useState<ThemeSettings>(DEFAULT_SETTINGS);
+  const [sections, setSections] = useState<Record<PageType, ThemeSection[]>>({
+    homepage: getDefaultSections('homepage'),
+    collection: getDefaultSections('collection'),
+    product: getDefaultSections('product'),
+  });
   const [preview, setPreview] = useState<{ page: PageType; mobile: boolean; width: number } | null>(null);
   const [showImport, setShowImport] = useState(false);
+
+  // Load state from server on mount
+  useEffect(() => {
+    loadStateFromServer().then(data => {
+      if (data) {
+        if (data.settings) setSettings(data.settings);
+        if (data.sections) setSections(data.sections);
+        if (data.canvasSections) setCanvasSections(data.canvasSections);
+        if (data.canvasPages) setCanvasPages(data.canvasPages);
+        if (data.groups) setGroups(data.groups);
+        if (data.librarySections) setLibrarySections(data.librarySections);
+      }
+      setLoaded(true);
+    });
+  }, []);
 
   // Undo system
   const [history, setHistory] = useState<{ sections: Record<PageType, ThemeSection[]>; canvasSections: ThemeSection[]; groups: SectionGroup[] }[]>([]);
@@ -137,7 +151,12 @@ const App: React.FC = () => {
   };
 
   // Imported sections on canvas (not in any page yet)
-  const [canvasSections, setCanvasSections] = useState<ThemeSection[]>(saved.current?.canvasSections || []);
+  const [canvasSections, setCanvasSections] = useState<ThemeSection[]>([]);
+
+  // Library sections (new flow)
+  const [librarySections, setLibrarySections] = useState<LibrarySection[]>([]);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [sidebarMinimized, setSidebarMinimized] = useState(false);
 
   const handleImport = (file: string, sectionId: string, blocks: { tag: string; html: string; text: string; height: number }[]) => {
     const sectionType = sectionId.split('__').pop()?.replace(/_[A-Za-z0-9]+$/, '') || 'imported';
@@ -164,18 +183,21 @@ const App: React.FC = () => {
   };
 
   // Imported full pages on canvas
-  const [canvasPages, setCanvasPages] = useState<{ id: string; file: string; name: string; x: number; y: number }[]>(saved.current?.canvasPages || []);
-  const [groups, setGroups] = useState<SectionGroup[]>(saved.current?.groups || []);
+  const [canvasPages, setCanvasPages] = useState<{ id: string; file: string; name: string }[]>([]);
+  const [groups, setGroups] = useState<SectionGroup[]>([]);
 
-  // Auto-save to localStorage
+  // Auto-save to server (only after initial load completes)
   useEffect(() => {
-    const t = setTimeout(() => saveState({ settings, sections, canvasSections, canvasPages, groups }), 500);
+    if (!loaded) return;
+    const t = setTimeout(() => saveState({ settings, sections, canvasSections, canvasPages, groups, librarySections }), 500);
     return () => clearTimeout(t);
-  }, [settings, sections, canvasSections, canvasPages, groups]);
+  }, [loaded, settings, sections, canvasSections, canvasPages, groups, librarySections]);
 
   const handleImportPage = (file: string, pageName: string, recommended?: Record<string, any>) => {
-    // Apply recommended settings if available
+    // Compute page width AFTER applying recommended settings
+    let effectiveWidth = settings.page_width;
     if (recommended) {
+      if (recommended.page_width) effectiveWidth = Math.max(effectiveWidth, recommended.page_width);
       setSettings(prev => {
         const updated = { ...prev };
         for (const [key, val] of Object.entries(recommended)) {
@@ -190,12 +212,10 @@ const App: React.FC = () => {
       id: `page-${Date.now()}`,
       file,
       name: pageName,
-      x: (settings.page_width + 100) * 3 + 100,
-      y: prev.length * 900,
     }]);
   };
 
-  // When user clicks a section in imported page → extract and add to canvas as imported
+  // When user clicks a section in imported page → extract and add to Library
   const handleSectionPick = async (sectionId: string, sectionType: string, height: number, sourceFile: string) => {
     try {
       const res = await fetch('http://localhost:3007/api/extract-from-file', {
@@ -206,17 +226,33 @@ const App: React.FC = () => {
       const data = await res.json();
       if (data.error) { console.error('Extract failed:', data.error); return; }
 
-      pushHistory();
-      setCanvasSections(prev => [...prev, {
-        id: `picked-${Date.now()}`,
-        type: data.sectionType || sectionType,
-        heading: `Imported: ${data.sectionType || sectionType}`,
-        visible: true,
-        order: 999,
+      const normalizedType = (data.sectionType || sectionType).replace(/_/g, '-');
+      const theme = (data.file || sourceFile).split('__')[0] || 'unknown';
+      const libSection: LibrarySection = {
+        id: `lib-${Date.now()}`,
+        status: 'imported',
+        sourceTheme: theme,
+        sourceFile: data.file || sourceFile,
+        importedAt: new Date().toISOString(),
+        sectionType: normalizedType,
         height: height || 500,
-        settings: { ...DEFAULT_SECTION_SETTINGS },
-        importedHtml: data.file,
-      }]);
+      };
+
+      setLibrarySections(prev => [...prev, libSection]);
+      setDrawerOpen(true);
+
+      // AI group suggestion (fire and forget)
+      fetch('http://localhost:3007/api/suggest-group', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sectionType: normalizedType, existingGroups: groups.map(g => ({ id: g.id, name: g.name })) }),
+      }).then(r => r.json()).then(suggestion => {
+        setLibrarySections(prev => prev.map(ls => ls.id === libSection.id ? {
+          ...ls,
+          suggestedGroupId: suggestion.groupId,
+          suggestedGroupName: suggestion.groupName,
+        } : ls));
+      }).catch(() => {});
     } catch (e) {
       console.error('Section pick failed:', e);
     }
@@ -269,6 +305,160 @@ const App: React.FC = () => {
     updateSections(page, [...sections[page], ...group.sections.map((s, i) => ({ ...s, id: `${s.id}-${Date.now()}-${i}`, order: sections[page].length + i }))]);
   };
 
+  // ── Library handlers ──
+
+  // Process a library section — send to queue for analysis
+  const handleLibraryProcess = async (libSectionId: string) => {
+    const ls = librarySections.find(s => s.id === libSectionId);
+    if (!ls || ls.status !== 'imported') return;
+
+    setLibrarySections(prev => prev.map(s => s.id === libSectionId ? { ...s, status: 'processing' as const } : s));
+
+    try {
+      const htmlRes = await fetch(`http://localhost:3007/extracted/${ls.sourceFile}`);
+      const sectionHtml = await htmlRes.text();
+
+      const queueRes = await fetch('http://localhost:3007/api/queue-section', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sectionHtml: sectionHtml.slice(0, 50000),
+          sectionType: ls.sectionType,
+          themeSettings: settings,
+          sourceFile: ls.sourceFile,
+        }),
+      });
+      const { id: queueId } = await queueRes.json();
+
+      setLibrarySections(prev => prev.map(s => s.id === libSectionId ? { ...s, queueId } : s));
+
+      // Poll for result — no timeout, keeps checking until result arrives
+      const poll = async () => {
+        try {
+          const checkRes = await fetch(`http://localhost:3007/api/queue/${queueId}`);
+          const checkData = await checkRes.json();
+          if (checkData.status === 'done' && checkData.result) {
+            const r = checkData.result;
+            setLibrarySections(prev => prev.map(s => s.id === libSectionId ? {
+              ...s,
+              status: 'ready' as const,
+              wireframeResult: {
+                type: (r.wireframeSection.type || '').replace(/_/g, '-'),
+                heading: r.wireframeSection.settings?.heading || r.wireframeSection.heading || '',
+                settings: r.wireframeSection.settings,
+                analysis: r.analysis,
+                recommendedThemeChanges: r.recommendedThemeChanges,
+              },
+            } : s));
+            return;
+          }
+        } catch (e) {}
+        setTimeout(poll, 2000);
+      };
+      setTimeout(poll, 1500);
+    } catch (e) {
+      setLibrarySections(prev => prev.map(s => s.id === libSectionId ? { ...s, status: 'error' as const, error: String(e) } : s));
+    }
+  };
+
+  // Add a ready library section to a page frame
+  const handleLibraryAddToPage = (libSectionId: string, page: PageType) => {
+    const ls = librarySections.find(s => s.id === libSectionId);
+    if (!ls || ls.status !== 'ready' || !ls.wireframeResult) return;
+
+    pushHistory();
+    const wireframe: ThemeSection = {
+      id: `wf-${Date.now()}`,
+      type: ls.wireframeResult.type,
+      heading: ls.wireframeResult.heading || null,
+      visible: true,
+      order: sections[page].length,
+      height: ls.height || SECTION_TEMPLATES[ls.wireframeResult.type]?.defaultHeight || 400,
+      settings: { ...DEFAULT_SECTION_SETTINGS, ...ls.wireframeResult.settings },
+    };
+    setSections(prev => ({ ...prev, [page]: [...prev[page], wireframe] }));
+  };
+
+  // Add original imported section to canvas (as iframe from source)
+  const handleLibraryAddToCanvas = (libSectionId: string) => {
+    const ls = librarySections.find(s => s.id === libSectionId);
+    if (!ls) return;
+    pushHistory();
+    setCanvasSections(prev => [...prev, {
+      id: `canvas-${Date.now()}`,
+      type: ls.sectionType,
+      heading: `Imported: ${ls.sectionType}`,
+      visible: true,
+      order: 999,
+      height: ls.height || 500,
+      settings: { ...DEFAULT_SECTION_SETTINGS },
+      importedHtml: ls.sourceFile,
+    }]);
+  };
+
+  // Move library section to a group
+  const handleMoveToGroup = (libSectionId: string, groupId: string) => {
+    setGroups(prev => prev.map(g => {
+      if (g.id === groupId) {
+        const ids = g.librarySectionIds || [];
+        if (ids.includes(libSectionId)) return g;
+        return { ...g, librarySectionIds: [...ids, libSectionId] };
+      }
+      // Remove from other groups
+      if (g.librarySectionIds?.includes(libSectionId)) {
+        return { ...g, librarySectionIds: g.librarySectionIds.filter(id => id !== libSectionId) };
+      }
+      return g;
+    }));
+  };
+
+  // Accept AI group suggestion — create group if needed, then move section there
+  const handleAcceptGroupSuggestion = (libSectionId: string) => {
+    const ls = librarySections.find(s => s.id === libSectionId);
+    if (!ls?.suggestedGroupName) return;
+
+    let targetGroupId = ls.suggestedGroupId;
+    const existingGroup = groups.find(g => g.id === targetGroupId);
+
+    if (!existingGroup) {
+      // Create new group with suggested name
+      targetGroupId = `group-${Date.now()}`;
+      setGroups(prev => [...prev, {
+        id: targetGroupId!,
+        name: ls.suggestedGroupName!,
+        color: GROUP_COLORS[prev.length % GROUP_COLORS.length],
+        sections: [],
+        librarySectionIds: [libSectionId],
+      }]);
+    } else {
+      handleMoveToGroup(libSectionId, targetGroupId!);
+    }
+  };
+
+  // Remove a library section
+  const handleRemoveLibrarySection = (libSectionId: string) => {
+    setLibrarySections(prev => prev.filter(s => s.id !== libSectionId));
+    // Remove from all groups
+    setGroups(prev => prev.map(g => ({
+      ...g,
+      librarySectionIds: (g.librarySectionIds || []).filter(id => id !== libSectionId),
+    })));
+  };
+
+  // Add wireframe template section directly to a page
+  const addWireframeToPage = (type: string, page: PageType) => {
+    pushHistory();
+    const template = SECTION_TEMPLATES[type];
+    const sec: ThemeSection = {
+      id: `wf-${Date.now()}`,
+      type, heading: null, visible: true,
+      order: sections[page].length,
+      height: template?.defaultHeight || 200,
+      settings: { ...DEFAULT_SECTION_SETTINGS },
+    };
+    setSections(prev => ({ ...prev, [page]: [...prev[page], sec] }));
+  };
+
   const addWireframeSectionToCanvas = (type: string) => {
     const template = SECTION_TEMPLATES[type];
     const sec: ThemeSection = {
@@ -297,24 +487,12 @@ const App: React.FC = () => {
         const htmlRes = await fetch(`http://localhost:3007/extracted/${section.importedHtml}`);
         const sectionHtml = await htmlRes.text();
 
-        await fetch('http://localhost:3007/api/queue-section', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            sectionHtml: sectionHtml.slice(0, 50000),
-            sectionType: section.type,
-            themeSettings: settings,
-            targetPage: page,
-            sourceFile: section.importedHtml,
-          }),
-        });
-
         const queueRes = await fetch('http://localhost:3007/api/queue-section', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             sectionHtml: sectionHtml.slice(0, 50000),
-            sectionType: section.type,
+            sectionType: section.type.replace(/_/g, '-'),
             themeSettings: settings,
             targetPage: page,
             sourceFile: section.importedHtml,
@@ -326,8 +504,8 @@ const App: React.FC = () => {
         const placeholderId = `queued-${Date.now()}`;
         const wireframe: ThemeSection = {
           id: placeholderId,
-          type: section.type || 'rich-text',
-          heading: `⏳ Analyzing: ${section.type}...`,
+          type: (section.type || 'rich-text').replace(/_/g, '-'),
+          heading: `Analyzing: ${section.type}...`,
           visible: true,
           order: sections[page].length,
           height: section.height || 400,
@@ -348,7 +526,7 @@ const App: React.FC = () => {
                   ...prev,
                   [page]: prev[page].map(s => s.id === placeholderId ? {
                     ...s,
-                    type: r.wireframeSection.type,
+                    type: (r.wireframeSection.type || '').replace(/_/g, '-'),
                     heading: r.wireframeSection.settings?.heading || r.wireframeSection.heading || null,
                     settings: { ...DEFAULT_SECTION_SETTINGS, ...r.wireframeSection.settings },
                   } : s),
@@ -377,6 +555,15 @@ const App: React.FC = () => {
   const updateCanvasSection = (id: string, updated: ThemeSection) => {
     setCanvasSections(prev => prev.map(s => s.id === id ? updated : s));
   };
+
+  // Loading state
+  if (!loaded) {
+    return (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', background: '#e8e8e8' }}>
+        <div style={{ fontSize: 13, color: '#666' }}>Loading...</div>
+      </div>
+    );
+  }
 
   // Preview mode
   if (preview) {
@@ -436,7 +623,7 @@ const App: React.FC = () => {
       style={{ display: 'flex', height: '100vh', overflow: 'hidden', outline: 'none' }}
       onMouseDown={(e) => { (e.currentTarget as HTMLElement).focus(); }}
     >
-      <SettingsSidebar settings={settings} onChange={setSettings} />
+      <SettingsSidebar settings={settings} onChange={setSettings} minimized={sidebarMinimized} onMinimizeChange={setSidebarMinimized} />
 
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <div style={{
@@ -448,13 +635,9 @@ const App: React.FC = () => {
           </div>
           <div style={{ display: 'flex', gap: 6 }}>
             <button onClick={() => setShowImport(true)} style={{
-              padding: '4px 14px', borderRadius: 6, border: '1px solid #6366f1', background: '#eef2ff',
-              color: '#6366f1', fontSize: 11, cursor: 'pointer', fontWeight: 600,
-            }}>Import Page</button>
-            <button onClick={exportConfig} style={{
               padding: '4px 14px', borderRadius: 6, border: 'none', background: '#6366f1',
               color: '#fff', fontSize: 11, cursor: 'pointer', fontWeight: 600,
-            }}>Export JSON</button>
+            }}>Import Page</button>
           </div>
         </div>
 
@@ -496,18 +679,21 @@ const App: React.FC = () => {
             x={(settings.page_width + 100) * 2} y={0}
           />
 
-          {/* Imported full pages — far right */}
-          {canvasPages.map((pg) => (
-            <ImportedPageCard
-              key={pg.id}
-              file={pg.file}
-              name={pg.name}
-              initialX={pg.x}
-              initialY={pg.y}
-              onRemove={() => removeCanvasPage(pg.id)}
-              onSectionPick={handleSectionPick}
-            />
-          ))}
+          {/* Imported full pages — far right, always calculated from current page_width */}
+          {canvasPages.map((pg, i) => {
+            const safeX = (Math.max(settings.page_width, 1440) + 100) * 3 + 300;
+            return (
+              <ImportedPageCard
+                key={pg.id}
+                file={pg.file}
+                name={pg.name}
+                initialX={safeX}
+                initialY={i * 3500}
+                onRemove={() => removeCanvasPage(pg.id)}
+                onSectionPick={handleSectionPick}
+              />
+            );
+          })}
 
           {/* Picked/imported sections — below all page frames, spaced out */}
           {canvasSections.map((sec, i) => (
@@ -516,7 +702,7 @@ const App: React.FC = () => {
               section={sec}
               settings={settings}
               initialX={i * 1550}
-              initialY={-800}
+              initialY={-900}
               onRemove={() => removeCanvasSection(sec.id)}
               onUpdate={(updated) => updateCanvasSection(sec.id, updated)}
               onAddToPage={handleAddToPage}
@@ -533,16 +719,20 @@ const App: React.FC = () => {
         )}
 
         <BottomDrawer
-          canvasSections={canvasSections}
+          librarySections={librarySections}
           groups={groups}
+          onProcess={handleLibraryProcess}
+          onAddToPage={handleLibraryAddToPage}
+          onAddToCanvas={handleLibraryAddToCanvas}
+          onAddWireframeToPage={addWireframeToPage}
           onCreateGroup={createGroup}
           onDeleteGroup={deleteGroup}
-          onRenameGroup={renameGroup}
-          onAddSectionToGroup={addSectionToGroup}
-          onRemoveSectionFromGroup={removeSectionFromGroup}
-          onAddGroupToCanvas={addGroupToCanvas}
-          onAddGroupToPage={addGroupToPage}
-          onAddWireframeSectionToCanvas={addWireframeSectionToCanvas}
+          onMoveToGroup={handleMoveToGroup}
+          onRemoveSection={handleRemoveLibrarySection}
+          onAcceptGroupSuggestion={handleAcceptGroupSuggestion}
+          isOpen={drawerOpen}
+          onToggle={() => setDrawerOpen(!drawerOpen)}
+          sidebarWidth={sidebarMinimized ? 40 : 240}
         />
       </div>
     </div>
