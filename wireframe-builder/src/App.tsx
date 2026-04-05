@@ -116,6 +116,43 @@ const App: React.FC = () => {
     }).catch(() => {});
   }, []);
 
+  // On mount: resume polling for any "processing" library sections that have a queueId
+  useEffect(() => {
+    if (!loaded) return;
+    librarySections.filter(ls => ls.status === 'processing' && ls.queueId).forEach(ls => {
+      const poll = async () => {
+        try {
+          const checkRes = await fetch(`${API}/api/queue/${ls.queueId}`);
+          const checkData = await checkRes.json();
+          if (checkData.status === 'done' && checkData.result) {
+            const r = checkData.result;
+            const resultType = (r.wireframeSection.type || '').replace(/_/g, '-');
+            const resultHeading = r.wireframeSection.settings?.heading || r.wireframeSection.heading || '';
+            setLibrarySections(prev => prev.map(s => s.id === ls.id ? {
+              ...s,
+              status: 'ready' as const,
+              wireframeResult: { type: resultType, heading: resultHeading, settings: r.wireframeSection.settings, analysis: r.analysis, recommendedThemeChanges: r.recommendedThemeChanges },
+            } : s));
+            // Also update any page placeholder that's still showing "Analyzing"
+            setSections(prev => {
+              const updated = { ...prev };
+              for (const page of ['homepage', 'collection', 'product'] as PageType[]) {
+                updated[page] = prev[page].map(s => s.heading?.startsWith('Analyzing:') && s.type === ls.sectionType ? {
+                  ...s, type: resultType, heading: resultHeading || null,
+                  settings: { ...DEFAULT_SECTION_SETTINGS, ...r.wireframeSection.settings },
+                } : s);
+              }
+              return updated;
+            });
+            return;
+          }
+        } catch (e) {}
+        setTimeout(poll, 3000);
+      };
+      setTimeout(poll, 1000);
+    });
+  }, [loaded]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Undo system — use structuredClone instead of JSON.parse/stringify
   const [history, setHistory] = useState<{ sections: Record<PageType, ThemeSection[]>; canvasSections: ThemeSection[]; groups: SectionGroup[] }[]>([]);
   const pushHistory = () => {
@@ -375,10 +412,10 @@ const App: React.FC = () => {
             return;
           }
         } catch (e) {}
-        if (!cancelled) setTimeout(poll, 2000);
+        if (!cancelled) setTimeout(poll, 3000);
       };
-      setTimeout(poll, 1500);
-      setTimeout(() => { cancelled = true; }, 60000);
+      setTimeout(poll, 2000);
+      // No timeout — keep polling until result arrives (skill can take minutes)
 
       // AI group suggestion (fire and forget)
       fetch('http://localhost:3007/api/suggest-group', {
@@ -494,11 +531,9 @@ const App: React.FC = () => {
             return;
           }
         } catch (e) {}
-        if (!cancelled) setTimeout(poll, 2000);
+        if (!cancelled) setTimeout(poll, 3000);
       };
-      setTimeout(poll, 1500);
-      // Stop polling after 60s
-      setTimeout(() => { cancelled = true; }, 60000);
+      setTimeout(poll, 2000);
     } catch (e) {
       setLibrarySections(prev => prev.map(s => s.id === libSectionId ? { ...s, status: 'error' as const, error: String(e) } : s));
     }
@@ -676,9 +711,8 @@ const App: React.FC = () => {
                 }));
               }
             } catch (e) {}
-          }, 2000);
-          // Stop polling after 60s
-          setTimeout(() => clearInterval(pollInterval), 60000);
+          }, 3000);
+          // No timeout — keep polling until result arrives
         }
       } catch (e) {
         setSections(prev => ({ ...prev, [page]: [...prev[page], { ...section, id: `copy-${Date.now()}`, order: sections[page].length }] }));
