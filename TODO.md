@@ -1,74 +1,74 @@
 # TODO
 
-## 1. Research TEME (CURRENT)
-- [x] Basic scraper (ime, cijena, reviews, niša) — 60 tema
-- [x] Dedup + detaljni logovi
-- [x] Launch date — reviews/month radi
-- [x] Reviews/month kalkulacija
-- [x] Feature extraction (testirano na Krank — 58 features, radi)
-- [x] Review sentiment pos/neg/neutral (testirano, radi iz SVG ikona)
-- [x] Developer/studio + preset count (testirano, radi)
-- [ ] **FULL RUN** sa features + sentiment + sekcije iz demo-a — radi u pozadini
-- [ ] Review tekstovi — SVE sa /reviews podstranice, ALI samo za teme u izabranoj niši (posle odluke)
+## 1. Theme research (CURRENT)
+- [x] Basic scraper (name, price, reviews, niche) — 60 themes
+- [x] Dedup + detailed logs
+- [x] Launch date — reviews/month works
+- [x] Reviews/month calculation
+- [x] Feature extraction (tested on Krank — 58 features, working)
+- [x] Review sentiment pos/neg/neutral (tested, works from SVG icons)
+- [x] Developer/studio + preset count (tested, working)
+- [ ] **FULL RUN** with features + sentiment + demo sections — running in background
+- [ ] Review texts — full pull from `/reviews` subpages, but only for themes in the chosen niche (after the niche decision)
 
-## 2. Research NIŠE (posle tema)
-- [ ] Filtrirati JSON po nišama (scraper hvata sve teme, ne treba poseban scrape)
-- [ ] Rankirati niše po reviews/month
-- [ ] Naći parove SLIČNIH niša (SEO keyword overlap, sekcije se prenose)
-- [ ] Mapa sekcija: koje su u 80%+ top tema (must-have)
+## 2. Niche research (after themes)
+- [ ] Filter the JSON by niche (the scraper already pulls every theme — no separate scrape needed)
+- [ ] Rank niches by reviews/month
+- [ ] Find pairs of similar niches (SEO keyword overlap, sections port across)
+- [ ] Section map: which sections appear in 80%+ of top themes (must-have)
 - [ ] Feature frequency map: must-have vs differentiator
-- [ ] **ODLUKA: 2 niše** (jedna po devu)
+- [ ] **DECISION: 2 niches** (one per dev)
 
-## 3. Engine varijable
-- [ ] Zaključati LISTU varijabli (~60: layout/spacing/typo/colors/shape/buttons/animation/components)
-- [ ] Varijable MORAJU biti povezane sa Shopify settings_schema.json — merchant mora moći da customizuje iz editora bez koda
-- [ ] Definisati granicu: koje varijable su dev-only (CSS) a koje merchant-facing (schema setting) — radimo kad izaberemo niše i ispravimo neke varijable
-- [ ] Responsive varijable — definisati kako rješavamo različite vrijednosti po breakpointu (gutter 16px mobile, 32px desktop itd)
-- [ ] Default vrijednosti za svaki layout/preset (2-3 layouta po temi, da merchant može koristiti za više niša)
-- [ ] Vrijednosti dolaze TEK iz wireframe-a (korak 4)
+## 3. Engine variables
+- [ ] Lock the variable LIST (~60: layout / spacing / typography / colors / shape / buttons / animation / components)
+- [ ] Variables MUST tie back to Shopify `settings_schema.json` — merchants need to customize from the editor with no code
+- [ ] Define the boundary: which variables are dev-only (CSS) vs merchant-facing (schema setting) — finalize once niches are picked and a few variables are corrected
+- [ ] Responsive variables — define how we handle per-breakpoint values (gutter 16px mobile, 32px desktop, etc.)
+- [ ] Default values for each layout/preset (2–3 layouts per theme so merchants can use it across multiple niches)
+- [ ] Values are filled in only AFTER the wireframe step (step 4)
 
-## 4. Wireframe builder + dizajn pravac
-- [x] Infinite canvas sa pan/zoom
-- [x] 3 page frame-a (HP, Collection, Product) na canvasu
-- [x] Sidebar sa theme settings (colors, typo, spacing, buttons, cards)
-- [x] Section drag & drop reorder u frame-ovima
-- [x] Import sekcija sa screenshot browse
+## 4. Wireframe builder + design direction
+- [x] Infinite canvas with pan/zoom
+- [x] 3 page frames (HP, Collection, Product) on the canvas
+- [x] Sidebar with theme settings (colors, typography, spacing, buttons, cards)
+- [x] Section drag & drop reorder inside frames
+- [x] Section import with screenshot browser
 - [x] Import FULL PAGE (rendered DOM + CSS + JS)
-- [x] Section picking iz importovanog page-a → extract na canvas
-- [x] Add section to frame (→ HP / → Col / → PDP) i extract iz frame-a (←)
-- [x] Preview mode sa width slider 300-2400px
-- [x] Resize handle na sekcijama (drag donju ivicu)
-- [x] Edit blocks u importovanim sekcijama (hide/delete elemente)
-- [x] Progress bar + checklist per page
-- [x] Auto-save state u localStorage
-- [x] Section library bottom drawer sa grupama
-- [ ] **Settings povezati sa pravim Shopify settings_schema.json** — da kad exportujemo, output bude validan Shopify config
-- [ ] **AI recommended settings** — za svaku importovanu sekciju, Claude analizira i predlaže naše engine settings (boje, fontovi, spacing, radius) da matčuju tu sekciju
-- [ ] Smisliti kako AI settings recommendations izgledaju u UI-ju (popup? sidebar panel? automatski apply?)
-- [ ] Desktop I mobile preview per frame
-- [ ] Export: varijable kao JSON → postaje engine config + settings_schema.json
-- [ ] Portability lista: zeleno / žuto / crveno (tek kad vidimo wireframe)
+- [x] Section picking from imported page → extract onto canvas
+- [x] Add section to frame (→ HP / → Col / → PDP) and extract from frame (←)
+- [x] Preview mode with a 300–2400px width slider
+- [x] Resize handle on sections (drag bottom edge)
+- [x] Edit blocks in imported sections (hide/delete elements)
+- [x] Progress bar + per-page checklist
+- [x] Auto-save state in localStorage
+- [x] Section library bottom drawer with groups
+- [ ] **Wire settings to a real Shopify `settings_schema.json`** — so the export is a valid Shopify config
+- [ ] **AI-recommended settings** — for every imported section, Claude analyzes it and suggests engine settings (colors, fonts, spacing, radius) that match
+- [ ] Decide how AI settings recommendations surface in the UI (popup? sidebar panel? auto-apply?)
+- [ ] Desktop AND mobile preview per frame
+- [ ] Export: variables as JSON → engine config + `settings_schema.json`
+- [ ] Portability list: green / yellow / red (only after wireframe is in place)
 
-## 5. Planiranje razvoja
-- [ ] Lista SVIH sekcija za obje teme (iz wireframe-a)
-- [ ] Lista SVIH features za obje teme
-- [ ] Ko radi šta — Claude savjetuje raspored
-- [ ] Redoslijed: dev A kreće od #1, dev B od posljednje, bilduju ka sredini
+## 5. Development planning
+- [ ] List of EVERY section for both themes (from the wireframe)
+- [ ] List of EVERY feature for both themes
+- [ ] Who builds what — Claude advises the split
+- [ ] Order: dev A starts from #1, dev B from the last item, build toward the middle
 
 ## 6. Claude Code setup
-- [ ] Research agent/skripta za analizu tema
-- [ ] Skillovi za dizajn i development
-- [ ] MD template za dokumentaciju sekcija
-- [ ] Workflow: sekcija gotova → MD → procjena porta u drugu temu
+- [ ] Research agent / script for theme analysis
+- [ ] Skills for design and development
+- [ ] MD template for section documentation
+- [ ] Workflow: section done → MD → port assessment for the other theme
 
 ## 7. Development
-- [ ] Engine base (shared varijable, grid, typography, base components)
-- [ ] Shared sekcije (header, footer, newsletter, FAQ, rich text, image+text)
-- [ ] Tema A niche sekcije
-- [ ] Tema B niche sekcije
-- [ ] Cross-port zelenih i žutih sekcija
+- [ ] Engine base (shared variables, grid, typography, base components)
+- [ ] Shared sections (header, footer, newsletter, FAQ, rich text, image+text)
+- [ ] Theme A niche sections
+- [ ] Theme B niche sections
+- [ ] Cross-port green and yellow sections
 
 ## 8. QA & Submit
 - [ ] Performance, accessibility, mobile, browser testing
-- [ ] Demo store sa sadržajem
-- [ ] Submit obje teme
+- [ ] Demo store with content
+- [ ] Submit both themes

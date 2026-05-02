@@ -11,7 +11,7 @@ Built with Claude Code under direction. Custom skills live in [`.claude/skills/`
 
 ```
 .
-├── CLAUDE.md                       project rules (Serbian)
+├── CLAUDE.md                       project rules
 ├── wireframe-builder/              the app — see its README
 ├── .claude/skills/analyze-section/ custom skill: queued section analysis
 ├── scrape-full.js                  theme demo scraper

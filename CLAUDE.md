@@ -1,52 +1,52 @@
 # Shopify Theme Store — Plan
 
-## Šta radimo
-Pravimo Shopify teme za oficijelni Theme Store. 2 deva (ja i drugar). Više tema odjednom.
+## What we're building
+Two Shopify themes for the official Theme Store. Two devs (me and a partner). Multiple themes built in parallel.
 
-## Struktura: Shared Engine
-- Jedna baza (engine) — zajedničke varijable, base sections, snippets
-- Svaka tema je layer iznad engine-a sa svojom nišom i vizualom
-- Kad dev završi sekciju → Claude ODMAH:
-  1. Napravi verziju te sekcije za drugu temu (swap tokeni, prilagodi niši)
-  2. Napravi MD sa razlikama (vidi format ispod)
-- Claude savjetuje koje sekcije radi ko
+## Structure: Shared Engine
+- One base (engine) — shared variables, base sections, snippets
+- Each theme is a layer on top of the engine with its own niche and visuals
+- When a dev finishes a section → Claude IMMEDIATELY:
+  1. Builds a version of that section for the other theme (swap tokens, adapt to niche)
+  2. Writes an MD with the differences (format below)
+- Claude advises which sections each dev should take
 
-### Sekcija MD format (automatski se pravi za svaku gotovu sekciju)
+### Section MD format (auto-generated for every finished section)
 ```
-# [Ime sekcije]
-- **Original tema:** A ili B
-- **Šta radi:** (1 rečenica)
-- **Port status:** zeleno / žuto / crveno
-- **Isto u obe teme:** (šta se ne mijenja)
-- **Različito:** (koji tokeni, blokovi, layout se mijenjaju)
-- **Ako žuto/crveno:** šta konkretno treba promijeniti i zašto
+# [Section name]
+- **Origin theme:** A or B
+- **What it does:** (one sentence)
+- **Port status:** green / yellow / red
+- **Same in both themes:** (what doesn't change)
+- **Different:** (which tokens, blocks, layout change)
+- **If yellow/red:** what specifically needs to change and why
 ```
-Ovo se pokreće automatski kroz /port-section skill.
+This runs automatically via the `/port-section` skill.
 
-## Varijable — ENGINE (razgraničiti ODMAH prije kodiranja)
-- max-width, spacing, grid, breakpoints — definišu se jednom u engine-u
-- Razmisliti koji engine elementi će MOŽDA biti drugačiji između tema
-- Preko tih varijabli se iste sekcije prilagođavaju za obje teme
-- **OVO JE KLJUČAN TODO** — kad dođemo do ovog koraka, Claude me mora detaljno ispitati o svakoj varijabli
+## Engine variables (lock down BEFORE coding)
+- max-width, spacing, grid, breakpoints — defined once in the engine
+- Think through which engine elements MAY need to differ between themes
+- These variables are how the same sections adapt across both themes
+- **THIS IS THE CRITICAL TODO** — when we reach this step, Claude must interrogate me in detail about every variable
 
-## Portabilnost sekcija
-- Neke sekcije mogu iz moje teme za njegovu, neke ne mogu
-- Plan mora imati listu: koje mogu, koje ne mogu, koje trebaju modifikaciju
-- Non-portable lista ZAVISI OD NIŠE — ako izaberemo slične niše koje gađaju 2 SEO keyworda, ta lista se drastično smanjuje
-- **Zato biramo niše koje su BLISKE** — više sekcija se prenosi, manje duplog posla
+## Section portability
+- Some sections port cleanly between themes, some don't
+- The plan must include a list: portable / non-portable / needs-modification
+- The non-portable list DEPENDS ON THE NICHES — picking similar niches that target two adjacent SEO keywords drastically shrinks it
+- **That's why we pick CLOSELY RELATED niches** — more sections port, less duplicate work
 
-## Workflow kad krenemo da kodiramo
-- Isplanirati SVE sekcije, dizajn i features za obje teme PRIJE početka
-- Jedan dev kreće od prve stavke, drugi od posljednje — bildujemo ka sredini
-- Svaka gotova sekcija se procijeni za transfer u drugu temu
+## Coding workflow
+- Plan ALL sections, design, and features for both themes BEFORE any code
+- One dev starts from item #1, the other from the last item — build toward the middle
+- Every finished section is evaluated for transfer to the other theme
 
-## Research faza — šta nam treba
-- Scrape sa DATUMIMA (launch date) — da znamo reviews/month, ne samo total
-- Sekcije od top tema — scraper/skripta koja izvuče sve sekcije iz demo-a
-- Upgrade JSON sa sekcijama svake teme (za inspiraciju i poređenje)
-- Research agent ili dio koji researčuje teme, gleda zapise, analizira
+## Research phase — what we need
+- Scrape with launch DATES — so we know reviews/month, not just totals
+- Sections from the top themes — a scraper that pulls every section from the demos
+- Upgrade JSON with each theme's sections (for inspiration and comparison)
+- A research agent (or part of one) that researches themes, reads transcripts, analyzes
 
 ## Claude Code setup
-- Napraviti/instalirati skillove za dizajn i development
-- Research agent koji može da researčuje teme i skriptu
-- Claude savjetuje prioritet sekcija, portabilnost, workflow
+- Build/install design and development skills
+- A research agent that can research themes and run scripts
+- Claude advises on section priority, portability, workflow

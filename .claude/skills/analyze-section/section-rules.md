@@ -1,52 +1,52 @@
 # Section Analysis Rules
 
-Referenca za analyze-section skill. Prije nego sto napravis result, provjeri ove ruleove.
+Reference for the `analyze-section` skill. Check these rules before producing a result.
 
-## Pravila za detekciju tipa
+## Type detection rules
 
 ### Carousel / Hero
-- Ako ima vise slide-ova (slider, swiper, carousel klase) → tip je `hero` sa blocksima za svaki slide
-- Svaki slide ima: heading, description, button_text, has_image: true
-- NIKAD ne smanji carousel na 1 slide — svi slide-ovi moraju biti u blocks
-- Provjeri: `[class*="carousel"], [class*="slider"], [class*="swiper"], [class*="slideshow"]`
-- Pogledaj koliko `li` elemenata ima u slider wrapperu
+- If there are multiple slides (slider, swiper, carousel classes) → type is `hero` with one block per slide
+- Each slide has: heading, description, button_text, has_image: true
+- NEVER reduce a carousel to one slide — every slide must be in `blocks`
+- Check: `[class*="carousel"], [class*="slider"], [class*="swiper"], [class*="slideshow"]`
+- Count the `li` elements inside the slider wrapper
 
 ### Featured Collection
-- Ako ima product kartice sa cijenama → `featured-collection`
-- Ako prvi item NEMA sliku ali ima heading/opis/CTA → to je info card (dark card), stavi ga kao prvi block sa `has_image: false`
-- Izvuci: brand, cijena (sale + original), badge (New!, Sale!, Low stock)
-- Format opisa za produkte: "BRAND — $price" ili "BRAND — $sale $original — Badge"
+- If there are product cards with prices → `featured-collection`
+- If the first item has NO image but has a heading/description/CTA → it's an info card (dark card); put it as the first block with `has_image: false`
+- Extract: brand, price (sale + original), badge (New!, Sale!, Low stock)
+- Description format for products: `"BRAND — $price"` or `"BRAND — $sale $original — Badge"`
 
 ### Collection Tabs
-- Ako ima tab bar sa vise tabova → `collection-tabs`
-- Heading treba biti tab labele spojene sa " | " — npr "Power Drills | Power Saws | Impact Wrenches"
-- Blocks su producti unutar aktivnog taba
+- If there is a tab bar with multiple tabs → `collection-tabs`
+- The heading should be the tab labels joined with `" | "` — e.g. `"Power Drills | Power Saws | Impact Wrenches"`
+- Blocks are the products inside the active tab
 
 ### Shop the Look
-- Slika lijevo + lista produkata desno
-- Svaki product block: heading=ime, description="variant — $sale $original"
-- button_text na sekciji: "Add All to Cart"
-- content_position: "left", columns: 2
+- Image on the left + product list on the right
+- Each product block: heading = name, description = `"variant — $sale $original"`
+- Section `button_text`: `"Add All to Cart"`
+- `content_position`: `"left"`, `columns`: 2
 
 ### Multicolumn
-- Grid sa kategorijama/kolonama — svaka ima sliku, naslov, opis, CTA
-- has_image: true za svaku kolonu
+- Grid with categories/columns — each has an image, title, description, CTA
+- `has_image: true` for every column
 
 ### Countdown
-- Timer sekcija — blocks su [Days, Hours, Minutes]
-- heading: "59", description: "Days" itd
+- Timer section — blocks are `[Days, Hours, Minutes]`
+- heading: `"59"`, description: `"Days"`, etc.
 
 ### Trust Badges
-- Ikone sa kratkim tekstom (Free Shipping, Returns, etc)
-- Svaki badge je block sa heading=tekst, has_image: true (za ikonu)
+- Icons with short text (Free Shipping, Returns, etc.)
+- Each badge is a block with heading = text, `has_image: true` (for the icon)
 
-## Generalna pravila
+## General rules
 
-1. **UVIJEK pogledaj cijeli HTML** — ne samo prvih 100 linija
-2. **Broji elemente tacno** — koliko producta, koliko kolona, koliko slide-ova
-3. **Izvuci SVE tekstove** — nikad placeholder text
-4. **Provjeri klase** — klase govore o tipu sekcije vise od HTML strukture
-5. **Pogledaj data atribute** — data-price, data-vendor, data-product itd
-6. **Sale cijene** — trazi `<s>`, `<del>`, `[class*="compare"]`, `[class*="was"]`
-7. **Badges** — trazi `[class*="badge"]`, `[class*="tag"]`, `[class*="label"]`
-8. **Ako nisi siguran** — bolje stavi vise informacija nego manje
+1. **ALWAYS read the entire HTML** — not just the first 100 lines
+2. **Count elements precisely** — how many products, how many columns, how many slides
+3. **Extract EVERY text** — never placeholder text
+4. **Check class names** — class names tell you more about section type than the HTML structure
+5. **Inspect data attributes** — `data-price`, `data-vendor`, `data-product`, etc.
+6. **Sale prices** — look for `<s>`, `<del>`, `[class*="compare"]`, `[class*="was"]`
+7. **Badges** — look for `[class*="badge"]`, `[class*="tag"]`, `[class*="label"]`
+8. **When unsure** — include more information rather than less
