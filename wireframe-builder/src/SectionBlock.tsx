@@ -189,7 +189,7 @@ const SectionBlock: React.FC<Props> = React.memo(({ section, settings, isMobile,
 
   const renderBlocks = () => {
     const blocks = section.settings.blocks!;
-    const sectionHeading = section.settings.heading || section.heading;
+    const sectionHeading = section.settings.heading || section.heading || undefined;
 
     // ── Hero / Carousel: slides with overlay text ──
     if (section.type === 'hero' && blocks.length > 0) {

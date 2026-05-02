@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Shopify Wireframe Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A local AI-assisted tool for turning Shopify theme demos into editable wireframes and reusable section patterns.
 
-Currently, two official plugins are available:
+The project was built as part of a Shopify Theme Store research workflow: scrape real theme demos, extract sections, analyze their structure with Claude Code skills, and rebuild them as editable wireframe blocks that can be ported across theme concepts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What It Does
 
-## React Compiler
+- Extracts sections from Shopify demo storefronts with Puppeteer.
+- Stores extracted section HTML in `extracted/` for visual comparison.
+- Imports sections into a React canvas for layout, resizing, grouping, and theme-setting experiments.
+- Converts extracted sections into structured wireframe blocks through a Claude Code skill workflow.
+- Connects to a Shopify store locally to preview and push template/theme changes during development.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Agent Workflow
 
-## Expanding the ESLint configuration
+The repo includes Claude Code project context and reusable skills:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `CLAUDE.md` defines the shared-engine Shopify theme workflow and section-porting rules.
+- `.claude/skills/analyze-section/` turns queued imported sections into structured wireframe data.
+- `.claude/skills/port-section/` documents and adapts finished sections for another theme concept.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The important part of the project is not just the UI. The system is designed so the agent can repeatedly inspect real extracted markup, produce consistent wireframe settings, and document portability decisions instead of relying on one-off prompts.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React + TypeScript + Vite
+- Express local API
+- Puppeteer for storefront extraction
+- Shopify Admin API integration
+- Claude Code skills for repeatable section analysis
+
+## Local Setup
+
+Requires Node `20.19+` or `22.12+`.
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The client runs on `http://localhost:3006` and the local API runs on `http://localhost:3007`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Optional Shopify connection values:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+SHOPIFY_STORE_URL=your-store.myshopify.com
+SHOPIFY_ACCESS_TOKEN=shpat_xxx
+SHOPIFY_STOREFRONT_PASSWORD=optional_password
 ```
+
+## Security Notes
+
+This is a local development tool, not a hosted multi-user SaaS app.
+
+- `.env`, generated app state, queue files, and build output are ignored.
+- Shopify tokens are stored only in the local `.env` file during development.
+- The local API uses permissive CORS and file writes for speed, so it should not be deployed publicly without authentication, token encryption, scoped CORS, request validation, and a proper secret store.
+
+## Verification
+
+```bash
+npm run build
+```
+
+Linting is enabled, but the current prototype still has cleanup work around strict `any` usage and React compiler lint rules. The production build is the main verification target for the current state of the demo.
